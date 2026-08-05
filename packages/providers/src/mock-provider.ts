@@ -7,19 +7,28 @@
  * deliberately incompatible (proud stone / weary human / chirpy merchant) so
  * voice-comparison tests have real contrast.
  *
- * Only `generateProfile` is fleshed out for M3; the other four methods throw
- * "not yet implemented" — they land in M4/M6 with the same mock pattern.
+ * generateProfile (M3), planScene + generateDialogue (M4) are implemented.
+ * reviewDialogue + repairDialogue remain M6.
  */
 
-import { CharacterProfile } from "@df/schemas";
+import {
+  CharacterProfile,
+  DialogueArtifact,
+  DialogueBeatPlan,
+  type CharacterProfile as CharacterProfileType,
+  type DialogueArtifact as DialogueArtifactType,
+  type DialogueBeatPlan as DialogueBeatPlanType,
+} from "@df/schemas";
 
 import type {
   DialogueAIProvider,
+  DialogueRequest,
   DialogueResult,
   ProfileRequest,
   ProfileResult,
   RepairResult,
   ReviewResult,
+  ScenePlanRequest,
   ScenePlanResult,
 } from "./provider.js";
 
@@ -68,13 +77,105 @@ export class MockProvider implements DialogueAIProvider {
     return { profile, canonProposals: [] };
   }
 
-  // The remaining methods land in M4/M6 with the same mock pattern.
-  async planScene(): Promise<ScenePlanResult> {
-    throw new Error("MockProvider.planScene: not implemented until M4");
+  /**
+   * Stage 2: build a deterministic beat plan from the scene spec (M4).
+   *
+   * One beat per required fact (each "lands on" that fact), plus a closing beat
+   * drawn from the scene's emotional progression (or a default). Speaker is the
+   * first participant. The plan is schema-valid (validated here before return).
+   */
+  async planScene(request: ScenePlanRequest): Promise<ScenePlanResult> {
+    const scene = request.scene;
+    const speakerId = scene.participants[0]?.characterId ?? "speaker";
+    const beats = scene.requiredFacts.map((factId, i) => ({
+      order: i + 1,
+      speakerId,
+      intent: `Convey ${factId}.`,
+      landsOn: [factId],
+      emotion: scene.emotionalProgression[Math.min(i, scene.emotionalProgression.length - 1)]?.emotion ?? "measured",
+    }));
+    // Closing beat: the last emotional beat, if any; otherwise a default.
+    if (beats.length === 0) {
+      beats.push({ order: 1, speakerId, intent: "Open the exchange.", landsOn: [], emotion: "measured" });
+    }
+    const closingEmotion = scene.emotionalProgression.at(-1)?.emotion ?? "resolved";
+    beats.push({
+      order: beats.length + 1,
+      speakerId,
+      intent: "Close the exchange.",
+      landsOn: [],
+      emotion: closingEmotion,
+    });
+
+    const candidate: DialogueBeatPlanType = {
+      id: `beat_${stripPrefix(scene.id, "scene_")}`,
+      version: 1,
+      contentHash: "sha256:mock-beat-uncommitted",
+      sceneId: scene.id,
+      contextPackageId: `ctx_${stripPrefix(scene.id, "scene_")}`,
+      beats,
+      avoids: [],
+    };
+    const parsed = DialogueBeatPlan.safeParse(candidate);
+    if (!parsed.success) {
+      throw new Error(`MockProvider.planScene produced an invalid beat plan: ${parsed.error.issues[0]?.message}`);
+    }
+    return { beatPlan: parsed.data, canonProposals: [] };
   }
-  async generateDialogue(): Promise<DialogueResult> {
-    throw new Error("MockProvider.generateDialogue: not implemented until M4");
+
+  /**
+   * Stage 3: draft dialogue from the beat plan (M4). One line per beat, voiced
+   * from the speaker's profile when available. The draft is schema-valid and
+   * references only the beat's `landsOn` facts (which the orchestrator checks
+   * against the forbidden set). Provenance is filled minimally — the orchestrator
+   * enriches it.
+   */
+  async generateDialogue(request: DialogueRequest): Promise<DialogueResult> {
+    const { scene, beatPlan } = request;
+    // Resolve the speaker profile from the context package if present.
+    const ctx = request.contextPackage as { participants?: { characterId: string; profile?: CharacterProfileType }[] } | undefined;
+    const speakerProfile = ctx?.participants?.find((p) => p.characterId === scene.participants[0]?.characterId)?.profile;
+
+    const lines = beatPlan.beats.map((beat, i) => ({
+      id: `l${i + 1}`,
+      beatOrder: beat.order,
+      speakerId: beat.speakerId,
+      text: { value: lineForBeat(beat, speakerProfile), lang: "en" },
+      humanEdited: false,
+    }));
+
+    const candidate: DialogueArtifactType = {
+      id: `dlg_${stripPrefix(scene.id, "scene_")}`,
+      version: 1,
+      contentHash: "sha256:mock-draft-uncommitted",
+      sceneId: scene.id,
+      beatPlanId: beatPlan.id,
+      contextPackageId: beatPlan.contextPackageId,
+      approvalStatus: "draft",
+      lines,
+      provenance: {
+        scene: { id: scene.id, version: scene.version },
+        characterProfiles: [],
+        characterStates: [],
+        relationships: [],
+        factions: [],
+        canonSnapshot: [],
+        schemaVersion: "1.0.0",
+        promptTemplateVersion: "mock-1.0.0",
+        provider: "mock",
+        model: "mock",
+        reasoningEffort: "normal",
+        generatedAt: "2026-08-06T00:00:00.000Z",
+      },
+      stale: false,
+    };
+    const parsed = DialogueArtifact.safeParse(candidate);
+    if (!parsed.success) {
+      throw new Error(`MockProvider.generateDialogue produced an invalid draft: ${parsed.error.issues[0]?.message}`);
+    }
+    return { draft: parsed.data, canonProposals: [] };
   }
+
   async reviewDialogue(): Promise<ReviewResult> {
     throw new Error("MockProvider.reviewDialogue: not implemented until M6");
   }
@@ -217,4 +318,42 @@ const GENERIC: ProfileTemplate = {
 function slugFromBrief(brief: string, kind: BriefKind): string {
   const words = brief.toLowerCase().replace(/[^a-z0-9 ]/g, "").split(/\s+/).filter(Boolean).slice(0, 3).join("_");
   return words || `new_${kind}`;
+}
+
+/** Strip a `<prefix>_` from an id, e.g. stripPrefix("scene_golem", "scene_") -> "golem". */
+function stripPrefix(id: string, prefix: string): string {
+  return id.startsWith(prefix) ? id.slice(prefix.length) : id;
+}
+
+/** Voice a single beat as a line, drawing on the speaker's profile when known. */
+function lineForBeat(
+  beat: { intent: string; emotion?: string; landsOn: string[] },
+  profile: CharacterProfileType | undefined,
+): string {
+  // If we know the speaker's sample lines, echo their register; otherwise generic.
+  const sample = profile?.voice.sampleLines[0]?.value;
+  const metaphor = profile?.voice.metaphorDomain?.source ?? "stone, weight";
+  const emotion = beat.emotion ?? "measured";
+
+  // A forbidden fact must NEVER be named by the mock. landsOn holds only
+  // required/permitted facts (the orchestrator checks against forbidden).
+  const fact = beat.landsOn[0];
+
+  // Closing beat vs content beat.
+  if (beat.intent.startsWith("Close")) {
+    if (sample) return `${trunc(sample)} You have your answer. The rest is weather.`;
+    return `That is all I have to say. Go.`;
+  }
+  if (beat.intent.startsWith("Open")) {
+    return sample ?? `You came. I wondered if you would.`;
+  }
+  // Content beat: name the permitted fact in the speaker's register.
+  if (fact) {
+    return `So. ${fact.replace(/_/g, " ")}. Consider it in the weight of every step you took to reach me — ${metaphor.split(",")[0]}.`;
+  }
+  return `Speak, then. I am listening (${emotion}).`;
+}
+
+function trunc(s: string, n = 60): string {
+  return s.length > n ? `${s.slice(0, n - 1)}…` : s;
 }

@@ -117,3 +117,32 @@ describe("studio backend — generate-profile (M3, mock only — Q-A1)", () => {
     expect(body.draft.profile.identity.gameplayRole).toBe("ambient-npc");
   });
 });
+
+describe("studio backend — generate-dialogue (M4, mock only)", () => {
+  const scene = {
+    id: "scene_test_m4",
+    version: 1,
+    contentHash: "sha256:m4",
+    label: "M4 test",
+    sceneType: "boss-first-encounter",
+    participants: [{ characterId: "char_boss", stateId: "state_boss__pre", role: "speaker" }],
+    purpose: { value: "Test", lang: "en" },
+    requiredFacts: ["fact_one"],
+    forbiddenRevelations: [],
+    emotionalProgression: [{ order: 1, emotion: "judgement" }],
+    maxLength: "short",
+  };
+
+  it("returns a beatPlan + draft from the two-call pipeline", async () => {
+    const { status, body } = await post("/api/generate-dialogue", { scene });
+    expect(status).toBe(200);
+    expect(body.beatPlan.beats.length).toBeGreaterThan(0);
+    expect(body.draft.lines.length).toBe(body.beatPlan.beats.length);
+    expect(body.draft.approvalStatus).toBe("draft");
+  });
+
+  it("rejects a missing scene with 400", async () => {
+    const { status } = await post("/api/generate-dialogue", {});
+    expect(status).toBe(400);
+  });
+});

@@ -1,4 +1,8 @@
 /**
- * Package entrypoint. Populated as the package's milestone lands.
+ * @df/generation — barrel.
+ *
+ * Orchestration for the generation pipeline stages. Depends on the injected
+ * DialogueAIProvider (constraint #9); pure of fs/network. Per Q-A1 the only
+ * shipped provider is the mock.
  */
-export {};
+export * from "./profile-generation.js";

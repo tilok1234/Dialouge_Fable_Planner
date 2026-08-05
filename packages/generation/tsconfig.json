@@ -9,5 +9,5 @@
     "sourceMap": true
   },
   "include": ["src/**/*"],
-  "references": [ { "path": "../schemas" }, { "path": "../core" }, { "path": "../context-compiler" } ]
+  "references": [ { "path": "../schemas" }, { "path": "../core" }, { "path": "../context-compiler" }, { "path": "../providers" } ]
 }

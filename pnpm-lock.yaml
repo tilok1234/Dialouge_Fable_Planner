@@ -38,6 +38,12 @@ importers:
       '@df/core':
         specifier: workspace:*
         version: link:../../packages/core
+      '@df/generation':
+        specifier: workspace:*
+        version: link:../../packages/generation
+      '@df/providers':
+        specifier: workspace:*
+        version: link:../../packages/providers
       '@df/schemas':
         specifier: workspace:*
         version: link:../../packages/schemas
@@ -120,6 +126,9 @@ importers:
       '@df/core':
         specifier: workspace:*
         version: link:../core
+      '@df/providers':
+        specifier: workspace:*
+        version: link:../providers
       '@df/schemas':
         specifier: workspace:*
         version: link:../schemas

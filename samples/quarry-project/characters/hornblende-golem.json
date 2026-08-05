@@ -1,0 +1,88 @@
+{
+  "id": "char_hornblende_golem",
+  "identity": {
+    "name": "The Hornblende Golem",
+    "species": "animated stone (hornblende)",
+    "culture": "Stoneborn (by adoption of purpose)",
+    "factions": ["fac_stoneborn"],
+    "occupation": "Guardian of the sealed quarry vein",
+    "gameplayRole": "boss",
+    "narrativeFunction": "boss",
+    "publicReputation": {
+      "key": "char_golem_reputation",
+      "value": "A monster that hunts any who enter the old quarry; the reason the place was sealed.",
+      "lang": "en"
+    },
+    "privateReality": {
+      "key": "char_golem_private",
+      "value": "A guardian built to atone for a theft it now cannot forgive, haunted by the irony of its own origin.",
+      "lang": "en"
+    },
+    "connections": ["quest_quarry_seals", "char_quarry_foreman", "fact_golem_created_by_miners"]
+  },
+  "core": {
+    "primaryDesire": { "key": "char_golem_desire", "value": "To keep the deep vein sealed until the earth forgets it was wounded.", "lang": "en" },
+    "primaryFear": { "key": "char_golem_fear", "value": "That it is, in the end, only another tool of the Taking it was made to end.", "lang": "en" },
+    "centralValue": { "key": "char_golem_value", "value": "The earth is not property. What was taken must be returned in stillness.", "lang": "en" },
+    "mainFlaw": { "key": "char_golem_flaw", "value": "It cannot tell a penitent miner from a thief; all who carry tools read as guilty.", "lang": "en" },
+    "centralContradiction": { "key": "char_golem_contradiction", "value": "It was carved by miners to atone for miners — and now it hunts their blood.", "lang": "en" },
+    "moralBoundary": { "key": "char_golem_boundary", "value": "It will not pursue the fleeing, nor strike one who has dropped their tools and knelt.", "lang": "en" },
+    "breakingPoint": { "key": "char_golem_breaking", "value": "Learning its own origin — that the miners it curses are its makers — could shatter its purpose.", "lang": "en" }
+  },
+  "opinions": [
+    { "target": "fac_ash_kingdom", "targetLabel": "The Ashen Kingdom", "position": "loathing", "reason": "It paid for the Taking.", "confidence": "absolute", "publiclyAdmitted": true, "canChangeCondition": "Only if the kingdom formally returns the taken stone, which it never will." },
+    { "target": "concept_industrial_mining", "targetLabel": "Industrial mining", "position": "loathing", "reason": "Mining is theft from the earth.", "confidence": "absolute", "publiclyAdmitted": true, "canChangeCondition": "Never, while the vein remains sealed." },
+    { "target": "char_quarry_foreman", "targetLabel": "Foreman Aldric", "position": "hostile", "reason": "He led the evacuation that abandoned the quarry to its wounds.", "confidence": "high", "publiclyAdmitted": false, "canChangeCondition": "If it learned Aldric ordered the evacuation to save lives, not to flee." },
+    { "target": "player", "targetLabel": "The player", "position": "hostile", "reason": "Carries tools; smells of ambition; entered uninvited.", "confidence": "moderate", "publiclyAdmitted": true, "canChangeCondition": "If the player drops their tools and kneels, or proves they came to seal, not to take." }
+  ],
+  "knowledge": {
+    "knows": ["fact_quarry_was_stoneborn_sacred_site", "fact_quarry_was_mined_industrially", "fact_seals_prevent_excavation", "fact_foreman_ordered_last_evacuation"],
+    "believesFalse": [],
+    "suspects": [],
+    "secrets": [],
+    "lies": [],
+    "unknown": ["fact_golem_created_by_miners"]
+  },
+  "voice": {
+    "formality": "formal",
+    "directness": "direct",
+    "typicalSentenceLength": "medium",
+    "rhythm": "Measured, with a low register; pauses before verbs of judgement.",
+    "vocabularyComplexity": "archaic",
+    "usesContractions": false,
+    "usesHumor": "never",
+    "metaphorDomain": {
+      "source": "stone, weight, erosion, strata, debt, stillness",
+      "examples": [
+        { "key": "char_golem_metaphor_1", "value": "Your name will erode before this vein remembers it.", "lang": "en" },
+        { "key": "char_golem_metaphor_2", "value": "You carry the weight of every stone your kind has stolen.", "lang": "en" }
+      ]
+    },
+    "emotionalRestraint": "impenetrable",
+    "declarationStyle": "declarative",
+    "namesEmotionsDirectly": false,
+    "addressMode": "impersonal",
+    "avoids": ["foolish mortal", "immense power", "you dare", "minions", "my liege"],
+    "sampleLines": [
+      { "key": "char_golem_sample_1", "value": "You walk beneath stolen stone and call yourself its master.", "lang": "en" },
+      { "key": "char_golem_sample_2", "value": "The mountain does not forgive. It merely outlives.", "lang": "en" },
+      { "key": "char_golem_sample_3", "value": "Drop what you carry. Kneel. Then we will see what manner of thing entered here.", "lang": "en" }
+    ],
+    "antiSampleLines": [
+      { "key": "char_golem_antisample_1", "value": "Foolish mortal! You dare challenge my immense power?", "lang": "en" },
+      { "key": "char_golem_antisample_2", "value": "You'll never defeat me and my minions!", "lang": "en" }
+    ]
+  },
+  "pressure": [
+    { "condition": "praised", "emotion": "unmoved", "voiceShift": "Treats praise as further extraction; colder tone.", "behaviour": "Ignores the praise and restates the charge." },
+    { "condition": "proven-wrong", "emotion": "strained", "voiceShift": "Longer pauses; shorter clauses.", "behaviour": "Does not concede; redirects to a larger charge." },
+    { "condition": "gaining-advantage", "emotion": "judicial", "voiceShift": "Slower; more formal.", "behaviour": "Offers the chance to kneel before striking." },
+    { "condition": "losing-control", "emotion": "offended", "voiceShift": "Louder consonants; loses the measured rhythm.", "behaviour": "Frames the player as a thief beyond mercy." },
+    { "condition": "facing-death", "emotion": "quietly resolved", "voiceShift": "Softer; returns to the long view.", "behaviour": "Refuses to beg; names the vein one last time." },
+    { "condition": "defeated", "emotion": "weary acknowledgement", "voiceShift": "Shortest sentences; almost gentle.", "behaviour": "Does not curse the player; warns them about the vein." }
+  ],
+  "tags": ["boss", "stoneborn", "stone", "quarry"],
+  "notes": "The golem does NOT know fact_golem_created_by_miners (it is in `unknown`). This is the lever for the breaking point and the scene_golem_defeated reveal.",
+  "version": 1,
+  "contentHash": "sha256:char-golem-v1"
+}

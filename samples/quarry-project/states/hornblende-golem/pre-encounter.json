@@ -1,0 +1,18 @@
+{
+  "id": "state_hornblende_golem__pre_encounter",
+  "characterId": "char_hornblende_golem",
+  "label": "Pre-encounter — sensing trespass",
+  "mood": "controlled judgement",
+  "location": "The sealed vein, deep quarry",
+  "injuries": [],
+  "activeQuestStages": ["quest_quarry_seals__stage_3"],
+  "recentEvents": [],
+  "temporaryObjective": { "key": "state_golem_pre_obj", "value": "Identify whether the trespasser is a thief or a penitent.", "lang": "en" },
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [],
+  "phase": "pre-encounter",
+  "version": 1,
+  "contentHash": "sha256:state-golem-pre-v1"
+}

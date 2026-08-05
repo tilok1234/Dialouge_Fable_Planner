@@ -1,0 +1,23 @@
+{
+  "id": "prop_seals_built_by_miners",
+  "proposedFact": {
+    "id": "fact_seals_built_by_miners",
+    "label": "Seals were built by the original mining crew",
+    "statement": { "key": "prop_seals_statement", "value": "The three rune-seals across the quarry were carved by the original mining crew as an act of atonement, not by the Stoneborn.", "lang": "en" },
+    "veracity": "established-fact",
+    "visibility": "known-to-few",
+    "tags": ["seals", "miners", "atonement", "proposal"]
+  },
+  "reason": "The golem's defeated-scene line implies the miners built the seals themselves as penance. This fact does not yet exist in canon and the writer should not invent it silently.",
+  "affectedAssets": [
+    { "kind": "character", "id": "char_hornblende_golem" },
+    { "kind": "quest", "id": "quest_quarry_seals" },
+    { "kind": "scene", "id": "scene_golem_defeated" }
+  ],
+  "status": "pending",
+  "suggestedVeracity": "established-fact",
+  "suggestedVisibility": "known-to-few",
+  "notes": "The canonical demonstration of the canon-proposal inbox (ARCHITECTURE §6.4). The AI needed a fact that wasn't in canon; instead of writing it, it proposed it. A human must accept, edit, or reject before it becomes truth. Note it is CONFLICT-ADJACENT to fact_golem_created_by_miners and acceptance should check for contradiction.",
+  "version": 1,
+  "contentHash": "sha256:prop-seals-miners-v1"
+}

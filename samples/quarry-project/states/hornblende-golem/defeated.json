@@ -1,0 +1,22 @@
+{
+  "id": "state_hornblende_golem__defeated",
+  "characterId": "char_hornblende_golem",
+  "label": "Defeated — the origin revealed",
+  "mood": "weary acknowledgement",
+  "location": "The sealed vein, deep quarry",
+  "injuries": ["dismantled; only the head and chest remain coherent"],
+  "activeQuestStages": ["quest_quarry_seals__stage_5a"],
+  "recentEvents": [
+    { "key": "state_golem_def_ev1", "value": "The player shattered the golem's central binding rune.", "lang": "en" },
+    { "key": "state_golem_def_ev2", "value": "The broken rune revealed the makers' marks of the original mining crew.", "lang": "en" }
+  ],
+  "temporaryObjective": { "key": "state_golem_def_obj", "value": "Tell the truth before stillness, and warn the player about the vein.", "lang": "en" },
+  "factsLearned": ["fact_golem_created_by_miners"],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [],
+  "phase": "defeated",
+  "notes": "This is the ONE state where the golem has learned fact_golem_created_by_miners. Its knowledge model for this state therefore permits it to speak the line that its profile's `unknown` bucket forbids in every other state.",
+  "version": 1,
+  "contentHash": "sha256:state-golem-defeated-v1"
+}

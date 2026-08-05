@@ -1,0 +1,17 @@
+{
+  "id": "state_quarry_foreman__default",
+  "characterId": "char_quarry_foreman",
+  "label": "Default — at the ridge-side inn",
+  "mood": "guarded, dryly weary",
+  "location": "The ridge-side inn, Hornblende Ridge",
+  "injuries": [],
+  "activeQuestStages": ["quest_quarry_seals__stage_1"],
+  "recentEvents": [],
+  "temporaryObjective": { "key": "state_foreman_def_obj", "value": "Find someone to look at the failing seals, without admitting why it matters to him.", "lang": "en" },
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [],
+  "version": 1,
+  "contentHash": "sha256:state-foreman-default-v1"
+}

@@ -1,0 +1,5 @@
+[
+  { "term": "Hornblende", "meaning": { "key": "term_hornblende", "value": "A dark, dense mineral; the dominant stone of the ridge and the golem's body.", "lang": "en" } },
+  { "term": "Vein-seal", "meaning": { "key": "term_vein_seal", "value": "A rune-bound seal placed to close a worked vein of stone.", "lang": "en" } },
+  { "term": "The Taking", "meaning": { "key": "term_the_taking", "value": "Stoneborn term for the industrial mining of the sacred quarry.", "lang": "en" } }
+]

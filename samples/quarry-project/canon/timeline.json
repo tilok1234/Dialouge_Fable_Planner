@@ -1,0 +1,7 @@
+[
+  { "date": "~400 years BP", "event": { "key": "tl_sacred_site", "value": "The quarry is recognized as a Stoneborn sacred site.", "lang": "en" } },
+  { "date": "~60 years BP", "event": { "key": "tl_industrial_mining", "value": "The quarry is reopened for industrial mining — The Taking.", "lang": "en" } },
+  { "date": "~55 years BP", "event": { "key": "tl_golem_awakened", "value": "Miners carve and awaken the Hornblende Golem as a guardian of atonement.", "lang": "en" } },
+  { "date": "~55 years BP", "event": { "key": "tl_golem_turns", "value": "The golem turns on the miners. Foreman Aldric orders evacuation. Seals are placed.", "lang": "en" } },
+  { "date": "present", "event": { "key": "tl_seals_failing", "value": "The three vein-seals begin to fail; something stirs beneath the rubble.", "lang": "en" } }
+]

@@ -1,0 +1,34 @@
+{
+  "id": "fac_stoneborn",
+  "name": "Stoneborn",
+  "summary": {
+    "key": "fac_stoneborn_summary",
+    "value": "A people who hold that stone and earth are sacred, not property. They consider cutting living rock an act that must be atoned for, never merely paid for.",
+    "lang": "en"
+  },
+  "sharedBeliefs": ["fact_quarry_was_stoneborn_sacred_site", "fact_quarry_was_mined_industrially"],
+  "sharedOpinions": [
+    { "target": "fac_ash_kingdom", "targetLabel": "The Ashen Kingdom", "position": "hostile", "reason": "It bankrolled the industrial reopening of the quarry." },
+    { "target": "concept_industrial_mining", "targetLabel": "Industrial mining", "position": "loathing", "reason": "Mining is theft from the earth." }
+  ],
+  "metaphorDomain": {
+    "source": "stone, weight, erosion, strata, pressure",
+    "examples": [
+      { "key": "fac_stoneborn_metaphor_1", "value": "Truth does not erode; only our patience does.", "lang": "en" },
+      { "key": "fac_stoneborn_metaphor_2", "value": "You carry the weight of what your hands have taken.", "lang": "en" }
+    ]
+  },
+  "terminology": [
+    { "term": "The Taking", "meaning": { "key": "fac_stoneborn_term_taking", "value": "Their word for the industrial mining of the quarry.", "lang": "en" } },
+    { "term": "vein-thief", "meaning": { "key": "fac_stoneborn_term_veinthief", "value": "An epithet for one who cuts a sealed vein.", "lang": "en" } }
+  ],
+  "customs": [
+    { "key": "fac_stoneborn_custom_address", "value": "Address strangers by their deed, not their name, until trust is earned.", "lang": "en" }
+  ],
+  "taboos": [
+    { "key": "fac_stoneborn_taboo_brag", "value": "Never boast of what stone you have taken or what it earned you.", "lang": "en" }
+  ],
+  "tags": ["faction", "stoneborn", "earth"],
+  "version": 1,
+  "contentHash": "sha256:fac-stoneborn-v1"
+}

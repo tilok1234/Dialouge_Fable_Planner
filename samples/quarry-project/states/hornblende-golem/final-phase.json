@@ -1,0 +1,20 @@
+{
+  "id": "state_hornblende_golem__final_phase",
+  "characterId": "char_hornblende_golem",
+  "label": "Final phase — quietly frightened",
+  "mood": "quietly frightened, still proud",
+  "location": "The sealed vein, deep quarry",
+  "injuries": ["the right arm hangs by a single ligament of stone", "the voice-box is cracked — consonants ring"],
+  "activeQuestStages": ["quest_quarry_seals__stage_4"],
+  "recentEvents": [
+    { "key": "state_golem_final_ev1", "value": "The player refused the offer to kneel and kept striking.", "lang": "en" }
+  ],
+  "temporaryObjective": { "key": "state_golem_final_obj", "value": "Hold the vein, even if it means being unmade.", "lang": "en" },
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [{ "key": "state_golem_final_conflict", "value": "The player has been named a thief in the golem's charge.", "lang": "en" }],
+  "phase": "final-phase",
+  "version": 1,
+  "contentHash": "sha256:state-golem-final-v1"
+}

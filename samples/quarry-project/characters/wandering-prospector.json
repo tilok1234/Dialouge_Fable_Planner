@@ -1,0 +1,85 @@
+{
+  "id": "char_wandering_prospector",
+  "identity": {
+    "name": "Mae the Prospector",
+    "species": "human",
+    "culture": "no fixed allegiance; travels the trade roads",
+    "factions": [],
+    "occupation": "Itinerant prospector and dealer in rare minerals",
+    "gameplayRole": "ambient-npc",
+    "narrativeFunction": "recurring-rival",
+    "publicReputation": {
+      "key": "char_prospector_reputation",
+      "value": "A cheerful trader who always seems to know where the next strike is — and who wants it kept quiet.",
+      "lang": "en"
+    },
+    "privateReality": {
+      "key": "char_prospector_private",
+      "value": "She wants the quarry's deep vein stone for herself and has been waiting years for the seals to fail.",
+      "lang": "en"
+    },
+    "connections": ["quest_quarry_seals", "fact_seals_prevent_excavation"]
+  },
+  "core": {
+    "primaryDesire": { "key": "char_prospector_desire", "value": "To cut the deep vein stone and retire on what it buys.", "lang": "en" },
+    "primaryFear": { "key": "char_prospector_fear", "value": "Dying broke on a trade road nobody remembers her name.", "lang": "en" },
+    "centralValue": { "key": "char_prospector_value", "value": "Anything's for sale; the only sin is a bad price.", "lang": "en" },
+    "mainFlaw": { "key": "char_prospector_flaw", "value": "She reads every kindness as leverage and every refusal as a negotiation.", "lang": "en" },
+    "centralContradiction": { "key": "char_prospector_contradiction", "value": "She wants to be remembered, but her whole trade depends on never being noticed.", "lang": "en" },
+    "moralBoundary": { "key": "char_prospector_boundary", "value": "She won't kill, and she won't sell someone into a death she could see coming.", "lang": "en" },
+    "breakingPoint": { "key": "char_prospector_breaking", "value": "Being shown that the golem is a person, not a hazard — and that cutting the vein is a kind of murder.", "lang": "en" }
+  },
+  "opinions": [
+    { "target": "concept_industrial_mining", "targetLabel": "Industrial mining", "position": "friendly", "reason": "It paid for her apprenticeship.", "confidence": "high", "publiclyAdmitted": true, "canChangeCondition": "Only if it stops paying." },
+    { "target": "fac_stoneborn", "targetLabel": "The Stoneborn", "position": "wary", "reason": "Their rites are bad for margins.", "confidence": "moderate", "publiclyAdmitted": false, "canChangeCondition": "If a Stoneborn saves her life." },
+    { "target": "char_hornblende_golem", "targetLabel": "The golem", "position": "wary", "reason": "It's sitting on the find of her career.", "confidence": "moderate", "publiclyAdmitted": false, "canChangeCondition": "If it lets her take even one stone." },
+    { "target": "player", "targetLabel": "The player", "position": "friendly", "reason": "A walking price she hasn't named yet.", "confidence": "moderate", "publiclyAdmitted": true, "canChangeCondition": "If the player refuses her cut and seals the vein anyway." }
+  ],
+  "knowledge": {
+    "knows": ["fact_quarry_was_mined_industrially", "fact_seals_prevent_excavation"],
+    "believesFalse": [],
+    "suspects": [],
+    "secrets": ["fact_golem_created_by_miners"],
+    "lies": [],
+    "unknown": ["fact_foreman_ordered_last_evacuation", "fact_quarry_was_stoneborn_sacred_site"]
+  },
+  "voice": {
+    "formality": "very-casual",
+    "directness": "indirect",
+    "typicalSentenceLength": "short",
+    "rhythm": "Bright, brisk; loads of questions; trails off mid-thought to make an offer.",
+    "vocabularyComplexity": "plain",
+    "usesContractions": true,
+    "usesHumor": "frequent",
+    "metaphorDomain": {
+      "source": "coin, weight on a scale, the open road, weather",
+      "examples": [
+        { "key": "char_prospector_metaphor_1", "value": "Everything's got a weight, friend. Even guilt. Especially guilt.", "lang": "en" }
+      ]
+    },
+    "emotionalRestraint": "open",
+    "declarationStyle": "interrogative",
+    "namesEmotionsDirectly": true,
+    "addressMode": "by-name",
+    "avoids": ["honour", "sacred", "duty", "the gods decree"],
+    "sampleLines": [
+      { "key": "char_prospector_sample_1", "value": "Oh, the old quarry? Friend, that place is a retirement plan with teeth.", "lang": "en" },
+      { "key": "char_prospector_sample_2", "value": "You're not here to seal it. Nobody walks in with that look to seal something. So — what's your price?", "lang": "en" },
+      { "key": "char_prospector_sample_3", "value": "I like you. I say that to everyone. But I mean it maybe ten percent. That's high, for me.", "lang": "en" }
+    ],
+    "antiSampleLines": [
+      { "key": "char_prospector_antisample_1", "value": "By my honour, I shall see this sacred duty done.", "lang": "en" },
+      { "key": "char_prospector_antisample_2", "value": "The mountain does not forgive.", "lang": "en" }
+    ]
+  },
+  "pressure": [
+    { "condition": "praised", "emotion": "delighted", "voiceShift": "Even faster; leans into the flattery.", "behaviour": "Uses the moment to pitch a deal." },
+    { "condition": "proven-wrong", "emotion": "unbothered", "voiceShift": "Pivots without acknowledging the correction.", "behaviour": "Reframes the error as a feature." },
+    { "condition": "threatened", "emotion": "wary", "voiceShift": "Drops the humor; shorter, flatter.", "behaviour": "Names a price to leave, and leaves." },
+    { "condition": "speaking-to-required-but-hated", "emotion": "performative warmth", "voiceShift": "Over-familiar; too many 'friend's.", "behaviour": "Talks the whole time to control the exchange." }
+  ],
+  "tags": ["recurring", "prospector", "human", "mercantile"],
+  "notes": "Deliberately the OPPOSITE voice of the golem so the voice-comparison test has contrast. Note she SECRETLY knows the golem's origin but won't reveal it without payment — a different knowledge posture from Aldric (who only suspects).",
+  "version": 1,
+  "contentHash": "sha256:char-prospector-v1"
+}

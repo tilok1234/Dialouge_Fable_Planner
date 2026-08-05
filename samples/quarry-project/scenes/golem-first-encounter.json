@@ -1,0 +1,32 @@
+{
+  "id": "scene_golem_first_encounter",
+  "label": "Golem first encounter",
+  "sceneType": "boss-first-encounter",
+  "participants": [
+    {
+      "characterId": "char_hornblende_golem",
+      "stateId": "state_hornblende_golem__pre_encounter",
+      "relationshipIds": ["rel_hornblende_golem__player"],
+      "role": "speaker"
+    }
+  ],
+  "boundQuestStages": ["quest_quarry_seals__stage_3"],
+  "purpose": {
+    "key": "scene_golem_enc_purpose",
+    "value": "Explain why the golem sees the player as a trespasser, and offer the player the chance to kneel or refuse.",
+    "lang": "en"
+  },
+  "requiredFacts": ["fact_seals_prevent_excavation"],
+  "hintableFacts": ["fact_quarry_was_stoneborn_sacred_site"],
+  "forbiddenRevelations": ["fact_golem_created_by_miners"],
+  "emotionalProgression": [
+    { "order": 1, "emotion": "controlled judgement" },
+    { "order": 2, "emotion": "offended warning" }
+  ],
+  "maxLength": "short",
+  "availableChoices": ["choice_quarry_destroy_golem", "choice_quarry_spare_golem"],
+  "templateDefaults": { "bossFirstEncounter": { "mustOfferMercy": true, "mustNotRevealWeakness": true } },
+  "notes": "The keystone knowledge-gating scene. The golem MUST convey that the seals prevent excavation; it MUST NOT reveal its own origin (which it does not yet know). The reviewer's knowledge-leak check fires if 'miners', 'makers', or 'created by' framing leaks here.",
+  "version": 1,
+  "contentHash": "sha256:scene-golem-enc-v1"
+}

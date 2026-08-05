@@ -1,0 +1,32 @@
+{
+  "name": "@df/schemas",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Zod schemas that encode the Dialogue Foundry data contract. The single source of truth every package validates against.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "validate-samples": "tsc -p tsconfig.json && node scripts/validate-samples.js",
+    "emit-json-schema": "tsc -p tsconfig.json && node scripts/emit-json-schema.js"
+  },
+  "dependencies": {
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "vitest": "^1.6.0",
+    "zod-to-json-schema": "^3.23.0"
+  }
+}

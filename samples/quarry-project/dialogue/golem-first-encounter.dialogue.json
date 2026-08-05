@@ -1,0 +1,63 @@
+{
+  "id": "dlg_golem_first_encounter",
+  "sceneId": "scene_golem_first_encounter",
+  "beatPlanId": "beat_golem_first_encounter",
+  "contextPackageId": "ctx_golem_first_encounter",
+  "reviewId": "review_golem_first_encounter",
+  "approvalStatus": "accepted",
+  "lines": [
+    {
+      "id": "l1",
+      "beatOrder": 1,
+      "speakerId": "char_hornblende_golem",
+      "text": { "key": "dlg_golem_enc_l1", "value": "You broke three seals to reach this floor. Each was a promise. Yours is the first step that did not keep it.", "lang": "en" },
+      "humanEdited": false
+    },
+    {
+      "id": "l2",
+      "beatOrder": 2,
+      "speakerId": "char_hornblende_golem",
+      "text": { "key": "dlg_golem_enc_l2", "value": "You call it a quarry. A wound, left open, is what it is. And you carry the tools to open it further.", "lang": "en" },
+      "humanEdited": false
+    },
+    {
+      "id": "l3",
+      "beatOrder": 3,
+      "speakerId": "char_hornblende_golem",
+      "text": { "key": "dlg_golem_enc_l3", "value": "Drop what you carry. Kneel. Then we will see what manner of thing entered here.", "lang": "en" },
+      "humanEdited": false
+    },
+    {
+      "id": "l4",
+      "beatOrder": 4,
+      "speakerId": "char_hornblende_golem",
+      "text": { "key": "dlg_golem_enc_l4", "value": "You will not kneel. Then stand, and be weighed.", "lang": "en" },
+      "humanEdited": true,
+      "lock": { "state": "hard-locked", "lockedBy": "author", "lockedAt": "2026-08-05T12:30:00.000Z", "reason": "Final line, locked after manual edit; must survive any regeneration." }
+    }
+  ],
+  "provenance": {
+    "characterProfiles": [{ "id": "char_hornblende_golem", "version": 1 }],
+    "characterStates": [{ "id": "state_hornblende_golem__pre_encounter", "version": 1 }],
+    "relationships": [{ "id": "rel_hornblende_golem__player", "version": 1 }],
+    "factions": [{ "id": "fac_stoneborn", "version": 1 }],
+    "quest": { "id": "quest_quarry_seals", "version": 1 },
+    "questStage": { "id": "quest_quarry_seals__stage_3", "version": 1 },
+    "scene": { "id": "scene_golem_first_encounter", "version": 1 },
+    "canonSnapshot": [
+      { "id": "fact_quarry_was_stoneborn_sacred_site", "version": 1 },
+      { "id": "fact_quarry_was_mined_industrially", "version": 1 },
+      { "id": "fact_seals_prevent_excavation", "version": 1 }
+    ],
+    "schemaVersion": "1.0.0",
+    "promptTemplateVersion": "1.0.0",
+    "provider": "glm",
+    "model": "glm-5.2",
+    "reasoningEffort": "high",
+    "generatedAt": "2026-08-05T12:20:00.000Z"
+  },
+  "stale": false,
+  "notes": "Line l4 is hard-locked and human-edited — the proof artifact for the 'locked edits survive regeneration' MVP criterion. Note the lines obey the forbiddenRevelations gate: no mention of the origin.",
+  "version": 1,
+  "contentHash": "sha256:dlg-golem-enc-v1"
+}

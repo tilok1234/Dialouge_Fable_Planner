@@ -1,0 +1,82 @@
+[
+  {
+    "id": "fact_quarry_was_stoneborn_sacred_site",
+    "label": "Quarry was a Stoneborn sacred site",
+    "statement": {
+      "key": "canon_quarry_sacred",
+      "value": "The quarry at Hornblende Ridge was a sacred site of the Stoneborn long before any pick struck its stone.",
+      "lang": "en"
+    },
+    "veracity": "objective-truth",
+    "visibility": "known-to-few",
+    "inWorldDate": "circa 400 years before present",
+    "references": [],
+    "tags": ["quarry", "stoneborn", "history"],
+    "version": 1,
+    "contentHash": "sha256:fact-sacred-site"
+  },
+  {
+    "id": "fact_quarry_was_mined_industrially",
+    "label": "Quarry was mined industrially",
+    "statement": {
+      "key": "canon_quarry_mined",
+      "value": "Two generations ago the quarry was reopened and mined industrially, against Stoneborn protest.",
+      "lang": "en"
+    },
+    "veracity": "established-fact",
+    "visibility": "public",
+    "inWorldDate": "60 years before present",
+    "references": ["fact_quarry_was_stoneborn_sacred_site"],
+    "tags": ["quarry", "history", "economy"],
+    "version": 1,
+    "contentHash": "sha256:fact-mined-industrially"
+  },
+  {
+    "id": "fact_seals_prevent_excavation",
+    "label": "Seals prevent further excavation",
+    "statement": {
+      "key": "canon_seals_purpose",
+      "value": "Three rune-seals were placed across the quarry to prevent any further excavation of its deepest vein.",
+      "lang": "en"
+    },
+    "veracity": "established-fact",
+    "visibility": "known-to-few",
+    "inWorldDate": "55 years before present",
+    "references": ["fact_quarry_was_mined_industrially"],
+    "tags": ["seals", "quarry", "magic"],
+    "version": 1,
+    "contentHash": "sha256:fact-seals-purpose"
+  },
+  {
+    "id": "fact_golem_created_by_miners",
+    "label": "The golem was created by the miners",
+    "statement": {
+      "key": "canon_golem_origin",
+      "value": "The Hornblende Golem was carved and awoken by the very miners whose later descendants it now hunts, as a guardian meant to atone for what they had taken.",
+      "lang": "en"
+    },
+    "veracity": "objective-truth",
+    "visibility": "secret",
+    "inWorldDate": "55 years before present",
+    "references": ["fact_seals_prevent_excavation", "fact_quarry_was_stoneborn_sacred_site"],
+    "tags": ["golem", "secret", "origin"],
+    "version": 1,
+    "contentHash": "sha256:fact-golem-origin"
+  },
+  {
+    "id": "fact_foreman_ordered_last_evacuation",
+    "label": "Foreman ordered the last evacuation",
+    "statement": {
+      "key": "canon_foreman_evac",
+      "value": "Quarry Foreman Aldric ordered the final evacuation of the quarry the day the golem first turned on the miners.",
+      "lang": "en"
+    },
+    "veracity": "established-fact",
+    "visibility": "known-to-few",
+    "inWorldDate": "55 years before present",
+    "references": ["fact_golem_created_by_miners"],
+    "tags": ["foreman", "history"],
+    "version": 1,
+    "contentHash": "sha256:fact-foreman-evac"
+  }
+]

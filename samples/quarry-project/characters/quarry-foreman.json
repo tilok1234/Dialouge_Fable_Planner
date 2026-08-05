@@ -1,0 +1,84 @@
+{
+  "id": "char_quarry_foreman",
+  "identity": {
+    "name": "Foreman Aldric",
+    "species": "human",
+    "culture": "Ashen Kingdom (by birth), Stoneborn-sympathetic (by guilt)",
+    "factions": ["fac_ash_kingdom"],
+    "occupation": "Retired quarry foreman",
+    "gameplayRole": "quest-giver",
+    "narrativeFunction": "quest-giver",
+    "publicReputation": {
+      "key": "char_foreman_reputation",
+      "value": "A tired old man who drinks at the ridge-side inn and won't speak of the quarry.",
+      "lang": "en"
+    },
+    "privateReality": {
+      "key": "char_foreman_private",
+      "value": "He ordered the evacuation that saved his crew and has spent forty years wondering if running was the same as stealing.",
+      "lang": "en"
+    },
+    "connections": ["quest_quarry_seals", "char_hornblende_golem", "fact_foreman_ordered_last_evacuation"]
+  },
+  "core": {
+    "primaryDesire": { "key": "char_foreman_desire", "value": "To die knowing the quarry is sealed and his crew's grandchildren are safe.", "lang": "en" },
+    "primaryFear": { "key": "char_foreman_fear", "value": "That what he calls prudence, history will call cowardice.", "lang": "en" },
+    "centralValue": { "key": "char_foreman_value", "value": "A foreman brings his people home. Everything else is negotiable.", "lang": "en" },
+    "mainFlaw": { "key": "char_foreman_flaw", "value": "He frames his own escape as an act of leadership, and refuses to look too closely at that frame.", "lang": "en" },
+    "centralContradiction": { "key": "char_foreman_contradiction", "value": "He saved his crew by fleeing the thing his crew had built.", "lang": "en" },
+    "moralBoundary": { "key": "char_foreman_boundary", "value": "He will not send another person into the quarry to die for his peace of mind.", "lang": "en" },
+    "breakingPoint": { "key": "char_foreman_breaking", "value": "Confronted with proof that the golem remembers him specifically and judges him.", "lang": "en" }
+  },
+  "opinions": [
+    { "target": "char_hornblende_golem", "targetLabel": "The Hornblende Golem", "position": "wary", "reason": "It is the grave-marker of the worst day of his life.", "confidence": "high", "publiclyAdmitted": false, "canChangeCondition": "If he learns the golem was made by his crew, not by some enemy." },
+    { "target": "fac_ash_kingdom", "targetLabel": "The Ashen Kingdom", "position": "sympathetic", "reason": "It gave his people work; he cannot bring himself to blame it for the Taking.", "confidence": "moderate", "publiclyAdmitted": true, "canChangeCondition": "If shown the kingdom knew the quarry was sacred and mined it anyway." },
+    { "target": "concept_industrial_mining", "targetLabel": "Industrial mining", "position": "neutral", "reason": "It fed his family for thirty years; he cannot call it theft without calling himself a thief.", "confidence": "low", "publiclyAdmitted": true, "canChangeCondition": "A long, slow process; not a single revelation." },
+    { "target": "player", "targetLabel": "The player", "position": "friendly", "reason": "Someone willing to go where he could not.", "confidence": "moderate", "publiclyAdmitted": true, "canChangeCondition": "If the player takes the vein's stone for profit." }
+  ],
+  "knowledge": {
+    "knows": ["fact_quarry_was_mined_industrially", "fact_seals_prevent_excavation", "fact_foreman_ordered_last_evacuation", "fact_quarry_was_stoneborn_sacred_site"],
+    "believesFalse": [],
+    "suspects": ["fact_golem_created_by_miners"],
+    "secrets": [],
+    "lies": [],
+    "unknown": []
+  },
+  "voice": {
+    "formality": "casual",
+    "directness": "indirect",
+    "typicalSentenceLength": "medium",
+    "rhythm": "Clipped, with trailing qualifications; tends to end sentences by talking himself out of them.",
+    "vocabularyComplexity": "common",
+    "usesContractions": true,
+    "usesHumor": "dry",
+    "metaphorDomain": {
+      "source": "work, weight, pay, and the road home",
+      "examples": [
+        { "key": "char_foreman_metaphor_1", "value": "Some debts you don't settle. You just keep making payments till you're dead.", "lang": "en" }
+      ]
+    },
+    "emotionalRestraint": "guarded",
+    "declarationStyle": "balanced",
+    "namesEmotionsDirectly": false,
+    "addressMode": "by-name",
+    "avoids": ["destiny", "the gods", "sacred duty", "by my honour"],
+    "sampleLines": [
+      { "key": "char_foreman_sample_1", "value": "You want the quarry story. Course you do. Everyone does, eventually.", "lang": "en" },
+      { "key": "char_foreman_sample_2", "value": "I got my people out that day. Don't ask me to feel right about it.", "lang": "en" },
+      { "key": "char_foreman_sample_3", "value": "The seals are failing. I can hear 'em in the rain. Go look — or don't. Your road.", "lang": "en" }
+    ],
+    "antiSampleLines": [
+      { "key": "char_foreman_antisample_1", "value": "By the gods! A hero has come at last to lift our curse!", "lang": "en" },
+      { "key": "char_foreman_antisample_2", "value": "It is my sacred duty to tell you the truth of the quarry.", "lang": "en" }
+    ]
+  },
+  "pressure": [
+    { "condition": "praised", "emotion": "flinching", "voiceShift": "Brushes it off, changes subject to the crew.", "behaviour": "Deflects credit to long-dead miners." },
+    { "condition": "proven-wrong", "emotion": "quietly ashamed", "voiceShift": "Slower; loses the dry humor.", "behaviour": "Admits the smallest version of the error." },
+    { "condition": "threatened", "emotion": "weary", "voiceShift": "Shorter; stops qualifying.", "behaviour": "Will not be bullied; offers information freely rather than under threat." }
+  ],
+  "tags": ["quest-giver", "foreman", "human"],
+  "notes": "Aldric SUSPECTS fact_golem_created_by_miners but does not know it. He will not state it as fact in dialogue. This is a clean knowledge-model test case.",
+  "version": 1,
+  "contentHash": "sha256:char-foreman-v1"
+}

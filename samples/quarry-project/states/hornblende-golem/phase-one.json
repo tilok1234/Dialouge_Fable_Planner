@@ -1,0 +1,20 @@
+{
+  "id": "state_hornblende_golem__phase_one",
+  "characterId": "char_hornblende_golem",
+  "label": "Phase one — the charge laid",
+  "mood": "offended warning",
+  "location": "The sealed vein, deep quarry",
+  "injuries": [],
+  "activeQuestStages": ["quest_quarry_seals__stage_4"],
+  "recentEvents": [
+    { "key": "state_golem_p1_ev1", "value": "The player refused to drop their tools and kneel.", "lang": "en" }
+  ],
+  "temporaryObjective": { "key": "state_golem_p1_obj", "value": "Drive the trespasser out or break them against the seal.", "lang": "en" },
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [{ "key": "state_golem_p1_conflict", "value": "The player has been named a thief in the golem's charge.", "lang": "en" }],
+  "phase": "phase-one",
+  "version": 1,
+  "contentHash": "sha256:state-golem-p1-v1"
+}

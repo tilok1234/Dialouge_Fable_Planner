@@ -1,0 +1,20 @@
+{
+  "id": "state_hornblende_golem__phase_two",
+  "characterId": "char_hornblende_golem",
+  "label": "Phase two — first cracks",
+  "mood": "offended, escalating",
+  "location": "The sealed vein, deep quarry",
+  "injuries": ["a long fracture across the right shoulder", "two fingers of the left hand sheared away"],
+  "activeQuestStages": ["quest_quarry_seals__stage_4"],
+  "recentEvents": [
+    { "key": "state_golem_p2_ev1", "value": "The player landed a blow that cracked the golem's shoulder.", "lang": "en" }
+  ],
+  "temporaryObjective": { "key": "state_golem_p2_obj", "value": "End the fight before the seal is disturbed.", "lang": "en" },
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [{ "key": "state_golem_p2_conflict", "value": "The player has been named a thief in the golem's charge.", "lang": "en" }],
+  "phase": "phase-two",
+  "version": 1,
+  "contentHash": "sha256:state-golem-p2-v1"
+}

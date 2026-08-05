@@ -1,0 +1,17 @@
+{
+  "id": "state_wandering_prospector__default",
+  "characterId": "char_wandering_prospector",
+  "label": "Default — working the angle",
+  "mood": "brightly calculating",
+  "location": "The ridge-side inn, Hornblende Ridge",
+  "injuries": [],
+  "activeQuestStages": ["quest_quarry_seals__stage_1"],
+  "recentEvents": [],
+  "temporaryObjective": { "key": "state_prospector_def_obj", "value": "Attach herself to whoever is about to break the quarry open.", "lang": "en" },
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [],
+  "version": 1,
+  "contentHash": "sha256:state-prospector-default-v1"
+}

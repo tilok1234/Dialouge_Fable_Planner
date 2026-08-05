@@ -1,0 +1,11 @@
+node_modules/
+dist/
+*.tsbuildinfo
+coverage/
+.env
+.env.*
+!.env.example
+*.local.json
+
+# generated json-schema output (regenerated via pnpm emit-json-schema)
+packages/schemas/json-schema/

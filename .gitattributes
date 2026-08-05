@@ -1,0 +1,21 @@
+# Normalize line endings so diffs stay clean across Windows / macOS / Linux.
+# Text files use LF in the repo regardless of OS; binary files are marked.
+* text=auto eol=lf
+
+# Ensure these always check out LF (JSON/TS/MD are whitespace-sensitive).
+*.json   text eol=lf
+*.ts     text eol=lf
+*.js     text eol=lf
+*.md     text eol=lf
+*.yaml   text eol=lf
+*.yml    text eol=lf
+
+# Treat generated schema output and lockfiles as text too.
+*.schema.json text eol=lf
+package-lock.json text eol=lf
+pnpm-lock.yaml  text eol=lf
+
+# Binary assets (none yet, but reserved).
+*.png binary
+*.jpg binary
+*.ico binary

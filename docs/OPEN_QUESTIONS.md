@@ -246,3 +246,35 @@ R-3: M6+, R-4: M3/M4, R-5: M1, R-6: M0).
 **Phase 0 is CLOSED.** Next action: `git init`, add remote
 `https://github.com/tilok1234/Dialouge_Fable_Planner`, create
 `milestones/M0.md`, begin M0.
+
+---
+
+## 8. Post-Phase-0 decisions
+
+### Q-A1 — No API keys / no paid model calls (decided 2026-08-05)
+
+**Decision:** The application **never** makes a real LLM call. No `GLM_API_KEY`
+is read, no network egress to a model provider, ever. Every code path —
+including the UI's Generate button — uses a **mock provider** that returns
+canned, deterministic, schema-valid output.
+
+**Scope impact:**
+- **M3 (profile generation), M4 (dialogue generation), M6 (consistency engine):**
+  built and fully tested with the mock provider. The pipelines, schemas,
+  validation, locking, and approval flow all work for real; only the *source*
+  of the generated text is mocked rather than a live model.
+- **Human gates** for M3/M4/M6 ("three distinct generated characters", "voice
+  holds across states", "checker catches planted contradictions") are met by
+  inspecting the mock's output and the planted-contradiction tests — not by
+  judging live model quality. This is an explicit, accepted limitation.
+- **The `DialogueAIProvider` interface is unchanged** (constraint #9). A real
+  GLM/Claude/local implementation can be added later by anyone who opts in;
+  the default build ships mock-only.
+
+**Why this is safe:** the contract's hardest guarantees (validate-before-store,
+propose-not-impose, no silent canon edits, locking) are all exercised
+identically against mock output — the mock is just another untrusted provider.
+The architecture's value is the *pipeline*, not the model behind it.
+
+**Supersedes** any implication in earlier docs that GLM-5.2 is wired by default.
+`providers/` ships the interface + the mock; no GLM client code is written.

@@ -14,6 +14,7 @@ import { CanonFactEditor } from "./CanonFactEditor.js";
 import { CharacterEditor } from "./CharacterEditor.js";
 import { CharacterStateEditor } from "./CharacterStateEditor.js";
 import { FactionEditor } from "./FactionEditor.js";
+import { GeneratePanel } from "./GeneratePanel.js";
 import { QuestEditor } from "./QuestEditor.js";
 import { SceneEditor } from "./SceneEditor.js";
 
@@ -148,7 +149,17 @@ export function App() {
         </aside>
 
         <section className="editor">
-          {project && selection ? renderEditor(project, selection, integrityFor, patch, patchCanonFacts) : (
+          {project && selection ? (
+            renderEditor(project, selection, integrityFor, patch, patchCanonFacts)
+          ) : project ? (
+            <GeneratePanel
+              onAccept={(profile) => {
+                setProject({ ...project, characters: [...project.characters, profile] });
+                setSelection({ kind: "character", id: profile.id });
+                setDirty(true);
+              }}
+            />
+          ) : (
             <p className="hint">Select an artifact to edit.</p>
           )}
         </section>

@@ -6,18 +6,23 @@
 // to this service (constraint #9 — the boundary rule).
 //
 // Endpoints (all JSON in/out):
-//   POST /api/load      { dir }                          -> { data, errors }
-//   POST /api/save      { dir, project }                 -> { errors }
-//   POST /api/integrity { project }                      -> { issues }
-//   GET  /api/health                                     -> { ok: true }
+//   POST /api/load              { dir }                          -> { data, errors }
+//   POST /api/save              { dir, project }                 -> { errors }
+//   POST /api/integrity         { project }                      -> { issues }
+//   POST /api/generate-profile  { brief, idSlug? }               -> { draft } | { error }
+//   GET  /api/health                                             -> { ok: true }
 //
 // Runs against the BUILT @df/storage dist. Start after `pnpm --filter
 // @df/storage build`. Port defaults to 7317; override with DF_PORT.
+//
+// Q-A1: generate-profile uses ONLY the MockProvider — no API key, no network.
 
 import { createServer } from "node:http";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { generateProfileDraft } from "@df/generation";
+import { mockProvider } from "@df/providers";
 import { readProject, writeProject, checkIntegrity } from "@df/storage";
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -82,6 +87,17 @@ const server = createServer(async (req, res) => {
       if (!project) return send(res, 400, { error: "missing project" });
       const issues = checkIntegrity(project);
       return send(res, 200, { issues });
+    }
+
+    if (req.method === "POST" && path === "/api/generate-profile") {
+      // Q-A1: MockProvider only — no key, no network. Returns a DRAFT for human
+      // review; nothing is persisted. The caller (UI) stages it for accept/reject.
+      const { brief, idSlug } = await readBody(req);
+      if (typeof brief !== "string" || !brief.trim()) {
+        return send(res, 400, { error: "missing or empty brief" });
+      }
+      const draft = await generateProfileDraft(mockProvider, { brief, idSlug });
+      return send(res, 200, { draft });
     }
 
     return send(res, 404, { error: "not found" });

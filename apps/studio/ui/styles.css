@@ -116,3 +116,15 @@ select[multiple] { min-height: 60px; }
 .line-list li .rm { padding: 2px 8px; color: var(--bad); }
 
 .hint { color: var(--muted); }
+
+/* Generate panel (M3) */
+.generate-panel { max-width: 780px; }
+.generate-panel h2 { text-transform: none; font-size: 18px; letter-spacing: 0; color: var(--ink); margin-top: 0; }
+.generate-panel p { font-size: 13px; line-height: 1.5; }
+.generate-panel .draft {
+  margin-top: 16px; padding: 12px; background: var(--panel);
+  border: 1px solid var(--border); border-radius: 6px;
+}
+.generate-panel .draft h3 { margin: 0 0 6px; font-size: 15px; }
+.generate-panel .draft-actions { display: flex; gap: 8px; margin-top: 12px; }
+.generate-panel .stages, .generate-panel .stage { margin-bottom: 8px; }

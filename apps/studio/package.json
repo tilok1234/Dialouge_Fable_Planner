@@ -17,6 +17,8 @@
     "@df/schemas": "workspace:*",
     "@df/storage": "workspace:*",
     "@df/core": "workspace:*",
+    "@df/generation": "workspace:*",
+    "@df/providers": "workspace:*",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "zod": "^3.23.0"

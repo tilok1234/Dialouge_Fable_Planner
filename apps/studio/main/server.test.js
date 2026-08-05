@@ -94,3 +94,26 @@ describe("studio backend API", () => {
     expect(noDir.status).toBe(400);
   });
 });
+
+describe("studio backend — generate-profile (M3, mock only — Q-A1)", () => {
+  it("generates a schema-valid profile draft from a brief", async () => {
+    const { status, body } = await post("/api/generate-profile", {
+      brief: "ancient stone boss, proud and judicial",
+      idSlug: "hollow_king",
+    });
+    expect(status).toBe(200);
+    expect(body.draft.profile.id).toBe("char_hollow_king");
+    expect(body.draft.profile.identity.gameplayRole).toBe("boss");
+    expect(body.draft.canonProposals).toEqual([]);
+  });
+
+  it("rejects an empty brief with 400", async () => {
+    const { status } = await post("/api/generate-profile", { brief: "   " });
+    expect(status).toBe(400);
+  });
+
+  it("classifies merchant briefs to the merchant template", async () => {
+    const { body } = await post("/api/generate-profile", { brief: "wandering prospector merchant" });
+    expect(body.draft.profile.identity.gameplayRole).toBe("ambient-npc");
+  });
+});

@@ -7,6 +7,7 @@
  */
 
 import { z } from "zod";
+
 import { LocalizedText, Ref, StableId, TagList, Versioned } from "./common.js";
 
 export const CanonVeracity = z.enum(["objective-truth", "established-fact", "world-rule"]);

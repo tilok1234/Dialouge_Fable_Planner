@@ -1,0 +1,12 @@
+packages:
+  # All internal libraries live under packages/ and are published as @df/*
+  - "packages/*"
+  # The local-first app(s) live under apps/
+  - "apps/*"
+
+# pnpm 11+ reads its settings here, not from the `pnpm` field in package.json.
+# These have legitimate postinstall scripts: esbuild fetches its native binary
+# (needed by vitest), unrs-resolver is the TS import resolver.
+allowBuilds:
+  esbuild: true
+  unrs-resolver: true

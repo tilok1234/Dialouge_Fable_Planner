@@ -14,6 +14,7 @@
  */
 
 import { z } from "zod";
+
 import { LocalizedText, Ref, StableId, Versioned } from "./common.js";
 
 export const RelationshipDimension = z

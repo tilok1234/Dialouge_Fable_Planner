@@ -8,7 +8,8 @@
  */
 
 import { z } from "zod";
-import { LocalizedText, Ref, StableId, Versioned } from "./common.js";
+
+import { Ref, StableId, Versioned } from "./common.js";
 
 export const DialogueBeat = z.object({
   /** 1-based order in the scene. */

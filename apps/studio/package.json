@@ -1,0 +1,7 @@
+{
+  "name": "@df/studio",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Dialogue Foundry studio app (React + Vite UI + Node backend service). Placeholder in M0; UI work begins in M2.",
+  "type": "module"
+}

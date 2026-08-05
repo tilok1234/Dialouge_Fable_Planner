@@ -7,11 +7,12 @@
  * The validator script is the single source of truth; this test just invokes
  * it and asserts a zero exit. Keeps the JSON files honest under CI.
  */
-import { describe, expect, it } from "vitest";
 import { execFileSync } from "node:child_process";
 import { existsSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+
+import { describe, expect, it } from "vitest";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const repoRoot = resolve(here, "..", "..", "..");

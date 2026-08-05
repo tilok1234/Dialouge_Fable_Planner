@@ -1,0 +1,27 @@
+{
+  "name": "@df/core",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Domain primitives: stable IDs, versioning, content hashing, provenance helpers. The single consumer of @df/schemas besides the schemas themselves.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@df/schemas": "workspace:*"
+  },
+  "devDependencies": {
+    "vitest": "^1.6.0"
+  }
+}

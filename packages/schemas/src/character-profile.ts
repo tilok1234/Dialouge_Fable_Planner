@@ -11,12 +11,12 @@
  */
 
 import { z } from "zod";
-import { LocalizedText, Ref, StableId, TagList, Versioned } from "./common.js";
-import { KnowledgeModel } from "./common.js";
+
 import { CharacterCore } from "./character-core.js";
+import { LocalizedText, Ref, StableId, TagList, Versioned , KnowledgeModel } from "./common.js";
 import { Opinion } from "./opinion.js";
-import { VoiceProfile } from "./voice.js";
 import { PressureProfile } from "./pressure.js";
+import { VoiceProfile } from "./voice.js";
 
 export const NarrativeFunction = z.enum([
   "introduce-region",

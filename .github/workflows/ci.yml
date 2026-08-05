@@ -1,0 +1,59 @@
+# Dialogue Foundry — continuous integration.
+#
+# Runs the full acceptance gate (typecheck + lint + test + validate-samples) on
+# every push and pull request. No network, no secrets, no API keys — acceptance
+# tests must pass fully offline (docs/ACCEPTANCE_TESTS.md §2).
+#
+# Matrix: Windows (the development OS, R-6) + Ubuntu (the CI default). Catches
+# path/line-ending/platform bugs before they land on main.
+name: CI
+
+on:
+  push:
+    branches: ["**"] # run on every branch, not just main
+  pull_request:
+
+# Cancel superseded runs on the same ref to save minutes.
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: verify (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false # surface failures on BOTH platforms, don't abort early
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        run: corepack enable
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build @df/schemas (needed by @df/core tests)
+        run: pnpm --filter @df/schemas run build
+
+      - name: Typecheck
+        run: pnpm run typecheck
+
+      - name: Lint (incl. import-boundary rule, constraint #9)
+        run: pnpm run lint
+
+      - name: Test
+        run: pnpm run test
+
+      - name: Validate sample project (23/23 contract conformance)
+        run: pnpm run validate-samples

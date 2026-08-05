@@ -6,6 +6,7 @@
  */
 
 import { z } from "zod";
+
 import { LocalizedText, Ref, StableId, TagList, Versioned } from "./common.js";
 
 export const MetaphorDomain = z.object({

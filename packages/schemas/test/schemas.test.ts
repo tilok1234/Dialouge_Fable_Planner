@@ -10,6 +10,7 @@
  * belong in @df/validators. The schema test only proves the SHAPE permits them.
  */
 import { describe, expect, it } from "vitest";
+
 import {
   CanonFact,
   CanonProposal,

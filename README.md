@@ -1,7 +1,7 @@
 # Dialogue Foundry
 
 > A local-first, model-independent **game dialogue authoring system**.
-> Status: **Phase 0 complete — contract, schemas, and reference sample.**
+> Status: **M0 in progress — monorepo scaffolded, `@df/core` landed.**
 > Not yet a usable tool; the foundation is being laid.
 
 Dialogue Foundry does not generate dialogue from a one-line description. It
@@ -32,37 +32,40 @@ change; the underlying character does not. That consistency only comes from
 compiling dialogue from a structured model of *who is speaking*, not from
 prompting a model cold each time.
 
-## Current state (Phase 0)
+## Current state
 
-Phase 0 produced the **product contract** and the **executable data contract**
-— no application yet. Everything below is in this repo:
+Phase 0 produced the **product contract** and the **executable data contract**.
+M0 scaffolds the monorepo and lands `@df/core` (stable IDs, versioning,
+content hashing). No application UI yet. The design docs live in `docs/`:
 
 | Deliverable | What it is |
 |-------------|------------|
-| `PRODUCT_CONTRACT.md` | The binding product promise + 12 hard constraints. |
-| `NON_GOALS.md` | What v1 deliberately is *not* (a "not now" list, not "never"). |
-| `ARCHITECTURE.md` | The seven-stage pipeline, the six data layers, module boundaries. |
-| `REPO_LAYOUT.md` | The proposed pnpm + TypeScript monorepo structure. |
-| `ACCEPTANCE_TESTS.md` | How each milestone M0–M7 is judged (automated tests + human gates). |
-| `OPEN_QUESTIONS.md` | The resolved open-questions / risks register. |
-| `packages/schemas/` | 13 Zod schemas = the executable contract. Builds, typechecks, **15 tests green**. |
+| `docs/PRODUCT_CONTRACT.md` | The binding product promise + 12 hard constraints. |
+| `docs/NON_GOALS.md` | What v1 deliberately is *not* (a "not now" list, not "never"). |
+| `docs/ARCHITECTURE.md` | The seven-stage pipeline, the six data layers, module boundaries. |
+| `docs/REPO_LAYOUT.md` | The pnpm + TypeScript monorepo structure. |
+| `docs/ACCEPTANCE_TESTS.md` | How each milestone M0–M7 is judged (automated tests + human gates). |
+| `docs/OPEN_QUESTIONS.md` | The resolved open-questions / risks register. |
+| `packages/schemas/` | 13 Zod schemas = the executable contract. **15 tests green.** |
+| `packages/core/` | Stable IDs, versioning, deterministic content hashing (Q-F3), provenance. **22 tests green.** |
 | `samples/quarry-project/` | A hand-authored reference project (3 characters, 5-stage quest, full pipeline trace). **23/23 artifacts validate.** |
 
-Milestones ahead: **M0** scaffolding + `@df/core` → **M1** schemas complete +
+Milestones: **M0** (current) scaffolding + core → **M1** schemas complete +
 storage → **M2** local editor → **M3** profile generation → **M4** dialogue
 generation → **M5** quest/boss continuity → **M6** consistency engine → **M7**
 export. Each ends with a human review gate before the next begins.
 
-## Quickstart (schemas only, for now)
+## Quickstart
 
-Requires Node 20+ and npm (pnpm from M0 on).
+Requires Node 20+ and pnpm 11+.
 
 ```bash
-cd packages/schemas
-npm install
-npm test                 # 15 tests (13 schema + 2 sample-project)
-npm run validate-samples # re-check every sample artifact against the schemas
-npm run emit-json-schema # emit draft-07 JSON Schema for the 12 exportable types
+pnpm install
+pnpm --filter @df/schemas run build   # @df/core tests import from schemas/dist
+pnpm test                # all packages: 37 tests (15 schema + 22 core)
+pnpm run validate-samples  # re-check every sample artifact against the schemas
+pnpm run emit-json-schema  # emit draft-07 JSON Schema for the 12 exportable types
+pnpm run ci               # the full gate: typecheck + lint + test + validate-samples
 ```
 
 No network or API key is needed for any of the above.
@@ -71,22 +74,33 @@ No network or API key is needed for any of the above.
 
 ```
 .
-├─ PRODUCT_CONTRACT.md  NON_GOALS.md  ARCHITECTURE.md
-├─ REPO_LAYOUT.md       ACCEPTANCE_TESTS.md  OPEN_QUESTIONS.md
-├─ tsconfig.base.json   .gitignore  .gitattributes  LICENSE
+├─ docs/                # the Phase-0 design + acceptance docs
+├─ milestones/          # M0.md, M1.md, ... sign-off records
 ├─ packages/
-│  └─ schemas/          # @df/schemas — Zod contract (the foundation)
-│     ├─ src/           # one file per schema + index barrel
-│     ├─ test/          # contract + sample-project tests
-│     ├─ scripts/       # validate-samples.js, emit-json-schema.js
-│     └─ json-schema/   # generated draft-07 JSON Schema (gitignored)
-└─ samples/
-   └─ quarry-project/   # the Phase-0 reference project + its own README
+│  ├─ schemas/          # @df/schemas — Zod contract (the foundation)
+│  ├─ core/             # @df/core — IDs, versioning, content hashing, provenance
+│  ├─ context-compiler/ # Stage 1 (M4)   generation/    # Stages 2/3/5 (M3/M4)
+│  ├─ validators/       # Stage 4 (M6)   exporters/     # generic JSON (M7)
+│  ├─ storage/          # fs I/O (M1)    providers/     # GLM + net (M3)
+│  └─ test-fixtures/    # shared sample data (data-only)
+├─ apps/studio/         # the React+Vite app (placeholder until M2)
+├─ samples/quarry-project/  # the reference project + its own README
+├─ tsconfig.base.json   pnpm-workspace.yaml   package.json
+└─ .github/workflows/ci.yml  # Windows + Linux matrix
 ```
 
-The full target monorepo (`apps/studio`, `packages/{core,context-compiler,
-generation,validators,providers,exporters,storage,test-fixtures}`) is specified
-in `REPO_LAYOUT.md` and arrives with M0.
+The empty `packages/*` are wired into the workspace so their dependency
+boundaries are enforced from day one; their code lands in later milestones.
+
+## For contributors — `.js` import specifiers
+
+This repo uses **`.js` specifiers inside `.ts` source files** (e.g.
+`import { x } from "./common.js"`), compiled via `tsc` with
+`moduleResolution: Bundler`. This is deliberate: it works uniformly under
+`tsc`, `vitest`, and the JSON-schema emit script, and produces clean ESM
+output. A consequence is that you cannot run a `.ts` file directly with
+`node --strip-types` without a specifier rewriter — always go through
+`pnpm build` or `pnpm test`. See `docs/OPEN_QUESTIONS.md` Q-E4.
 
 ## Design principles
 

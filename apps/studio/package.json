@@ -2,6 +2,32 @@
   "name": "@df/studio",
   "version": "0.0.0",
   "private": true,
-  "description": "Dialogue Foundry studio app (React + Vite UI + Node backend service). Placeholder in M0; UI work begins in M2.",
-  "type": "module"
+  "description": "Dialogue Foundry studio app: React + Vite UI backed by a Node service that hosts @df/storage over a local HTTP API.",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -n server,web -c blue,green \"pnpm run dev:server\" \"pnpm run dev:web\"",
+    "dev:server": "node main/server.js",
+    "dev:web": "vite",
+    "build": "vite build && tsc -p tsconfig.json --noEmit",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@df/schemas": "workspace:*",
+    "@df/storage": "workspace:*",
+    "@df/core": "workspace:*",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "concurrently": "^8.2.2",
+    "typescript": "^5.4.0",
+    "vite": "^5.3.1",
+    "vitest": "^1.6.0"
+  }
 }

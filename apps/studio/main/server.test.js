@@ -1,0 +1,96 @@
+// Backend API acceptance test (M2).
+//
+// Boots the studio backend on an ephemeral port, exercises load/save/integrity
+// against the real sample project. No network beyond 127.0.0.1; no React.
+import { spawn } from "node:child_process";
+import { mkdtemp, rm } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+
+import { describe, expect, it, beforeAll, afterAll } from "vitest";
+
+const here = dirname(fileURLToPath(import.meta.url));
+const repoRoot = join(here, "..", "..", "..");
+const sampleDir = join(repoRoot, "samples", "quarry-project");
+
+const PORT = String(17317 + Math.floor(Math.random() * 1000));
+let serverProc;
+const base = `http://127.0.0.1:${PORT}`;
+
+async function req(path, init) {
+  const res = await fetch(base + path, init);
+  return { status: res.status, body: await res.json() };
+}
+const post = (path, body) => req(path, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body) });
+
+beforeAll(async () => {
+  serverProc = spawn(process.execPath, [join(here, "server.js")], {
+    env: { ...process.env, DF_PORT: PORT },
+    stdio: "ignore",
+  });
+  // wait for health
+  for (let i = 0; i < 50; i++) {
+    try {
+      const r = await fetch(base + "/api/health");
+      if (r.ok) return;
+    } catch {
+      /* server not ready yet */
+    }
+    await new Promise((r) => setTimeout(r, 100));
+  }
+  throw new Error("backend did not start");
+}, 30000);
+
+afterAll(() => serverProc?.kill());
+
+describe("studio backend API", () => {
+  it("GET /api/health", async () => {
+    const { status, body } = await req("/api/health");
+    expect(status).toBe(200);
+    expect(body.ok).toBe(true);
+  });
+
+  it("loads the sample project with zero errors", async () => {
+    const { status, body } = await post("/api/load", { dir: sampleDir });
+    expect(status).toBe(200);
+    expect(body.errors).toEqual([]);
+    expect(body.data.project.id).toBe("project_quarry_module");
+    expect(body.data.characters).toHaveLength(3);
+  });
+
+  it("reports integrity issues for a clean project (none) and a corrupted one (some)", async () => {
+    const loaded = await post("/api/load", { dir: sampleDir });
+    const clean = await post("/api/integrity", { project: loaded.body.data });
+    expect(clean.body.issues).toEqual([]);
+
+    // Corrupt: point a relationship at a nonexistent party.
+    const bad = structuredClone(loaded.body.data);
+    bad.relationships[0].partyB = "char_does_not_exist";
+    const dirty = await post("/api/integrity", { project: bad });
+    expect(dirty.body.issues.some((i) => i.ref === "char_does_not_exist")).toBe(true);
+  });
+
+  it("save round-trips: load -> save -> reload yields the same data", async () => {
+    const loaded = await post("/api/load", { dir: sampleDir });
+    const tmp = await mkdtemp(join(tmpdir(), "df-studio-"));
+    try {
+      const saved = await post("/api/save", { dir: tmp, project: loaded.body.data });
+      expect(saved.status).toBe(200);
+      expect(saved.body.errors).toEqual([]);
+
+      const reloaded = await post("/api/load", { dir: tmp });
+      expect(reloaded.body.errors).toEqual([]);
+      const ids = (xs) => xs.map((x) => x.id).sort();
+      expect(ids(reloaded.body.data.characters)).toEqual(ids(loaded.body.data.characters));
+      expect(ids(reloaded.body.data.scenes)).toEqual(ids(loaded.body.data.scenes));
+    } finally {
+      await rm(tmp, { recursive: true, force: true });
+    }
+  });
+
+  it("rejects bad requests with 400", async () => {
+    const noDir = await post("/api/load", {});
+    expect(noDir.status).toBe(400);
+  });
+});

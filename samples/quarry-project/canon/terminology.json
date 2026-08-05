@@ -1,26 +1,51 @@
 [
   {
+    "version": 1,
+    "contentHash": "sha256:term-hornblende",
     "term": "Hornblende",
-    "meaning": { "key": "term_hornblende", "value": "A dark, dense mineral; the dominant stone of the ridge and the golem's body.", "lang": "en" },
-    "factions": ["fac_stoneborn"],
-    "tags": ["mineral", "stone"],
-    "version": 1,
-    "contentHash": "sha256:term-hornblende"
+    "meaning": {
+      "key": "term_hornblende",
+      "value": "A dark, dense mineral; the dominant stone of the ridge and the golem's body.",
+      "lang": "en"
+    },
+    "factions": [
+      "fac_stoneborn"
+    ],
+    "tags": [
+      "mineral",
+      "stone"
+    ]
   },
   {
+    "version": 1,
+    "contentHash": "sha256:term-vein-seal",
     "term": "Vein-seal",
-    "meaning": { "key": "term_vein_seal", "value": "A rune-bound seal placed to close a worked vein of stone.", "lang": "en" },
+    "meaning": {
+      "key": "term_vein_seal",
+      "value": "A rune-bound seal placed to close a worked vein of stone.",
+      "lang": "en"
+    },
     "factions": [],
-    "tags": ["seals", "magic"],
-    "version": 1,
-    "contentHash": "sha256:term-vein-seal"
+    "tags": [
+      "seals",
+      "magic"
+    ]
   },
   {
-    "term": "The Taking",
-    "meaning": { "key": "term_the_taking", "value": "Stoneborn term for the industrial mining of the sacred quarry.", "lang": "en" },
-    "factions": ["fac_stoneborn"],
-    "tags": ["stoneborn", "history"],
     "version": 1,
-    "contentHash": "sha256:term-taking"
+    "contentHash": "sha256:term-taking",
+    "term": "The Taking",
+    "meaning": {
+      "key": "term_the_taking",
+      "value": "Stoneborn term for the industrial mining of the sacred quarry.",
+      "lang": "en"
+    },
+    "factions": [
+      "fac_stoneborn"
+    ],
+    "tags": [
+      "stoneborn",
+      "history"
+    ]
   }
 ]

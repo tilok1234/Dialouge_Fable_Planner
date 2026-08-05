@@ -1,4 +1,6 @@
 {
+  "version": 1,
+  "contentHash": "sha256:fac-ash-kingdom-v1",
   "id": "fac_ash_kingdom",
   "name": "The Ashen Kingdom",
   "summary": {
@@ -6,27 +8,57 @@
     "value": "An expansionist realm that measures progress in tonnes of cut stone and miles of paved road. It bankrolled the industrial reopening of the quarry a generation ago and has never formally apologized.",
     "lang": "en"
   },
-  "sharedBeliefs": ["fact_quarry_was_mined_industrially"],
+  "sharedBeliefs": [
+    "fact_quarry_was_mined_industrially"
+  ],
   "sharedOpinions": [
-    { "target": "fac_stoneborn", "targetLabel": "The Stoneborn", "position": "wary", "reason": "Their rites slow progress that would benefit everyone." },
-    { "target": "concept_industrial_mining", "targetLabel": "Industrial mining", "position": "friendly", "reason": "Stone feeds the kingdom's roads and walls." }
+    {
+      "target": "fac_stoneborn",
+      "position": "wary",
+      "reason": "Their rites slow progress that would benefit everyone."
+    },
+    {
+      "target": "concept_industrial_mining",
+      "position": "friendly",
+      "reason": "Stone feeds the kingdom's roads and walls."
+    }
   ],
   "metaphorDomain": {
     "source": "foundation, road, mortar, progress",
     "examples": [
-      { "key": "fac_ash_kingdom_metaphor_1", "value": "A kingdom is only as far as its longest road.", "lang": "en" }
+      {
+        "key": "fac_ash_kingdom_metaphor_1",
+        "value": "A kingdom is only as far as its longest road.",
+        "lang": "en"
+      }
     ]
   },
   "terminology": [
-    { "term": "development", "meaning": { "key": "fac_ash_kingdom_term_dev", "value": "Their preferred word for industrial extraction.", "lang": "en" } }
+    {
+      "term": "development",
+      "meaning": {
+        "key": "fac_ash_kingdom_term_dev",
+        "value": "Their preferred word for industrial extraction.",
+        "lang": "en"
+      }
+    }
   ],
   "customs": [
-    { "key": "fac_ash_kingdom_custom_title", "value": "Address officials by rank first, then surname.", "lang": "en" }
+    {
+      "key": "fac_ash_kingdom_custom_title",
+      "value": "Address officials by rank first, then surname.",
+      "lang": "en"
+    }
   ],
   "taboos": [
-    { "key": "fac_ash_kingdom_taboo_waste", "value": "Never leave cut stone unused; waste is a civic sin.", "lang": "en" }
+    {
+      "key": "fac_ash_kingdom_taboo_waste",
+      "value": "Never leave cut stone unused; waste is a civic sin.",
+      "lang": "en"
+    }
   ],
-  "tags": ["faction", "ash-kingdom"],
-  "version": 1,
-  "contentHash": "sha256:fac-ash-kingdom-v1"
+  "tags": [
+    "faction",
+    "ash-kingdom"
+  ]
 }

@@ -1,4 +1,6 @@
 {
+  "version": 1,
+  "contentHash": "sha256:beat-golem-enc-v1",
   "id": "beat_golem_first_encounter",
   "sceneId": "scene_golem_first_encounter",
   "contextPackageId": "ctx_golem_first_encounter",
@@ -7,14 +9,18 @@
       "order": 1,
       "speakerId": "char_hornblende_golem",
       "intent": "Acknowledge that the player broke the seals and entered uninvited.",
-      "landsOn": ["fact_seals_prevent_excavation"],
+      "landsOn": [
+        "fact_seals_prevent_excavation"
+      ],
       "emotion": "controlled judgement"
     },
     {
       "order": 2,
       "speakerId": "char_hornblende_golem",
       "intent": "Frame excavation as theft from the earth, not industry.",
-      "landsOn": ["fact_quarry_was_mined_industrially"],
+      "landsOn": [
+        "fact_quarry_was_mined_industrially"
+      ],
       "emotion": "controlled judgement"
     },
     {
@@ -32,7 +38,9 @@
       "emotion": "offended warning"
     }
   ],
-  "avoids": ["revealing the golem's origin", "begging or blustering", "generic villain phrasing"],
-  "version": 1,
-  "contentHash": "sha256:beat-golem-enc-v1"
+  "avoids": [
+    "revealing the golem's origin",
+    "begging or blustering",
+    "generic villain phrasing"
+  ]
 }

@@ -1,4 +1,6 @@
 {
+  "version": 1,
+  "contentHash": "sha256:scene-foreman-offer-v1",
   "id": "scene_foreman_offer",
   "label": "Foreman offers the job",
   "sceneType": "quest-offer",
@@ -10,23 +12,42 @@
       "role": "speaker"
     }
   ],
-  "boundQuestStages": ["quest_quarry_seals__stage_1"],
+  "boundQuestStages": [
+    "quest_quarry_seals__stage_1"
+  ],
   "purpose": {
     "key": "scene_foreman_offer_purpose",
     "value": "Aldric asks the player to check the failing seals, while carefully avoiding why it matters to him.",
     "lang": "en"
   },
-  "requiredFacts": ["fact_quarry_was_mined_industrially", "fact_seals_prevent_excavation"],
-  "hintableFacts": ["fact_foreman_ordered_last_evacuation"],
-  "forbiddenRevelations": ["fact_golem_created_by_miners", "fact_quarry_was_stoneborn_sacred_site"],
+  "requiredFacts": [
+    "fact_quarry_was_mined_industrially",
+    "fact_seals_prevent_excavation"
+  ],
+  "hintableFacts": [
+    "fact_foreman_ordered_last_evacuation"
+  ],
+  "forbiddenRevelations": [
+    "fact_golem_created_by_miners",
+    "fact_quarry_was_stoneborn_sacred_site"
+  ],
   "emotionalProgression": [
-    { "order": 1, "emotion": "guarded" },
-    { "order": 2, "emotion": "reluctantly hopeful" }
+    {
+      "order": 1,
+      "emotion": "guarded"
+    },
+    {
+      "order": 2,
+      "emotion": "reluctantly hopeful"
+    }
   ],
   "maxLength": "medium",
   "availableChoices": [],
-  "templateDefaults": { "questOffer": { "mustStateObjective": true, "mustNotBeg": true } },
-  "notes": "Aldric knows the sacred-site fact but withholds it here (it lands at stage 3 via the golem). He only SUSPECTS the origin, so it must never be stated as fact by him in any scene.",
-  "version": 1,
-  "contentHash": "sha256:scene-foreman-offer-v1"
+  "templateDefaults": {
+    "questOffer": {
+      "mustStateObjective": true,
+      "mustNotBeg": true
+    }
+  },
+  "notes": "Aldric knows the sacred-site fact but withholds it here (it lands at stage 3 via the golem). He only SUSPECTS the origin, so it must never be stated as fact by him in any scene."
 }

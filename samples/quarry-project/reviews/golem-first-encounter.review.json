@@ -1,4 +1,6 @@
 {
+  "version": 1,
+  "contentHash": "sha256:review-golem-enc-v1",
   "id": "review_golem_first_encounter",
   "artifactId": "dlg_golem_first_encounter",
   "sceneId": "scene_golem_first_encounter",
@@ -12,7 +14,11 @@
       "lineId": "l2",
       "excerpt": "You call it a quarry. A wound, left open, is what it is.",
       "reason": "First draft omitted explicit mention that the seals prevent excavation (fact_seals_prevent_excavation); only implied it.",
-      "suggestedRepair": { "key": "rev_golem_f1_repair", "value": "Make explicit that the seals exist to prevent further excavation of the vein.", "lang": "en" }
+      "suggestedRepair": {
+        "key": "rev_golem_f1_repair",
+        "value": "Make explicit that the seals exist to prevent further excavation of the vein.",
+        "lang": "en"
+      }
     },
     {
       "id": "f2",
@@ -21,12 +27,14 @@
       "severity": "minor",
       "lineId": "l3",
       "reason": "An earlier candidate read 'You dare enter my domain' — rejected at draft stage as an anti-sample match.",
-      "suggestedRepair": { "key": "rev_golem_f2_repair", "value": "Replaced with the stone/metaphor-domain line in the accepted draft.", "lang": "en" }
+      "suggestedRepair": {
+        "key": "rev_golem_f2_repair",
+        "value": "Replaced with the stone/metaphor-domain line in the accepted draft.",
+        "lang": "en"
+      }
     }
   ],
   "aiTierRan": true,
   "reviewedAt": "2026-08-05T12:25:00.000Z",
-  "notes": "Illustrates the two-tier reviewer: a deterministic blocker on required-facts, and an AI pass that caught an anti-sample phrase. Both findings were resolved before the artifact reached approvalStatus=accepted. The 'passed=true' reflects the final state after repair, per ARCHITECTURE §6.3.",
-  "version": 1,
-  "contentHash": "sha256:review-golem-enc-v1"
+  "notes": "Illustrates the two-tier reviewer: a deterministic blocker on required-facts, and an AI pass that caught an anti-sample phrase. Both findings were resolved before the artifact reached approvalStatus=accepted. The 'passed=true' reflects the final state after repair, per ARCHITECTURE §6.3."
 }

@@ -236,13 +236,20 @@ export async function readProject(rootDir: string): Promise<ReadResult> {
 /* writeProject                                                               */
 /* -------------------------------------------------------------------------- */
 
-/** Slugify a stable id for filenames: strip the kind prefix, keep `__` subsegment. */
+/**
+ * Slugify a stable id for filenames.
+ *
+ * On-disk convention (samples/ is the authoritative fixture): the slug uses
+ * HYPHENS, e.g. char_hornblende_golem -> "hornblende-golem". A `__` subsegment
+ * becomes a dot, e.g. state_hornblende_golem__phase_two -> "hornblende-golem.phase-two",
+ * rel_hornblende_golem__player -> "hornblende-golem.player".
+ */
 function idToFilename(id: string): string {
   const sep = id.indexOf("__");
   const main = sep === -1 ? id : id.slice(0, sep);
   const underscore = main.indexOf("_");
-  const slug = underscore === -1 ? main : main.slice(underscore + 1);
-  return sep === -1 ? slug : `${slug}.${id.slice(sep + 2).replace(/__/g, "--")}`;
+  const slug = (underscore === -1 ? main : main.slice(underscore + 1)).replace(/_/g, "-");
+  return sep === -1 ? slug : `${slug}.${id.slice(sep + 2).replace(/_/g, "-")}`;
 }
 
 export async function writeProject(rootDir: string, data: ProjectData): Promise<void> {
@@ -272,9 +279,13 @@ export async function writeProject(rootDir: string, data: ProjectData): Promise<
   }
 
   // states/ : states/<char-slug>/<state-slug>.json
+  // The state file is just the `__` subsegment (e.g. "defeated"), since the
+  // character is already the folder. State ids are state_<char>__<state>.
   for (const state of data.states) {
     const charSlug = idToFilename(state.characterId);
-    await writeJson(j("states", charSlug, `${idToFilename(state.id)}.json`), state);
+    const sep = state.id.indexOf("__");
+    const stateSlug = sep === -1 ? idToFilename(state.id) : state.id.slice(sep + 2).replace(/_/g, "-");
+    await writeJson(j("states", charSlug, `${stateSlug}.json`), state);
   }
 }
 

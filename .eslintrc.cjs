@@ -20,7 +20,7 @@
 module.exports = {
   root: true,
   parser: "@typescript-eslint/parser",
-  parserOptions: { ecmaVersion: 2022, sourceType: "module" },
+  parserOptions: { ecmaVersion: 2022, sourceType: "module", ecmaFeatures: { jsx: true } },
   plugins: ["@typescript-eslint", "import"],
   extends: [
     "eslint:recommended",
@@ -116,6 +116,19 @@ module.exports = {
     // Plain JS scripts (JSON-schema emit, sample validator) run in Node.
     {
       files: ["**/scripts/**/*.js"],
+      env: { node: true },
+      rules: { "no-console": "off" },
+    },
+    // apps/studio — the application layer.
+    // UI (React) runs in the browser: allow DOM globals; JSX allowed above.
+    {
+      files: ["apps/studio/ui/**/*.ts", "apps/studio/ui/**/*.tsx"],
+      env: { browser: true },
+    },
+    // Backend service: a Node process. May use node:http/node:console; reaches
+    // the filesystem only through @df/storage (which it imports).
+    {
+      files: ["apps/studio/main/**/*.js"],
       env: { node: true },
       rules: { "no-console": "off" },
     },

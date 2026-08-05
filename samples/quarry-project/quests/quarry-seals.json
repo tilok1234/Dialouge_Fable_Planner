@@ -1,4 +1,6 @@
 {
+  "version": 1,
+  "contentHash": "sha256:quest-quarry-v1",
   "id": "quest_quarry_seals",
   "name": "The Quarry Seals",
   "premise": {
@@ -7,11 +9,34 @@
     "lang": "en"
   },
   "objectiveTruth": "fact_seals_prevent_excavation",
-  "playerInitialKnowledge": ["fact_quarry_was_mined_industrially"],
+  "playerInitialKnowledge": [
+    "fact_quarry_was_mined_industrially"
+  ],
   "characterKnowledge": [
-    { "characterId": "char_quarry_foreman", "knows": ["fact_seals_prevent_excavation", "fact_foreman_ordered_last_evacuation", "fact_quarry_was_stoneborn_sacred_site"] },
-    { "characterId": "char_hornblende_golem", "knows": ["fact_quarry_was_stoneborn_sacred_site", "fact_quarry_was_mined_industrially", "fact_seals_prevent_excavation", "fact_foreman_ordered_last_evacuation"] },
-    { "characterId": "char_wandering_prospector", "knows": ["fact_quarry_was_mined_industrially", "fact_seals_prevent_excavation"] }
+    {
+      "characterId": "char_quarry_foreman",
+      "knows": [
+        "fact_seals_prevent_excavation",
+        "fact_foreman_ordered_last_evacuation",
+        "fact_quarry_was_stoneborn_sacred_site"
+      ]
+    },
+    {
+      "characterId": "char_hornblende_golem",
+      "knows": [
+        "fact_quarry_was_stoneborn_sacred_site",
+        "fact_quarry_was_mined_industrially",
+        "fact_seals_prevent_excavation",
+        "fact_foreman_ordered_last_evacuation"
+      ]
+    },
+    {
+      "characterId": "char_wandering_prospector",
+      "knows": [
+        "fact_quarry_was_mined_industrially",
+        "fact_seals_prevent_excavation"
+      ]
+    }
   ],
   "stages": [
     {
@@ -21,7 +46,9 @@
       "entryCondition": "Player has not yet visited Hornblende Ridge or spoken to Aldric.",
       "completionCondition": "Player arrives at the ridge-side inn and Aldric is willing to talk.",
       "factsRevealedToPlayer": [],
-      "transitionsTo": ["quest_quarry_seals__stage_1"],
+      "transitionsTo": [
+        "quest_quarry_seals__stage_1"
+      ],
       "scenes": [],
       "notes": "Quest is hidden until the player reaches the ridge."
     },
@@ -32,9 +59,16 @@
       "entryCondition": "Player has reached the ridge and Aldric has sized them up.",
       "completionCondition": "Player accepts the job of inspecting the seals.",
       "failureCondition": "Player refuses and leaves the ridge.",
-      "factsRevealedToPlayer": ["fact_quarry_was_mined_industrially"],
-      "transitionsTo": ["quest_quarry_seals__stage_2", "quest_quarry_seals__stage_0"],
-      "scenes": ["scene_foreman_offer"],
+      "factsRevealedToPlayer": [
+        "fact_quarry_was_mined_industrially"
+      ],
+      "transitionsTo": [
+        "quest_quarry_seals__stage_2",
+        "quest_quarry_seals__stage_0"
+      ],
+      "scenes": [
+        "scene_foreman_offer"
+      ],
       "notes": "Aldric gives context but withholds the sacred-site framing. The Prospector can also be met here."
     },
     {
@@ -43,8 +77,12 @@
       "label": "Seals investigated",
       "entryCondition": "Player has reached the quarry mouth and examined at least one seal.",
       "completionCondition": "Player has examined all three seals and confirmed they are failing.",
-      "factsRevealedToPlayer": ["fact_seals_prevent_excavation"],
-      "transitionsTo": ["quest_quarry_seals__stage_3"],
+      "factsRevealedToPlayer": [
+        "fact_seals_prevent_excavation"
+      ],
+      "transitionsTo": [
+        "quest_quarry_seals__stage_3"
+      ],
       "scenes": [],
       "notes": "Ambient stage; the golem is sensed but not yet confronted."
     },
@@ -54,9 +92,15 @@
       "label": "Golem confronted",
       "entryCondition": "Player has descended to the sealed vein and the golem has made contact.",
       "completionCondition": "The first-encounter exchange resolves (kneel, parley, or fight).",
-      "factsRevealedToPlayer": ["fact_quarry_was_stoneborn_sacred_site"],
-      "transitionsTo": ["quest_quarry_seals__stage_4"],
-      "scenes": ["scene_golem_first_encounter"],
+      "factsRevealedToPlayer": [
+        "fact_quarry_was_stoneborn_sacred_site"
+      ],
+      "transitionsTo": [
+        "quest_quarry_seals__stage_4"
+      ],
+      "scenes": [
+        "scene_golem_first_encounter"
+      ],
       "notes": "The golem learns the player's intent here; relationship state is set."
     },
     {
@@ -66,8 +110,14 @@
       "entryCondition": "Combat with the golem is underway (player refused to kneel).",
       "completionCondition": "The golem is reduced to its final phase.",
       "factsRevealedToPlayer": [],
-      "transitionsTo": ["quest_quarry_seals__stage_5a", "quest_quarry_seals__stage_5b"],
-      "scenes": ["scene_golem_phase_transition", "scene_golem_defeated"],
+      "transitionsTo": [
+        "quest_quarry_seals__stage_5a",
+        "quest_quarry_seals__stage_5b"
+      ],
+      "scenes": [
+        "scene_golem_phase_transition",
+        "scene_golem_defeated"
+      ],
       "notes": "Branch point. Destroying the golem exposes the makers' marks (5a). Sparing it leaves the vein sealed (5b)."
     },
     {
@@ -76,9 +126,13 @@
       "label": "Consequence — the truth",
       "entryCondition": "Player destroyed the golem's central binding rune.",
       "completionCondition": "Player has heard the golem's dying warning and the quest closes on the truth of the origin.",
-      "factsRevealedToPlayer": ["fact_golem_created_by_miners"],
+      "factsRevealedToPlayer": [
+        "fact_golem_created_by_miners"
+      ],
       "transitionsTo": [],
-      "scenes": ["scene_golem_defeated"],
+      "scenes": [
+        "scene_golem_defeated"
+      ],
       "notes": "The origin is revealed ONLY on this branch. This is the design's biggest knowledge-gating test."
     },
     {
@@ -96,36 +150,91 @@
   "choices": [
     {
       "id": "choice_quarry_destroy_golem",
-      "label": { "key": "choice_quarry_destroy", "value": "Destroy the golem's binding rune", "lang": "en" },
+      "label": {
+        "key": "choice_quarry_destroy",
+        "value": "Destroy the golem's binding rune",
+        "lang": "en"
+      },
       "resultingStage": "quest_quarry_seals__stage_5a",
       "consequences": [
-        { "key": "choice_quarry_destroy_c1", "value": "The makers' marks are exposed; the origin becomes known.", "lang": "en" },
-        { "key": "choice_quarry_destroy_c2", "value": "Aldric is devastated; the Prospector is delighted.", "lang": "en" }
+        {
+          "key": "choice_quarry_destroy_c1",
+          "value": "The makers' marks are exposed; the origin becomes known.",
+          "lang": "en"
+        },
+        {
+          "key": "choice_quarry_destroy_c2",
+          "value": "Aldric is devastated; the Prospector is delighted.",
+          "lang": "en"
+        }
       ],
       "variablesChanged": [
-        { "key": "golem_alive", "from": "true", "to": "false" },
-        { "key": "origin_revealed", "from": "false", "to": "true" }
+        {
+          "key": "golem_alive",
+          "from": "true",
+          "to": "false"
+        },
+        {
+          "key": "origin_revealed",
+          "from": "false",
+          "to": "true"
+        }
       ],
-      "affectsCharacters": ["char_hornblende_golem", "char_quarry_foreman", "char_wandering_prospector"]
+      "affectsCharacters": [
+        "char_hornblende_golem",
+        "char_quarry_foreman",
+        "char_wandering_prospector"
+      ]
     },
     {
       "id": "choice_quarry_spare_golem",
-      "label": { "key": "choice_quarry_spare", "value": "Spare the golem and withdraw", "lang": "en" },
+      "label": {
+        "key": "choice_quarry_spare",
+        "value": "Spare the golem and withdraw",
+        "lang": "en"
+      },
       "resultingStage": "quest_quarry_seals__stage_5b",
       "consequences": [
-        { "key": "choice_quarry_spare_c1", "value": "The vein stays sealed; the origin stays secret.", "lang": "en" },
-        { "key": "choice_quarry_spare_c2", "value": "Aldric is relieved; the Prospector is furious.", "lang": "en" }
+        {
+          "key": "choice_quarry_spare_c1",
+          "value": "The vein stays sealed; the origin stays secret.",
+          "lang": "en"
+        },
+        {
+          "key": "choice_quarry_spare_c2",
+          "value": "Aldric is relieved; the Prospector is furious.",
+          "lang": "en"
+        }
       ],
       "variablesChanged": [
-        { "key": "golem_alive", "from": "true", "to": "true" },
-        { "key": "origin_revealed", "from": "false", "to": "false" }
+        {
+          "key": "golem_alive",
+          "from": "true",
+          "to": "true"
+        },
+        {
+          "key": "origin_revealed",
+          "from": "false",
+          "to": "false"
+        }
       ],
-      "affectsCharacters": ["char_hornblende_golem", "char_quarry_foreman", "char_wandering_prospector"]
+      "affectsCharacters": [
+        "char_hornblende_golem",
+        "char_quarry_foreman",
+        "char_wandering_prospector"
+      ]
     }
   ],
-  "participatingCharacters": ["char_quarry_foreman", "char_hornblende_golem", "char_wandering_prospector"],
-  "tags": ["quest", "quarry", "boss", "choice"],
-  "notes": "The 5+ stage labels are the five narrative beats; stage_0 is the unavailable pre-state. The branch at stage 4 -> 5a/5b is the design's central knowledge-gating mechanism.",
-  "version": 1,
-  "contentHash": "sha256:quest-quarry-v1"
+  "participatingCharacters": [
+    "char_quarry_foreman",
+    "char_hornblende_golem",
+    "char_wandering_prospector"
+  ],
+  "tags": [
+    "quest",
+    "quarry",
+    "boss",
+    "choice"
+  ],
+  "notes": "The 5+ stage labels are the five narrative beats; stage_0 is the unavailable pre-state. The branch at stage 4 -> 5a/5b is the design's central knowledge-gating mechanism."
 }

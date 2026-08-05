@@ -1,4 +1,6 @@
 {
+  "version": 1,
+  "contentHash": "sha256:scene-golem-phase-v1",
   "id": "scene_golem_phase_transition",
   "label": "Golem phase two transition",
   "sceneType": "boss-phase-transition",
@@ -6,11 +8,15 @@
     {
       "characterId": "char_hornblende_golem",
       "stateId": "state_hornblende_golem__phase_two",
-      "relationshipIds": ["rel_hornblende_golem__player"],
+      "relationshipIds": [
+        "rel_hornblende_golem__player"
+      ],
       "role": "speaker"
     }
   ],
-  "boundQuestStages": ["quest_quarry_seals__stage_4"],
+  "boundQuestStages": [
+    "quest_quarry_seals__stage_4"
+  ],
   "purpose": {
     "key": "scene_golem_phase_purpose",
     "value": "Mark the golem's shift from judicial to offended as the fight escalates, without breaking its pride.",
@@ -18,14 +24,22 @@
   },
   "requiredFacts": [],
   "hintableFacts": [],
-  "forbiddenRevelations": ["fact_golem_created_by_miners"],
+  "forbiddenRevelations": [
+    "fact_golem_created_by_miners"
+  ],
   "emotionalProgression": [
-    { "order": 1, "emotion": "offended, escalating" }
+    {
+      "order": 1,
+      "emotion": "offended, escalating"
+    }
   ],
   "maxLength": "single-line",
   "availableChoices": [],
-  "templateDefaults": { "bossPhaseTransition": { "mustReflectDamage": true, "mustNotBeg": true } },
-  "notes": "Demonstrates consistency-under-pressure: emotion changes (offended), underlying pride does not. Origin still forbidden.",
-  "version": 1,
-  "contentHash": "sha256:scene-golem-phase-v1"
+  "templateDefaults": {
+    "bossPhaseTransition": {
+      "mustReflectDamage": true,
+      "mustNotBeg": true
+    }
+  },
+  "notes": "Demonstrates consistency-under-pressure: emotion changes (offended), underlying pride does not. Origin still forbidden."
 }

@@ -1,0 +1,118 @@
+/* Dialogue Foundry studio — plain CSS. No framework, no theme engine.
+   Functional and readable; polish is a post-MVP concern. */
+
+:root {
+  --bg: #11151a;
+  --panel: #1a2028;
+  --panel-2: #232b35;
+  --ink: #e6edf3;
+  --muted: #8b98a8;
+  --accent: #4493f8;
+  --bad: #f85149;
+  --ok: #2ea043;
+  --warn: #d29922;
+  --border: #2d3640;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); }
+
+.app { display: flex; flex-direction: column; height: 100vh; }
+
+/* Top bar */
+.topbar {
+  display: flex; align-items: center; gap: 12px;
+  padding: 8px 16px; background: var(--panel); border-bottom: 1px solid var(--border);
+}
+.topbar h1 { font-size: 15px; margin: 0; font-weight: 600; }
+.dir-form { display: flex; align-items: center; gap: 6px; flex: 1; }
+.dir-form label { color: var(--muted); font-size: 12px; }
+.dir-form input {
+  flex: 1; max-width: 420px;
+  background: var(--bg); border: 1px solid var(--border); color: var(--ink);
+  padding: 4px 8px; border-radius: 4px; font-family: ui-monospace, monospace; font-size: 12px;
+}
+button {
+  background: var(--panel-2); color: var(--ink); border: 1px solid var(--border);
+  padding: 4px 12px; border-radius: 4px; cursor: pointer; font-size: 13px;
+}
+button:hover { border-color: var(--accent); }
+button:disabled { opacity: 0.5; cursor: default; }
+button.save { background: var(--accent); border-color: var(--accent); color: white; font-weight: 600; }
+button.save:disabled { background: var(--panel-2); color: var(--muted); border-color: var(--border); }
+
+.err { color: var(--bad); font-size: 12px; }
+.banner { padding: 8px 16px; border-bottom: 1px solid var(--border); }
+.banner.err { background: rgba(248,81,73,0.08); }
+
+/* Layout */
+.layout { display: flex; flex: 1; min-height: 0; }
+.browser {
+  width: 280px; flex-shrink: 0; background: var(--panel);
+  border-right: 1px solid var(--border); overflow-y: auto; padding: 8px;
+}
+.editor { flex: 1; overflow-y: auto; padding: 16px; }
+
+/* Browser */
+.proj-head { margin-bottom: 12px; }
+.proj-head strong { display: block; }
+.muted { color: var(--muted); font-size: 11px; }
+h2 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin: 16px 0 6px; }
+.char-list, .ro-list { list-style: none; padding: 0; margin: 0; }
+.char-list li { margin-bottom: 2px; }
+.char-list button {
+  width: 100%; text-align: left; display: flex; align-items: center; gap: 8px;
+  padding: 6px 8px; background: transparent; border: 1px solid transparent; border-radius: 4px;
+}
+.char-list button:hover { background: var(--panel-2); }
+.char-list button.sel { background: var(--panel-2); border-color: var(--accent); }
+.char-name { flex: 1; }
+.flag { color: var(--warn); }
+.ro-list li { padding: 4px 8px; font-size: 13px; color: var(--ink); display: flex; align-items: center; gap: 6px; }
+.ro-list li.flagged { color: var(--warn); }
+.count { color: var(--muted); }
+.integrity { margin-top: 16px; padding: 8px; background: rgba(210,153,34,0.08); border-radius: 4px; }
+.integrity h3 { margin: 0 0 4px; font-size: 12px; color: var(--warn); }
+.integrity ul { margin: 0; padding-left: 16px; font-size: 11px; }
+.integrity code { font-family: ui-monospace, monospace; color: var(--warn); }
+
+/* Editor */
+.editor-inner { max-width: 780px; }
+.ed-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px; }
+.ed-head h2 { margin: 0; color: var(--ink); text-transform: none; font-size: 20px; letter-spacing: 0; }
+.badge { font-size: 11px; padding: 2px 8px; border-radius: 10px; }
+.badge.bad { background: rgba(248,81,73,0.15); color: var(--bad); }
+.badge.ok { background: rgba(46,160,67,0.15); color: var(--ok); }
+.validation, .integrity-inline {
+  background: rgba(248,81,73,0.06); border: 1px solid rgba(248,81,73,0.3);
+  border-radius: 4px; padding: 8px 12px; margin-bottom: 12px; font-size: 12px;
+}
+.integrity-inline { background: rgba(210,153,34,0.06); border-color: rgba(210,153,34,0.3); }
+.validation ul, .integrity-inline ul { margin: 4px 0 0; padding-left: 16px; }
+.validation code { font-family: ui-monospace, monospace; color: var(--bad); }
+
+fieldset {
+  border: 1px solid var(--border); border-radius: 6px; padding: 12px; margin-bottom: 12px;
+}
+legend { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; padding: 0 6px; }
+label { display: flex; flex-direction: column; gap: 4px; margin-bottom: 10px; font-size: 12px; color: var(--muted); }
+input, textarea, select {
+  background: var(--bg); border: 1px solid var(--border); color: var(--ink);
+  padding: 6px 8px; border-radius: 4px; font-size: 13px; font-family: inherit;
+}
+input:focus, textarea:focus, select:focus { outline: none; border-color: var(--accent); }
+textarea { font-family: inherit; resize: vertical; }
+select[multiple] { min-height: 60px; }
+
+.buckets { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.bucket input { font-family: ui-monospace, monospace; font-size: 12px; }
+
+.line-list { margin-bottom: 12px; }
+.line-list-head { display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 12px; margin-bottom: 4px; }
+.line-list ul { list-style: none; padding: 0; margin: 0; }
+.line-list li { display: flex; gap: 6px; margin-bottom: 4px; }
+.line-list li input { flex: 1; }
+.line-list li .rm { padding: 2px 8px; color: var(--bad); }
+
+.hint { color: var(--muted); }

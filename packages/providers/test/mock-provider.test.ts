@@ -8,7 +8,7 @@
  *  - the provider is deterministic (same brief -> same profile)
  *  - not-yet-implemented methods throw clearly (M4/M6 land them)
  */
-import { CharacterProfile } from "@df/schemas";
+import { CharacterProfile, DialogueArtifact, DialogueBeatPlan } from "@df/schemas";
 import { describe, expect, it } from "vitest";
 
 import { MockProvider, mockProvider, type DialogueAIProvider } from "../src/index.js";
@@ -93,15 +93,59 @@ describe("MockProvider — determinism", () => {
   });
 });
 
-describe("MockProvider — M4/M6 methods throw clearly", () => {
-  it("planScene throws not-implemented-until-M4", async () => {
-    await expect(provider.planScene({ scene: {} as never, contextPackage: {} })).rejects.toThrow(/M4/);
+describe("MockProvider — planScene + generateDialogue (M4)", () => {
+  // A minimal valid scene with two required facts and two emotional beats.
+  const scene = {
+    id: "scene_test_encounter",
+    version: 1,
+    contentHash: "sha256:test-scene",
+    label: "Test encounter",
+    sceneType: "boss-first-encounter" as const,
+    participants: [{ characterId: "char_boss", stateId: "state_boss__pre", role: "speaker" as const }],
+    purpose: { value: "Test purpose", lang: "en" },
+    requiredFacts: ["fact_a", "fact_b"],
+    forbiddenRevelations: ["fact_secret"],
+    emotionalProgression: [
+      { order: 1, emotion: "judgement" },
+      { order: 2, emotion: "warning" },
+    ],
+    maxLength: "short" as const,
+  };
+
+  it("planScene produces a schema-valid beat plan with one beat per required fact + a closing beat", async () => {
+    const { beatPlan } = await provider.planScene({ scene, contextPackage: {} });
+    expect(DialogueBeatPlan.safeParse(beatPlan).success).toBe(true);
+    // 2 required facts -> 2 content beats + 1 closing beat.
+    expect(beatPlan.beats).toHaveLength(3);
+    // Each content beat lands on exactly one required fact.
+    expect(beatPlan.beats[0].landsOn).toEqual(["fact_a"]);
+    expect(beatPlan.beats[1].landsOn).toEqual(["fact_b"]);
+    // The closing beat lands on nothing.
+    expect(beatPlan.beats[2].intent).toMatch(/Close/);
   });
-  it("generateDialogue throws not-implemented-until-M4", async () => {
-    await expect(
-      provider.generateDialogue({ scene: {} as never, beatPlan: {} as never, contextPackage: {} }),
-    ).rejects.toThrow(/M4/);
+
+  it("generateDialogue realizes every beat as a line, schema-valid", async () => {
+    const { beatPlan } = await provider.planScene({ scene, contextPackage: {} });
+    const { draft } = await provider.generateDialogue({ scene, beatPlan, contextPackage: {} });
+    expect(DialogueArtifact.safeParse(draft).success).toBe(true);
+    expect(draft.lines).toHaveLength(beatPlan.beats.length);
+    // Every line maps to a beat order.
+    expect(draft.lines.map((l) => l.beatOrder)).toEqual(beatPlan.beats.map((b) => b.order));
   });
+
+  it("the draft references the permitted facts but NOT the forbidden one", async () => {
+    const { beatPlan } = await provider.planScene({ scene, contextPackage: {} });
+    const { draft } = await provider.generateDialogue({ scene, beatPlan, contextPackage: {} });
+    const allText = draft.lines.map((l) => l.text.value).join(" ");
+    // The mock renders fact ids as readable text (underscores -> spaces).
+    expect(allText).toContain("fact a");
+    expect(allText).toContain("fact b");
+    expect(allText).not.toContain("fact secret"); // the mock never names forbidden facts
+    expect(allText).not.toContain("fact_secret");
+  });
+});
+
+describe("MockProvider — M6 methods still throw clearly", () => {
   it("reviewDialogue / repairDialogue throw not-implemented-until-M6", async () => {
     await expect(provider.reviewDialogue({ draft: {} as never, contextPackage: {} })).rejects.toThrow(/M6/);
     await expect(provider.repairDialogue({ draft: {} as never, review: {} as never, lockedLineIds: [] })).rejects.toThrow(/M6/);

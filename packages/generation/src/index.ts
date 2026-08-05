@@ -6,3 +6,4 @@
  * shipped provider is the mock.
  */
 export * from "./profile-generation.js";
+export * from "./dialogue-generation.js";

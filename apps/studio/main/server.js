@@ -10,6 +10,7 @@
 //   POST /api/save              { dir, project }                 -> { errors }
 //   POST /api/integrity         { project }                      -> { issues }
 //   POST /api/generate-profile  { brief, idSlug? }               -> { draft } | { error }
+//   POST /api/generate-dialogue { scene, contextPackage? }       -> { beatPlan, draft } | { error }
 //   GET  /api/health                                             -> { ok: true }
 //
 // Runs against the BUILT @df/storage dist. Start after `pnpm --filter
@@ -21,7 +22,7 @@ import { createServer } from "node:http";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { generateProfileDraft } from "@df/generation";
+import { generateProfileDraft, planAndDraft } from "@df/generation";
 import { mockProvider } from "@df/providers";
 import { readProject, writeProject, checkIntegrity } from "@df/storage";
 
@@ -98,6 +99,17 @@ const server = createServer(async (req, res) => {
       }
       const draft = await generateProfileDraft(mockProvider, { brief, idSlug });
       return send(res, 200, { draft });
+    }
+
+    if (req.method === "POST" && path === "/api/generate-dialogue") {
+      // Q-A1: MockProvider only. Two-call pipeline (plan then draft) with the
+      // forbidden-facts knowledge gate. Returns a beatPlan + draft for review;
+      // nothing persisted. Throws -> 500 if the gate rejects (forbidden leak)
+      // or the provider output is invalid.
+      const { scene, contextPackage } = await readBody(req);
+      if (!scene) return send(res, 400, { error: "missing scene" });
+      const result = await planAndDraft(mockProvider, scene, contextPackage ?? {});
+      return send(res, 200, result);
     }
 
     return send(res, 404, { error: "not found" });

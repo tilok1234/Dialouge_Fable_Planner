@@ -13,6 +13,7 @@
  */
 
 import { z } from "zod";
+
 import { LocalizedText, Ref, StableId, TagList, Versioned } from "./common.js";
 
 export const QuestObjective = z.object({

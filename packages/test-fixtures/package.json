@@ -1,0 +1,7 @@
+{
+  "name": "@df/test-fixtures",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Hand-authored sample projects consumed as data by every package's tests.",
+  "files": ["*.json", "**/*.json"]
+}

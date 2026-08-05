@@ -8,6 +8,7 @@
  */
 
 import { z } from "zod";
+
 import { LocalizedText } from "./common.js";
 
 export const CharacterCore = z.object({

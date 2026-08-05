@@ -8,6 +8,7 @@
  */
 
 import { z } from "zod";
+
 import { LocalizedText } from "./common.js";
 import { MetaphorDomain } from "./faction.js";
 

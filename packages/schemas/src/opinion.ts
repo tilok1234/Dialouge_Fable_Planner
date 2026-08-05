@@ -11,6 +11,7 @@
  */
 
 import { z } from "zod";
+
 import { LocalizedText, Ref } from "./common.js";
 
 export const OpinionPosition = z.enum([

@@ -1,0 +1,5 @@
+packages:
+  # All internal libraries live under packages/ and are published as @df/*
+  - "packages/*"
+  # The local-first app(s) live under apps/
+  - "apps/*"

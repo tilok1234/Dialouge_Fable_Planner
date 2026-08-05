@@ -7,8 +7,9 @@
  */
 
 import { z } from "zod";
-import { LocalizedText, Ref, StableId, Versioned } from "./common.js";
+
 import { CanonFact, CanonVeracity, CanonVisibility } from "./canon.js";
+import { Ref, StableId, Versioned } from "./common.js";
 
 export const ProposalStatus = z.enum(["pending", "accepted", "rejected", "superseded"]);
 

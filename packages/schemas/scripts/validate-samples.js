@@ -74,19 +74,26 @@ walk(samples, (file) => {
     return check(file, S.Project, "Project");
   }
 
-  // canon/ : only world-facts.json is contract-validated (CanonFact[]).
-  // terminology.json + timeline.json are loose helper arrays (no schema yet).
+  // canon/ : world-facts (CanonFact[]), terminology (Terminology[]),
+  // timeline (TimelineEvent[]) — all contract-validated as of M1 (Q-F2).
   if (topDir === "canon") {
-    if (rel === "canon/world-facts.json") {
+    const schemaByLeaf = {
+      "canon/world-facts.json": S.CanonFact,
+      "canon/terminology.json": S.Terminology,
+      "canon/timeline.json": S.TimelineEvent,
+    };
+    const schema = schemaByLeaf[rel];
+    if (schema) {
       const arr = JSON.parse(readFileSync(file, "utf8"));
       if (!Array.isArray(arr)) {
-        failures.push({ file: rel, label: "CanonFact[]", error: "not an array" });
-        console.log(`FAIL CanonFact[]  ${rel} (not an array)`);
+        failures.push({ file: rel, label: `${schema.description ?? rel}[]`, error: "not an array" });
+        console.log(`FAIL ${rel} (not an array)`);
         return;
       }
-      arr.forEach((item, i) => check(file, S.CanonFact, `CanonFact[${i}]`, item));
+      const label = rel.replace("canon/", "").replace(".json", "");
+      arr.forEach((item, i) => check(file, schema, `${label}[${i}]`, item));
     }
-    return; // terminology/timeline skipped
+    return;
   }
 
   // states/ has per-character subfolders; each leaf is a CharacterState.
@@ -94,8 +101,10 @@ walk(samples, (file) => {
     return check(file, S.CharacterState, "CharacterState");
   }
 
-  // context/ : ContextPackage has no contract schema yet (flagged Q-F1); skip.
-  if (topDir === "context") return;
+  // context/ : ContextPackage (Q-F1, validated as of M1).
+  if (topDir === "context") {
+    return check(file, S.ContextPackage, "ContextPackage");
+  }
 
   const schema = dirToSchema[topDir];
   if (schema) return check(file, schema, topDir);

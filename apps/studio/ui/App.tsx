@@ -73,12 +73,12 @@ export function App() {
     if (!project) return;
     setProject({
       ...project,
-      characters: project.characters.map((c) => (c.id === id ? patch(c) : c)),
+      characters: project.characters.map((c: ProjectData["characters"][number]) => (c.id === id ? patch(c) : c)),
     });
     setDirty(true);
   }
 
-  const selected = project?.characters.find((c) => c.id === selectedCharId) ?? null;
+  const selected = project?.characters.find((c: ProjectData["characters"][number]) => c.id === selectedCharId) ?? null;
   const integrityForSelected = integrity.filter((i) => i.from === selectedCharId);
 
   return (
@@ -135,7 +135,7 @@ export function App() {
               key={selected.id}
               character={selected}
               integrity={integrityForSelected}
-              knownFactionIds={project?.factions.map((f) => f.id) ?? []}
+              knownFactionIds={project?.factions.map((f: ProjectData["factions"][number]) => f.id) ?? []}
               onChange={(patch) => patchCharacter(selected.id, patch)}
             />
           ) : (

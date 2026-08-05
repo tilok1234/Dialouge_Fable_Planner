@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "contentHash": "sha256:rel-golem-player-v1",
+  "id": "rel_hornblende_golem__player",
+  "partyA": "char_hornblende_golem",
+  "partyB": "player",
+  "dimensions": {
+    "trust": -40,
+    "respect": 15,
+    "affection": -10,
+    "fear": 10,
+    "suspicion": 60,
+    "debt": 0
+  },
+  "namedState": "hostile-but-grudging-respect",
+  "history": [
+    {
+      "event": {
+        "key": "rel_golem_player_h1",
+        "value": "Player entered the sealed quarry uninvited, carrying tools.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -30,
+        "suspicion": 40
+      }
+    },
+    {
+      "event": {
+        "key": "rel_golem_player_h2",
+        "value": "Player refused to kneel and struck first.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "respect": 10,
+        "affection": -10
+      }
+    }
+  ],
+  "notes": "Represents the relationship DURING the boss fight (stage 4). The golem respects strength but does not yet trust the player's intent. `namedState` is what the Context Compiler surfaces; raw numbers need not appear in dialogue."
+}

@@ -1,47 +1,92 @@
 [
   {
+    "version": 1,
+    "contentHash": "sha256:tl-sacred-site",
     "date": "~400 years BP",
-    "event": { "key": "tl_sacred_site", "value": "The quarry is recognized as a Stoneborn sacred site.", "lang": "en" },
-    "establishes": ["fact_quarry_was_stoneborn_sacred_site"],
+    "event": {
+      "key": "tl_sacred_site",
+      "value": "The quarry is recognized as a Stoneborn sacred site.",
+      "lang": "en"
+    },
+    "establishes": [
+      "fact_quarry_was_stoneborn_sacred_site"
+    ],
     "order": -400,
-    "tags": ["stoneborn", "history"],
-    "version": 1,
-    "contentHash": "sha256:tl-sacred-site"
+    "tags": [
+      "stoneborn",
+      "history"
+    ]
   },
   {
+    "version": 1,
+    "contentHash": "sha256:tl-mining",
     "date": "~60 years BP",
-    "event": { "key": "tl_industrial_mining", "value": "The quarry is reopened for industrial mining — The Taking.", "lang": "en" },
-    "establishes": ["fact_quarry_was_mined_industrially"],
+    "event": {
+      "key": "tl_industrial_mining",
+      "value": "The quarry is reopened for industrial mining — The Taking.",
+      "lang": "en"
+    },
+    "establishes": [
+      "fact_quarry_was_mined_industrially"
+    ],
     "order": -60,
-    "tags": ["history", "economy"],
-    "version": 1,
-    "contentHash": "sha256:tl-mining"
+    "tags": [
+      "history",
+      "economy"
+    ]
   },
   {
+    "version": 1,
+    "contentHash": "sha256:tl-golem-awakened",
     "date": "~55 years BP",
-    "event": { "key": "tl_golem_awakened", "value": "Miners carve and awaken the Hornblende Golem as a guardian of atonement.", "lang": "en" },
-    "establishes": ["fact_golem_created_by_miners", "fact_seals_prevent_excavation"],
+    "event": {
+      "key": "tl_golem_awakened",
+      "value": "Miners carve and awaken the Hornblende Golem as a guardian of atonement.",
+      "lang": "en"
+    },
+    "establishes": [
+      "fact_golem_created_by_miners",
+      "fact_seals_prevent_excavation"
+    ],
     "order": -55,
-    "tags": ["golem", "history"],
-    "version": 1,
-    "contentHash": "sha256:tl-golem-awakened"
+    "tags": [
+      "golem",
+      "history"
+    ]
   },
   {
+    "version": 1,
+    "contentHash": "sha256:tl-golem-turns",
     "date": "~55 years BP",
-    "event": { "key": "tl_golem_turns", "value": "The golem turns on the miners. Foreman Aldric orders evacuation. Seals are placed.", "lang": "en" },
-    "establishes": ["fact_foreman_ordered_last_evacuation"],
+    "event": {
+      "key": "tl_golem_turns",
+      "value": "The golem turns on the miners. Foreman Aldric orders evacuation. Seals are placed.",
+      "lang": "en"
+    },
+    "establishes": [
+      "fact_foreman_ordered_last_evacuation"
+    ],
     "order": -55,
-    "tags": ["golem", "foreman", "history"],
-    "version": 1,
-    "contentHash": "sha256:tl-golem-turns"
+    "tags": [
+      "golem",
+      "foreman",
+      "history"
+    ]
   },
   {
+    "version": 1,
+    "contentHash": "sha256:tl-seals-failing",
     "date": "present",
-    "event": { "key": "tl_seals_failing", "value": "The three vein-seals begin to fail; something stirs beneath the rubble.", "lang": "en" },
+    "event": {
+      "key": "tl_seals_failing",
+      "value": "The three vein-seals begin to fail; something stirs beneath the rubble.",
+      "lang": "en"
+    },
     "establishes": [],
     "order": 0,
-    "tags": ["seals", "present"],
-    "version": 1,
-    "contentHash": "sha256:tl-seals-failing"
+    "tags": [
+      "seals",
+      "present"
+    ]
   }
 ]

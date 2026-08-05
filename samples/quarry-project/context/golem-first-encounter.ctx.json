@@ -1,7 +1,11 @@
 {
+  "version": 1,
+  "contentHash": "sha256:ctx-golem-enc-v1",
   "id": "ctx_golem_first_encounter",
   "sceneId": "scene_golem_first_encounter",
-  "questStageIds": ["quest_quarry_seals__stage_3"],
+  "questStageIds": [
+    "quest_quarry_seals__stage_3"
+  ],
   "compiledAt": "2026-08-05T12:00:00.000Z",
   "participants": [
     {
@@ -15,17 +19,29 @@
     "fact_quarry_was_mined_industrially",
     "fact_seals_prevent_excavation"
   ],
-  "selectedFactions": ["fac_stoneborn"],
+  "selectedFactions": [
+    "fac_stoneborn"
+  ],
   "factsPermittedInDialogue": [
     "fact_quarry_was_stoneborn_sacred_site",
     "fact_quarry_was_mined_industrially",
     "fact_seals_prevent_excavation",
     "fact_foreman_ordered_last_evacuation"
   ],
-  "factsForbiddenInDialogue": ["fact_golem_created_by_miners"],
+  "factsForbiddenInDialogue": [
+    "fact_golem_created_by_miners"
+  ],
   "memorySummaries": [
-    { "key": "ctx_mem_1", "value": "The player entered the sealed quarry uninvited, carrying tools.", "lang": "en" },
-    { "key": "ctx_mem_2", "value": "The golem has not yet decided whether the player is a thief or a penitent.", "lang": "en" }
+    {
+      "key": "ctx_mem_1",
+      "value": "The player entered the sealed quarry uninvited, carrying tools.",
+      "lang": "en"
+    },
+    {
+      "key": "ctx_mem_2",
+      "value": "The golem has not yet decided whether the player is a thief or a penitent.",
+      "lang": "en"
+    }
   ],
   "relationshipSnapshot": {
     "namedState": "hostile-but-grudging-respect",
@@ -33,7 +49,5 @@
     "respect": 15,
     "suspicion": 60
   },
-  "notes": "Inspect on disk first when a generation looks wrong. Note fact_golem_created_by_miners is in factsForbiddenInDialogue AND is absent from the golem's profile knowledge.knows — both signals converge. The compiler did NOT select fact_foreman_ordered_last_evacuation for forbidden; the golem knows it and MAY use it, but the scene doesn't require it.",
-  "version": 1,
-  "contentHash": "sha256:ctx-golem-enc-v1"
+  "notes": "Inspect on disk first when a generation looks wrong. Note fact_golem_created_by_miners is in factsForbiddenInDialogue AND is absent from the golem's profile knowledge.knows — both signals converge. The compiler did NOT select fact_foreman_ordered_last_evacuation for forbidden; the golem knows it and MAY use it, but the scene doesn't require it."
 }

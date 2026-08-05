@@ -1,5 +1,7 @@
 [
   {
+    "version": 1,
+    "contentHash": "sha256:fact-sacred-site",
     "id": "fact_quarry_was_stoneborn_sacred_site",
     "label": "Quarry was a Stoneborn sacred site",
     "statement": {
@@ -11,11 +13,15 @@
     "visibility": "known-to-few",
     "inWorldDate": "circa 400 years before present",
     "references": [],
-    "tags": ["quarry", "stoneborn", "history"],
-    "version": 1,
-    "contentHash": "sha256:fact-sacred-site"
+    "tags": [
+      "quarry",
+      "stoneborn",
+      "history"
+    ]
   },
   {
+    "version": 1,
+    "contentHash": "sha256:fact-mined-industrially",
     "id": "fact_quarry_was_mined_industrially",
     "label": "Quarry was mined industrially",
     "statement": {
@@ -26,12 +32,18 @@
     "veracity": "established-fact",
     "visibility": "public",
     "inWorldDate": "60 years before present",
-    "references": ["fact_quarry_was_stoneborn_sacred_site"],
-    "tags": ["quarry", "history", "economy"],
-    "version": 1,
-    "contentHash": "sha256:fact-mined-industrially"
+    "references": [
+      "fact_quarry_was_stoneborn_sacred_site"
+    ],
+    "tags": [
+      "quarry",
+      "history",
+      "economy"
+    ]
   },
   {
+    "version": 1,
+    "contentHash": "sha256:fact-seals-purpose",
     "id": "fact_seals_prevent_excavation",
     "label": "Seals prevent further excavation",
     "statement": {
@@ -42,12 +54,18 @@
     "veracity": "established-fact",
     "visibility": "known-to-few",
     "inWorldDate": "55 years before present",
-    "references": ["fact_quarry_was_mined_industrially"],
-    "tags": ["seals", "quarry", "magic"],
-    "version": 1,
-    "contentHash": "sha256:fact-seals-purpose"
+    "references": [
+      "fact_quarry_was_mined_industrially"
+    ],
+    "tags": [
+      "seals",
+      "quarry",
+      "magic"
+    ]
   },
   {
+    "version": 1,
+    "contentHash": "sha256:fact-golem-origin",
     "id": "fact_golem_created_by_miners",
     "label": "The golem was created by the miners",
     "statement": {
@@ -58,12 +76,19 @@
     "veracity": "objective-truth",
     "visibility": "secret",
     "inWorldDate": "55 years before present",
-    "references": ["fact_seals_prevent_excavation", "fact_quarry_was_stoneborn_sacred_site"],
-    "tags": ["golem", "secret", "origin"],
-    "version": 1,
-    "contentHash": "sha256:fact-golem-origin"
+    "references": [
+      "fact_seals_prevent_excavation",
+      "fact_quarry_was_stoneborn_sacred_site"
+    ],
+    "tags": [
+      "golem",
+      "secret",
+      "origin"
+    ]
   },
   {
+    "version": 1,
+    "contentHash": "sha256:fact-foreman-evac",
     "id": "fact_foreman_ordered_last_evacuation",
     "label": "Foreman ordered the last evacuation",
     "statement": {
@@ -74,9 +99,12 @@
     "veracity": "established-fact",
     "visibility": "known-to-few",
     "inWorldDate": "55 years before present",
-    "references": ["fact_golem_created_by_miners"],
-    "tags": ["foreman", "history"],
-    "version": 1,
-    "contentHash": "sha256:fact-foreman-evac"
+    "references": [
+      "fact_golem_created_by_miners"
+    ],
+    "tags": [
+      "foreman",
+      "history"
+    ]
   }
 ]

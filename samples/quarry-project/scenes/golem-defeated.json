@@ -1,4 +1,6 @@
 {
+  "version": 1,
+  "contentHash": "sha256:scene-golem-def-v1",
   "id": "scene_golem_defeated",
   "label": "Golem defeated — the origin revealed",
   "sceneType": "boss-defeat",
@@ -6,27 +8,42 @@
     {
       "characterId": "char_hornblende_golem",
       "stateId": "state_hornblende_golem__defeated",
-      "relationshipIds": ["rel_hornblende_golem__player"],
+      "relationshipIds": [
+        "rel_hornblende_golem__player"
+      ],
       "role": "speaker"
     }
   ],
-  "boundQuestStages": ["quest_quarry_seals__stage_5a"],
+  "boundQuestStages": [
+    "quest_quarry_seals__stage_5a"
+  ],
   "purpose": {
     "key": "scene_golem_def_purpose",
     "value": "Let the dying golem reveal its origin and warn the player about the vein, while refusing to beg.",
     "lang": "en"
   },
-  "requiredFacts": ["fact_golem_created_by_miners"],
+  "requiredFacts": [
+    "fact_golem_created_by_miners"
+  ],
   "hintableFacts": [],
   "forbiddenRevelations": [],
   "emotionalProgression": [
-    { "order": 1, "emotion": "weary acknowledgement" },
-    { "order": 2, "emotion": "quiet warning" }
+    {
+      "order": 1,
+      "emotion": "weary acknowledgement"
+    },
+    {
+      "order": 2,
+      "emotion": "quiet warning"
+    }
   ],
   "maxLength": "short",
   "availableChoices": [],
-  "templateDefaults": { "bossDefeat": { "mustNotBeg": true, "mustDeliverFinalTruth": true } },
-  "notes": "The ONLY scene where fact_golem_created_by_miners is REQUIRED. The golem's defeated STATE has it in factsLearned, so the knowledge model permits the line here that every other scene forbids. This is the clean inverse of the first-encounter gate.",
-  "version": 1,
-  "contentHash": "sha256:scene-golem-def-v1"
+  "templateDefaults": {
+    "bossDefeat": {
+      "mustNotBeg": true,
+      "mustDeliverFinalTruth": true
+    }
+  },
+  "notes": "The ONLY scene where fact_golem_created_by_miners is REQUIRED. The golem's defeated STATE has it in factsLearned, so the knowledge model permits the line here that every other scene forbids. This is the clean inverse of the first-encounter gate."
 }

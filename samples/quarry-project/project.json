@@ -1,4 +1,8 @@
 {
+  "version": 1,
+  "contentHash": "sha256:project-quarry-v1-placeholder",
+  "createdAt": "2026-08-05T12:00:00.000Z",
+  "updatedAt": "2026-08-05T12:00:00.000Z",
   "id": "project_quarry_module",
   "name": "The Quarry Seals",
   "summary": {
@@ -6,20 +10,16 @@
     "value": "A played-out stone quarry, sacred to the Stoneborn, sealed long ago. The seals are failing and something ancient stirs beneath the rubble.",
     "lang": "en"
   },
-  "version": 1,
-  "contentHash": "sha256:project-quarry-v1-placeholder",
-  "createdAt": "2026-08-05T12:00:00.000Z",
-  "updatedAt": "2026-08-05T12:00:00.000Z",
   "schemaVersion": "1.0.0",
   "promptTemplateVersion": "1.0.0",
   "defaultProvider": "glm",
   "defaultModel": "glm-5.2",
   "defaultReasoningEffort": "high",
-  "locKeyPrefix": "quarry",
   "locks": {
     "characterProfileFields": {},
     "dialogueLines": {},
     "canonFacts": [],
     "questFacts": {}
-  }
+  },
+  "locKeyPrefix": "quarry"
 }

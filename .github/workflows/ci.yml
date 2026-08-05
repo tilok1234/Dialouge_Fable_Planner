@@ -43,8 +43,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build internal packages (needed by downstream typecheck/tests)
-        run: pnpm --filter @df/schemas --filter @df/core --filter @df/storage run build
+      - name: Build all internal packages (needed by downstream typecheck/tests)
+        run: pnpm -r --filter "./packages/*" run build
 
       - name: Typecheck
         run: pnpm run typecheck

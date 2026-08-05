@@ -2,17 +2,33 @@
 //
 // Owns the loaded project state, the load/save lifecycle, and selection.
 // The browser (left) lists artifacts by type; the editor (right) edits the
-// selected character. Edits live in memory until Save (no autosave; NON_GOALS
-// §3.1 — Git is history).
+// selected artifact of any type. Edits live in memory until Save (no autosave;
+// NON_GOALS §3.1 — Git is history).
 
 import type { ProjectData } from "@df/storage";
 import { useEffect, useState } from "react";
 
 import { api, type IntegrityIssue } from "./api.js";
 import { Browser } from "./Browser.js";
+import { CanonFactEditor } from "./CanonFactEditor.js";
 import { CharacterEditor } from "./CharacterEditor.js";
+import { CharacterStateEditor } from "./CharacterStateEditor.js";
+import { FactionEditor } from "./FactionEditor.js";
+import { QuestEditor } from "./QuestEditor.js";
+import { SceneEditor } from "./SceneEditor.js";
 
 const DEFAULT_DIR = "../../samples/quarry-project"; // relative to repo root from dev's POV
+
+/** Which artifact is selected for editing. */
+type Selection =
+  | { kind: "character"; id: string }
+  | { kind: "faction"; id: string }
+  | { kind: "state"; id: string }
+  | { kind: "quest"; id: string }
+  | { kind: "scene"; id: string }
+  | { kind: "canon"; id: "__list__" }; // canon facts are edited as a list
+
+type Kind = Selection["kind"];
 
 export function App() {
   const [dir, setDir] = useState(DEFAULT_DIR);
@@ -20,7 +36,7 @@ export function App() {
   const [project, setProject] = useState<ProjectData | null>(null);
   const [loadErrors, setLoadErrors] = useState<string[]>([]);
   const [integrity, setIntegrity] = useState<IntegrityIssue[]>([]);
-  const [selectedCharId, setSelectedCharId] = useState<string | null>(null);
+  const [selection, setSelection] = useState<Selection | null>(null);
   const [dirty, setDirty] = useState(false);
   const [saving, setSaving] = useState(false);
   const [saveError, setSaveError] = useState<string | null>(null);
@@ -36,7 +52,7 @@ export function App() {
       setLoadErrors(result.errors);
       const { issues } = await api.integrity(result.data);
       setIntegrity(issues);
-      setSelectedCharId(result.data.characters[0]?.id ?? null);
+      setSelection(result.data.characters[0] ? { kind: "character", id: result.data.characters[0].id } : null);
       setDirty(false);
     } catch (e) {
       setLoadErrors([(e as Error).message]);
@@ -51,8 +67,7 @@ export function App() {
     // `load` intentionally closes over the setter only; dep is [dir].
   }, [dir]);
 
-  // Persist via Save. Blocked if any schema-invalid state exists (the editor
-  // surfaces invalid fields; Save confirms the whole character parses).
+  // Persist via Save.
   async function save() {
     if (!project) return;
     setSaving(true);
@@ -68,18 +83,26 @@ export function App() {
     }
   }
 
-  // Update one character in the in-memory project.
-  function patchCharacter(id: string, patch: (c: ProjectData["characters"][number]) => ProjectData["characters"][number]) {
+  // Generic patch: update one item in any collection by id.
+  function patch<T extends { id: string }>(kind: Kind, id: string, fn: (item: T) => T) {
     if (!project) return;
+    const field = collectionField(kind);
+    const items = project[field] as unknown as T[];
     setProject({
       ...project,
-      characters: project.characters.map((c: ProjectData["characters"][number]) => (c.id === id ? patch(c) : c)),
+      [field]: items.map((it: T) => (it.id === id ? fn(it) : it)),
     });
     setDirty(true);
   }
 
-  const selected = project?.characters.find((c: ProjectData["characters"][number]) => c.id === selectedCharId) ?? null;
-  const integrityForSelected = integrity.filter((i) => i.from === selectedCharId);
+  // Canon facts are an array editor (no single-id selection).
+  function patchCanonFacts(next: ProjectData["canonFacts"]) {
+    if (!project) return;
+    setProject({ ...project, canonFacts: next });
+    setDirty(true);
+  }
+
+  const integrityFor = (id: string): IntegrityIssue[] => integrity.filter((i) => i.from === id);
 
   return (
     <div className="app">
@@ -116,12 +139,7 @@ export function App() {
       <main className="layout">
         <aside className="browser">
           {project ? (
-            <Browser
-              project={project}
-              integrity={integrity}
-              selectedCharId={selectedCharId}
-              onSelectChar={setSelectedCharId}
-            />
+            <Browser project={project} integrity={integrity} selection={selection} onSelect={setSelection} />
           ) : loading ? (
             <p>Loading…</p>
           ) : (
@@ -130,19 +148,71 @@ export function App() {
         </aside>
 
         <section className="editor">
-          {selected ? (
-            <CharacterEditor
-              key={selected.id}
-              character={selected}
-              integrity={integrityForSelected}
-              knownFactionIds={project?.factions.map((f: ProjectData["factions"][number]) => f.id) ?? []}
-              onChange={(patch) => patchCharacter(selected.id, patch)}
-            />
-          ) : (
-            <p className="hint">Select a character to edit.</p>
+          {project && selection ? renderEditor(project, selection, integrityFor, patch, patchCanonFacts) : (
+            <p className="hint">Select an artifact to edit.</p>
           )}
         </section>
       </main>
     </div>
   );
+}
+
+/** Map a selection kind to the ProjectData collection field. */
+function collectionField(kind: Kind): keyof ProjectData {
+  switch (kind) {
+    case "character": return "characters";
+    case "faction": return "factions";
+    case "state": return "states";
+    case "quest": return "quests";
+    case "scene": return "scenes";
+    case "canon": return "canonFacts";
+  }
+}
+
+/** Render the right editor for the current selection. */
+function renderEditor(
+  project: ProjectData,
+  sel: Selection,
+  integrityFor: (id: string) => IntegrityIssue[],
+  patch: <T extends { id: string }>(kind: Kind, id: string, fn: (item: T) => T) => void,
+  patchCanonFacts: (next: ProjectData["canonFacts"]) => void,
+) {
+  switch (sel.kind) {
+    case "character": {
+      const c = project.characters.find((x) => x.id === sel.id);
+      if (!c) return <p className="hint">Character not found.</p>;
+      return (
+        <CharacterEditor
+          key={c.id}
+          character={c}
+          integrity={integrityFor(c.id)}
+          knownFactionIds={project.factions.map((f: ProjectData["factions"][number]) => f.id)}
+          onChange={(fn) => patch(sel.kind, sel.id, fn)}
+        />
+      );
+    }
+    case "faction": {
+      const f = project.factions.find((x) => x.id === sel.id);
+      if (!f) return <p className="hint">Faction not found.</p>;
+      return <FactionEditor key={f.id} faction={f} integrity={integrityFor(f.id)} onChange={(fn) => patch(sel.kind, sel.id, fn)} />;
+    }
+    case "state": {
+      const s = project.states.find((x) => x.id === sel.id);
+      if (!s) return <p className="hint">State not found.</p>;
+      return <CharacterStateEditor key={s.id} state={s} integrity={integrityFor(s.id)} onChange={(fn) => patch(sel.kind, sel.id, fn)} />;
+    }
+    case "quest": {
+      const q = project.quests.find((x) => x.id === sel.id);
+      if (!q) return <p className="hint">Quest not found.</p>;
+      return <QuestEditor key={q.id} quest={q} integrity={integrityFor(q.id)} onChange={(fn) => patch(sel.kind, sel.id, fn)} />;
+    }
+    case "scene": {
+      const sc = project.scenes.find((x) => x.id === sel.id);
+      if (!sc) return <p className="hint">Scene not found.</p>;
+      return <SceneEditor key={sc.id} scene={sc} integrity={integrityFor(sc.id)} onChange={(fn) => patch(sel.kind, sel.id, fn)} />;
+    }
+    case "canon": {
+      return <CanonFactEditor key="canon" facts={project.canonFacts} integrityRefs={new Set()} onChange={patchCanonFacts} />;
+    }
+  }
 }

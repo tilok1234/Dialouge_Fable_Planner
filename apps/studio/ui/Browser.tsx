@@ -1,40 +1,58 @@
-// Read-only project browser (left panel).
+// Project browser (left panel).
 //
-// Lists every artifact by type. Characters are selectable (the only editor in
-// this slice); other types are shown read-only with counts. Integrity issues
-// are flagged inline so dangling refs are visible before you edit.
+// Lists every artifact by type. All collections are selectable now (M2
+// follow-up). Integrity issues are flagged inline so dangling refs are visible
+// before you edit.
 
 import type { ProjectData } from "@df/storage";
 
 import type { IntegrityIssue } from "./api.js";
 
+/** Selection shared with App. */
+type Selection =
+  | { kind: "character"; id: string }
+  | { kind: "faction"; id: string }
+  | { kind: "state"; id: string }
+  | { kind: "quest"; id: string }
+  | { kind: "scene"; id: string }
+  | { kind: "canon"; id: "__list__" };
+
 interface Props {
   project: ProjectData;
   integrity: IntegrityIssue[];
-  selectedCharId: string | null;
-  onSelectChar: (id: string) => void;
+  selection: Selection | null;
+  onSelect: (sel: Selection) => void;
 }
 
-export function Browser({ project, integrity, selectedCharId, onSelectChar }: Props) {
+export function Browser({ project, integrity, selection, onSelect }: Props) {
   const issueFromIds = new Set(integrity.map((i) => i.from));
+  const isSel = (kind: Selection["kind"], id: string) => selection?.kind === kind && selection?.id === id;
 
-  // Read-only collections: name, count, flag if any member has an integrity issue.
-  // Note: terminology/timeline have no `id` field, so the entry type is loose.
-  const ro: [string, unknown[], boolean][] = [
-    ["canon facts", project.canonFacts, false],
-    ["terminology", project.terminology, false],
-    ["timeline", project.timeline, false],
-    ["factions", project.factions, false],
-    ["relationships", project.relationships, project.relationships.some((r: { id: string }) => issueFromIds.has(r.id))],
-    ["quests", project.quests, false],
-    ["scenes", project.scenes, project.scenes.some((s: { id: string }) => issueFromIds.has(s.id))],
-    ["states", project.states, project.states.some((s: { id: string }) => issueFromIds.has(s.id))],
-    ["context packages", project.contextPackages, project.contextPackages.some((c: { id: string }) => issueFromIds.has(c.id))],
-    ["beat plans", project.beatPlans, false],
-    ["dialogues", project.dialogues, false],
-    ["reviews", project.reviews, false],
-    ["proposals", project.proposals, false],
-  ];
+  // Generic selectable collection renderer.
+  function collection(
+    title: string,
+    kind: Selection["kind"],
+    items: { id: string; label: string; sub?: string }[],
+  ) {
+    return (
+      <>
+        <h2>
+          {title} ({items.length})
+        </h2>
+        <ul className="char-list">
+          {items.map((it) => (
+            <li key={it.id}>
+              <button className={isSel(kind, it.id) ? "sel" : ""} onClick={() => onSelect({ kind, id: it.id } as Selection)}>
+                <span className="char-name">{it.label}</span>
+                {it.sub && <span className="muted">{it.sub}</span>}
+                {issueFromIds.has(it.id) && <span className="flag" title="integrity issue">⚠</span>}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </>
+    );
+  }
 
   return (
     <div className="browser-inner">
@@ -43,30 +61,43 @@ export function Browser({ project, integrity, selectedCharId, onSelectChar }: Pr
         <span className="muted">{project.project.id}</span>
       </div>
 
-      <h2>Characters ({project.characters.length})</h2>
-      <ul className="char-list">
-        {project.characters.map((c) => (
-          <li key={c.id}>
-            <button
-              className={c.id === selectedCharId ? "sel" : ""}
-              onClick={() => onSelectChar(c.id)}
-            >
-              <span className="char-name">{c.identity.name}</span>
-              <span className="muted">{c.identity.gameplayRole}</span>
-              {issueFromIds.has(c.id) && <span className="flag" title="integrity issue">⚠</span>}
-            </button>
-          </li>
-        ))}
-      </ul>
+      {collection("Canon facts", "canon", [{ id: "__list__", label: "world-facts.json", sub: `${project.canonFacts.length} facts` }])}
+      {collection(
+        "Factions",
+        "faction",
+        project.factions.map((f) => ({ id: f.id, label: f.name })),
+      )}
+      {collection(
+        "Characters",
+        "character",
+        project.characters.map((c) => ({ id: c.id, label: c.identity.name, sub: c.identity.gameplayRole })),
+      )}
+      {collection(
+        "States",
+        "state",
+        project.states.map((s) => ({ id: s.id, label: s.label, sub: s.phase })),
+      )}
+      {collection(
+        "Quests",
+        "quest",
+        project.quests.map((q) => ({ id: q.id, label: q.name, sub: `${q.stages.length} stages` })),
+      )}
+      {collection(
+        "Scenes",
+        "scene",
+        project.scenes.map((s) => ({ id: s.id, label: s.label, sub: s.sceneType })),
+      )}
 
-      <h2>Other artifacts</h2>
+      <h2>Read-only</h2>
       <ul className="ro-list">
-        {ro.map(([label, items, flagged]) => (
-          <li key={label} className={flagged ? "flagged" : ""}>
-            {label} <span className="count">({items.length})</span>
-            {flagged && <span className="flag" title="integrity issue">⚠</span>}
-          </li>
-        ))}
+        <li>terminology ({project.terminology.length})</li>
+        <li>timeline ({project.timeline.length})</li>
+        <li>relationships ({project.relationships.length})</li>
+        <li>context ({project.contextPackages.length})</li>
+        <li>beats ({project.beatPlans.length})</li>
+        <li>dialogues ({project.dialogues.length})</li>
+        <li>reviews ({project.reviews.length})</li>
+        <li>proposals ({project.proposals.length})</li>
       </ul>
 
       {integrity.length > 0 && (

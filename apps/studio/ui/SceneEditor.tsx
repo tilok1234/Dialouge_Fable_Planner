@@ -96,10 +96,97 @@ export function SceneEditor({ scene, onChange }: Props) {
                 </li>
               ))}
             </ul>
-            <p className="muted">Draft only — not saved. (Persistence + accept/reject lands in M5.)</p>
+            <ReviewPanel draft={draft} scene={sc} />
           </div>
         )}
       </Section>
+    </div>
+  );
+}
+
+/** Inline review + repair panel shown beneath a generated draft (M6). */
+function ReviewPanel({ draft, scene }: { draft: { lines: { text: { value: string }; speakerId: string }[] }; scene: SceneType }) {
+  const [review, setReview] = useState<{ findings: { id: string; type: string; severity: string; lineId?: string; reason: string; suggestedRepair?: { value: string } }[]; passed: boolean } | null>(null);
+  const [reviewing, setReviewing] = useState(false);
+  const [repaired, setRepaired] = useState<{ lines: { text: { value: string }; speakerId: string }[] } | null>(null);
+  const [err, setErr] = useState<string | null>(null);
+
+  async function runReview() {
+    setReviewing(true);
+    setErr(null);
+    setReview(null);
+    setRepaired(null);
+    try {
+      const res = await fetch("/api/review-dialogue", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ draft, scene }),
+      });
+      const body = await res.json();
+      if (!res.ok) throw new Error(body.error ?? `review failed (${res.status})`);
+      setReview(body.review);
+    } catch (e) {
+      setErr((e as Error).message);
+    } finally {
+      setReviewing(false);
+    }
+  }
+
+  async function runRepair() {
+    if (!review) return;
+    setErr(null);
+    try {
+      const res = await fetch("/api/repair-dialogue", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ draft, review, lockedLineIds: [] }),
+      });
+      const body = await res.json();
+      if (!res.ok) throw new Error(body.error ?? `repair failed (${res.status})`);
+      setRepaired(body.draft);
+    } catch (e) {
+      setErr((e as Error).message);
+    }
+  }
+
+  return (
+    <div className="review-panel">
+      <button onClick={() => void runReview()} disabled={reviewing}>
+        {reviewing ? "Reviewing…" : "Review (consistency check)"}
+      </button>
+      {err && <div className="err">{err}</div>}
+      {review && (
+        <>
+          <p className={review.passed ? "badge ok" : "badge bad"}>
+            {review.passed ? "PASSED — no blockers" : `${review.findings.length} finding(s)`}
+          </p>
+          {review.findings.length > 0 && (
+            <ul className="validation">
+              {review.findings.map((f) => (
+                <li key={f.id}>
+                  <span className={`sev ${f.severity}`}>{f.severity}</span>{" "}
+                  <code>{f.type}</code>
+                  {f.lineId && <span className="muted"> (line {f.lineId})</span>}: {f.reason}
+                  {f.suggestedRepair && <div className="muted">→ suggested: <em>{f.suggestedRepair.value}</em></div>}
+                </li>
+              ))}
+            </ul>
+          )}
+          {review.findings.some((f) => f.suggestedRepair) && (
+            <button onClick={() => void runRepair()}>Apply suggested repairs</button>
+          )}
+        </>
+      )}
+      {repaired && (
+        <div className="draft">
+          <h4>Repaired draft</h4>
+          <ul>
+            {repaired.lines.map((l, i) => (
+              <li key={i}><code className="muted">{l.speakerId}:</code> {l.text.value}</li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }

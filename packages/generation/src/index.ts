@@ -7,3 +7,4 @@
  */
 export * from "./profile-generation.js";
 export * from "./dialogue-generation.js";
+export * from "./dialogue-review.js";

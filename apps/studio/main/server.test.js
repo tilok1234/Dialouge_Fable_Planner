@@ -146,3 +146,41 @@ describe("studio backend — generate-dialogue (M4, mock only)", () => {
     expect(status).toBe(400);
   });
 });
+
+describe("studio backend — review + repair dialogue (M6, mock only)", () => {
+  const scene = {
+    id: "scene_m6", version: 1, contentHash: "sha256:m6",
+    label: "M6", sceneType: "boss-first-encounter",
+    participants: [{ characterId: "char_b", stateId: "state_b", role: "speaker" }],
+    purpose: { value: "x", lang: "en" },
+    requiredFacts: [], forbiddenRevelations: [],
+    emotionalProgression: [{ order: 1, emotion: "judgement" }], maxLength: "short",
+  };
+  const draft = {
+    id: "dlg_m6", version: 1, contentHash: "sha256:m6d",
+    sceneId: "scene_m6", beatPlanId: "beat_m6", contextPackageId: "ctx_m6",
+    approvalStatus: "draft",
+    lines: [{ id: "l1", speakerId: "char_b", text: { value: "Foolish mortal! You dare challenge my immense power?", lang: "en" }, humanEdited: false }],
+    provenance: {
+      scene: { id: "scene_m6", version: 1 }, characterProfiles: [], characterStates: [],
+      relationships: [], factions: [], canonSnapshot: [],
+      schemaVersion: "1", promptTemplateVersion: "1",
+      provider: "mock", model: "mock", reasoningEffort: "normal", generatedAt: "2026-08-06T00:00:00.000Z",
+    },
+    stale: false,
+  };
+
+  it("review-dialogue returns findings (AI flags the generic line)", async () => {
+    const { status, body } = await post("/api/review-dialogue", { draft, scene });
+    expect(status).toBe(200);
+    expect(body.review.findings.length).toBeGreaterThan(0);
+    expect(body.review.findings.some((f) => f.type === "generic-fantasy-phrasing")).toBe(true);
+  });
+
+  it("repair-dialogue patches the flagged line", async () => {
+    const review = (await post("/api/review-dialogue", { draft, scene })).body.review;
+    const { status, body } = await post("/api/repair-dialogue", { draft, review, lockedLineIds: [] });
+    expect(status).toBe(200);
+    expect(body.draft.lines[0].text.value).not.toContain("Foolish mortal");
+  });
+});

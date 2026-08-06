@@ -9,3 +9,4 @@ export * from "./types.js";
 export * from "./quest.js";
 export * from "./knowledge-progression.js";
 export * from "./playthrough.js";
+export * from "./dialogue.js";

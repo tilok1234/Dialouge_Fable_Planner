@@ -38,6 +38,9 @@ importers:
       '@df/core':
         specifier: workspace:*
         version: link:../../packages/core
+      '@df/exporters':
+        specifier: workspace:*
+        version: link:../../packages/exporters
       '@df/generation':
         specifier: workspace:*
         version: link:../../packages/generation
@@ -116,6 +119,9 @@ importers:
       '@df/schemas':
         specifier: workspace:*
         version: link:../schemas
+      '@df/storage':
+        specifier: workspace:*
+        version: link:../storage
     devDependencies:
       vitest:
         specifier: ^1.6.0

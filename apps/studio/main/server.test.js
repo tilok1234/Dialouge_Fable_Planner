@@ -184,3 +184,24 @@ describe("studio backend — review + repair dialogue (M6, mock only)", () => {
     expect(body.draft.lines[0].text.value).not.toContain("Foolish mortal");
   });
 });
+
+describe("studio backend — export (M7)", () => {
+  it("exports JSON with accepted dialogue lines + loc keys", async () => {
+    const loaded = await post("/api/load", { dir: sampleDir });
+    const { status, body } = await post("/api/export", { project: loaded.body.data });
+    expect(status).toBe(200);
+    expect(body.json.lines.length).toBeGreaterThan(0);
+    expect(body.json.lines[0].locKey).toMatch(/^quarry\./);
+    expect(body.json.skippedDrafts).toBe(0);
+  });
+
+  it("exports CSV with a header row + one row per line", async () => {
+    const loaded = await post("/api/load", { dir: sampleDir });
+    const { status, body } = await post("/api/export", { project: loaded.body.data, format: "csv" });
+    expect(status).toBe(200);
+    const rows = body.csv.trim().split("\n");
+    expect(rows[0]).toContain("locKey");
+    // header + 4 data lines (the sample's accepted dialogue has 4 lines)
+    expect(rows.length).toBe(5);
+  });
+});

@@ -129,6 +129,185 @@ export function App() {
     }
   }
 
+  // ---- Hand-authoring: create a blank, schema-valid artifact of any kind ----
+
+  /** Smallest unused `<prefix>_new_<n>` id across the given collection. */
+  function nextId(prefix: string, existing: { id: string }[]): string {
+    for (let n = 1; ; n++) {
+      const id = `${prefix}_new_${n}`;
+      if (!existing.some((x) => x.id === id)) return id;
+    }
+  }
+
+  const loc = (value: string) => ({ value, lang: "en" });
+  const versioned = { version: 1, contentHash: "sha256:uncommitted" };
+
+  function createArtifact(kind: Kind) {
+    if (!project) return;
+    const p = project;
+    switch (kind) {
+      case "canon": {
+        const fact: ProjectData["canonFacts"][number] = {
+          ...versioned,
+          id: nextId("canon", p.canonFacts),
+          label: "New fact",
+          statement: loc("State the fact here."),
+          veracity: "established-fact",
+          visibility: "public",
+          references: [],
+          tags: [],
+        };
+        setProject({ ...p, canonFacts: [...p.canonFacts, fact] });
+        setSelection({ kind: "canon", id: "__list__" });
+        break;
+      }
+      case "faction": {
+        const faction: ProjectData["factions"][number] = {
+          ...versioned,
+          id: nextId("fac", p.factions),
+          name: "New faction",
+          summary: loc("Describe the faction's identity."),
+          sharedBeliefs: [],
+          sharedOpinions: [],
+          terminology: [],
+          customs: [],
+          taboos: [],
+          tags: [],
+        };
+        setProject({ ...p, factions: [...p.factions, faction] });
+        setSelection({ kind: "faction", id: faction.id });
+        break;
+      }
+      case "character": {
+        const character: ProjectData["characters"][number] = {
+          ...versioned,
+          id: nextId("char", p.characters),
+          identity: {
+            name: "New character",
+            factions: [],
+            gameplayRole: "ambient-npc",
+            narrativeFunction: "other",
+            connections: [],
+          },
+          core: {
+            primaryDesire: loc("What do they want most?"),
+            primaryFear: loc("What do they fear most?"),
+            centralValue: loc("What do they hold sacred?"),
+            mainFlaw: loc("How does that value turn harmful?"),
+            centralContradiction: loc("What tension makes them human?"),
+            moralBoundary: loc("What will they refuse to do?"),
+          },
+          opinions: [],
+          knowledge: { knows: [], believesFalse: [], suspects: [], secrets: [], lies: [], unknown: [] },
+          voice: {
+            formality: "neutral",
+            directness: "balanced",
+            typicalSentenceLength: "medium",
+            vocabularyComplexity: "common",
+            usesContractions: true,
+            usesHumor: "rare",
+            emotionalRestraint: "measured",
+            declarationStyle: "balanced",
+            namesEmotionsDirectly: true,
+            addressMode: "by-name",
+            avoids: [],
+            sampleLines: [loc("Write one line the way this character would say it.")],
+            antiSampleLines: [],
+          },
+          pressure: [],
+          tags: [],
+        };
+        setProject({ ...p, characters: [...p.characters, character] });
+        setSelection({ kind: "character", id: character.id });
+        break;
+      }
+      case "state": {
+        const owner =
+          (selection?.kind === "character" && p.characters.find((c) => c.id === selection.id)) || p.characters[0];
+        if (!owner) {
+          setSaveError("create a character first — a state belongs to one");
+          return;
+        }
+        const slug = owner.id.replace(/^char_/, "");
+        const state: ProjectData["states"][number] = {
+          ...versioned,
+          id: nextId(`state_${slug}`, p.states),
+          characterId: owner.id,
+          label: `${owner.identity.name} — new state`,
+          mood: "neutral",
+          injuries: [],
+          activeQuestStages: [],
+          recentEvents: [],
+          factsLearned: [],
+          promises: [],
+          playerBetrayed: false,
+          unresolvedConflicts: [],
+        };
+        setProject({ ...p, states: [...p.states, state] });
+        setSelection({ kind: "state", id: state.id });
+        break;
+      }
+      case "quest": {
+        const id = nextId("quest", p.quests);
+        const quest: ProjectData["quests"][number] = {
+          ...versioned,
+          id,
+          name: "New quest",
+          premise: loc("What is this quest about?"),
+          playerInitialKnowledge: [],
+          characterKnowledge: [],
+          stages: [
+            {
+              id: `${id}__stage_0`,
+              order: 0,
+              label: "Opening stage",
+              factsRevealedToPlayer: [],
+              transitionsTo: [],
+              scenes: [],
+            },
+          ],
+          choices: [],
+          participatingCharacters: [],
+          tags: [],
+        };
+        setProject({ ...p, quests: [...p.quests, quest] });
+        setSelection({ kind: "quest", id });
+        break;
+      }
+      case "scene": {
+        const speaker = p.characters[0];
+        const speakerState = speaker && p.states.find((s) => s.characterId === speaker.id);
+        const scene: ProjectData["scenes"][number] = {
+          ...versioned,
+          id: nextId("scene", p.scenes),
+          label: "New scene",
+          sceneType: "npc-first-greeting",
+          participants: [
+            {
+              characterId: speaker?.id ?? "char_todo",
+              stateId: speakerState?.id ?? "state_todo",
+              relationshipIds: [],
+              role: "speaker",
+            },
+          ],
+          boundQuestStages: [],
+          purpose: loc("Why does this scene exist?"),
+          requiredFacts: [],
+          hintableFacts: [],
+          forbiddenRevelations: [],
+          emotionalProgression: [{ order: 1, emotion: "neutral" }],
+          maxLength: "short",
+          availableChoices: [],
+          templateDefaults: {},
+        };
+        setProject({ ...p, scenes: [...p.scenes, scene] });
+        setSelection({ kind: "scene", id: scene.id });
+        break;
+      }
+    }
+    setDirty(true);
+  }
+
   // Export the project (M7). Fetches JSON or CSV and triggers a download.
   async function exportFormat(format: "json" | "csv") {
     if (!project) return;
@@ -237,7 +416,7 @@ export function App() {
       <main className="layout">
         <aside className="browser">
           {project ? (
-            <Browser project={project} integrity={integrity} selection={selection} onSelect={setSelection} />
+            <Browser project={project} integrity={integrity} selection={selection} onSelect={setSelection} onAdd={createArtifact} />
           ) : loading ? (
             <p>Loading…</p>
           ) : (

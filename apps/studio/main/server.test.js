@@ -5,7 +5,7 @@
 import { spawn } from "node:child_process";
 import { mkdtemp, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { dirname, join } from "node:path";
+import { delimiter, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { describe, expect, it, beforeAll, afterAll } from "vitest";
@@ -26,7 +26,9 @@ const post = (path, body) => req(path, { method: "POST", headers: { "content-typ
 
 beforeAll(async () => {
   serverProc = spawn(process.execPath, [join(here, "server.js")], {
-    env: { ...process.env, DF_PORT: PORT },
+    // Roots: the repo (for the sample project) + the OS tmpdir (for the
+    // save round-trip test). Everything else must be refused.
+    env: { ...process.env, DF_PORT: PORT, DF_PROJECT_ROOT: [repoRoot, tmpdir()].join(delimiter) },
     stdio: "ignore",
   });
   // wait for health
@@ -92,6 +94,50 @@ describe("studio backend API", () => {
   it("rejects bad requests with 400", async () => {
     const noDir = await post("/api/load", {});
     expect(noDir.status).toBe(400);
+  });
+});
+
+describe("studio backend — browser hardening", () => {
+  it("refuses requests from a foreign Origin (drive-by page)", async () => {
+    const { status } = await req("/api/load", {
+      method: "POST",
+      headers: { "content-type": "application/json", origin: "https://evil.example" },
+      body: JSON.stringify({ dir: sampleDir }),
+    });
+    expect(status).toBe(403);
+  });
+
+  it("accepts the Vite dev origin", async () => {
+    const { status } = await req("/api/health", { headers: { origin: "http://localhost:5317" } });
+    expect(status).toBe(200);
+  });
+
+  it("refuses a no-cors-style POST (text/plain smuggled JSON)", async () => {
+    const { status } = await req("/api/save", {
+      method: "POST",
+      headers: { "content-type": "text/plain" },
+      body: JSON.stringify({ dir: tmpdir(), project: {} }),
+    });
+    expect(status).toBe(415);
+  });
+
+  it("refuses load/save outside the allowed roots", async () => {
+    const outside = join(repoRoot, "..", "some-other-folder");
+    const load = await post("/api/load", { dir: outside });
+    expect(load.status).toBe(403);
+    const save = await post("/api/save", { dir: outside, project: { id: "x" } });
+    expect(save.status).toBe(403);
+  });
+
+  it("refuses ../ escape from an allowed root", async () => {
+    const escape = join(sampleDir, "..", "..", "..", "escape-target");
+    const { status } = await post("/api/load", { dir: escape });
+    expect(status).toBe(403);
+  });
+
+  it("sends no Access-Control-Allow-Origin header", async () => {
+    const res = await fetch(base + "/api/health");
+    expect(res.headers.get("access-control-allow-origin")).toBeNull();
   });
 });
 

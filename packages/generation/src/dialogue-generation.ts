@@ -4,12 +4,15 @@
  * Two-call pattern (ARCHITECTURE §2.2): the beat plan is produced first, then
  * prose is drafted from it. Each stage validate-before-store (constraint #12).
  *
- * The forbidden-facts gate (the contract's headline correctness check): after
- * drafting, the orchestrator scans every line for any reference to a fact in
- * the scene's `forbiddenRevelations` and rejects the draft if found. The mock
- * provider never names forbidden facts, but a real (or adversarial) provider
- * might — this is the defence-in-depth that makes the gate trustworthy
- * regardless of provider.
+ * The forbidden-facts gate: after drafting, the orchestrator scans every line
+ * for a LITERAL reference to a fact in the scene's `forbiddenRevelations`
+ * (the id, or the id with underscores as spaces). Be honest about what that
+ * is: a tripwire for id echoes, NOT a semantic leak detector — a model that
+ * paraphrases a secret ("the miners made me, long ago") passes this check.
+ * Semantic leak detection is layered elsewhere: the provider prompt forbids
+ * paraphrase/implication, the AI review tier is instructed to hunt for
+ * paraphrased leaks, and the human accept gate is the final authority. This
+ * gate is the cheap deterministic floor under those layers, nothing more.
  */
 
 import type { DialogueAIProvider, DialogueRequest, ScenePlanRequest } from "@df/providers";
@@ -68,8 +71,8 @@ export async function generateDialogueDraft(
     );
   }
 
-  // Knowledge gate: no line may reference a forbidden fact (in any rendering —
-  // id form `fact_x` or readable form `fact x`). This is the leak detector.
+  // Knowledge gate: no line may literally reference a forbidden fact id
+  // (`fact_x` or "fact x"). Catches id echoes only — see the header note.
   const forbidden = request.scene.forbiddenRevelations;
   if (forbidden.length > 0) {
     const leaked = findForbiddenReferences(parsed.data, forbidden);

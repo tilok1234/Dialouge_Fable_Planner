@@ -8,8 +8,10 @@
  * Checks (from ARCHITECTURE §6.1):
  *  - required-fact-missing: every scene.requiredFacts must appear in the draft
  *    (in some line's text, id or readable form).
- *  - forbidden-term-present: no line references a scene.forbiddenRevelations
- *    fact (the leak detector — the contract's headline check).
+ *  - forbidden-term-present: no line contains a forbiddenRevelations fact id
+ *    literally (id or underscores-as-spaces form). An id-echo tripwire, not a
+ *    semantic leak detector — paraphrased leaks are the AI review tier's and
+ *    the human gate's job.
  *  - locked-text-changed: a line marked hard-locked must be byte-identical to
  *    its previous value (the caller passes the previous draft for comparison).
  *  - duplicate-dialogue-id: line ids unique within the artifact.
@@ -50,7 +52,7 @@ export function validateDialogue(input: DialogueReviewInput): ValidationIssue[] 
     }
   }
 
-  // forbidden-term-present (the leak detector)
+  // forbidden-term-present (literal id echoes only)
   for (const fact of scene.forbiddenRevelations) {
     const id = fact.toLowerCase();
     const readable = id.replace(/_/g, " ");

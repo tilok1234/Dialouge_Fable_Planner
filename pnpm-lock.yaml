@@ -50,6 +50,9 @@ importers:
       '@df/storage':
         specifier: workspace:*
         version: link:../../packages/storage
+      '@df/validators':
+        specifier: workspace:*
+        version: link:../../packages/validators
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -193,6 +196,9 @@ importers:
         specifier: workspace:*
         version: link:../schemas
     devDependencies:
+      '@df/storage':
+        specifier: workspace:*
+        version: link:../storage
       vitest:
         specifier: ^1.6.0
         version: 1.6.1(@types/node@22.20.1)

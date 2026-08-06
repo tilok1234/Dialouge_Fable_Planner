@@ -60,7 +60,9 @@
       "completionCondition": "Player accepts the job of inspecting the seals.",
       "failureCondition": "Player refuses and leaves the ridge.",
       "factsRevealedToPlayer": [
-        "fact_quarry_was_mined_industrially"
+        "fact_quarry_was_mined_industrially",
+        "fact_seals_prevent_excavation",
+        "fact_foreman_ordered_last_evacuation"
       ],
       "transitionsTo": [
         "quest_quarry_seals__stage_2",

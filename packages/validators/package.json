@@ -19,6 +19,7 @@
   },
   "dependencies": { "@df/schemas": "workspace:*", "@df/core": "workspace:*" },
   "devDependencies": {
+    "@df/storage": "workspace:*",
     "vitest": "^1.6.0"
   }
 }

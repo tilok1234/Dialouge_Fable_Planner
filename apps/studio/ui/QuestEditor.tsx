@@ -4,7 +4,7 @@
 // conditions as natural language for v1 per Q-E1).
 
 import { Quest, type Quest as QuestType } from "@df/schemas";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 
 import { EditorHeader, RefListField, Section, TextArea, TextField, ValidationIssues } from "./fields.js";
 
@@ -18,9 +18,25 @@ export function QuestEditor({ quest, onChange }: Props) {
   const validation = useMemo(() => Quest.safeParse(quest), [quest]);
   const issues = validation.success ? [] : validation.error.issues.slice(0, 8);
   const q = quest;
+  const [questReport, setQuestReport] = useState<{ issues: { from: string; field: string; reason: string; severity: string }[]; branches: { path: string[]; terminal: string; resolves: boolean }[] } | null>(null);
+  const [validating, setValidating] = useState(false);
 
   function patchStage(idx: number, patch: Partial<QuestType["stages"][number]>) {
     onChange((x) => ({ ...x, stages: x.stages.map((s, i) => (i === idx ? { ...s, ...patch } : s)) }));
+  }
+
+  async function validateQuestFull() {
+    setValidating(true);
+    try {
+      const res = await fetch("/api/validate-quest", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ quest: q }),
+      });
+      setQuestReport(await res.json());
+    } finally {
+      setValidating(false);
+    }
   }
 
   return (
@@ -55,6 +71,31 @@ export function QuestEditor({ quest, onChange }: Props) {
             </div>
           ))}
         </div>
+      </Section>
+
+      <Section title="Validate quest (structure + knowledge + playthrough)">
+        <button onClick={() => void validateQuestFull()} disabled={validating}>
+          {validating ? "Validating…" : "Validate quest"}
+        </button>
+        {questReport && (
+          <div className="quest-report">
+            {questReport.issues.length === 0 ? (
+              <p className="badge ok">Clean — no structural, knowledge, or playthrough issues.</p>
+            ) : (
+              <ul className="validation">
+                {questReport.issues.map((i, idx) => (
+                  <li key={idx}>
+                    <span className={`sev ${i.severity}`}>{i.severity}</span>{" "}
+                    <code>{i.from}.{i.field}</code>: {i.reason}
+                  </li>
+                ))}
+              </ul>
+            )}
+            {questReport.branches.length > 0 && (
+              <p className="muted">Simulated {questReport.branches.length} branch(es).</p>
+            )}
+          </div>
+        )}
       </Section>
     </div>
   );

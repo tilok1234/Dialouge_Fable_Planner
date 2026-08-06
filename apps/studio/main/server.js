@@ -11,6 +11,7 @@
 //   POST /api/integrity         { project }                      -> { issues }
 //   POST /api/generate-profile  { brief, idSlug? }               -> { draft } | { error }
 //   POST /api/generate-dialogue { scene, contextPackage? }       -> { beatPlan, draft } | { error }
+//   POST /api/validate-quest   { quest, scenes? }                -> { issues, branches }
 //   GET  /api/health                                             -> { ok: true }
 //
 // Runs against the BUILT @df/storage dist. Start after `pnpm --filter
@@ -25,6 +26,7 @@ import { fileURLToPath } from "node:url";
 import { generateProfileDraft, planAndDraft } from "@df/generation";
 import { mockProvider } from "@df/providers";
 import { readProject, writeProject, checkIntegrity } from "@df/storage";
+import { validateQuest, validateKnowledge, simulatePlaythrough } from "@df/validators";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const PORT = Number(process.env.DF_PORT ?? 7317);
@@ -110,6 +112,20 @@ const server = createServer(async (req, res) => {
       if (!scene) return send(res, 400, { error: "missing scene" });
       const result = await planAndDraft(mockProvider, scene, contextPackage ?? {});
       return send(res, 200, result);
+    }
+
+    if (req.method === "POST" && path === "/api/validate-quest") {
+      // M5: run all three quest validators (structure, knowledge progression,
+      // playthrough). Returns combined issues + branch traces. Pure, no I/O.
+      const { quest, scenes } = await readBody(req);
+      if (!quest) return send(res, 400, { error: "missing quest" });
+      const structure = validateQuest(quest);
+      const knowledge = validateKnowledge(quest, scenes ?? []);
+      const playthrough = simulatePlaythrough(quest);
+      return send(res, 200, {
+        issues: [...structure.issues, ...knowledge.issues, ...playthrough.issues],
+        branches: playthrough.branches,
+      });
     }
 
     return send(res, 404, { error: "not found" });

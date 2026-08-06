@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently -n server,web -c blue,green \"pnpm run dev:server\" \"pnpm run dev:web\"",
+    "dev:claude": "concurrently -n server,web -c blue,green \"node main/server.js --provider claude\" \"vite\"",
     "dev:server": "node main/server.js",
     "dev:web": "vite",
     "build": "vite build && tsc -p tsconfig.json --noEmit",

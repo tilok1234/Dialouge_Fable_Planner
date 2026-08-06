@@ -61,6 +61,12 @@ describe("studio backend API", () => {
     expect(body.data.characters).toHaveLength(3);
   });
 
+  it("resolves relative dirs against the repo root, not the server's cwd", async () => {
+    const { status, body } = await post("/api/load", { dir: "samples/quarry-project" });
+    expect(status).toBe(200);
+    expect(body.data.project.id).toBe("project_quarry_module");
+  });
+
   it("reports integrity issues for a clean project (none) and a corrupted one (some)", async () => {
     const loaded = await post("/api/load", { dir: sampleDir });
     const clean = await post("/api/integrity", { project: loaded.body.data });

@@ -197,6 +197,22 @@ describe("studio backend — generate-dialogue (M4, mock only)", () => {
     const { status } = await post("/api/generate-dialogue", {});
     expect(status).toBe(400);
   });
+
+  it("compiles real context from the project (M9): profiles reach the provider", async () => {
+    const loaded = await post("/api/load", { dir: sampleDir });
+    const project = loaded.body.data;
+    const golemScene = project.scenes.find((s) => s.id === "scene_golem_first_encounter");
+    const { status, body } = await post("/api/generate-dialogue", { scene: golemScene, project });
+    expect(status).toBe(200);
+    expect(body.warnings).toEqual([]);
+    expect(body.contextPackage.id).toBe("ctx_golem_first_encounter");
+    expect(body.contextPackage.factsForbiddenInDialogue).toEqual(golemScene.forbiddenRevelations);
+    // The mock voices lines from the resolved profile — the golem's own sample
+    // line surfaces in the draft, proving the profile made it through Stage 1.
+    const golem = project.characters.find((c) => c.id === golemScene.participants[0].characterId);
+    const sampleStart = golem.voice.sampleLines[0].value.slice(0, 30);
+    expect(body.draft.lines.some((l) => l.text.value.includes(sampleStart))).toBe(true);
+  });
 });
 
 describe("studio backend — review + repair dialogue (M6, mock only)", () => {

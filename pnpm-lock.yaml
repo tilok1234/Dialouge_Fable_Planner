@@ -35,6 +35,9 @@ importers:
 
   apps/studio:
     dependencies:
+      '@df/context-compiler':
+        specifier: workspace:*
+        version: link:../../packages/context-compiler
       '@df/core':
         specifier: workspace:*
         version: link:../../packages/core

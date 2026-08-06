@@ -40,6 +40,7 @@ import { createServer } from "node:http";
 import { delimiter, dirname, isAbsolute, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { compileContext } from "@df/context-compiler";
 import { exportJson, exportCsv } from "@df/exporters";
 import { generateProfileDraft, planAndDraft, reviewDraft, repairDraft } from "@df/generation";
 import { mockProvider, ClaudeCliProvider } from "@df/providers";
@@ -195,10 +196,34 @@ const server = createServer(async (req, res) => {
       // Two-call pipeline (plan then draft) with the forbidden-facts gate.
       // Returns a beatPlan + draft for review; nothing persisted. Throws ->
       // 500 if the gate rejects (forbidden leak) or the output is invalid.
-      const { scene, contextPackage } = await readBody(req);
+      //
+      // When the caller sends the loaded `project`, Stage 1 runs first: the
+      // context compiler resolves participants' profiles/states, permitted
+      // fact statements, factions, and relationship named states, and the
+      // provider writes from THAT — not from a bare scene. The ref-only
+      // ContextPackage + compile warnings come back for inspection.
+      const { scene, project, contextPackage } = await readBody(req);
       if (!scene) return send(res, 400, { error: "missing scene" });
-      const result = await planAndDraft(provider, scene, contextPackage ?? {});
-      return send(res, 200, result);
+      let snapshot = contextPackage ?? {};
+      let compiled = null;
+      let warnings = [];
+      if (project) {
+        const compileResult = compileContext(
+          {
+            characters: project.characters ?? [],
+            states: project.states ?? [],
+            canonFacts: project.canonFacts ?? [],
+            factions: project.factions ?? [],
+            relationships: project.relationships ?? [],
+          },
+          scene,
+        );
+        snapshot = compileResult.snapshot;
+        compiled = compileResult.contextPackage;
+        warnings = compileResult.warnings;
+      }
+      const result = await planAndDraft(provider, scene, snapshot);
+      return send(res, 200, { ...result, contextPackage: compiled, warnings });
     }
 
     if (req.method === "POST" && path === "/api/validate-quest") {

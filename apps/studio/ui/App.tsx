@@ -18,7 +18,9 @@ import { GeneratePanel } from "./GeneratePanel.js";
 import { QuestEditor } from "./QuestEditor.js";
 import { SceneEditor } from "./SceneEditor.js";
 
-const DEFAULT_DIR = "../../samples/quarry-project"; // relative to repo root from dev's POV
+// Relative dirs are resolved by the backend against the repo root (its first
+// allowed root), regardless of where the server process was launched from.
+const DEFAULT_DIR = "samples/quarry-project";
 
 /** Which artifact is selected for editing. */
 type Selection =

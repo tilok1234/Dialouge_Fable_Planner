@@ -94,6 +94,13 @@ function insideAllowedRoots(absolute) {
   });
 }
 
+// Resolve a client-supplied dir. Relative paths resolve against the FIRST
+// allowed root (the repo root by default), never against process.cwd() —
+// the server must behave the same no matter which directory launched it.
+function resolveDir(dir) {
+  return isAbsolute(dir) ? resolve(dir) : resolve(ALLOWED_ROOTS[0], dir);
+}
+
 /** Read and parse a JSON request body. */
 function readBody(req) {
   return new Promise((fulfil, reject) => {
@@ -147,7 +154,7 @@ const server = createServer(async (req, res) => {
     if (req.method === "POST" && path === "/api/load") {
       const { dir } = await readBody(req);
       if (typeof dir !== "string") return send(res, 400, { error: "missing dir" });
-      const absolute = resolve(dir);
+      const absolute = resolveDir(dir);
       if (!insideAllowedRoots(absolute)) {
         return send(res, 403, { error: "dir is outside the allowed project roots (set DF_PROJECT_ROOT to extend)" });
       }
@@ -158,7 +165,7 @@ const server = createServer(async (req, res) => {
     if (req.method === "POST" && path === "/api/save") {
       const { dir, project } = await readBody(req);
       if (typeof dir !== "string" || !project) return send(res, 400, { error: "missing dir or project" });
-      const absolute = resolve(dir);
+      const absolute = resolveDir(dir);
       if (!insideAllowedRoots(absolute)) {
         return send(res, 403, { error: "dir is outside the allowed project roots (set DF_PROJECT_ROOT to extend)" });
       }

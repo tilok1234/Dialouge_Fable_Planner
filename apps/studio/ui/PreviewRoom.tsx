@@ -147,7 +147,6 @@ export function PreviewRoom({ project, onClose }: Props) {
       };
     });
     return placed;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [project, index, overrides]);
   const npcsRef = useRef(npcs);
   npcsRef.current = npcs;
@@ -217,7 +216,6 @@ export function PreviewRoom({ project, onClose }: Props) {
     window.addEventListener("keyup", onKeyUp);
 
     let raf = 0;
-    let t0 = performance.now();
 
     function drawSheetSprite(sprite: SpriteRef, x: number, y: number, dir: Dir, moving: boolean, now: number, label: string) {
       if (!ctx) return;
@@ -243,7 +241,6 @@ export function PreviewRoom({ project, onClose }: Props) {
     }
 
     function frame(now: number) {
-      t0 = now;
       // input → movement (frozen while a dialogue box is open)
       if (!talkingRef.current) {
         let dx = 0;
@@ -316,7 +313,6 @@ export function PreviewRoom({ project, onClose }: Props) {
       window.removeEventListener("keydown", onKeyDown);
       window.removeEventListener("keyup", onKeyUp);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [index]);
 
   const spriteOptions = useMemo(

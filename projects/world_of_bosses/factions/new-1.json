@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "contentHash": "sha256:uncommitted",
+  "id": "fac_new_1",
+  "name": "New faction",
+  "summary": {
+    "value": "Describe the faction's identity.",
+    "lang": "en"
+  },
+  "sharedBeliefs": [],
+  "sharedOpinions": [],
+  "terminology": [],
+  "customs": [],
+  "taboos": [],
+  "tags": []
+}

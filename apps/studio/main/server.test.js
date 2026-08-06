@@ -3,7 +3,7 @@
 // Boots the studio backend on an ephemeral port, exercises load/save/integrity
 // against the real sample project. No network beyond 127.0.0.1; no React.
 import { spawn } from "node:child_process";
-import { mkdtemp, rm } from "node:fs/promises";
+import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { delimiter, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -147,6 +147,87 @@ describe("studio backend — browser hardening", () => {
   });
 });
 
+describe("studio backend — preview assets", () => {
+  // A second server instance with DF_ASSET_DIR pointing at a fake pack tree.
+  const PORT2 = String(18400 + Math.floor(Math.random() * 1000));
+  const base2 = `http://127.0.0.1:${PORT2}`;
+  let assetDir;
+  let proc2;
+
+  beforeAll(async () => {
+    assetDir = await mkdtemp(join(tmpdir(), "df-assets-"));
+    // minimal fake pack: one player sheet, one family index + sheet
+    await mkdir(join(assetDir, "assembler-pack", "players"), { recursive: true });
+    await mkdir(join(assetDir, "assembler-pack", "indexes"), { recursive: true });
+    await mkdir(join(assetDir, "assembler-pack", "enemies", "slime"), { recursive: true });
+    const png = Buffer.from("89504e470d0a1a0a", "hex"); // just a magic header; content is irrelevant
+    await writeFile(join(assetDir, "assembler-pack", "players", "character-ranger.png"), png);
+    await writeFile(join(assetDir, "assembler-pack", "enemies", "slime", "lime.png"), png);
+    await writeFile(
+      join(assetDir, "assembler-pack", "indexes", "enemy-families.json"),
+      JSON.stringify({ families: [{ id: "slime", name: "Slime", default_variant: "lime", variants: [{ id: "lime", sheet: "enemies/slime/lime.png" }] }] }),
+    );
+    // a secret OUTSIDE the asset dir that traversal must never reach
+    await writeFile(join(assetDir, "..", "df-assets-secret.json"), JSON.stringify({ secret: true }));
+
+    proc2 = spawn(process.execPath, [join(here, "server.js")], {
+      env: { ...process.env, DF_PORT: PORT2, DF_ASSET_DIR: assetDir },
+      stdio: "ignore",
+    });
+    for (let i = 0; i < 50; i++) {
+      try {
+        const r = await fetch(base2 + "/api/health");
+        if (r.ok) return;
+      } catch {
+        /* not ready */
+      }
+      await new Promise((r) => setTimeout(r, 100));
+    }
+    throw new Error("asset backend did not start");
+  }, 30000);
+
+  afterAll(async () => {
+    proc2?.kill();
+    await rm(assetDir, { recursive: true, force: true });
+    await rm(join(assetDir, "..", "df-assets-secret.json"), { force: true });
+  });
+
+  it("health reports assets availability", async () => {
+    const r = await fetch(base2 + "/api/health");
+    expect((await r.json()).assets).toBe(true);
+    const r0 = await fetch(base + "/api/health");
+    expect((await r0.json()).assets).toBe(false);
+  });
+
+  it("assets-index lists players and enemy families", async () => {
+    const r = await fetch(base2 + "/api/assets-index");
+    const idx = await r.json();
+    expect(idx.available).toBe(true);
+    expect(idx.players).toEqual([{ id: "ranger", sheet: "assembler-pack/players/character-ranger.png" }]);
+    expect(idx.enemies).toEqual([{ id: "slime", name: "Slime", sheet: "assembler-pack/enemies/slime/lime.png" }]);
+  });
+
+  it("assets-index is empty-but-ok without an asset dir", async () => {
+    const r = await fetch(base + "/api/assets-index");
+    const idx = await r.json();
+    expect(idx.available).toBe(false);
+    expect(idx.players).toEqual([]);
+  });
+
+  it("serves a sheet inside the asset dir", async () => {
+    const r = await fetch(base2 + "/api/assets/assembler-pack/players/character-ranger.png");
+    expect(r.status).toBe(200);
+    expect(r.headers.get("content-type")).toBe("image/png");
+  });
+
+  it("refuses traversal outside the asset dir and non-png/json types", async () => {
+    const traversal = await fetch(base2 + "/api/assets/..%2Fdf-assets-secret.json");
+    expect(traversal.status).toBe(403);
+    const badType = await fetch(base2 + "/api/assets/assembler-pack/players/character-ranger.exe");
+    expect(badType.status).toBe(403);
+  });
+});
+
 describe("studio backend — generate-profile (M3, mock only — Q-A1)", () => {
   it("generates a schema-valid profile draft from a brief", async () => {
     const { status, body } = await post("/api/generate-profile", {
@@ -196,6 +277,41 @@ describe("studio backend — generate-dialogue (M4, mock only)", () => {
   it("rejects a missing scene with 400", async () => {
     const { status } = await post("/api/generate-dialogue", {});
     expect(status).toBe(400);
+  });
+
+  it("lists loadable projects via /api/projects (samples included)", async () => {
+    const { status, body } = await req("/api/projects");
+    expect(status).toBe(200);
+    expect(body.projects.some((p) => p.id === "project_quarry_module" && p.dir === "samples/quarry-project")).toBe(true);
+  });
+
+  it("surfaces quest-gating warnings when a stage-bound scene requires a later fact (M11)", async () => {
+    const loaded = await post("/api/load", { dir: sampleDir });
+    const project = loaded.body.data;
+    const golemScene = project.scenes.find((s) => s.id === "scene_golem_first_encounter");
+    // Bind to stage 1 but require the fact revealed only at stage 3 — an
+    // early-revelation authoring mistake. Give the golem the knowledge so the
+    // compiler check stays quiet and the QUEST check is what fires. Forbidden
+    // list emptied so the mock's landsOn line passes the id gate.
+    const badScene = {
+      ...golemScene,
+      boundQuestStages: ["quest_quarry_seals__stage_1"],
+      requiredFacts: ["fact_quarry_was_stoneborn_sacred_site"],
+      forbiddenRevelations: [],
+    };
+    const { status, body } = await post("/api/generate-dialogue", { scene: badScene, project });
+    expect(status).toBe(200);
+    expect(body.warnings.some((w) => w.reason.includes("quest gating") && w.ref === "fact_quarry_was_stoneborn_sacred_site")).toBe(true);
+  });
+
+  it("pins provenance from the compiled context (M11)", async () => {
+    const loaded = await post("/api/load", { dir: sampleDir });
+    const project = loaded.body.data;
+    const golemScene = project.scenes.find((s) => s.id === "scene_golem_first_encounter");
+    const { body } = await post("/api/generate-dialogue", { scene: golemScene, project });
+    const golem = project.characters.find((c) => c.id === "char_hornblende_golem");
+    expect(body.draft.provenance.characterProfiles).toContainEqual({ id: golem.id, version: golem.version });
+    expect(body.draft.provenance.canonSnapshot.length).toBeGreaterThan(0);
   });
 
   it("compiles real context from the project (M9): profiles reach the provider", async () => {

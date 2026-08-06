@@ -23,9 +23,11 @@ interface Props {
   selection: Selection | null;
   /** null clears the selection, which shows the generate-character panel. */
   onSelect: (sel: Selection | null) => void;
+  /** Create a blank artifact of the given kind (App owns the templates). */
+  onAdd: (kind: Selection["kind"]) => void;
 }
 
-export function Browser({ project, integrity, selection, onSelect }: Props) {
+export function Browser({ project, integrity, selection, onSelect, onAdd }: Props) {
   const issueFromIds = new Set(integrity.map((i) => i.from));
   const isSel = (kind: Selection["kind"], id: string) => selection?.kind === kind && selection?.id === id;
 
@@ -39,6 +41,9 @@ export function Browser({ project, integrity, selection, onSelect }: Props) {
       <>
         <h2>
           {title} ({items.length})
+          <button className="add" title={`add ${title.toLowerCase()}`} onClick={() => onAdd(kind)} style={{ marginLeft: 8 }}>
+            ＋
+          </button>
         </h2>
         <ul className="char-list">
           {items.map((it) => (

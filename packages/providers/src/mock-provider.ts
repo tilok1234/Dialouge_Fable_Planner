@@ -430,9 +430,10 @@ function lineForBeat(
   beat: { intent: string; emotion?: string; landsOn: string[] },
   profile: CharacterProfileType | undefined,
 ): string {
-  // If we know the speaker's sample lines, echo their register; otherwise generic.
-  const sample = profile?.voice.sampleLines[0]?.value;
-  const metaphor = profile?.voice.metaphorDomain?.source ?? "stone, weight";
+  // If we know the speaker's sample lines, echo their register; otherwise
+  // generic. Defensive access: a context snapshot may carry partial profiles.
+  const sample = profile?.voice?.sampleLines?.[0]?.value;
+  const metaphor = profile?.voice?.metaphorDomain?.source ?? "stone, weight";
   const emotion = beat.emotion ?? "measured";
 
   // A forbidden fact must NEVER be named by the mock. landsOn holds only

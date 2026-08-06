@@ -84,7 +84,54 @@ export async function generateDialogueDraft(
     }
   }
 
-  return { draft: parsed.data };
+  // Provenance pinning (constraint #6): the provider can't know which source
+  // versions the compiler selected, so the orchestrator pins them here from
+  // the compiled snapshot. Staleness detection depends on these being real.
+  const pinned = pinProvenance(parsed.data, request.contextPackage);
+
+  return { draft: pinned };
+}
+
+/** VersionedRef pin from any snapshot object carrying id + version. */
+type Pinnable = { id?: unknown; version?: unknown } | undefined;
+function pin(x: Pinnable): { id: string; version: number } | null {
+  return x && typeof x.id === "string" && typeof x.version === "number" ? { id: x.id, version: x.version } : null;
+}
+
+/** Fill the draft's provenance pins from a compiled context snapshot, if one
+ * was provided. Re-validated before return (constraint #12). */
+function pinProvenance(draft: DialogueArtifactType, contextPackage: unknown): DialogueArtifactType {
+  const snap = contextPackage as
+    | {
+        participants?: { profile?: Pinnable; state?: Pinnable }[];
+        permittedFacts?: Pinnable[];
+        factions?: Pinnable[];
+        relationships?: Pinnable[];
+      }
+    | null
+    | undefined;
+  if (!snap || !Array.isArray(snap.participants)) return draft;
+
+  const pins = (xs: Pinnable[] | undefined) => (xs ?? []).map(pin).filter((p): p is { id: string; version: number } => p !== null);
+  const candidate: DialogueArtifactType = {
+    ...draft,
+    provenance: {
+      ...draft.provenance,
+      characterProfiles: pins(snap.participants.map((p) => p.profile)),
+      characterStates: pins(snap.participants.map((p) => p.state)),
+      factions: pins(snap.factions),
+      relationships: pins(snap.relationships),
+      canonSnapshot: pins(snap.permittedFacts),
+    },
+  };
+  const revalidated = DialogueArtifact.safeParse(candidate);
+  if (!revalidated.success) {
+    throw new GenerationError(
+      `provenance pinning produced an invalid DialogueArtifact: ${revalidated.error.issues[0]?.message}`,
+      candidate,
+    );
+  }
+  return revalidated.data;
 }
 
 /** Scan draft lines for any forbidden fact reference (id form or readable form). */

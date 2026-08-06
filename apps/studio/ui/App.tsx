@@ -14,6 +14,7 @@ import { CanonFactEditor } from "./CanonFactEditor.js";
 import { CharacterEditor } from "./CharacterEditor.js";
 import { CharacterStateEditor } from "./CharacterStateEditor.js";
 import { FactionEditor } from "./FactionEditor.js";
+import { FieldGuide } from "./FieldGuide.js";
 import { GeneratePanel } from "./GeneratePanel.js";
 import { PreviewRoom } from "./PreviewRoom.js";
 import { QuestEditor } from "./QuestEditor.js";
@@ -464,15 +465,25 @@ export function App() {
 
         <section className="editor">
           {project && selection ? (
-            renderEditor(project, selection, integrityFor, patch, patchCanonFacts)
+            <div style={{ display: "flex", gap: 20, alignItems: "flex-start" }}>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                {renderEditor(project, selection, integrityFor, patch, patchCanonFacts)}
+              </div>
+              <FieldGuide kind={selection.kind} />
+            </div>
           ) : project ? (
-            <GeneratePanel
-              onAccept={(profile) => {
-                setProject({ ...project, characters: [...project.characters, profile] });
-                setSelection({ kind: "character", id: profile.id });
-                setDirty(true);
-              }}
-            />
+            <div style={{ display: "flex", gap: 20, alignItems: "flex-start" }}>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <GeneratePanel
+                  onAccept={(profile) => {
+                    setProject({ ...project, characters: [...project.characters, profile] });
+                    setSelection({ kind: "character", id: profile.id });
+                    setDirty(true);
+                  }}
+                />
+              </div>
+              <FieldGuide kind="generate" />
+            </div>
           ) : (
             <p className="hint">Select an artifact to edit.</p>
           )}

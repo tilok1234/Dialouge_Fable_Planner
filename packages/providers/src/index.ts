@@ -1,10 +1,13 @@
 /**
  * @df/providers — barrel.
  *
- * The AI seam. Per Q-A1, ships ONLY the interface + MockProvider: the app
- * never makes a real LLM call, reads no API key, opens no network socket. A
- * future GLM/Claude/local implementation can satisfy the same interface for
- * anyone who opts in.
+ * The AI seam. Two implementations:
+ *  - MockProvider (default): deterministic, offline, zero-key. What tests and
+ *    CI use; nothing here ever touches a network in the test suite.
+ *  - ClaudeCliProvider (opt-in via DF_PROVIDER=claude): shells out to the
+ *    Claude Code CLI on the user's own subscription login. No API key. Pinned
+ *    to claude-opus-5 by default.
  */
 export * from "./provider.js";
 export * from "./mock-provider.js";
+export * from "./cli-provider.js";

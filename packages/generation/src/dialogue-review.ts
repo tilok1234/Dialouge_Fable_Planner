@@ -46,8 +46,14 @@ export async function reviewDraft(
     reason: issue.reason,
   }));
 
-  // AI-assisted pass.
-  const aiResult = await provider.reviewDialogue({ draft: request.draft, contextPackage: request.contextPackage });
+  // AI-assisted pass. The scene's forbidden facts are injected into the
+  // context so the provider can hunt for SEMANTIC leaks (paraphrase,
+  // implication) that the deterministic id-echo check above cannot see.
+  const reviewContext = {
+    ...(typeof request.contextPackage === "object" && request.contextPackage !== null ? request.contextPackage : {}),
+    forbiddenRevelations: request.scene.forbiddenRevelations,
+  };
+  const aiResult = await provider.reviewDialogue({ draft: request.draft, contextPackage: reviewContext });
   const aiFindings = aiResult.review.findings.map((f) => ({
     id: f.id,
     tier: f.tier,

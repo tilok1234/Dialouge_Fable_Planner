@@ -1,8 +1,9 @@
 # Dialogue Foundry
 
 > A local-first, model-independent **game dialogue authoring system**.
-> Status: **M0 in progress — monorepo scaffolded, `@df/core` landed.**
-> Not yet a usable tool; the foundation is being laid.
+> Status: **M0–M7 landed (MVP frame complete).** The pipeline, editor, and
+> validators work end-to-end; real-model generation is opt-in via the Claude
+> Code CLI (`DF_PROVIDER=claude`), otherwise a deterministic mock is used.
 
 Dialogue Foundry does not generate dialogue from a one-line description. It
 maintains a durable, inspectable model of each character — worldview, knowledge,
@@ -34,9 +35,13 @@ prompting a model cold each time.
 
 ## Current state
 
-Phase 0 produced the **product contract** and the **executable data contract**.
-M0 scaffolds the monorepo and lands `@df/core` (stable IDs, versioning,
-content hashing). No application UI yet. The design docs live in `docs/`:
+All eight milestones (M0–M7) are merged: monorepo + core, schemas + storage,
+the React editor, profile generation, dialogue generation, quest validators,
+the consistency engine, and JSON/CSV export. Honesty note: the milestone
+records in `milestones/` were produced during a compressed AI-driven build,
+not spaced human review gates — treat them as build logs, and treat the
+sample project plus the test suite as the actual evidence. The design docs
+live in `docs/`:
 
 | Deliverable | What it is |
 |-------------|------------|
@@ -50,10 +55,11 @@ content hashing). No application UI yet. The design docs live in `docs/`:
 | `packages/core/` | Stable IDs, versioning, deterministic content hashing (Q-F3), provenance. **22 tests green.** |
 | `samples/quarry-project/` | A hand-authored reference project (3 characters, 5-stage quest, full pipeline trace). **23/23 artifacts validate.** |
 
-Milestones: **M0** (current) scaffolding + core → **M1** schemas complete +
-storage → **M2** local editor → **M3** profile generation → **M4** dialogue
-generation → **M5** quest/boss continuity → **M6** consistency engine → **M7**
-export. Each ends with a human review gate before the next begins.
+What "complete" does NOT yet mean: the pipeline has mostly been exercised
+against the deterministic `MockProvider`. The real test — whether a live
+model stays in voice, produces schema-valid plans, and avoids semantic leaks
+— starts now that `ClaudeCliProvider` exists. Expect the prompts and the
+review gates to evolve under real output.
 
 ## Quickstart
 
@@ -62,13 +68,37 @@ Requires Node 20+ and pnpm 11+.
 ```bash
 pnpm install
 pnpm --filter @df/schemas run build   # @df/core tests import from schemas/dist
-pnpm test                # all packages: 37 tests (15 schema + 22 core)
+pnpm test                # all packages (125 tests, all offline)
 pnpm run validate-samples  # re-check every sample artifact against the schemas
 pnpm run emit-json-schema  # emit draft-07 JSON Schema for the 12 exportable types
 pnpm run ci               # the full gate: typecheck + lint + test + validate-samples
 ```
 
-No network or API key is needed for any of the above.
+No network or API key is needed for any of the above — tests and CI always
+use the deterministic `MockProvider`.
+
+### Generating with a real model (no API key)
+
+If you have [Claude Code](https://claude.com/claude-code) installed and logged
+in with a Claude subscription, the studio can generate through it — usage
+bills against your subscription's limits, not per-token API pricing:
+
+```bash
+node apps/studio/main/server.js --provider claude   # backend, Opus 5
+pnpm --filter studio run dev                        # UI on :5317 (2nd terminal)
+```
+
+(`DF_PROVIDER=claude` as an env var works too, on shells that support it.)
+The model is pinned to `claude-opus-5`; override with `--model <id>` or
+`DF_CLAUDE_MODEL`.
+Subscription login is for **your own individual use** (Anthropic ToS) — anyone
+else running this tool brings their own login or API key. `GET /api/health`
+reports which provider is active.
+
+The backend refuses requests from foreign browser origins, requires JSON
+content-type, and only reads/writes project directories under the repo root
+(extend with `DF_PROJECT_ROOT`, multiple paths joined with the OS path
+delimiter).
 
 ## Project layout
 
@@ -113,8 +143,10 @@ output. A consequence is that you cannot run a `.ts` file directly with
 4. **Separate the durable from the derived.** Permanent identity is distinct
    from mutable state; dialogue is derived from sources and stored apart from
    them, recording the exact versions that produced it.
-5. **Keep the AI behind an interface.** GLM-5.2 is the first provider, not a
-   builtin. Core logic never imports a vendor client.
+5. **Keep the AI behind an interface.** Core logic never imports a vendor
+   client. The deterministic `MockProvider` is the default; `ClaudeCliProvider`
+   (Claude Code CLI on your own subscription) is the first real implementation,
+   and any other model can satisfy the same interface.
 
 ## The reference sample — "The Quarry Seals"
 

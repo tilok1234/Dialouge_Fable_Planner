@@ -15,6 +15,7 @@ import { CharacterEditor } from "./CharacterEditor.js";
 import { CharacterStateEditor } from "./CharacterStateEditor.js";
 import { FactionEditor } from "./FactionEditor.js";
 import { GeneratePanel } from "./GeneratePanel.js";
+import { PreviewRoom } from "./PreviewRoom.js";
 import { QuestEditor } from "./QuestEditor.js";
 import { SceneEditor } from "./SceneEditor.js";
 
@@ -44,6 +45,7 @@ export function App() {
   const [saving, setSaving] = useState(false);
   const [saveError, setSaveError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [preview, setPreview] = useState(false);
 
   // Load project on mount and when dir changes.
   async function load(target = dir) {
@@ -152,6 +154,9 @@ export function App() {
         </button>
         <button onClick={() => void exportFormat("json")} disabled={!project}>Export JSON</button>
         <button onClick={() => void exportFormat("csv")} disabled={!project}>Export CSV</button>
+        <button onClick={() => setPreview((p) => !p)} disabled={!project}>
+          {preview ? "Close preview" : "Preview room"}
+        </button>
         {saveError && <span className="err">save: {saveError}</span>}
       </header>
 
@@ -166,6 +171,9 @@ export function App() {
         </div>
       )}
 
+      {preview && project ? (
+        <PreviewRoom project={project} onClose={() => setPreview(false)} />
+      ) : (
       <main className="layout">
         <aside className="browser">
           {project ? (
@@ -193,6 +201,7 @@ export function App() {
           )}
         </section>
       </main>
+      )}
     </div>
   );
 }

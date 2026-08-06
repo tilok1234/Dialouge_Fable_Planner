@@ -100,6 +100,16 @@ content-type, and only reads/writes project directories under the repo root
 (extend with `DF_PROJECT_ROOT`, multiple paths joined with the OS path
 delimiter).
 
+### Preview room
+
+The studio's **Preview room** button drops the project's characters into a
+small walkable room (WASD/arrows; F to talk — lines come from accepted
+dialogue artifacts, falling back to the profile's voice samples). Sprites are
+served from a local asset directory (`DF_ASSET_DIR` or `--assets <dir>`)
+containing `assembler-pack/` and `assembler-boss-pack/`; the assets are NOT
+part of this repo (private-use license) and without them the preview uses
+labeled placeholders.
+
 ## Project layout
 
 ```

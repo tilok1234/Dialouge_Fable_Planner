@@ -36,8 +36,10 @@
 // Set DF_PROVIDER=claude to use the Claude Code CLI on your subscription
 // (model pinned to claude-opus-5 unless DF_CLAUDE_MODEL overrides it).
 
+import { createReadStream, existsSync } from "node:fs";
+import { readdir, readFile } from "node:fs/promises";
 import { createServer } from "node:http";
-import { delimiter, dirname, isAbsolute, relative, resolve } from "node:path";
+import { delimiter, dirname, extname, isAbsolute, join, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { compileContext } from "@df/context-compiler";
@@ -95,6 +97,66 @@ function insideAllowedRoots(absolute) {
   });
 }
 
+// Optional sprite-asset root for the preview room (--assets / DF_ASSET_DIR).
+// The assets are NOT part of this repo (the user's packs carry a
+// private-use license); the studio only reads them from local disk.
+const ASSET_DIR = (() => {
+  const dir = flag("assets") ?? process.env.DF_ASSET_DIR;
+  return dir ? resolve(dir) : null;
+})();
+
+function insideAssetDir(absolute) {
+  if (!ASSET_DIR) return false;
+  const rel = relative(ASSET_DIR, absolute);
+  return rel !== "" && !rel.startsWith("..") && !isAbsolute(rel);
+}
+
+/**
+ * Build the preview sprite index from the packs under ASSET_DIR:
+ *   assembler-pack/       players + 57 enemy families (24px sheets)
+ *   assembler-boss-pack/  13 bosses (48px per-animation sheets)
+ * Every `sheet` is a path relative to ASSET_DIR, served via /api/assets/.
+ * Missing packs simply produce empty lists — the preview falls back to
+ * placeholder rectangles, it never errors.
+ */
+async function buildAssetIndex() {
+  if (!ASSET_DIR) return { available: false, players: [], enemies: [], bosses: [] };
+  const index = { available: true, players: [], enemies: [], bosses: [] };
+
+  const playersDir = join(ASSET_DIR, "assembler-pack", "players");
+  if (existsSync(playersDir)) {
+    for (const f of await readdir(playersDir)) {
+      if (f.endsWith(".png")) {
+        index.players.push({ id: f.replace(/^character-|\.png$/g, ""), sheet: `assembler-pack/players/${f}` });
+      }
+    }
+  }
+
+  const famIndex = join(ASSET_DIR, "assembler-pack", "indexes", "enemy-families.json");
+  if (existsSync(famIndex)) {
+    const parsed = JSON.parse(await readFile(famIndex, "utf8"));
+    for (const fam of parsed.families ?? []) {
+      const variant = fam.variants?.find((v) => v.id === fam.default_variant) ?? fam.variants?.[0];
+      if (variant?.sheet) {
+        index.enemies.push({ id: fam.id, name: fam.name ?? fam.id, sheet: `assembler-pack/${variant.sheet}` });
+      }
+    }
+  }
+
+  const bossesDir = join(ASSET_DIR, "assembler-boss-pack", "bosses");
+  if (existsSync(bossesDir)) {
+    for (const id of await readdir(bossesDir)) {
+      const idle = `assembler-boss-pack/bosses/${id}/${id}-animation-v1-animation-idle.png`;
+      if (existsSync(join(ASSET_DIR, idle))) {
+        index.bosses.push({ id, sheet: idle });
+      }
+    }
+  }
+  return index;
+}
+
+const ASSET_TYPES = { ".png": "image/png", ".json": "application/json" };
+
 // Resolve a client-supplied dir. Relative paths resolve against the FIRST
 // allowed root (the repo root by default), never against process.cwd() —
 // the server must behave the same no matter which directory launched it.
@@ -149,7 +211,26 @@ const server = createServer(async (req, res) => {
 
   try {
     if (req.method === "GET" && path === "/api/health") {
-      return send(res, 200, { ok: true, service: "dialogue-foundry-studio", provider: provider.id });
+      return send(res, 200, { ok: true, service: "dialogue-foundry-studio", provider: provider.id, assets: !!ASSET_DIR });
+    }
+
+    if (req.method === "GET" && path === "/api/assets-index") {
+      return send(res, 200, await buildAssetIndex());
+    }
+
+    if (req.method === "GET" && path.startsWith("/api/assets/")) {
+      // Static sprite serving, fenced to ASSET_DIR. png/json only.
+      if (!ASSET_DIR) return send(res, 404, { error: "no asset dir configured (set DF_ASSET_DIR or --assets)" });
+      const relPath = decodeURIComponent(path.slice("/api/assets/".length));
+      const absolute = resolve(ASSET_DIR, relPath);
+      const type = ASSET_TYPES[extname(absolute).toLowerCase()];
+      if (!insideAssetDir(absolute) || !type) {
+        return send(res, 403, { error: "asset path not allowed" });
+      }
+      if (!existsSync(absolute)) return send(res, 404, { error: "asset not found" });
+      res.writeHead(200, { "content-type": type, "cache-control": "max-age=3600" });
+      createReadStream(absolute).pipe(res);
+      return;
     }
 
     if (req.method === "POST" && path === "/api/load") {

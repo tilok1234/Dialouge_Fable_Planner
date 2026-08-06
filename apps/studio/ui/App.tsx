@@ -48,6 +48,7 @@ export function App() {
   const [preview, setPreview] = useState(false);
   const [creating, setCreating] = useState(false);
   const [newName, setNewName] = useState("");
+  const [browse, setBrowse] = useState<{ dir: string; id: string; name: string }[] | null>(null);
 
   // Load project on mount and when dir changes.
   async function load(target = dir) {
@@ -368,6 +369,17 @@ export function App() {
           <label>Project dir</label>
           <input value={dirInput} onChange={(e) => setDirInput(e.target.value)} size={50} spellCheck={false} />
           <button type="submit">Load</button>
+          <button
+            type="button"
+            onClick={() => {
+              if (browse) return setBrowse(null);
+              void fetch("/api/projects")
+                .then(async (r) => setBrowse((await r.json()).projects ?? []))
+                .catch(() => setBrowse([]));
+            }}
+          >
+            {browse ? "Hide saves" : "Browse saves…"}
+          </button>
         </form>
         <button className="save" onClick={() => void save()} disabled={!project || saving || !dirty}>
           {saving ? "Saving…" : dirty ? "Save*" : "Saved"}
@@ -380,6 +392,32 @@ export function App() {
         <button onClick={() => setCreating((c) => !c)}>New project</button>
         {saveError && <span className="err">save: {saveError}</span>}
       </header>
+
+      {browse && (
+        <div className="banner">
+          {browse.length === 0 ? (
+            <span className="muted">No saved projects found under the allowed roots.</span>
+          ) : (
+            <ul style={{ display: "flex", flexWrap: "wrap", gap: 8, listStyle: "none", margin: 0, padding: 0 }}>
+              {browse.map((p) => (
+                <li key={p.dir}>
+                  <button
+                    onClick={() => {
+                      if (dirty && !window.confirm("Discard unsaved changes and load this project?")) return;
+                      setBrowse(null);
+                      setDirInput(p.dir);
+                      setDir(p.dir);
+                    }}
+                    title={p.dir}
+                  >
+                    {p.name} <span className="muted">({p.dir})</span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      )}
 
       {creating && (
         <div className="banner">

@@ -96,3 +96,68 @@ describe("compileContext — degraded input", () => {
     expect(warnings.some((w) => w.reason.includes("profile not found"))).toBe(true);
   });
 });
+
+describe("compileContext — knowledge enforcement (M11)", () => {
+  it("warns when no participant knows a required fact", () => {
+    const badScene = { ...scene, requiredFacts: ["fact_golem_created_by_miners"], forbiddenRevelations: [] };
+    const { warnings } = compileContext(source, badScene);
+    expect(warnings.some((w) => w.ref === "fact_golem_created_by_miners" && w.reason.includes("not in any participant's knowledge"))).toBe(true);
+  });
+
+  it("accepts a required fact held as a secret", () => {
+    const golem = source.characters.find((c) => c.id === "char_hornblende_golem")!;
+    const secretive = {
+      ...source,
+      characters: source.characters.map((c) =>
+        c.id === golem.id
+          ? { ...c, knowledge: { ...c.knowledge, knows: [], secrets: ["fact_seals_prevent_excavation"] } }
+          : c,
+      ),
+    };
+    const { warnings } = compileContext(secretive, scene);
+    expect(warnings).toEqual([]);
+  });
+
+  it("accepts a required fact learned in the participant's scene state", () => {
+    const stripped = {
+      ...source,
+      characters: source.characters.map((c) =>
+        c.id === "char_hornblende_golem" ? { ...c, knowledge: { ...c.knowledge, knows: [] } } : c,
+      ),
+      states: source.states.map((s) =>
+        s.id === "state_hornblende_golem__pre_encounter" ? { ...s, factsLearned: ["fact_seals_prevent_excavation"] } : s,
+      ),
+    };
+    const { warnings } = compileContext(stripped, scene);
+    expect(warnings).toEqual([]);
+  });
+
+  it("names the misbeliever when the fact is only in believesFalse", () => {
+    const deluded = {
+      ...source,
+      characters: source.characters.map((c) =>
+        c.id === "char_hornblende_golem"
+          ? { ...c, knowledge: { ...c.knowledge, knows: [], believesFalse: ["fact_seals_prevent_excavation"] } }
+          : c,
+      ),
+    };
+    const { warnings } = compileContext(deluded, scene);
+    expect(warnings.some((w) => w.reason.includes("char_hornblende_golem") && w.reason.includes("believesFalse"))).toBe(true);
+  });
+});
+
+describe("compileContext — terminology (M11)", () => {
+  const terms = [
+    { version: 1, contentHash: "sha256:t1", term: "vein-seal", meaning: { value: "a stoneborn ward", lang: "en" }, factions: ["fac_stoneborn"], tags: [] },
+    { version: 1, contentHash: "sha256:t2", term: "the Taking", meaning: { value: "the industrial mining era", lang: "en" }, factions: [], tags: [] },
+    { version: 1, contentHash: "sha256:t3", term: "ledger-day", meaning: { value: "ash kingdom tax day", lang: "en" }, factions: ["fac_nowhere"], tags: [] },
+  ];
+
+  it("includes global terms and terms of the participants' factions only", () => {
+    const { snapshot } = compileContext({ ...source, terminology: terms }, scene);
+    const picked = snapshot.terminology.map((t) => t.term);
+    expect(picked).toContain("vein-seal"); // golem is stoneborn
+    expect(picked).toContain("the Taking"); // factionless = global
+    expect(picked).not.toContain("ledger-day"); // unrelated faction
+  });
+});

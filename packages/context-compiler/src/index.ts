@@ -29,6 +29,7 @@ import {
   type FactionProfile,
   type RelationshipState,
   type SceneSpecification,
+  type Terminology,
 } from "@df/schemas";
 
 /** The slice of a project the compiler resolves against. */
@@ -38,6 +39,8 @@ export interface ContextSource {
   canonFacts: CanonFact[];
   factions: FactionProfile[];
   relationships: RelationshipState[];
+  /** Project-wide terminology; the writer grounds in faction idiom (Q-F2). */
+  terminology?: Terminology[];
 }
 
 /** A participant with everything the writer needs resolved. */
@@ -49,8 +52,11 @@ export interface ResolvedParticipant {
   state?: CharacterState;
 }
 
-/** Relationship view for prompts: named state + history text, no numbers. */
+/** Relationship view for prompts: named state + history text, no numbers.
+ * id/version ride along for provenance pinning, not for the prompt. */
 export interface RelationshipView {
+  id: string;
+  version: number;
   partyA: string;
   partyB: string;
   namedState?: string;
@@ -67,6 +73,8 @@ export interface ContextSnapshot {
   forbiddenRevelations: string[];
   factions: FactionProfile[];
   relationships: RelationshipView[];
+  /** Faction idiom the writer should ground in ("vein-seal", not "magic door"). */
+  terminology: Terminology[];
 }
 
 export interface CompileWarning {
@@ -130,11 +138,47 @@ export function compileContext(source: ContextSource, scene: SceneSpecification)
     (r) => participantIds.has(r.partyA) || participantIds.has(r.partyB),
   );
   const relationships: RelationshipView[] = relevantRels.map((r) => ({
+    id: r.id,
+    version: r.version,
     partyA: r.partyA,
     partyB: r.partyB,
     namedState: r.namedState,
     recentHistory: r.history.slice(-3).map((h) => h.event.value),
   }));
+
+  // Knowledge enforcement (M11): a required fact someone must SAY has to be
+  // genuinely known by at least one participant — profile `knows`, `secrets`
+  // (they may choose to reveal), or learned during play in their scene state.
+  // Only checked once at least one participant profile resolved; dangling
+  // profiles already warned above.
+  if (participants.some((p) => p.profile)) {
+    for (const factId of scene.requiredFacts) {
+      const knownBySomeone = participants.some((p) => {
+        if (!p.profile) return false;
+        const k = p.profile.knowledge;
+        const learned = p.state?.factsLearned ?? [];
+        return k.knows.includes(factId) || k.secrets.includes(factId) || learned.includes(factId);
+      });
+      if (!knownBySomeone) {
+        const misbeliever = participants.find(
+          (p) => p.profile && (p.profile.knowledge.believesFalse.includes(factId) || p.profile.knowledge.lies.includes(factId)),
+        );
+        warnings.push({
+          ref: factId,
+          reason: misbeliever
+            ? `required fact is only in ${misbeliever.characterId}'s believesFalse/lies — no participant can state it truthfully`
+            : "required fact is not in any participant's knowledge (knows / secrets / state.factsLearned)",
+        });
+      }
+    }
+  }
+
+  // Terminology: faction idiom for the participants' factions + factionless
+  // global terms. Small by construction; the writer grounds vocabulary in it.
+  const selectedFactionIds = new Set(selectedFactions.map((f) => f.id));
+  const terminology = (source.terminology ?? []).filter(
+    (t) => t.factions.length === 0 || t.factions.some((f) => selectedFactionIds.has(f)),
+  );
 
   const snapshot: ContextSnapshot = {
     sceneId: scene.id,
@@ -143,6 +187,7 @@ export function compileContext(source: ContextSource, scene: SceneSpecification)
     forbiddenRevelations: [...scene.forbiddenRevelations],
     factions: selectedFactions,
     relationships,
+    terminology,
   };
 
   // The ref-only artifact. Its contentHash is real (Q-F3) so provenance can

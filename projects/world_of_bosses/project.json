@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "contentHash": "sha256:uncommitted",
+  "id": "project_world_of_bosses",
+  "name": "world-of-bosses",
+  "summary": {
+    "value": "world-of-bosses — a Dialogue Foundry project.",
+    "lang": "en"
+  },
+  "schemaVersion": "1.0.0",
+  "promptTemplateVersion": "1.0.0",
+  "defaultProvider": "claude-cli",
+  "defaultModel": "claude-opus-5",
+  "defaultReasoningEffort": "normal",
+  "locks": {
+    "characterProfileFields": {},
+    "dialogueLines": {},
+    "canonFacts": [],
+    "questFacts": {}
+  },
+  "locKeyPrefix": "world_of_bosses"
+}

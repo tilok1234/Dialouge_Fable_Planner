@@ -279,6 +279,41 @@ describe("studio backend — generate-dialogue (M4, mock only)", () => {
     expect(status).toBe(400);
   });
 
+  it("lists loadable projects via /api/projects (samples included)", async () => {
+    const { status, body } = await req("/api/projects");
+    expect(status).toBe(200);
+    expect(body.projects.some((p) => p.id === "project_quarry_module" && p.dir === "samples/quarry-project")).toBe(true);
+  });
+
+  it("surfaces quest-gating warnings when a stage-bound scene requires a later fact (M11)", async () => {
+    const loaded = await post("/api/load", { dir: sampleDir });
+    const project = loaded.body.data;
+    const golemScene = project.scenes.find((s) => s.id === "scene_golem_first_encounter");
+    // Bind to stage 1 but require the fact revealed only at stage 3 — an
+    // early-revelation authoring mistake. Give the golem the knowledge so the
+    // compiler check stays quiet and the QUEST check is what fires. Forbidden
+    // list emptied so the mock's landsOn line passes the id gate.
+    const badScene = {
+      ...golemScene,
+      boundQuestStages: ["quest_quarry_seals__stage_1"],
+      requiredFacts: ["fact_quarry_was_stoneborn_sacred_site"],
+      forbiddenRevelations: [],
+    };
+    const { status, body } = await post("/api/generate-dialogue", { scene: badScene, project });
+    expect(status).toBe(200);
+    expect(body.warnings.some((w) => w.reason.includes("quest gating") && w.ref === "fact_quarry_was_stoneborn_sacred_site")).toBe(true);
+  });
+
+  it("pins provenance from the compiled context (M11)", async () => {
+    const loaded = await post("/api/load", { dir: sampleDir });
+    const project = loaded.body.data;
+    const golemScene = project.scenes.find((s) => s.id === "scene_golem_first_encounter");
+    const { body } = await post("/api/generate-dialogue", { scene: golemScene, project });
+    const golem = project.characters.find((c) => c.id === "char_hornblende_golem");
+    expect(body.draft.provenance.characterProfiles).toContainEqual({ id: golem.id, version: golem.version });
+    expect(body.draft.provenance.canonSnapshot.length).toBeGreaterThan(0);
+  });
+
   it("compiles real context from the project (M9): profiles reach the provider", async () => {
     const loaded = await post("/api/load", { dir: sampleDir });
     const project = loaded.body.data;

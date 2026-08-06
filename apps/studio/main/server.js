@@ -47,7 +47,7 @@ import { exportJson, exportCsv } from "@df/exporters";
 import { generateProfileDraft, planAndDraft, reviewDraft, repairDraft } from "@df/generation";
 import { mockProvider, ClaudeCliProvider } from "@df/providers";
 import { readProject, writeProject, checkIntegrity } from "@df/storage";
-import { validateQuest, validateKnowledge, simulatePlaythrough } from "@df/validators";
+import { validateKnowledge, validateQuest, simulatePlaythrough } from "@df/validators";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const PORT = Number(process.env.DF_PORT ?? 7317);
@@ -157,6 +157,18 @@ async function buildAssetIndex() {
 
 const ASSET_TYPES = { ".png": "image/png", ".json": "application/json" };
 
+/** Subdirectories of dir, skipping hidden/dependency folders. Never throws. */
+async function safeSubdirs(dir) {
+  try {
+    const entries = await readdir(dir, { withFileTypes: true });
+    return entries
+      .filter((e) => e.isDirectory() && !e.name.startsWith(".") && !["node_modules", "dist", "coverage"].includes(e.name))
+      .map((e) => join(dir, e.name));
+  } catch {
+    return [];
+  }
+}
+
 // Resolve a client-supplied dir. Relative paths resolve against the FIRST
 // allowed root (the repo root by default), never against process.cwd() —
 // the server must behave the same no matter which directory launched it.
@@ -216,6 +228,33 @@ const server = createServer(async (req, res) => {
 
     if (req.method === "GET" && path === "/api/assets-index") {
       return send(res, 200, await buildAssetIndex());
+    }
+
+    if (req.method === "GET" && path === "/api/projects") {
+      // Discover loadable projects: any directory up to two levels below an
+      // allowed root that contains a project.json. Shallow by design.
+      const found = [];
+      for (const root of ALLOWED_ROOTS) {
+        const candidates = [root];
+        for (const level1 of await safeSubdirs(root)) {
+          candidates.push(level1);
+          candidates.push(...(await safeSubdirs(level1)));
+        }
+        for (const dir of candidates) {
+          try {
+            const parsed = JSON.parse(await readFile(join(dir, "project.json"), "utf8"));
+            const rel = relative(ALLOWED_ROOTS[0], dir);
+            found.push({
+              dir: rel && !rel.startsWith("..") && !isAbsolute(rel) ? rel.replaceAll("\\", "/") : dir,
+              id: parsed.id ?? "?",
+              name: parsed.name ?? dir,
+            });
+          } catch {
+            /* not a project dir */
+          }
+        }
+      }
+      return send(res, 200, { projects: found });
     }
 
     if (req.method === "GET" && path.startsWith("/api/assets/")) {
@@ -296,12 +335,25 @@ const server = createServer(async (req, res) => {
             canonFacts: project.canonFacts ?? [],
             factions: project.factions ?? [],
             relationships: project.relationships ?? [],
+            terminology: project.terminology ?? [],
           },
           scene,
         );
         snapshot = compileResult.snapshot;
         compiled = compileResult.contextPackage;
         warnings = compileResult.warnings;
+
+        // M11: quest gating runs automatically when the scene is stage-bound —
+        // an early-revelation mistake surfaces here, not after the model call.
+        const bound = scene.boundQuestStages ?? [];
+        if (bound.length > 0) {
+          for (const quest of project.quests ?? []) {
+            if (!quest.stages.some((s) => bound.includes(s.id))) continue;
+            for (const issue of validateKnowledge(quest, [scene]).issues) {
+              warnings.push({ ref: String(issue.value ?? issue.from), reason: `quest gating (${quest.id}): ${issue.reason}` });
+            }
+          }
+        }
       }
       const result = await planAndDraft(provider, scene, snapshot);
       return send(res, 200, { ...result, contextPackage: compiled, warnings });

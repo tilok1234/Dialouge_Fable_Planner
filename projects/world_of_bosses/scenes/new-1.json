@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "contentHash": "sha256:uncommitted",
+  "id": "scene_new_1",
+  "label": "New scene",
+  "sceneType": "npc-first-greeting",
+  "participants": [
+    {
+      "characterId": "char_todo",
+      "stateId": "state_todo",
+      "relationshipIds": [],
+      "role": "speaker"
+    }
+  ],
+  "boundQuestStages": [],
+  "purpose": {
+    "value": "Why does this scene exist?",
+    "lang": "en"
+  },
+  "requiredFacts": [],
+  "hintableFacts": [],
+  "forbiddenRevelations": [],
+  "emotionalProgression": [
+    {
+      "order": 1,
+      "emotion": "neutral"
+    }
+  ],
+  "maxLength": "short",
+  "availableChoices": [],
+  "templateDefaults": {}
+}

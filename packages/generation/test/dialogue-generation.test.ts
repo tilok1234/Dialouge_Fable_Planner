@@ -130,6 +130,40 @@ describe("planAndDraft — full two-call pipeline", () => {
   });
 });
 
+describe("provenance pinning (M11, constraint #6)", () => {
+  const snapshot = {
+    sceneId: "scene_test",
+    participants: [
+      {
+        characterId: "char_boss",
+        stateId: "state_boss__pre",
+        role: "speaker",
+        profile: { id: "char_boss", version: 3 },
+        state: { id: "state_boss__pre", version: 2 },
+      },
+    ],
+    permittedFacts: [{ id: "fact_required", version: 5 }],
+    factions: [{ id: "fac_stone", version: 1 }],
+    relationships: [{ id: "rel_boss__player", version: 4, partyA: "char_boss", partyB: "player" }],
+  };
+
+  it("pins profile/state/canon/faction/relationship versions from the snapshot", async () => {
+    const { beatPlan } = await planSceneDraft(mock, { scene, contextPackage: snapshot });
+    const { draft } = await generateDialogueDraft(mock, { scene, beatPlan, contextPackage: snapshot });
+    expect(draft.provenance.characterProfiles).toEqual([{ id: "char_boss", version: 3 }]);
+    expect(draft.provenance.characterStates).toEqual([{ id: "state_boss__pre", version: 2 }]);
+    expect(draft.provenance.canonSnapshot).toEqual([{ id: "fact_required", version: 5 }]);
+    expect(draft.provenance.factions).toEqual([{ id: "fac_stone", version: 1 }]);
+    expect(draft.provenance.relationships).toEqual([{ id: "rel_boss__player", version: 4 }]);
+  });
+
+  it("leaves provenance untouched when no compiled snapshot was provided", async () => {
+    const { beatPlan } = await planSceneDraft(mock, { scene, contextPackage: {} });
+    const { draft } = await generateDialogueDraft(mock, { scene, beatPlan, contextPackage: {} });
+    expect(draft.provenance.characterProfiles).toEqual([]);
+  });
+});
+
 // Ensure generateProfileDraft still works (M3 regression — it shares GenerationError).
 describe("M3 regression", () => {
   it("generateProfileDraft still works", async () => {

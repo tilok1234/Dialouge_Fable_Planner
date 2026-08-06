@@ -249,7 +249,7 @@ function renderEditor(
     case "scene": {
       const sc = project.scenes.find((x) => x.id === sel.id);
       if (!sc) return <p className="hint">Scene not found.</p>;
-      return <SceneEditor key={sc.id} scene={sc} integrity={integrityFor(sc.id)} onChange={(fn) => patch(sel.kind, sel.id, fn)} />;
+      return <SceneEditor key={sc.id} scene={sc} integrity={integrityFor(sc.id)} project={project} onChange={(fn) => patch(sel.kind, sel.id, fn)} />;
     }
     case "canon": {
       return <CanonFactEditor key="canon" facts={project.canonFacts} integrityRefs={new Set()} onChange={patchCanonFacts} />;

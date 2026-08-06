@@ -15,6 +15,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@df/context-compiler": "workspace:*",
     "@df/schemas": "workspace:*",
     "@df/storage": "workspace:*",
     "@df/core": "workspace:*",

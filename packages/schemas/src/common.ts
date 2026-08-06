@@ -41,11 +41,11 @@ export const StableIdRegex = /^[a-z][a-z0-9]*_[a-z0-9]+(?:_[a-z0-9]+)*(?:__[a-z0
 export const StableId = z
   .string()
   .min(3)
-  .max(96)
+  .max(128)
   .regex(StableIdRegex, "stable id must be <kind>_<snake_case_slug>, e.g. char_hornblende_golem");
 
 /** A reference to another artifact by stable ID. Never embed; always resolve. */
-export const Ref = z.string().min(3).max(96);
+export const Ref = z.string().min(3).max(128);
 
 /** A stable reference that also pins the version of the thing it points at. */
 export const VersionedRef = z.object({
@@ -89,7 +89,7 @@ export const Lock = z.object({
  * external tooling; `value` is the authored text.
  */
 export const LocalizedText = z.object({
-  key: z.string().min(1).max(96).optional(),
+  key: z.string().min(1).max(128).optional(),
   value: z.string().min(1),
   lang: z.string().min(2).max(16).default("en"),
 });

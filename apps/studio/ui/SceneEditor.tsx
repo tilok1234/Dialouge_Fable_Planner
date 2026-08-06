@@ -27,29 +27,35 @@ interface Props {
   scene: SceneType;
   integrity: { field: string; ref: string }[];
   onChange: (patch: (s: SceneType) => SceneType) => void;
+  /** The loaded project — sent with generate requests so the backend can
+   * compile real context (profiles, states, fact statements) for the scene. */
+  project?: unknown;
 }
 
-export function SceneEditor({ scene, onChange }: Props) {
+export function SceneEditor({ scene, onChange, project }: Props) {
   const validation = useMemo(() => SceneSpecification.safeParse(scene), [scene]);
   const issues = validation.success ? [] : validation.error.issues.slice(0, 8);
   const sc = scene;
   const [generating, setGenerating] = useState(false);
   const [draft, setDraft] = useState<{ lines: { text: { value: string }; speakerId: string }[] } | null>(null);
   const [genError, setGenError] = useState<string | null>(null);
+  const [genWarnings, setGenWarnings] = useState<{ ref: string; reason: string }[]>([]);
 
   async function generateDialogue() {
     setGenerating(true);
     setGenError(null);
     setDraft(null);
+    setGenWarnings([]);
     try {
       const res = await fetch("/api/generate-dialogue", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ scene: sc }),
+        body: JSON.stringify({ scene: sc, project }),
       });
       const body = await res.json();
       if (!res.ok) throw new Error(body.error ?? `generate failed (${res.status})`);
       setDraft(body.draft);
+      setGenWarnings(body.warnings ?? []);
     } catch (e) {
       setGenError((e as Error).message);
     } finally {
@@ -81,11 +87,28 @@ export function SceneEditor({ scene, onChange }: Props) {
       </Section>
 
       <Section title="Generate dialogue (uses the configured provider; Claude takes minutes)">
+        <p className="muted">
+          The context compiler resolves the participants&apos; profiles, states, fact
+          statements, and relationship states from the loaded project — the model
+          writes from those, not from the scene alone.
+        </p>
         <button onClick={() => void generateDialogue()} disabled={generating || !validation.success}>
           {generating ? "Generating…" : "Generate dialogue"}
         </button>
         {!validation.success && <p className="muted">Fix schema errors before generating.</p>}
         {genError && <div className="err">error: {genError}</div>}
+        {genWarnings.length > 0 && (
+          <div className="err">
+            <strong>Context warnings (generation ran anyway):</strong>
+            <ul>
+              {genWarnings.map((w, i) => (
+                <li key={i}>
+                  <code>{w.ref}</code>: {w.reason}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
         {draft && (
           <div className="draft">
             <h3>Generated draft ({draft.lines.length} lines)</h3>

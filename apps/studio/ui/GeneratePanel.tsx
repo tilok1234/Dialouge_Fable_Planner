@@ -57,11 +57,12 @@ export function GeneratePanel({ onAccept }: Props) {
 
   return (
     <div className="generate-panel">
-      <h2>Generate profile (mock — no API key, no cost)</h2>
+      <h2>Generate character profile</h2>
       <p className="muted">
-        Enter a brief. The mock provider picks one of three canned profiles by keyword
-        (boss / quest-giver / merchant). Output is schema-valid; nothing is saved until you
-        Accept and then Save.
+        Enter a brief; the configured provider writes a full profile. With the mock
+        (default) this is instant and canned; with the Claude provider it is a real
+        model call and can take a few minutes. Output is schema-valid; nothing is
+        saved until you Accept and then Save.
       </p>
       <label>
         Brief

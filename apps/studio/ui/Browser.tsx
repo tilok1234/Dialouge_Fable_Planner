@@ -21,7 +21,8 @@ interface Props {
   project: ProjectData;
   integrity: IntegrityIssue[];
   selection: Selection | null;
-  onSelect: (sel: Selection) => void;
+  /** null clears the selection, which shows the generate-character panel. */
+  onSelect: (sel: Selection | null) => void;
 }
 
 export function Browser({ project, integrity, selection, onSelect }: Props) {
@@ -60,6 +61,10 @@ export function Browser({ project, integrity, selection, onSelect }: Props) {
         <strong>{project.project.name}</strong>
         <span className="muted">{project.project.id}</span>
       </div>
+
+      <button className="gen-new" onClick={() => onSelect(null)} disabled={selection === null}>
+        ＋ New character (generate)
+      </button>
 
       {collection("Canon facts", "canon", [{ id: "__list__", label: "world-facts.json", sub: `${project.canonFacts.length} facts` }])}
       {collection(

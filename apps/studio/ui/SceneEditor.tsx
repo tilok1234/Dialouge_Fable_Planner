@@ -80,7 +80,7 @@ export function SceneEditor({ scene, onChange }: Props) {
         <RefListField label="Available choices" values={sc.availableChoices} onChange={(v) => onChange((x) => ({ ...x, availableChoices: v }))} />
       </Section>
 
-      <Section title="Generate dialogue (mock — no key, no cost)">
+      <Section title="Generate dialogue (uses the configured provider; Claude takes minutes)">
         <button onClick={() => void generateDialogue()} disabled={generating || !validation.success}>
           {generating ? "Generating…" : "Generate dialogue"}
         </button>

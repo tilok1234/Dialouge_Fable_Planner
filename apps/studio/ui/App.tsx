@@ -84,6 +84,31 @@ export function App() {
     }
   }
 
+  // Export the project (M7). Fetches JSON or CSV and triggers a download.
+  async function exportFormat(format: "json" | "csv") {
+    if (!project) return;
+    try {
+      const res = await fetch("/api/export", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ project, format }),
+      });
+      const body = await res.json();
+      if (!res.ok) throw new Error(body.error ?? `export failed (${res.status})`);
+      const content = format === "csv" ? body.csv : JSON.stringify(body.json, null, 2) + "\n";
+      const mime = format === "csv" ? "text/csv" : "application/json";
+      const blob = new Blob([content], { type: mime });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${project.project.id}.${format === "csv" ? "csv" : "export.json"}`;
+      a.click();
+      URL.revokeObjectURL(url);
+    } catch (e) {
+      setSaveError(`export: ${(e as Error).message}`);
+    }
+  }
+
   // Generic patch: update one item in any collection by id.
   function patch<T extends { id: string }>(kind: Kind, id: string, fn: (item: T) => T) {
     if (!project) return;
@@ -123,6 +148,8 @@ export function App() {
         <button className="save" onClick={() => void save()} disabled={!project || saving || !dirty}>
           {saving ? "Saving…" : dirty ? "Save*" : "Saved"}
         </button>
+        <button onClick={() => void exportFormat("json")} disabled={!project}>Export JSON</button>
+        <button onClick={() => void exportFormat("csv")} disabled={!project}>Export CSV</button>
         {saveError && <span className="err">save: {saveError}</span>}
       </header>
 

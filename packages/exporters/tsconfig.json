@@ -9,5 +9,5 @@
     "sourceMap": true
   },
   "include": ["src/**/*"],
-  "references": [ { "path": "../schemas" }, { "path": "../core" } ]
+  "references": [ { "path": "../schemas" }, { "path": "../core" }, { "path": "../storage" } ]
 }

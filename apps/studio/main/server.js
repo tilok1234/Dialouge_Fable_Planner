@@ -14,6 +14,7 @@
 //   POST /api/validate-quest   { quest, scenes? }                -> { issues, branches }
 //   POST /api/review-dialogue  { draft, scene, contextPackage? } -> { review }
 //   POST /api/repair-dialogue  { draft, review, lockedLineIds? } -> { draft }
+//   POST /api/export           { project, format?: 'json'|'csv' } -> { json } | { csv }
 //   GET  /api/health                                             -> { ok: true }
 //
 // Runs against the BUILT @df/storage dist. Start after `pnpm --filter
@@ -25,6 +26,7 @@ import { createServer } from "node:http";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { exportJson, exportCsv } from "@df/exporters";
 import { generateProfileDraft, planAndDraft, reviewDraft, repairDraft } from "@df/generation";
 import { mockProvider } from "@df/providers";
 import { readProject, writeProject, checkIntegrity } from "@df/storage";
@@ -144,6 +146,16 @@ const server = createServer(async (req, res) => {
       if (!draft || !review) return send(res, 400, { error: "missing draft or review" });
       const result = await repairDraft(mockProvider, { draft, review, lockedLineIds: lockedLineIds ?? [] });
       return send(res, 200, result);
+    }
+
+    if (req.method === "POST" && path === "/api/export") {
+      // M7: generic JSON + CSV export. Only accepted dialogue leaves the tool.
+      const { project, format } = await readBody(req);
+      if (!project) return send(res, 400, { error: "missing project" });
+      if (format === "csv") {
+        return send(res, 200, { csv: exportCsv(project) });
+      }
+      return send(res, 200, { json: exportJson(project) });
     }
 
     return send(res, 404, { error: "not found" });

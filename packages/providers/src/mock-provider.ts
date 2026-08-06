@@ -15,6 +15,7 @@ import {
   CharacterProfile,
   DialogueArtifact,
   DialogueBeatPlan,
+  DialogueReview,
   type CharacterProfile as CharacterProfileType,
   type DialogueArtifact as DialogueArtifactType,
   type DialogueBeatPlan as DialogueBeatPlanType,
@@ -25,6 +26,8 @@ import type {
   DialogueRequest,
   DialogueResult,
   ProfileRequest,
+  RepairRequest,
+  ReviewRequest,
   ProfileResult,
   RepairResult,
   ReviewResult,
@@ -176,11 +179,108 @@ export class MockProvider implements DialogueAIProvider {
     return { draft: parsed.data, canonProposals: [] };
   }
 
-  async reviewDialogue(): Promise<ReviewResult> {
-    throw new Error("MockProvider.reviewDialogue: not implemented until M6");
+  /**
+   * AI-assisted review (M6). The mock returns canned findings that a real
+   * provider might: a voice-drift note if a line reads "generic fantasy", and a
+   * repetition note if two lines share >40% words. Schema-valid DialogueReview.
+   * The deterministic checks (leak, required-facts, etc.) are run by the
+   * orchestrator in @df/generation, not here — the provider tier is for
+   * semantic judgements only.
+   */
+  async reviewDialogue(request: ReviewRequest): Promise<ReviewResult> {
+    const draft = request.draft;
+    const findings: Array<{
+      id: string;
+      tier: "ai-assisted";
+      type: string;
+      severity: "blocker" | "major" | "minor" | "info";
+      lineId?: string;
+      excerpt?: string;
+      reason: string;
+      suggestedRepair?: { value: string; lang: string };
+    }> = [];
+
+    // Voice drift: flag lines that hit the generic-fantasy anti-pattern.
+    const generic = /foolish mortal|you dare|immense power|minions|my liege/i;
+    for (const line of draft.lines) {
+      if (generic.test(line.text.value)) {
+        findings.push({
+          id: `af${findings.length + 1}`,
+          tier: "ai-assisted",
+          type: "generic-fantasy-phrasing",
+          severity: "minor",
+          lineId: line.id,
+          excerpt: line.text.value.slice(0, 80),
+          reason: "line matches a generic-fantasy anti-sample pattern",
+          suggestedRepair: { value: "The stone remembers your name, though you wish it not to.", lang: "en" },
+        });
+      }
+    }
+
+    // Repetition: flag pairs of lines sharing >40% of non-trivial words.
+    const words = (s: string) => new Set(s.toLowerCase().replace(/[^a-z0-9 ]/g, "").split(/\s+/).filter((w) => w.length > 3));
+    for (let i = 0; i < draft.lines.length; i++) {
+      for (let j = i + 1; j < draft.lines.length; j++) {
+        const a = words(draft.lines[i]!.text.value);
+        const b = words(draft.lines[j]!.text.value);
+        const overlap = [...a].filter((w) => b.has(w)).length;
+        const ratio = a.size === 0 ? 0 : overlap / a.size;
+        if (ratio > 0.4) {
+          findings.push({
+            id: `af${findings.length + 1}`,
+            tier: "ai-assisted",
+            type: "repetition",
+            severity: "minor",
+            lineId: draft.lines[j]!.id,
+            reason: `line ${draft.lines[j]!.id} repeats ${Math.round(ratio * 100)}% of line ${draft.lines[i]!.id}'s wording`,
+          });
+        }
+      }
+    }
+
+    const review = DialogueReview.safeParse({
+      id: `review_${stripPrefix(draft.id, "dlg_")}`,
+      version: 1,
+      contentHash: "sha256:mock-review-uncommitted",
+      artifactId: draft.id,
+      sceneId: draft.sceneId,
+      passed: findings.length === 0,
+      findings,
+      aiTierRan: true,
+      reviewedAt: "2026-08-06T00:00:00.000Z",
+    });
+    if (!review.success) {
+      throw new Error(`MockProvider.reviewDialogue produced an invalid review: ${review.error.issues[0]?.message}`);
+    }
+    return { review: review.data };
   }
-  async repairDialogue(): Promise<RepairResult> {
-    throw new Error("MockProvider.repairDialogue: not implemented until M6");
+
+  /**
+   * Repair (M6): for each finding with a suggestedRepair on a non-locked line,
+   * apply the suggestion. Locked lines (in request.lockedLineIds OR marked
+   * hard-locked on the line) survive byte-for-byte. Schema-valid draft returned.
+   */
+  async repairDialogue(request: RepairRequest): Promise<RepairResult> {
+    const locked = new Set(request.lockedLineIds);
+    const repairs = new Map<string, string>(); // lineId -> suggested text
+    for (const f of request.review.findings) {
+      if (f.lineId && f.suggestedRepair?.value && !locked.has(f.lineId)) {
+        repairs.set(f.lineId, f.suggestedRepair.value);
+      }
+    }
+    const patched: DialogueArtifactType = {
+      ...request.draft,
+      lines: request.draft.lines.map((line) => {
+        if (line.lock?.state === "hard-locked" || locked.has(line.id)) return line; // preserve
+        const text = repairs.get(line.id);
+        return text ? { ...line, text: { ...line.text, value: text } } : line;
+      }),
+    };
+    const parsed = DialogueArtifact.safeParse(patched);
+    if (!parsed.success) {
+      throw new Error(`MockProvider.repairDialogue produced an invalid draft: ${parsed.error.issues[0]?.message}`);
+    }
+    return { draft: parsed.data };
   }
 }
 

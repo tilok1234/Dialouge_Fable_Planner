@@ -12,6 +12,8 @@
 //   POST /api/generate-profile  { brief, idSlug? }               -> { draft } | { error }
 //   POST /api/generate-dialogue { scene, contextPackage? }       -> { beatPlan, draft } | { error }
 //   POST /api/validate-quest   { quest, scenes? }                -> { issues, branches }
+//   POST /api/review-dialogue  { draft, scene, contextPackage? } -> { review }
+//   POST /api/repair-dialogue  { draft, review, lockedLineIds? } -> { draft }
 //   GET  /api/health                                             -> { ok: true }
 //
 // Runs against the BUILT @df/storage dist. Start after `pnpm --filter
@@ -23,7 +25,7 @@ import { createServer } from "node:http";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { generateProfileDraft, planAndDraft } from "@df/generation";
+import { generateProfileDraft, planAndDraft, reviewDraft, repairDraft } from "@df/generation";
 import { mockProvider } from "@df/providers";
 import { readProject, writeProject, checkIntegrity } from "@df/storage";
 import { validateQuest, validateKnowledge, simulatePlaythrough } from "@df/validators";
@@ -126,6 +128,22 @@ const server = createServer(async (req, res) => {
         issues: [...structure.issues, ...knowledge.issues, ...playthrough.issues],
         branches: playthrough.branches,
       });
+    }
+
+    if (req.method === "POST" && path === "/api/review-dialogue") {
+      // M6: deterministic + AI-assisted review of a draft. Returns a DialogueReview.
+      const { draft, scene, contextPackage, previousDraft } = await readBody(req);
+      if (!draft || !scene) return send(res, 400, { error: "missing draft or scene" });
+      const result = await reviewDraft(mockProvider, { draft, scene, contextPackage: contextPackage ?? {}, previousDraft });
+      return send(res, 200, result);
+    }
+
+    if (req.method === "POST" && path === "/api/repair-dialogue") {
+      // M6: apply suggested repairs, preserving locked lines. Returns patched draft.
+      const { draft, review, lockedLineIds } = await readBody(req);
+      if (!draft || !review) return send(res, 400, { error: "missing draft or review" });
+      const result = await repairDraft(mockProvider, { draft, review, lockedLineIds: lockedLineIds ?? [] });
+      return send(res, 200, result);
     }
 
     return send(res, 404, { error: "not found" });

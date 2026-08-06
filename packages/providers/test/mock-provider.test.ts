@@ -145,10 +145,53 @@ describe("MockProvider — planScene + generateDialogue (M4)", () => {
   });
 });
 
-describe("MockProvider — M6 methods still throw clearly", () => {
-  it("reviewDialogue / repairDialogue throw not-implemented-until-M6", async () => {
-    await expect(provider.reviewDialogue({ draft: {} as never, contextPackage: {} })).rejects.toThrow(/M6/);
-    await expect(provider.repairDialogue({ draft: {} as never, review: {} as never, lockedLineIds: [] })).rejects.toThrow(/M6/);
+describe("MockProvider — reviewDialogue + repairDialogue (M6)", () => {
+
+  // A draft with one generic-fantasy line (voice drift) + a clean line.
+  const draft = {
+    id: "dlg_test_m6",
+    version: 1,
+    contentHash: "sha256:draft-m6",
+    sceneId: "scene_test_m6",
+    beatPlanId: "beat_test_m6",
+    contextPackageId: "ctx_test_m6",
+    approvalStatus: "draft" as const,
+    lines: [
+      { id: "l1", speakerId: "char_boss", text: { value: "Foolish mortal! You dare challenge my immense power?", lang: "en" }, humanEdited: false },
+      { id: "l2", speakerId: "char_boss", text: { value: "The stone outlives the sculptor.", lang: "en" }, humanEdited: false },
+    ],
+    provenance: {
+      scene: { id: "scene_test_m6", version: 1 },
+      characterProfiles: [], characterStates: [], relationships: [], factions: [], canonSnapshot: [],
+      schemaVersion: "1.0.0", promptTemplateVersion: "mock-1.0.0",
+      provider: "mock", model: "mock", reasoningEffort: "normal" as const, generatedAt: "2026-08-06T00:00:00.000Z",
+    },
+    stale: false,
+  };
+
+  it("reviewDialogue flags the generic-fantasy line with a suggested repair", async () => {
+    const { review } = await provider.reviewDialogue({ draft, contextPackage: {} });
+    expect(review.findings.length).toBeGreaterThan(0);
+    const voice = review.findings.find((f) => f.type === "generic-fantasy-phrasing");
+    expect(voice).toBeTruthy();
+    expect(voice!.lineId).toBe("l1");
+    expect(voice!.suggestedRepair?.value).toBeTruthy();
+  });
+
+  it("repairDialogue applies the suggested repair to the flagged line", async () => {
+    const { review } = await provider.reviewDialogue({ draft, contextPackage: {} });
+    const { draft: repaired } = await provider.repairDialogue({ draft, review, lockedLineIds: [] });
+    const l1 = repaired.lines.find((l) => l.id === "l1")!;
+    expect(l1.text.value).not.toContain("Foolish mortal");
+  });
+
+  it("repairDialogue preserves locked lines byte-for-byte", async () => {
+    // Mark l2 as hard-locked on the draft; also pass it in lockedLineIds.
+    const lockedDraft = { ...draft, lines: draft.lines.map((l) => l.id === "l2" ? { ...l, lock: { state: "hard-locked" as const } } : l) };
+    const { review } = await provider.reviewDialogue({ draft: lockedDraft, contextPackage: {} });
+    const { draft: repaired } = await provider.repairDialogue({ draft: lockedDraft, review, lockedLineIds: ["l2"] });
+    const l2 = repaired.lines.find((l) => l.id === "l2")!;
+    expect(l2.text.value).toBe("The stone outlives the sculptor.");
   });
 });
 

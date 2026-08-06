@@ -135,6 +135,9 @@ importers:
       '@df/schemas':
         specifier: workspace:*
         version: link:../schemas
+      '@df/validators':
+        specifier: workspace:*
+        version: link:../validators
     devDependencies:
       vitest:
         specifier: ^1.6.0

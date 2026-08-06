@@ -17,7 +17,7 @@
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run"
   },
-  "dependencies": { "@df/schemas": "workspace:*", "@df/core": "workspace:*", "@df/context-compiler": "workspace:*", "@df/providers": "workspace:*" },
+  "dependencies": { "@df/schemas": "workspace:*", "@df/core": "workspace:*", "@df/context-compiler": "workspace:*", "@df/providers": "workspace:*", "@df/validators": "workspace:*" },
   "devDependencies": {
     "vitest": "^1.6.0"
   }

@@ -168,6 +168,36 @@ const GUIDES: Record<string, Guide> = {
     ],
   },
 
+  relationship: {
+    title: "Relationship",
+    intro:
+      "Multi-dimensional state between two parties — never a single friendship score. A character may trust but dislike, respect but fear. The numbers steer which NAMED STATE applies; only the named state reaches the writer.",
+    fields: [
+      { name: "Parties", what: "Usually a character and the player, or two characters. Order is just convention (A = the character whose perspective dominates)." },
+      {
+        name: "Named state",
+        what: "The phrase the writer actually sees. Make it evocative and specific — it does more for the dialogue than all six numbers combined.",
+        example: "“wary-respect”, “hostile-but-indebted”",
+      },
+      {
+        name: "Dimensions",
+        what: "trust, respect, affection, fear, suspicion, debt (positive = they are owed). −100…100. These never reach prompts directly — update them as events happen, then rename the named state when the shape of the relationship changes.",
+      },
+      { name: "History", what: "Compact notes on events that shifted the relationship — NOT transcripts. The last few entries reach the writer as memory." },
+    ],
+  },
+
+  terminology: {
+    title: "Terminology",
+    intro:
+      "The world's own vocabulary. Terms reach the writer's context: faction-scoped terms go to scenes where that faction is present, factionless terms go everywhere. This is how the golem says “vein-seal”, not “magic door”.",
+    fields: [
+      { name: "Term", what: "The in-world word or idiom itself." },
+      { name: "Meaning", what: "What it denotes, so the writer uses it correctly — and so a future you remembers." },
+      { name: "Factions", what: "Whose idiom this is. Leave empty for world-wide vocabulary every character may use." },
+    ],
+  },
+
   generate: {
     title: "Generating a character",
     intro:

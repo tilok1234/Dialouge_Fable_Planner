@@ -46,6 +46,8 @@ export function App() {
   const [saveError, setSaveError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [preview, setPreview] = useState(false);
+  const [creating, setCreating] = useState(false);
+  const [newName, setNewName] = useState("");
 
   // Load project on mount and when dir changes.
   async function load(target = dir) {
@@ -85,6 +87,45 @@ export function App() {
       setSaveError((e as Error).message);
     } finally {
       setSaving(false);
+    }
+  }
+
+  // Create a brand-new empty project on disk under projects/<slug> (relative
+  // dirs resolve against the repo root server-side), then load it.
+  async function createProject() {
+    const name = newName.trim() || "Untitled project";
+    const slug =
+      name.toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "").slice(0, 40) || "untitled";
+    if (dirty && !window.confirm("Discard unsaved changes and create a new project?")) return;
+    const target = `projects/${slug}`;
+    const fresh: ProjectData = {
+      project: {
+        id: `project_${slug}`,
+        version: 1,
+        contentHash: "sha256:uncommitted",
+        name,
+        summary: { value: `${name} — a Dialogue Foundry project.`, lang: "en" },
+        schemaVersion: "1.0.0",
+        promptTemplateVersion: "1.0.0",
+        defaultProvider: "claude-cli",
+        defaultModel: "claude-opus-5",
+        defaultReasoningEffort: "normal",
+        locks: { characterProfileFields: {}, dialogueLines: {}, canonFacts: [], questFacts: {} },
+        locKeyPrefix: slug,
+      },
+      canonFacts: [], terminology: [], timeline: [], factions: [], characters: [], states: [],
+      relationships: [], quests: [], scenes: [], contextPackages: [], beatPlans: [], dialogues: [],
+      reviews: [], proposals: [],
+    };
+    setSaveError(null);
+    try {
+      await api.save(target, fresh);
+      setCreating(false);
+      setNewName("");
+      setDirInput(target);
+      setDir(target); // triggers the load effect
+    } catch (e) {
+      setSaveError(`new project: ${(e as Error).message}`);
     }
   }
 
@@ -157,8 +198,27 @@ export function App() {
         <button onClick={() => setPreview((p) => !p)} disabled={!project}>
           {preview ? "Close preview" : "Preview room"}
         </button>
+        <button onClick={() => setCreating((c) => !c)}>New project</button>
         {saveError && <span className="err">save: {saveError}</span>}
       </header>
+
+      {creating && (
+        <div className="banner">
+          <form
+            style={{ display: "flex", gap: 8, alignItems: "center" }}
+            onSubmit={(e) => {
+              e.preventDefault();
+              void createProject();
+            }}
+          >
+            <label>New project name</label>
+            <input value={newName} onChange={(e) => setNewName(e.target.value)} placeholder="e.g. Harbor of Glass" size={30} autoFocus />
+            <span className="muted">→ projects/{(newName.trim() || "untitled").toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "").slice(0, 40) || "untitled"}</span>
+            <button type="submit" className="save">Create</button>
+            <button type="button" onClick={() => setCreating(false)}>Cancel</button>
+          </form>
+        </div>
+      )}
 
       {loadErrors.length > 0 && (
         <div className="banner err">

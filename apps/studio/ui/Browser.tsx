@@ -15,7 +15,9 @@ type Selection =
   | { kind: "state"; id: string }
   | { kind: "quest"; id: string }
   | { kind: "scene"; id: string }
-  | { kind: "canon"; id: "__list__" };
+  | { kind: "relationship"; id: string }
+  | { kind: "canon"; id: "__list__" }
+  | { kind: "terminology"; id: "__list__" };
 
 interface Props {
   project: ProjectData;
@@ -97,12 +99,18 @@ export function Browser({ project, integrity, selection, onSelect, onAdd }: Prop
         "scene",
         project.scenes.map((s) => ({ id: s.id, label: s.label, sub: s.sceneType })),
       )}
+      {collection(
+        "Relationships",
+        "relationship",
+        project.relationships.map((r) => ({ id: r.id, label: `${r.partyA} ↔ ${r.partyB}`, sub: r.namedState })),
+      )}
+      {collection("Terminology", "terminology", [
+        { id: "__list__", label: "terminology.json", sub: `${project.terminology.length} terms` },
+      ])}
 
-      <h2>Read-only</h2>
+      <h2>Pipeline output (read-only)</h2>
       <ul className="ro-list">
-        <li>terminology ({project.terminology.length})</li>
         <li>timeline ({project.timeline.length})</li>
-        <li>relationships ({project.relationships.length})</li>
         <li>context ({project.contextPackages.length})</li>
         <li>beats ({project.beatPlans.length})</li>
         <li>dialogues ({project.dialogues.length})</li>

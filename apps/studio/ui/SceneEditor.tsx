@@ -30,14 +30,30 @@ interface Props {
   /** The loaded project — sent with generate requests so the backend can
    * compile real context (profiles, states, fact statements) for the scene. */
   project?: unknown;
+  /** Accept the generated bundle into the project (App upserts + marks dirty). */
+  onAcceptDialogue?: (bundle: { dialogue: unknown; beatPlan?: unknown; contextPackage?: unknown; review?: unknown }) => void;
 }
 
-export function SceneEditor({ scene, onChange, project }: Props) {
+/** Loose artifact shapes — full schema-valid JSON from the backend. */
+type DraftJson = { id?: string; lines: { text: { value: string }; speakerId: string }[]; [k: string]: unknown };
+type ReviewJson = {
+  id?: string;
+  passed: boolean;
+  findings: { id: string; type: string; severity: string; lineId?: string; reason: string; suggestedRepair?: { value: string } }[];
+  [k: string]: unknown;
+};
+
+export function SceneEditor({ scene, onChange, project, onAcceptDialogue }: Props) {
   const validation = useMemo(() => SceneSpecification.safeParse(scene), [scene]);
   const issues = validation.success ? [] : validation.error.issues.slice(0, 8);
   const sc = scene;
   const [generating, setGenerating] = useState(false);
-  const [draft, setDraft] = useState<{ lines: { text: { value: string }; speakerId: string }[] } | null>(null);
+  const [draft, setDraft] = useState<DraftJson | null>(null);
+  const [beatPlan, setBeatPlan] = useState<unknown>(null);
+  const [contextPackage, setContextPackage] = useState<unknown>(null);
+  const [review, setReview] = useState<ReviewJson | null>(null);
+  const [repaired, setRepaired] = useState<DraftJson | null>(null);
+  const [accepted, setAccepted] = useState(false);
   const [genError, setGenError] = useState<string | null>(null);
   const [genWarnings, setGenWarnings] = useState<{ ref: string; reason: string }[]>([]);
 
@@ -45,6 +61,11 @@ export function SceneEditor({ scene, onChange, project }: Props) {
     setGenerating(true);
     setGenError(null);
     setDraft(null);
+    setBeatPlan(null);
+    setContextPackage(null);
+    setReview(null);
+    setRepaired(null);
+    setAccepted(false);
     setGenWarnings([]);
     try {
       const res = await fetch("/api/generate-dialogue", {
@@ -55,12 +76,28 @@ export function SceneEditor({ scene, onChange, project }: Props) {
       const body = await res.json();
       if (!res.ok) throw new Error(body.error ?? `generate failed (${res.status})`);
       setDraft(body.draft);
+      setBeatPlan(body.beatPlan ?? null);
+      setContextPackage(body.contextPackage ?? null);
       setGenWarnings(body.warnings ?? []);
     } catch (e) {
       setGenError((e as Error).message);
     } finally {
       setGenerating(false);
     }
+  }
+
+  // Accept: the reviewed/repaired draft becomes project content (constraint
+  // #8's missing half — the human saying yes). Nothing touches disk until Save.
+  function accept() {
+    const finalDraft = repaired ?? draft;
+    if (!finalDraft || !onAcceptDialogue) return;
+    onAcceptDialogue({
+      dialogue: { ...finalDraft, approvalStatus: "accepted", reviewId: review?.id },
+      beatPlan,
+      contextPackage,
+      review,
+    });
+    setAccepted(true);
   }
 
   return (
@@ -111,15 +148,40 @@ export function SceneEditor({ scene, onChange, project }: Props) {
         )}
         {draft && (
           <div className="draft">
-            <h3>Generated draft ({draft.lines.length} lines)</h3>
+            <h3>{repaired ? "Repaired draft" : "Generated draft"} ({(repaired ?? draft).lines.length} lines)</h3>
             <ul>
-              {draft.lines.map((l, i) => (
+              {(repaired ?? draft).lines.map((l, i) => (
                 <li key={i}>
                   <code className="muted">{l.speakerId}:</code> {l.text.value}
                 </li>
               ))}
             </ul>
-            <ReviewPanel draft={draft} scene={sc} />
+            <ReviewPanel
+              draft={repaired ?? draft}
+              scene={sc}
+              review={review}
+              onReview={(r) => {
+                setReview(r);
+                setRepaired(null);
+                setAccepted(false);
+              }}
+              onRepaired={(d) => {
+                setRepaired(d);
+                setAccepted(false);
+              }}
+            />
+            <div className="draft-actions" style={{ marginTop: 10 }}>
+              {accepted ? (
+                <span className="badge ok">accepted ✓ — press Save to persist it</span>
+              ) : (
+                <>
+                  <button className="save" onClick={accept} disabled={!onAcceptDialogue}>
+                    Accept into project
+                  </button>
+                  {!review && <span className="muted"> tip: run the review first — accept records its verdict</span>}
+                </>
+              )}
+            </div>
           </div>
         )}
       </Section>
@@ -127,18 +189,27 @@ export function SceneEditor({ scene, onChange, project }: Props) {
   );
 }
 
-/** Inline review + repair panel shown beneath a generated draft (M6). */
-function ReviewPanel({ draft, scene }: { draft: { lines: { text: { value: string }; speakerId: string }[] }; scene: SceneType }) {
-  const [review, setReview] = useState<{ findings: { id: string; type: string; severity: string; lineId?: string; reason: string; suggestedRepair?: { value: string } }[]; passed: boolean } | null>(null);
+/** Inline review + repair panel beneath a generated draft (M6). State lives
+ * in SceneEditor so Accept can bundle the review with the artifact. */
+function ReviewPanel({
+  draft,
+  scene,
+  review,
+  onReview,
+  onRepaired,
+}: {
+  draft: DraftJson;
+  scene: SceneType;
+  review: ReviewJson | null;
+  onReview: (review: ReviewJson) => void;
+  onRepaired: (draft: DraftJson) => void;
+}) {
   const [reviewing, setReviewing] = useState(false);
-  const [repaired, setRepaired] = useState<{ lines: { text: { value: string }; speakerId: string }[] } | null>(null);
   const [err, setErr] = useState<string | null>(null);
 
   async function runReview() {
     setReviewing(true);
     setErr(null);
-    setReview(null);
-    setRepaired(null);
     try {
       const res = await fetch("/api/review-dialogue", {
         method: "POST",
@@ -147,7 +218,7 @@ function ReviewPanel({ draft, scene }: { draft: { lines: { text: { value: string
       });
       const body = await res.json();
       if (!res.ok) throw new Error(body.error ?? `review failed (${res.status})`);
-      setReview(body.review);
+      onReview(body.review);
     } catch (e) {
       setErr((e as Error).message);
     } finally {
@@ -166,7 +237,7 @@ function ReviewPanel({ draft, scene }: { draft: { lines: { text: { value: string
       });
       const body = await res.json();
       if (!res.ok) throw new Error(body.error ?? `repair failed (${res.status})`);
-      setRepaired(body.draft);
+      onRepaired(body.draft);
     } catch (e) {
       setErr((e as Error).message);
     }
@@ -199,16 +270,6 @@ function ReviewPanel({ draft, scene }: { draft: { lines: { text: { value: string
             <button onClick={() => void runRepair()}>Apply suggested repairs</button>
           )}
         </>
-      )}
-      {repaired && (
-        <div className="draft">
-          <h4>Repaired draft</h4>
-          <ul>
-            {repaired.lines.map((l, i) => (
-              <li key={i}><code className="muted">{l.speakerId}:</code> {l.text.value}</li>
-            ))}
-          </ul>
-        </div>
       )}
     </div>
   );

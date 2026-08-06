@@ -18,7 +18,9 @@ import { FieldGuide } from "./FieldGuide.js";
 import { GeneratePanel } from "./GeneratePanel.js";
 import { PreviewRoom } from "./PreviewRoom.js";
 import { QuestEditor } from "./QuestEditor.js";
+import { RelationshipEditor } from "./RelationshipEditor.js";
 import { SceneEditor } from "./SceneEditor.js";
+import { TerminologyEditor } from "./TerminologyEditor.js";
 
 // Relative dirs are resolved by the backend against the repo root (its first
 // allowed root), regardless of where the server process was launched from.
@@ -31,7 +33,9 @@ type Selection =
   | { kind: "state"; id: string }
   | { kind: "quest"; id: string }
   | { kind: "scene"; id: string }
-  | { kind: "canon"; id: "__list__" }; // canon facts are edited as a list
+  | { kind: "relationship"; id: string }
+  | { kind: "canon"; id: "__list__" } // canon facts are edited as a list
+  | { kind: "terminology"; id: "__list__" }; // so is terminology
 
 type Kind = Selection["kind"];
 
@@ -276,6 +280,39 @@ export function App() {
         setSelection({ kind: "quest", id });
         break;
       }
+      case "relationship": {
+        const a = (selection?.kind === "character" && p.characters.find((c) => c.id === selection.id)) || p.characters[0];
+        if (!a) {
+          setSaveError("create a character first — a relationship needs a party");
+          return;
+        }
+        const base = `rel_${a.id.replace(/^char_/, "")}__player`;
+        let id = base;
+        for (let n = 2; p.relationships.some((r) => r.id === id); n++) id = `${base}_${n}`;
+        const rel: ProjectData["relationships"][number] = {
+          ...versioned,
+          id,
+          partyA: a.id,
+          partyB: "player",
+          dimensions: { trust: 0, respect: 0, affection: 0, fear: 0, suspicion: 0, debt: 0 },
+          history: [],
+        };
+        setProject({ ...p, relationships: [...p.relationships, rel] });
+        setSelection({ kind: "relationship", id });
+        break;
+      }
+      case "terminology": {
+        const term: ProjectData["terminology"][number] = {
+          ...versioned,
+          term: "",
+          meaning: loc("What it means, in-world."),
+          factions: [],
+          tags: [],
+        };
+        setProject({ ...p, terminology: [...p.terminology, term] });
+        setSelection({ kind: "terminology", id: "__list__" });
+        break;
+      }
       case "scene": {
         const speaker = p.characters[0];
         const speakerState = speaker && p.states.find((s) => s.characterId === speaker.id);
@@ -307,6 +344,26 @@ export function App() {
         break;
       }
     }
+    setDirty(true);
+  }
+
+  // Accept a generated dialogue bundle into the project (constraint #8: the
+  // human gate). Upserts by id so re-accepting a regenerated scene replaces
+  // the old artifact instead of duplicating it.
+  function acceptDialogue(bundle: { dialogue: unknown; beatPlan?: unknown; contextPackage?: unknown; review?: unknown }) {
+    if (!project) return;
+    const upsert = <T extends { id: string }>(xs: T[], item: unknown): T[] => {
+      if (!item || typeof (item as T).id !== "string") return xs;
+      const t = item as T;
+      return xs.some((x) => x.id === t.id) ? xs.map((x) => (x.id === t.id ? t : x)) : [...xs, t];
+    };
+    setProject({
+      ...project,
+      dialogues: upsert(project.dialogues, bundle.dialogue),
+      beatPlans: upsert(project.beatPlans, bundle.beatPlan),
+      contextPackages: upsert(project.contextPackages, bundle.contextPackage),
+      reviews: upsert(project.reviews, bundle.review),
+    });
     setDirty(true);
   }
 
@@ -347,10 +404,15 @@ export function App() {
     setDirty(true);
   }
 
-  // Canon facts are an array editor (no single-id selection).
+  // Canon facts + terminology are array editors (no single-id selection).
   function patchCanonFacts(next: ProjectData["canonFacts"]) {
     if (!project) return;
     setProject({ ...project, canonFacts: next });
+    setDirty(true);
+  }
+  function patchTerminology(next: ProjectData["terminology"]) {
+    if (!project) return;
+    setProject({ ...project, terminology: next });
     setDirty(true);
   }
 
@@ -467,7 +529,7 @@ export function App() {
           {project && selection ? (
             <div style={{ display: "flex", gap: 20, alignItems: "flex-start" }}>
               <div style={{ flex: 1, minWidth: 0 }}>
-                {renderEditor(project, selection, integrityFor, patch, patchCanonFacts)}
+                {renderEditor(project, selection, integrityFor, patch, patchCanonFacts, patchTerminology, acceptDialogue)}
               </div>
               <FieldGuide kind={selection.kind} />
             </div>
@@ -502,7 +564,9 @@ function collectionField(kind: Kind): keyof ProjectData {
     case "state": return "states";
     case "quest": return "quests";
     case "scene": return "scenes";
+    case "relationship": return "relationships";
     case "canon": return "canonFacts";
+    case "terminology": return "terminology";
   }
 }
 
@@ -513,6 +577,8 @@ function renderEditor(
   integrityFor: (id: string) => IntegrityIssue[],
   patch: <T extends { id: string }>(kind: Kind, id: string, fn: (item: T) => T) => void,
   patchCanonFacts: (next: ProjectData["canonFacts"]) => void,
+  patchTerminology: (next: ProjectData["terminology"]) => void,
+  acceptDialogue: (bundle: { dialogue: unknown; beatPlan?: unknown; contextPackage?: unknown; review?: unknown }) => void,
 ) {
   switch (sel.kind) {
     case "character": {
@@ -546,10 +612,26 @@ function renderEditor(
     case "scene": {
       const sc = project.scenes.find((x) => x.id === sel.id);
       if (!sc) return <p className="hint">Scene not found.</p>;
-      return <SceneEditor key={sc.id} scene={sc} integrity={integrityFor(sc.id)} project={project} onChange={(fn) => patch(sel.kind, sel.id, fn)} />;
+      return <SceneEditor key={sc.id} scene={sc} integrity={integrityFor(sc.id)} project={project} onChange={(fn) => patch(sel.kind, sel.id, fn)} onAcceptDialogue={acceptDialogue} />;
+    }
+    case "relationship": {
+      const r = project.relationships.find((x) => x.id === sel.id);
+      if (!r) return <p className="hint">Relationship not found.</p>;
+      return (
+        <RelationshipEditor
+          key={r.id}
+          rel={r}
+          characterIds={project.characters.map((c) => c.id)}
+          integrity={integrityFor(r.id)}
+          onChange={(fn) => patch(sel.kind, sel.id, fn)}
+        />
+      );
     }
     case "canon": {
       return <CanonFactEditor key="canon" facts={project.canonFacts} integrityRefs={new Set()} onChange={patchCanonFacts} />;
+    }
+    case "terminology": {
+      return <TerminologyEditor key="terminology" terms={project.terminology} onChange={patchTerminology} />;
     }
   }
 }

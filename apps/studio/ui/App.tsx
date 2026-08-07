@@ -18,6 +18,7 @@ import { FactionEditor } from "./FactionEditor.js";
 import { FieldGuide } from "./FieldGuide.js";
 import { GeneratePanel } from "./GeneratePanel.js";
 import { PreviewRoom } from "./PreviewRoom.js";
+import { ProviderPicker } from "./ProviderPicker.js";
 import { QuestEditor } from "./QuestEditor.js";
 import { RelationshipEditor } from "./RelationshipEditor.js";
 import { SceneEditor } from "./SceneEditor.js";
@@ -496,6 +497,7 @@ export function App() {
           {batch ? "Close batch" : "Batch generate"}
         </button>
         <button onClick={() => setCreating((c) => !c)}>New project</button>
+        <ProviderPicker />
         {saveError && <span className="err">save: {saveError}</span>}
       </header>
 

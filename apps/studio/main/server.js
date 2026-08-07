@@ -67,9 +67,15 @@ if (!["mock", "claude"].includes(providerName)) {
   console.error(`[studio] unknown provider "${providerName}" (use mock or claude)`);
   process.exit(1);
 }
+// The CLI command is overridable (--claude-cmd / DF_CLAUDE_CMD) so any
+// Claude-Code-compatible CLI (kimi, glm, etc. — same -p/--output-format
+// flags) can sit behind the same provider. Pair it with --model.
 const provider =
   providerName === "claude"
-    ? new ClaudeCliProvider({ model: flag("model") ?? process.env.DF_CLAUDE_MODEL })
+    ? new ClaudeCliProvider({
+        model: flag("model") ?? process.env.DF_CLAUDE_MODEL,
+        command: flag("claude-cmd") ?? process.env.DF_CLAUDE_CMD,
+      })
     : mockProvider;
 
 // Origins allowed to make requests (the Vite dev UI, plus DF_ALLOW_ORIGIN).

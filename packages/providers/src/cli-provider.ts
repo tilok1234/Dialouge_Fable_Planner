@@ -83,6 +83,7 @@ export class ClaudeCliProvider implements DialogueAIProvider {
   private readonly command: string;
   private readonly timeoutMs: number;
   private readonly runner: CliRunner;
+  private readonly baseArgs: string[];
 
   constructor(options: ClaudeCliOptions = {}) {
     this.model = options.model ?? "claude-opus-5";
@@ -92,6 +93,11 @@ export class ClaudeCliProvider implements DialogueAIProvider {
     this.command = options.command ?? "claude";
     this.timeoutMs = options.timeoutMs ?? 300_000;
     this.runner = options.runner ?? defaultRunner(this.command, options.env);
+    // Custom endpoint (env override) → `--bare`: the CLI must never read the
+    // saved claude.ai login, or it hangs on an interactive auth-conflict
+    // prompt (headless can't answer it). Without an env override the saved
+    // login IS the auth — no --bare there.
+    this.baseArgs = ["-p", "--output-format", "json", "--model", this.model, ...(options.env ? ["--bare"] : [])];
   }
 
   async generateProfile(request: ProfileRequest): Promise<ProfileResult> {
@@ -217,11 +223,7 @@ export class ClaudeCliProvider implements DialogueAIProvider {
       const prompt = attempt === 0
         ? basePrompt
         : `${basePrompt}\n\nYour previous reply failed schema validation: ${lastError}\nReturn ONLY the corrected JSON object.`;
-      const stdout = await this.runner(
-        ["-p", "--output-format", "json", "--model", this.model],
-        prompt,
-        this.timeoutMs,
-      );
+      const stdout = await this.runner(this.baseArgs, prompt, this.timeoutMs);
       const raw = extractJsonObject(resultText(stdout));
       lastRaw = raw;
       const parsed = schema.safeParse(raw);
@@ -306,7 +308,12 @@ function defaultRunner(command: string, extraEnv?: Record<string, string>): CliR
       child.on("close", (code) => {
         clearTimeout(timer);
         if (code === 0) fulfil(stdout);
-        else reject(new CliProviderError(`claude CLI exited ${code}: ${stderr.slice(0, 500)}`, stderr));
+        else {
+          // In -p mode the CLI reports run failures (auth, endpoint errors)
+          // on STDOUT; flag errors go to stderr. Surface both.
+          const detail = [stderr.trim(), stdout.trim()].filter(Boolean).join(" | ").slice(0, 500);
+          reject(new CliProviderError(`${command} exited ${code}: ${detail || "(no output)"}`, { stdout, stderr }));
+        }
       });
       child.stdin.end(stdin, "utf8");
     });

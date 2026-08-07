@@ -70,13 +70,20 @@ if (!["mock", "claude"].includes(providerName)) {
 // The CLI command is overridable (--claude-cmd / DF_CLAUDE_CMD) so any
 // Claude-Code-compatible CLI (kimi, glm, etc. — same -p/--output-format
 // flags) can sit behind the same provider. Pair it with --model.
-const provider =
+//
+// `provider` is MUTABLE: POST /api/provider switches it at runtime (the UI's
+// provider picker). Flags/env only set the boot default; a restart reverts.
+let provider =
   providerName === "claude"
     ? new ClaudeCliProvider({
         model: flag("model") ?? process.env.DF_CLAUDE_MODEL,
         command: flag("claude-cmd") ?? process.env.DF_CLAUDE_CMD,
       })
     : mockProvider;
+
+// A CLI command becomes part of a spawned command line (shell:true on
+// Windows) — keep it to path-ish characters, no shell metacharacters.
+const CLI_CMD_RE = /^[a-zA-Z0-9 ._\\/:-]+$/;
 
 // Origins allowed to make requests (the Vite dev UI, plus DF_ALLOW_ORIGIN).
 // Requests with NO Origin header (curl, tests, local scripts) are allowed —
@@ -229,7 +236,35 @@ const server = createServer(async (req, res) => {
 
   try {
     if (req.method === "GET" && path === "/api/health") {
-      return send(res, 200, { ok: true, service: "dialogue-foundry-studio", provider: provider.id, assets: !!ASSET_DIR });
+      return send(res, 200, {
+        ok: true,
+        service: "dialogue-foundry-studio",
+        provider: provider.id,
+        model: provider.model,
+        assets: !!ASSET_DIR,
+      });
+    }
+
+    if (req.method === "POST" && path === "/api/provider") {
+      // Runtime provider switch (the UI picker). Local tool, origin-fenced;
+      // the command charset check keeps the spawned command line boring.
+      const { name, command, model } = await readBody(req);
+      if (name === "mock") {
+        provider = mockProvider;
+        return send(res, 200, { provider: provider.id });
+      }
+      if (name === "claude") {
+        if (command !== undefined && (typeof command !== "string" || !CLI_CMD_RE.test(command))) {
+          return send(res, 400, { error: "command may only contain letters, digits, spaces, . _ / \\ : -" });
+        }
+        try {
+          provider = new ClaudeCliProvider({ command, model });
+        } catch (e) {
+          return send(res, 400, { error: e.message });
+        }
+        return send(res, 200, { provider: provider.id, model: provider.model, command: command ?? "claude" });
+      }
+      return send(res, 400, { error: `unknown provider "${name}" (mock | claude)` });
     }
 
     if (req.method === "GET" && path === "/api/assets-index") {

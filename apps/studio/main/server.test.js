@@ -147,6 +147,38 @@ describe("studio backend — browser hardening", () => {
   });
 });
 
+describe("studio backend — runtime provider switch (M15)", () => {
+  afterAll(async () => {
+    // Leave the shared server on the mock for the other suites.
+    await post("/api/provider", { name: "mock" });
+  });
+
+  it("switches to a CLI provider and reports it on health", async () => {
+    const { status, body } = await post("/api/provider", { name: "claude", command: "claude", model: "kimi-k3" });
+    expect(status).toBe(200);
+    expect(body.provider).toBe("claude-cli");
+    expect(body.model).toBe("kimi-k3");
+    const health = await (await fetch(base + "/api/health")).json();
+    expect(health.provider).toBe("claude-cli");
+    expect(health.model).toBe("kimi-k3");
+  });
+
+  it("switches back to mock", async () => {
+    const { body } = await post("/api/provider", { name: "mock" });
+    expect(body.provider).toBe("mock");
+  });
+
+  it("rejects shell metacharacters in the command", async () => {
+    const { status } = await post("/api/provider", { name: "claude", command: "claude && del /f" });
+    expect(status).toBe(400);
+  });
+
+  it("rejects a malformed model id and unknown providers", async () => {
+    expect((await post("/api/provider", { name: "claude", model: "bad model; rm" })).status).toBe(400);
+    expect((await post("/api/provider", { name: "gpt" })).status).toBe(400);
+  });
+});
+
 describe("studio backend — preview assets", () => {
   // A second server instance with DF_ASSET_DIR pointing at a fake pack tree.
   const PORT2 = String(18400 + Math.floor(Math.random() * 1000));

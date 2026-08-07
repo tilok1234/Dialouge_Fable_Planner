@@ -132,7 +132,8 @@ export function BatchPanel({ project, onBundleSaved, onAcceptAllPassed, onClose 
       <p className="muted" style={{ maxWidth: 720 }}>
         Each scene runs generate → review and is saved as a REVIEWED draft immediately (progress survives reloads).
         Nothing is accepted automatically — sweep the results below when the queue finishes. With a real model each
-        scene takes minutes; leave the tab open.
+        scene takes minutes; leave the tab open. The engine picker in the top bar controls which model this queue
+        burns — check it before starting a long run.
       </p>
 
       <div style={{ display: "flex", gap: 8, marginBottom: 10 }}>

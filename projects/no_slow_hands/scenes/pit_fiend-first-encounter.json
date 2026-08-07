@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "contentHash": "sha256:scene-pit_fiend-first-enc-v1",
+  "id": "scene_pit_fiend_first_encounter",
+  "label": "Pit-Fiend Juggernaut first encounter",
+  "sceneType": "boss-first-encounter",
+  "participants": [
+    {
+      "characterId": "char_pit_fiend_juggernaut",
+      "stateId": "state_pit_fiend_juggernaut__pre_encounter",
+      "relationshipIds": [
+        "rel_pit_fiend_juggernaut__player"
+      ],
+      "role": "speaker"
+    }
+  ],
+  "boundQuestStages": [
+    "quest_epilogue_false_history__stage_2"
+  ],
+  "purpose": {
+    "key": "scene_pit_fiend_first_enc_purpose",
+    "value": "Word of the ten realms' fall has reached the Pit-Fiend Juggernaut; it meets the hero with dread and sheer mass — and still offers the law's fair warning first.",
+    "lang": "en"
+  },
+  "requiredFacts": [
+    "fact_law_of_fair_warning"
+  ],
+  "hintableFacts": [
+    "fact_pit_fiend_is_rescue_guardian"
+  ],
+  "forbiddenRevelations": [
+    "fact_book_is_childrens_comedy"
+  ],
+  "emotionalProgression": [
+    {
+      "order": 1,
+      "emotion": "dread-tinged courtesy",
+      "note": "It knows exactly what happened to the ten guardians."
+    },
+    {
+      "order": 2,
+      "emotion": "resolute warning",
+      "note": "Mass and warning together: turn back, or be turned."
+    }
+  ],
+  "maxLength": "medium",
+  "availableChoices": [],
+  "templateDefaults": {
+    "bossFirstEncounter": {
+      "mustOfferMercy": true,
+      "mustNotRevealWeakness": true
+    }
+  },
+  "notes": "The bench guardians have heard what happened to the ten realms; the dread is informed, not naive. The fair warning still comes first. True role (cave-in rescue in the deep settlements) may be hinted to the player; the hero reads only a monster."
+}

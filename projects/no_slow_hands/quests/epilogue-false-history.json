@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-quest-epilogue-false-history-v1",
+  "id": "quest_epilogue_false_history",
+  "name": "The World Is Not Safe Yet",
+  "premise": {
+    "key": "quest_epilogue_false_history_premise",
+    "value": "The hero expects to find the source of all evil behind the final door. Instead he finds an untouched diplomatic reception hall prepared thousands of years ago for the first visitor from outside — gifts from all ten realms, a table set for a peace feast, a faded banner reading 'WELCOME, FRIEND BEYOND THE GATE.' He studies the evidence and concludes the deception is even greater than he feared.",
+    "lang": "en"
+  },
+  "objectiveTruth": "fact_reception_hall_awaits_first_visitor",
+  "playerInitialKnowledge": [
+    "fact_no_monster_ever_crossed_gates"
+  ],
+  "characterKnowledge": [
+    {
+      "characterId": "char_abyssal_crown_kraken",
+      "knows": [
+        "fact_kraken_is_reef_keeper",
+        "fact_law_of_fair_warning",
+        "fact_continuance_restores_dead"
+      ]
+    },
+    {
+      "characterId": "char_cyclops_forge_titan",
+      "knows": [
+        "fact_forge_titan_is_legendary_builder",
+        "fact_law_of_fair_warning",
+        "fact_continuance_restores_dead"
+      ]
+    },
+    {
+      "characterId": "char_pit_fiend_juggernaut",
+      "knows": [
+        "fact_pit_fiend_is_rescue_guardian",
+        "fact_law_of_fair_warning",
+        "fact_continuance_restores_dead"
+      ]
+    }
+  ],
+  "stages": [
+    {
+      "id": "quest_epilogue_false_history__stage_0",
+      "order": 0,
+      "label": "The last door",
+      "entryCondition": "quest_rung_10_scorpion_empress__stage_5 complete — the reception hall stands revealed beyond the Scorpion-Empress's hall. Cross-file dependency, recorded as natural language.",
+      "completionCondition": "The hero steps through the last door and takes in the gifts, the set table, the banner, and the murals of the ten guardians helping one another.",
+      "factsRevealedToPlayer": [
+        "fact_reception_hall_awaits_first_visitor"
+      ],
+      "transitionsTo": [
+        "quest_epilogue_false_history__stage_1"
+      ],
+      "scenes": [],
+      "notes": "The Colossus building bridges, the Tide-Man ending a flood, the Griffin guiding travelers, the Dryad restoring burned land, the Reliquary King preserving the names of the dead — all of it on the walls."
+    },
+    {
+      "id": "quest_epilogue_false_history__stage_1",
+      "order": 1,
+      "label": "The verdict",
+      "entryCondition": "The hero has seen the reception hall.",
+      "completionCondition": "The hero studies the evidence carefully and delivers his verdict: 'A false history. Their deception is even greater than I feared.'",
+      "factsRevealedToPlayer": [],
+      "transitionsTo": [
+        "quest_epilogue_false_history__stage_2"
+      ],
+      "scenes": [
+        "scene_reception_hall"
+      ],
+      "notes": "Every fact he needs is on the table in front of him; the amulet translates the banner flawlessly. The dramatic irony lands here and he does not. scene_reception_hall is shared with quest_rung_10_scorpion_empress__stage_5; boundQuestStages is an array, so one scene binds to both quest stages."
+    },
+    {
+      "id": "quest_epilogue_false_history__stage_2",
+      "order": 2,
+      "label": "The bench road",
+      "entryCondition": "The verdict is delivered.",
+      "completionCondition": "A new road opens toward the Abyssal-Crown Kraken, the Cyclops Forge-Titan, and the Pit-Fiend Juggernaut. The hero smiles. 'The world is not safe yet.'",
+      "factsRevealedToPlayer": [
+        "fact_kraken_is_reef_keeper",
+        "fact_forge_titan_is_legendary_builder",
+        "fact_pit_fiend_is_rescue_guardian"
+      ],
+      "transitionsTo": [],
+      "scenes": [],
+      "notes": "The bench bosses' frightening names are titles from his own journal, not objective descriptions. Their identity facts are revealed to the PLAYER here as the next frontier; the hero learns nothing. Terminal stage of the shipped ladder."
+    }
+  ],
+  "choices": [],
+  "participatingCharacters": [
+    "char_abyssal_crown_kraken",
+    "char_cyclops_forge_titan",
+    "char_pit_fiend_juggernaut",
+    "char_protagonist"
+  ],
+  "tags": [
+    "quest",
+    "epilogue",
+    "endgame",
+    "dramatic-irony"
+  ],
+  "notes": "choices is intentionally empty: the schema allows it (default []), so the conditional 'accept the feast' choice is omitted rather than modeled against a peace outcome no stage represents. If a 'sit at the table' stage is ever authored, add choice_epilogue_accept_the_feast here."
+}

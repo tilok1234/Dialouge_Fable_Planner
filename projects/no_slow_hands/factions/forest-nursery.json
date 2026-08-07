@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-fac-forest-nursery-v1",
+  "id": "fac_forest_nursery",
+  "name": "The Verdant Ward Nursery",
+  "summary": {
+    "key": "fac_forest_nursery_summary",
+    "value": "The keepers of the Verdant Ward's vast forest nursery, led by the Dryad of Nature. They raise saplings, restore burned land, and protect nesting grounds. Her curving projectiles are grown to bend around ancient trees and steer intruders away from the nests — she only bends shots around cover because the hero keeps hiding near vulnerable trees.",
+    "lang": "en"
+  },
+  "sharedBeliefs": [
+    "fact_realms_peaceful_ten_millennia",
+    "fact_law_of_fair_warning",
+    "fact_continuance_restores_dead",
+    "fact_dryad_is_nursery_keeper"
+  ],
+  "sharedOpinions": [
+    {
+      "target": "char_protagonist",
+      "position": "frightened",
+      "reason": "He shelters against the oldest trunks as if the trees were shields. Every curved shot is us begging him to stand somewhere safer."
+    },
+    {
+      "target": "fac_fungal_field_commons",
+      "position": "friendly",
+      "reason": "Their pollinators service our young groves; their gardeners trained half our apprentices."
+    },
+    {
+      "target": "fac_mire_wetlands",
+      "position": "friendly",
+      "reason": "The mire's waters feed our roots. Nursery and fen are one watershed with two temperaments."
+    }
+  ],
+  "metaphorDomain": {
+    "source": "growth, roots, seasons, grafting",
+    "examples": [
+      {
+        "key": "fac_forest_nursery_metaphor_1",
+        "value": "You cannot hurry a seed; you can only keep faith with it.",
+        "lang": "en"
+      },
+      {
+        "key": "fac_forest_nursery_metaphor_2",
+        "value": "An old tree is a library that reads you back.",
+        "lang": "en"
+      }
+    ]
+  },
+  "terminology": [
+    {
+      "term": "the tending",
+      "meaning": {
+        "key": "fac_forest_nursery_term_tending",
+        "value": "The centuries-long work of raising a grove from seed to canopy. A keeper may tend a tree their grandchildren's grandchildren will sit under.",
+        "lang": "en"
+      }
+    },
+    {
+      "term": "curved path",
+      "meaning": {
+        "key": "fac_forest_nursery_term_curved_path",
+        "value": "Their doctrine that even defense should bend around what is fragile. Every projectile in the Ward is grown to obey it.",
+        "lang": "en"
+      }
+    }
+  ],
+  "customs": [
+    {
+      "key": "fac_forest_nursery_custom_planting",
+      "value": "A keeper plants one tree for every visitor the Ward receives, so the forest remembers guests kindly even when they do not deserve it.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_forest_nursery_custom_nests",
+      "value": "During nesting season, whole paths are closed and rerouted. No errand outranks a nest.",
+      "lang": "en"
+    }
+  ],
+  "taboos": [
+    {
+      "key": "fac_forest_nursery_taboo_fire",
+      "value": "Never carry open flame beneath the canopy. Burned land is restored, but the keeper who lit it is not easily restored with.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_forest_nursery_taboo_ancients",
+      "value": "Never strike, carve, or shelter behind an ancient tree in a fight. The Dryad will curve the very air around it — the hero mistakes this for sorcery.",
+      "lang": "en"
+    }
+  ],
+  "tags": [
+    "faction",
+    "realm-people",
+    "verdant-ward",
+    "rung-6"
+  ]
+}

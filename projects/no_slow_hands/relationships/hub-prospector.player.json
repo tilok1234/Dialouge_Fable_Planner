@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-rel-hub-prospector-player-v1",
+  "id": "rel_hub_prospector__player",
+  "partyA": "char_hub_prospector",
+  "partyB": "player",
+  "dimensions": {
+    "trust": -20,
+    "respect": 0,
+    "affection": 5,
+    "fear": 15,
+    "suspicion": 35,
+    "debt": 0
+  },
+  "namedState": "patient-reidentification",
+  "history": [
+    {
+      "event": {
+        "key": "rel_hub_prospector_h1",
+        "value": "First banked haul: Joren identified every 'dark shard' aloud — heating stone, cracked, goblin make, nursery grade. The protagonist wrote 'demon embers' in his journal and asked about resale.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -10,
+        "affection": 5,
+        "suspicion": 20
+      }
+    },
+    {
+      "event": {
+        "key": "rel_hub_prospector_h2",
+        "value": "A fragment came in off a memorial lamp, still warm, with the family's mark on it; the hero asked what it grades at. Joren refused to grade it and told him whose shelf it sat on. Identification is where he draws the line.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -10,
+        "fear": 15,
+        "suspicion": 15
+      }
+    }
+  ],
+  "notes": "Modeled at the EARLY/default state: patient re-identification — 'That is not a dark shard, friend. That is an irrigation rune.' One of the five NPCs with the most Witness Glass exposure (every banked shard lands on his table), so suspicion 35 runs hot for the early arc. Escalation per profile: mid-arc he names the original owner of each piece; late-runs he sets the shards out in a row and makes the hero walk past them — 'Bowl. Toy. Fishing hook. Family portrait. Shall I grade the portrait?' Affection 5 persists because the man is likeable, brave, and courteous; that is the horror. Softens only if the hero ever hands a shard back. Deltas sum to current dimensions."
+}

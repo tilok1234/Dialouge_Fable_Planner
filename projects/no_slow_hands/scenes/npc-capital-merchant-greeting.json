@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "contentHash": "sha256:scene-npc-capital-merchant-greeting-v1",
+  "id": "scene_npc_capital_merchant_greeting",
+  "label": "Mira Fenwick's first greeting — protection, not permission",
+  "sceneType": "npc-first-greeting",
+  "participants": [
+    {
+      "characterId": "char_capital_merchant",
+      "stateId": "state_capital_merchant__default",
+      "relationshipIds": [
+        "rel_capital_merchant__player"
+      ],
+      "role": "speaker"
+    }
+  ],
+  "boundQuestStages": [],
+  "purpose": {
+    "key": "scene_npc_capital_merchant_greeting_purpose",
+    "value": "Fenwick sells the hero good kit with bright patter and one hook in it: protective equipment is protection, not permission to invade another realm — nothing on her shelves is.",
+    "lang": "en"
+  },
+  "requiredFacts": [],
+  "hintableFacts": [],
+  "forbiddenRevelations": [],
+  "emotionalProgression": [
+    {
+      "order": 1,
+      "emotion": "bright patter",
+      "note": "Best kit in the capital, fitted and flattered; the sales patter never quite covers the opinion."
+    },
+    {
+      "order": 2,
+      "emotion": "pointed lecture",
+      "note": "Greaves are not a warrant. The word on the tag is 'protection'. The other purchase she does not stock."
+    },
+    {
+      "order": 3,
+      "emotion": "stung silence",
+      "note": "He hears the warning as a merchant's blessing on the crusade; she completes the sale and quietly logs the coin as evidence against herself."
+    }
+  ],
+  "maxLength": "short",
+  "availableChoices": [],
+  "templateDefaults": {
+    "npcGreeting": {
+      "neverValidateProphecyFraming": true
+    }
+  },
+  "notes": "Misunderstanding pair: her 'protection is not permission' is heard as 'even the merchants believe in me'. Deliberately NO required facts — the protection-is-not-permission truth has no canon fact id, so purpose text carries it. fact_law_of_fair_warning is the wrong register for her and is not used. Her contradiction: she sells anyway; her refusal line is weapons whose only purpose is killing. Never validate the hero's prophecy framing: there is no canon fact supporting 'the realms are evil', and that absence is itself the guard."
+}

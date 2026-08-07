@@ -1,0 +1,40 @@
+{
+  "id": "state_abyssal_crown_kraken__pre_encounter",
+  "characterId": "char_abyssal_crown_kraken",
+  "label": "Pre-encounter — news down the currents",
+  "mood": "dreadful calm, bracing",
+  "location": "The ocean realm, the reef commons",
+  "injuries": [],
+  "activeQuestStages": [],
+  "recentEvents": [
+    {
+      "key": "nsh_state_abyssal_crown_kraken_pre_ev1",
+      "value": "Word has come down the currents: ten gates forced, ten guardians fallen and returned, one armed swimmer who answers pleas with a battle cry.",
+      "lang": "en"
+    },
+    {
+      "key": "nsh_state_abyssal_crown_kraken_pre_ev2",
+      "value": "It has begun steering storms off the reefs earlier, and towing the far fishing boats home without being asked.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_abyssal_crown_kraken_pre_cf1",
+      "value": "The hero's road points seaward now. It has carried three hundred ships to safe water and cannot tow the one that matters.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-abyssal-crown-kraken-pre-encounter-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_abyssal_crown_kraken_pre_obj",
+    "value": "Brace the reef commons for the day the road opens toward the sea.",
+    "lang": "en"
+  },
+  "phase": "pre-encounter",
+  "notes": "Future content (rungs 11+); no quest stages exist yet, so activeQuestStages is empty. News travels between the realms — this is distant awareness, not contact."
+}

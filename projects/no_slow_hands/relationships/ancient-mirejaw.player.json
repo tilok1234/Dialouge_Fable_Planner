@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-rel-ancient-mirejaw-player-v1",
+  "id": "rel_ancient_mirejaw__player",
+  "partyA": "char_ancient_mirejaw",
+  "partyB": "player",
+  "dimensions": {
+    "trust": -30,
+    "respect": 0,
+    "affection": -10,
+    "fear": 50,
+    "suspicion": 20,
+    "debt": 0
+  },
+  "namedState": "registered-intrusion",
+  "history": [
+    {
+      "event": {
+        "key": "rel_ancient_mirejaw_h1",
+        "value": "A splashing in the water. The Poolwarden surfaced where he waded and showed him the bank — 'Out of the pools.' That was its entire first argument.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "fear": 15,
+        "suspicion": 10
+      }
+    },
+    {
+      "event": {
+        "key": "rel_ancient_mirejaw_h2",
+        "value": "First fight: the mire itself rose beneath him and carried him toward the bank; he called it an ambush and fought the water. It put its whole length between him and the deepest spawning pools and simply did not move.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -25,
+        "affection": -10,
+        "fear": 25,
+        "suspicion": 10
+      }
+    },
+    {
+      "event": {
+        "key": "rel_ancient_mirejaw_h3",
+        "value": "Continuance return: 'You again. The pools remember.' It does not plead and does not harden; it simply rises earlier each time, because it remembers.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -5,
+        "fear": 10
+      }
+    }
+  ],
+  "notes": "Modeled at rematch stage (rung 7). Deliberately the flattest profile on the ladder: it does not judge the protagonist, it registers him, the way the mire registers weather — so suspicion is held at 20 (it does not reason about motives at all) and trust only -30 (registration, not grievance). Fear 50 is purely territorial: a foot in the spawning pools is the one intrusion it cannot absorb, and everything it does is interposition, never pursuit — it has never once attacked anything that stayed outside its water. namedState captures that he is weather that returns. Deltas sum to current dimensions."
+}

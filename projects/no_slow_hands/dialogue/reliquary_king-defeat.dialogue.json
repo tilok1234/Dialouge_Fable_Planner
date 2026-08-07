@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "contentHash": "sha256:dlg-rk-defeat-v1",
+  "id": "dlg_reliquary_king_defeat",
+  "sceneId": "scene_reliquary_king_defeat",
+  "approvalStatus": "accepted",
+  "lines": [
+    {
+      "id": "l1",
+      "beatOrder": 1,
+      "speakerId": "char_bone_reliquary_king",
+      "text": {
+        "key": "dlg_rk_defeat_l1",
+        "value": "There. The last ward is not broken, stranger. It is spent. Holding doors closed costs more than opening them ever will.",
+        "lang": "en"
+      },
+      "humanEdited": false
+    },
+    {
+      "id": "l2",
+      "beatOrder": 2,
+      "speakerId": "char_bone_reliquary_king",
+      "text": {
+        "key": "dlg_rk_defeat_l2",
+        "value": "Please. There is nothing here that belongs to you. Only names, and the people who wore them.",
+        "lang": "en"
+      },
+      "humanEdited": false
+    },
+    {
+      "id": "l3",
+      "beatOrder": 3,
+      "speakerId": "char_bone_reliquary_king",
+      "text": {
+        "key": "dlg_rk_defeat_l3",
+        "value": "The Continuance will gather me, as it gathers everyone. It is slower with the old ones. Use the quiet well.",
+        "lang": "en"
+      },
+      "humanEdited": false
+    },
+    {
+      "id": "l4",
+      "beatOrder": 4,
+      "speakerId": "char_bone_reliquary_king",
+      "text": {
+        "key": "dlg_rk_defeat_l4",
+        "value": "And when you return — you will return — we will still ask you to leave in peace. It is a long ledger. I can wait.",
+        "lang": "en"
+      },
+      "humanEdited": false
+    }
+  ],
+  "provenance": {
+    "characterProfiles": [
+      {
+        "id": "char_bone_reliquary_king",
+        "version": 1
+      }
+    ],
+    "characterStates": [
+      {
+        "id": "state_bone_reliquary_king__exposed",
+        "version": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "rel_bone_reliquary_king__player",
+        "version": 1
+      }
+    ],
+    "scene": {
+      "id": "scene_reliquary_king_defeat",
+      "version": 1
+    },
+    "canonSnapshot": [
+      {
+        "id": "fact_law_of_fair_warning",
+        "version": 1
+      }
+    ],
+    "schemaVersion": "1.0.0",
+    "promptTemplateVersion": "1.0.0",
+    "provider": "claude-code-session",
+    "model": "claude-fable-5",
+    "reasoningEffort": "high",
+    "generatedAt": "2026-08-07T22:34:00Z"
+  },
+  "stale": false,
+  "notes": "Authored in-session at user direction (provider blocked, org 403). Exhaustion framing per brief — never divine judgment; the return is promised (Continuance) with quiet dignity, and the lore's required defeat sentiment is honored in l4.",
+  "beatPlanId": "beat_reliquary_king_defeat",
+  "contextPackageId": "ctx_reliquary_king_defeat"
+}

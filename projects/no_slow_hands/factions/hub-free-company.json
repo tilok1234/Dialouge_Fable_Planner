@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-fac-hub-free-company-v1",
+  "id": "fac_hub_free_company",
+  "name": "The Hub Free Company",
+  "summary": {
+    "key": "fac_hub_free_company_summary",
+    "value": "A company of retired caravan guards and hired escorts who know territory when they see it. Watching through the Witness Glass, they keep pointing out the one tactical fact the hero will not hear: every battle begins only after he enters someone else's territory. Nothing has ever come out to meet him.",
+    "lang": "en"
+  },
+  "sharedBeliefs": [
+    "fact_realms_peaceful_ten_millennia",
+    "fact_no_monster_ever_crossed_gates",
+    "fact_law_of_fair_warning",
+    "fact_witness_glass_observes_realms",
+    "fact_gates_are_diplomatic"
+  ],
+  "sharedOpinions": [
+    {
+      "target": "char_protagonist",
+      "position": "wary",
+      "reason": "Thirty years of escort work teaches you what aggression looks like. It looks like crossing someone's gate with a drawn blade. We told him so. He thanked us for the intel."
+    },
+    {
+      "target": "fac_hub_warden",
+      "position": "friendly",
+      "reason": "The Warden proves the realms never attacked with documents. We prove it with a map and one raised eyebrow. Same conclusion, shorter meeting."
+    },
+    {
+      "target": "fac_heavy_hands",
+      "position": "friendly",
+      "reason": "Half our old guard have pulled a Heavy Hand out of a ditch or been pulled by one. Professionals recognize professionals."
+    }
+  ],
+  "metaphorDomain": {
+    "source": "roads, escort work, territory, the map",
+    "examples": [
+      {
+        "key": "fac_hub_free_company_metaphor_1",
+        "value": "The side that crossed the border is the invasion. Everything after that is arithmetic.",
+        "lang": "en"
+      },
+      {
+        "key": "fac_hub_free_company_metaphor_2",
+        "value": "A defensive line doesn't chase you home. Notice which direction everyone is facing.",
+        "lang": "en"
+      }
+    ]
+  },
+  "terminology": [
+    {
+      "term": "someone else's gate",
+      "meaning": {
+        "key": "fac_hub_free_company_term_gate",
+        "value": "The Company's flat term for what the hero keeps crossing. Used in sentences like: 'Every fight starts after you walk through someone else's gate.'",
+        "lang": "en"
+      }
+    },
+    {
+      "term": "escort's rule",
+      "meaning": {
+        "key": "fac_hub_free_company_term_escort_rule",
+        "value": "Their old professional rule: you defend what you were hired to stand in front of, and you never start. The realms follow it better than most clients did.",
+        "lang": "en"
+      }
+    }
+  ],
+  "customs": [
+    {
+      "key": "fac_hub_free_company_custom_briefing",
+      "value": "Every Company opinion opens with the map: who was standing where when the fighting started. Geography first, feelings second.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_hub_free_company_custom_watch",
+      "value": "Retired members take shifts at the Witness Glass and log each incursion like an after-action report. The log is getting long.",
+      "lang": "en"
+    }
+  ],
+  "taboos": [
+    {
+      "key": "fac_hub_free_company_taboo_first_crossing",
+      "value": "Never be the one who crosses first. It is the oldest rule in escort work, and the hero breaks it as a matter of routine.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_hub_free_company_taboo_glory",
+      "value": "Never call a fight glorious in Company hearing. Fights are what happen when every better arrangement fails.",
+      "lang": "en"
+    }
+  ],
+  "tags": [
+    "faction",
+    "hub",
+    "free-company",
+    "witness-glass"
+  ]
+}

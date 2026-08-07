@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-rel-hub-free-company-rep-player-v1",
+  "id": "rel_hub_free_company_rep__player",
+  "partyA": "char_hub_free_company_rep",
+  "partyB": "player",
+  "dimensions": {
+    "trust": -25,
+    "respect": 15,
+    "affection": 0,
+    "fear": 15,
+    "suspicion": 40,
+    "debt": 0
+  },
+  "namedState": "professional-objection",
+  "history": [
+    {
+      "event": {
+        "key": "rel_hub_free_company_rep_h1",
+        "value": "Free professional advice, verdict first: after-action on every engagement shows the same first entry — the hero crossed the border armed. 'Every battle begins after you enter someone's territory. Draw the conclusion.' The protagonist saluted him as a fellow veteran of the coming war.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -10,
+        "respect": 15,
+        "suspicion": 20
+      }
+    },
+    {
+      "event": {
+        "key": "rel_hub_free_company_rep_h2",
+        "value": "He reviewed the Witness Glass with the hero frame by frame — defenders telegraphing, civilians evacuating, restraint as drill — and the hero logged it as 'the enemy's theatrical arrogance'. Holt filed the misread like a casualty report.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -15,
+        "fear": 15,
+        "suspicion": 20
+      }
+    }
+  ],
+  "notes": "Modeled at the EARLY/default state: the free-professional-advice phase. He watches the Glass like after-action reports, so suspicion 40 is the highest among the hub regulars. Respect 15 is genuine and specific: the protagonist is brave, fit, disciplined — and wrong about the one fact that matters; professional admiration is a poor container for grief. Fear 15 is not of the man but of what he is watching: that the realms' restraint runs out before the hero's certainty does. Escalation per profile: mid-arc he runs after-action reviews; late-runs, parade-ground monotone. His breaking point is already visible on the Glass — trophy-hunting Heavy Hands is stripping badges off stretcher-bearers. Softens if the hero ever fights on the right side of a border. Deltas sum to current dimensions."
+}

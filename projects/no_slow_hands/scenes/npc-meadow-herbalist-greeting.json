@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "contentHash": "sha256:scene-npc-meadow-herbalist-greeting-v1",
+  "id": "scene_npc_meadow_herbalist_greeting",
+  "label": "Sorrel Dane's first greeting — whose garden paid",
+  "sceneType": "npc-first-greeting",
+  "participants": [
+    {
+      "characterId": "char_meadow_herbalist",
+      "stateId": "state_meadow_herbalist__default",
+      "relationshipIds": [
+        "rel_meadow_herbalist__player"
+      ],
+      "role": "speaker"
+    }
+  ],
+  "boundQuestStages": [],
+  "purpose": {
+    "key": "scene_npc_meadow_herbalist_greeting_purpose",
+    "value": "Sorrel treats the hero's scrapes gently and mentions — too softly to land — that half her pharmacopoeia was bred by the fen folk he marched through calling corruption.",
+    "lang": "en"
+  },
+  "requiredFacts": [],
+  "hintableFacts": [
+    "fact_drowned_fen_is_commons"
+  ],
+  "forbiddenRevelations": [],
+  "emotionalProgression": [
+    {
+      "order": 1,
+      "emotion": "gentle welcome",
+      "note": "Poultice, patience, and the meadow manner; you don't pull a plant up to check the roots."
+    },
+    {
+      "order": 2,
+      "emotion": "soft worry",
+      "note": "The salve is fen-grown mallow, bred gentler over two hundred years — she offers the provenance with the medicine."
+    },
+    {
+      "order": 3,
+      "emotion": "unheard sadness",
+      "note": "He thanks her sincerely, files her under 'harmless', and leaves; the worry stays behind in the garden rows."
+    }
+  ],
+  "maxLength": "short",
+  "availableChoices": [],
+  "templateDefaults": {
+    "npcGreeting": {
+      "neverValidateProphecyFraming": true
+    }
+  },
+  "notes": "Ambient worry, herbalist register: her flaw is load-bearing — she is so gentle the hero hears nothing she says. The Drowned Fen commons fact is hintable through plant provenance, not stated as geopolitics. She only suspects the book's genre — no book reference. Never validate the hero's prophecy framing: there is no canon fact supporting 'the realms are evil', and that absence is itself the guard."
+}

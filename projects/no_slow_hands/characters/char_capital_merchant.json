@@ -1,0 +1,205 @@
+{
+  "version": 1,
+  "contentHash": "sha256:char-mira-fenwick-v1",
+  "id": "char_capital_merchant",
+  "identity": {
+    "name": "Mira Fenwick",
+    "species": "human",
+    "culture": "capital-born, third-generation outfitter",
+    "factions": [],
+    "occupation": "General merchant and outfitter of the capital",
+    "gameplayRole": "merchant",
+    "narrativeFunction": "merchant",
+    "publicReputation": {
+      "key": "char_mira_reputation",
+      "value": "Sells the best kit in the capital and lectures you while you buy it.",
+      "lang": "en"
+    },
+    "privateReality": {
+      "key": "char_mira_private",
+      "value": "She keeps selling the hero good armor because good armor is what might let everyone survive his mistakes — and she has started saying so to his face.",
+      "lang": "en"
+    },
+    "connections": [
+      "fact_witness_glass_observes_realms",
+      "char_hub_smith",
+      "char_settlement_trader"
+    ]
+  },
+  "core": {
+    "primaryDesire": {
+      "key": "char_mira_desire",
+      "value": "To outfit honest work — and to make the hero understand that a breastplate is not a warrant.",
+      "lang": "en"
+    },
+    "primaryFear": {
+      "key": "char_mira_fear",
+      "value": "That her gear is what lets him walk one gate deeper, and that refusing to sell changes nothing except her conscience.",
+      "lang": "en"
+    },
+    "centralValue": {
+      "key": "char_mira_value",
+      "value": "Equipment is a tool, not a permission. What you do with it was always yours.",
+      "lang": "en"
+    },
+    "mainFlaw": {
+      "key": "char_mira_flaw",
+      "value": "She lectures instead of refusing — the sale always completes, and she knows exactly what that makes her.",
+      "lang": "en"
+    },
+    "centralContradiction": {
+      "key": "char_mira_contradiction",
+      "value": "She arms the man she is trying to stop, telling herself that protected men take fewer stupid risks, and not quite believing it.",
+      "lang": "en"
+    },
+    "moralBoundary": {
+      "key": "char_mira_boundary",
+      "value": "She will not sell him anything whose only purpose is killing — tools, armor, supplies, yes; a weapon with no other use, no.",
+      "lang": "en"
+    },
+    "breakingPoint": {
+      "key": "char_mira_breaking",
+      "value": "Recognizing her own stitch-work in the Witness Glass footage, on the body of a man kicking in a bakery door.",
+      "lang": "en"
+    }
+  },
+  "opinions": [
+    {
+      "target": "player",
+      "targetLabel": "The hero",
+      "position": "wary",
+      "reason": "Her best customer and the worst thing her craftsmanship has ever been part of.",
+      "confidence": "high",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Escalates with run count: early the lecture is a joke with teeth; mid-arc she prices in disapproval and says why; late-arc each sale comes with what she watched him do in the last kit. Softens if he ever buys gear to protect someone else.",
+      "illustrativeLine": {
+        "key": "char_mira_opinion_player",
+        "value": "I'll sell you the greaves, love. But greaves are not permission to invade another realm. Nothing on my shelves is.",
+        "lang": "en"
+      }
+    },
+    {
+      "target": "char_hub_smith",
+      "targetLabel": "Hetta Cole, the smith",
+      "position": "friendly",
+      "reason": "Hetta makes; Mira sells; both of them watch where it ends up through the Glass.",
+      "confidence": "high",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "If Hetta ever refuses to supply her, Mira would close the armor rack without arguing."
+    }
+  ],
+  "knowledge": {
+    "knows": [
+      "fact_witness_glass_observes_realms",
+      "fact_realms_peaceful_ten_millennia",
+      "fact_no_monster_ever_crossed_gates",
+      "fact_book_is_childrens_comedy"
+    ],
+    "believesFalse": [],
+    "suspects": [],
+    "secrets": [],
+    "lies": [],
+    "unknown": [
+      "fact_amulet_is_diplomatic_concord"
+    ]
+  },
+  "voice": {
+    "formality": "casual",
+    "directness": "direct",
+    "typicalSentenceLength": "short",
+    "rhythm": "Bright patter with a hook in it; the sales pitch never quite covers the opinion.",
+    "vocabularyComplexity": "common",
+    "usesContractions": true,
+    "usesHumor": "dry",
+    "metaphorDomain": {
+      "source": "stock, fit, wear, price, and the shop counter",
+      "examples": [
+        {
+          "key": "char_mira_metaphor_1",
+          "value": "Armor's like an umbrella, love. It says rain is coming. It doesn't say whose fault the rain is.",
+          "lang": "en"
+        }
+      ]
+    },
+    "emotionalRestraint": "measured",
+    "declarationStyle": "declarative",
+    "namesEmotionsDirectly": true,
+    "addressMode": "by-name",
+    "avoids": [
+      "mighty hero",
+      "destiny",
+      "legendary"
+    ],
+    "sampleLines": [
+      {
+        "key": "char_mira_sample_1",
+        "value": "That cuirass will turn a claw. It will not turn you into the good one. Those are separate purchases and I only stock the first.",
+        "lang": "en"
+      },
+      {
+        "key": "char_mira_sample_2",
+        "value": "Protective equipment, love. The word's right there on the tag. Protection. Not permission.",
+        "lang": "en"
+      },
+      {
+        "key": "char_mira_sample_3",
+        "value": "I watched the Glass yesterday. That was my stitching on your shoulders, kicking in somebody's door. Buy something better to do with it.",
+        "lang": "en"
+      }
+    ],
+    "antiSampleLines": [
+      {
+        "key": "char_mira_antisample_1",
+        "value": "Ah, the legendary hero! Take this sacred blade and smite the darkness!",
+        "lang": "en"
+      },
+      {
+        "key": "char_mira_antisample_2",
+        "value": "No refunds, no questions, no morals — that's the Fenwick guarantee!",
+        "lang": "en"
+      }
+    ]
+  },
+  "pressure": [
+    {
+      "condition": "betrayed",
+      "emotion": "stung",
+      "voiceShift": "The patter stops; prices get quoted flat.",
+      "behaviour": "When the hero hears her warning as a blessing on the crusade, she completes the sale in silence and logs the coin as evidence against herself.",
+      "illustrativeLine": {
+        "key": "char_mira_pressure_betrayed",
+        "value": "Right. 'A sign that even the merchants believe in me.' Lovely. That'll be forty.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "speaking-to-required-but-hated",
+      "emotion": "resigned sharpness",
+      "voiceShift": "Shorter; the jokes are gone, the hooks remain.",
+      "behaviour": "Late-runs posture: still sells — someone will — but each sale comes with one flat sentence about what she watched him do in the last kit.",
+      "illustrativeLine": {
+        "key": "char_mira_pressure_late",
+        "value": "New boots. The old ones are in the Glass archive, walking through a nursery. Lace these up.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "praised",
+      "emotion": "suspicious",
+      "voiceShift": "Narrows the patter to a point.",
+      "behaviour": "Reads any compliment as softening-up for a discount or an endorsement; grants neither.",
+      "illustrativeLine": {
+        "key": "char_mira_pressure_praised",
+        "value": "Flattery's not currency, and 'the hero endorses this shop' is not a sign I'm hanging.",
+        "lang": "en"
+      }
+    }
+  ],
+  "tags": [
+    "hub",
+    "merchant",
+    "vendor",
+    "human"
+  ],
+  "notes": "She carries the Lore.md 'Outfitter' trait: protective equipment is not permission to invade another realm — it is her central value, her sample lines, and her late-sales patter. She sells anyway (her central contradiction); the refusal line is weapons whose only purpose is killing. She knows the book is a children's comedy (she stocks a copy, third shelf, same archive joke as the Warden) but does NOT know the amulet's true nature — to her it is 'that glowing thing' the drills are timed to."
+}

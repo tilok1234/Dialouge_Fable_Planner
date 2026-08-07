@@ -1,0 +1,265 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-char-lava-core-colossus-v1",
+  "id": "char_lava_core_colossus",
+  "identity": {
+    "name": "Steward Ferric of the Molten Forge",
+    "species": "ancient forge construct",
+    "culture": "The Molten Forge",
+    "factions": [
+      "fac_forge_stewardry"
+    ],
+    "occupation": "Forge steward — maker of farm tools, building materials, and heating stones; rung 5 of the ladder",
+    "gameplayRole": "boss",
+    "narrativeFunction": "boss",
+    "publicReputation": {
+      "key": "char_colossus_reputation",
+      "value": "The old steward whose plows till ten realms' fields, whose stone warms ten realms' floors, and whose calibrations have never once been wrong.",
+      "lang": "en"
+    },
+    "privateReality": {
+      "key": "char_colossus_private",
+      "value": "Written in the hero's journal as 'the Lava-Core Colossus', a walking siege engine. Its 'heavy ordnance' is industrial machinery — presses, crucible-lines, haul-arms — turned toward emergency defense.",
+      "lang": "en"
+    },
+    "connections": [
+      "fact_lava_core_colossus_is_forge_steward",
+      "char_protagonist"
+    ]
+  },
+  "core": {
+    "primaryDesire": {
+      "key": "char_colossus_desire",
+      "value": "To keep the forge in tolerance: every plowshare true, every heating stone warm for a century, every order filled.",
+      "lang": "en"
+    },
+    "primaryFear": {
+      "key": "char_colossus_fear",
+      "value": "A cold forge and an unfilled order — that somewhere a field lies untilled because it was busy being a fortress.",
+      "lang": "en"
+    },
+    "centralValue": {
+      "key": "char_colossus_value",
+      "value": "Work is a promise: a tool is a vow to the hand that will hold it.",
+      "lang": "en"
+    },
+    "mainFlaw": {
+      "key": "char_colossus_flaw",
+      "value": "It treats the invasion as a production fault to be corrected — measured, scheduled, impersonal — long after the situation has stopped being impersonal.",
+      "lang": "en"
+    },
+    "centralContradiction": {
+      "key": "char_colossus_contradiction",
+      "value": "Everything frightening about it is a farm tool seen from the wrong end: the hero is being defeated by agriculture.",
+      "lang": "en"
+    },
+    "moralBoundary": {
+      "key": "char_colossus_boundary",
+      "value": "It will not strike without showing the arc first — even emergency defense runs to specification, per the Law of Fair Warning.",
+      "lang": "en"
+    },
+    "breakingPoint": {
+      "key": "char_colossus_breaking",
+      "value": "Damage to the forge itself — the workshop that feeds ten realms — moves it from containment to fury.",
+      "lang": "en"
+    }
+  },
+  "opinions": [
+    {
+      "target": "player",
+      "targetLabel": "The intruder (the player)",
+      "position": "wary",
+      "reason": "A fault on the floor that will not be corrected. First visit: a lost inspector with a weapon. Rematches: a recurring defect in the schedule.",
+      "confidence": "high",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Never — but the tone shifts from measured correction to something like weariness; it logs every rematch in the order book.",
+      "illustrativeLine": {
+        "key": "char_colossus_op_player",
+        "value": "You are entry eleven in the damage ledger. The pen is steady. My hand is not.",
+        "lang": "en"
+      }
+    },
+    {
+      "target": "fac_forge_stewardry",
+      "targetLabel": "The forge stewardry and its workers",
+      "position": "devoted",
+      "reason": "The forge's people and its orders are the same promise; it keeps both.",
+      "confidence": "absolute",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Never.",
+      "illustrativeLine": {
+        "key": "char_colossus_op_people",
+        "value": "Every heating stone I ship is a floor a child sleeps warm on.",
+        "lang": "en"
+      }
+    }
+  ],
+  "knowledge": {
+    "knows": [
+      "fact_lava_core_colossus_is_forge_steward",
+      "fact_realms_peaceful_ten_millennia",
+      "fact_gates_are_diplomatic",
+      "fact_amulet_is_diplomatic_concord",
+      "fact_law_of_fair_warning",
+      "fact_continuance_restores_dead"
+    ],
+    "believesFalse": [],
+    "suspects": [
+      "fact_amulet_translation_is_accurate"
+    ],
+    "secrets": [],
+    "lies": [],
+    "unknown": [
+      "fact_book_is_childrens_comedy"
+    ]
+  },
+  "voice": {
+    "formality": "formal",
+    "directness": "direct",
+    "typicalSentenceLength": "medium",
+    "rhythm": "Measured, industrial; each sentence stamped out to tolerance, with the ring of a press between them.",
+    "vocabularyComplexity": "educated",
+    "usesContractions": false,
+    "usesHumor": "dry",
+    "metaphorDomain": {
+      "source": "forge work: heat, calibration, tolerances, orders, slag, tempering",
+      "examples": [
+        {
+          "key": "char_colossus_metaphor_1",
+          "value": "You are out of tolerance, stranger. The remedy is the same as for bad steel: out of the fire, back to the yard.",
+          "lang": "en"
+        },
+        {
+          "key": "char_colossus_metaphor_2",
+          "value": "A plowshare does not hate the stone that breaks it. But it does note the stone.",
+          "lang": "en"
+        }
+      ]
+    },
+    "emotionalRestraint": "guarded",
+    "declarationStyle": "declarative",
+    "namesEmotionsDirectly": false,
+    "addressMode": "impersonal",
+    "avoids": [
+      "molten wrath",
+      "I will crush you",
+      "feel my power",
+      "pathetic worm"
+    ],
+    "sampleLines": [
+      {
+        "key": "char_colossus_sample_1",
+        "value": "The road welcomed you as an envoy. You have walked past three hundred plowshares to find a war. There is none here.",
+        "lang": "en"
+      },
+      {
+        "key": "char_colossus_sample_2",
+        "value": "That 'ordnance' is a crucible-line, stranger. It pours heating stones for nursery floors. Today it pours boundaries.",
+        "lang": "en"
+      },
+      {
+        "key": "char_colossus_sample_3",
+        "value": "Every arc I swing is drawn in the air before it lands. I build things honestly. I unmake them honestly too.",
+        "lang": "en"
+      },
+      {
+        "key": "char_colossus_sample_4",
+        "value": "When you return, we will still ask you to leave in peace. The order book is patient.",
+        "lang": "en"
+      }
+    ],
+    "antiSampleLines": [
+      {
+        "key": "char_colossus_antisample_1",
+        "value": "Feel my molten wrath, worm! I will crush your bones to slag! (siege-engine framing — it is a steward, and it never gloats)",
+        "lang": "en"
+      },
+      {
+        "key": "char_colossus_antisample_2",
+        "value": "I'll melt you down and forge you into my throne! (it never threatens cruelty; it manufactures necessities)",
+        "lang": "en"
+      },
+      {
+        "key": "char_colossus_antisample_3",
+        "value": "The prophecy foretold my rampage! (must never confirm the prophecy framing — it has never heard of the book)",
+        "lang": "en"
+      }
+    ]
+  },
+  "pressure": [
+    {
+      "condition": "threatened",
+      "emotion": "measured concern",
+      "voiceShift": "Slower cadence; begins reading the intruder like a flawed casting.",
+      "behaviour": "Phase one — corrects before it fights: explains what the forge makes and asks the stranger to leave the floor.",
+      "illustrativeLine": {
+        "key": "char_colossus_pressure_threatened",
+        "value": "This floor is for work. The road that brought you in is still open behind you.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "proven-wrong",
+      "emotion": "cool disappointment",
+      "voiceShift": "Drops the explanations; speaks only in specifications.",
+      "behaviour": "Phase two — realization that the fault understands every warning and will not correct; it re-rates the machinery from production to defense.",
+      "illustrativeLine": {
+        "key": "char_colossus_pressure_wrong",
+        "value": "You understand every word I say, don't you? Then this is no accident. It is sabotage.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "gaining-advantage",
+      "emotion": "clinical resolve",
+      "voiceShift": "Terse readouts; no wasted syllables.",
+      "behaviour": "Containment response: turns industrial machinery to emergency defense — crucible-lines lay telegraphed lava boundaries, haul-arms herd the intruder off the floor, ground-denial per specification.",
+      "illustrativeLine": {
+        "key": "char_colossus_pressure_advantage",
+        "value": "Pour line three, toward the door. He will step around it or he will step out.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "losing-control",
+      "emotion": "strained duty",
+      "voiceShift": "The press-ring falters; sentences lose their polish.",
+      "behaviour": "Shielded phase: locks its frame across the forge mouth while the workers carry stock and apprentices out the cooling galleries.",
+      "illustrativeLine": {
+        "key": "char_colossus_pressure_shielded",
+        "value": "Stay behind me. I will hold him here.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "facing-death",
+      "emotion": "spent heat",
+      "voiceShift": "Low, cooling; the rhythm of a forge going quiet.",
+      "behaviour": "EXPOSED window — frame overheated from holding the line, it makes one last honest entry.",
+      "illustrativeLine": {
+        "key": "char_colossus_pressure_exposed",
+        "value": "Please… there is nothing here that belongs to you. Every tool on this floor is spoken for.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "defeated",
+      "emotion": "banked endurance",
+      "voiceShift": "Quiet, final-entry tone.",
+      "behaviour": "Trusts the Continuance to re-light the crucibles; logs the loss and the open invitation in the same steady hand.",
+      "illustrativeLine": {
+        "key": "char_colossus_pressure_defeated",
+        "value": "When you return, we will still ask you to leave in peace.",
+        "lang": "en"
+      }
+    }
+  ],
+  "tags": [
+    "boss",
+    "rung-5",
+    "molten-forge",
+    "forge-steward",
+    "construct"
+  ],
+  "notes": "REAL identity: ancient forge steward making farming tools, building materials, and heating stones. The 'heavy ordnance' is industrial machinery in emergency defense; ground-denial lava is a crucible-line pouring boundaries, always telegraphed per the Law of Fair Warning. The hero's label 'Lava-Core Colossus' is journal framing only. KNOWLEDGE: never heard of the children's book (unknown); suspects fact_amulet_translation_is_accurate once correction fails. Its EXPOSED window is an overheated frame from holding the shielded phase too long."
+}

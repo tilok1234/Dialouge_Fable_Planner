@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-rel-bone-reliquary-king-player-v1",
+  "id": "rel_bone_reliquary_king__player",
+  "partyA": "char_bone_reliquary_king",
+  "partyB": "player",
+  "dimensions": {
+    "trust": -55,
+    "respect": -10,
+    "affection": -20,
+    "fear": 45,
+    "suspicion": 40,
+    "debt": 0
+  },
+  "namedState": "grieving-guardian",
+  "history": [
+    {
+      "event": {
+        "key": "rel_bone_reliquary_king_h1",
+        "value": "The amulet opened the sealed gate; tomb attendants carried the youngest names deeper while Keeper Ostor received the armed stranger as a lost envoy and offered to explain whose chambers he stood on.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -10,
+        "suspicion": 10
+      }
+    },
+    {
+      "event": {
+        "key": "rel_bone_reliquary_king_h2",
+        "value": "First incursion: the Keeper tried to read the names of the dead aloud as a lesson in reverence; the protagonist attacked anyway, standing on his grandmother's chamber and refusing to step off the ceiling of the occupied tombs.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -30,
+        "respect": -10,
+        "affection": -15,
+        "fear": 25,
+        "suspicion": 20
+      }
+    },
+    {
+      "event": {
+        "key": "rel_bone_reliquary_king_h3",
+        "value": "Continuance return: the Continuance rebuilt him with every visit intact in memory. The tone moved from patient pleading to quiet grief; when the amulet glows now, he moves the names first and argues second.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -15,
+        "affection": -5,
+        "fear": 20,
+        "suspicion": 10
+      }
+    }
+  ],
+  "notes": "Modeled after repeated Continuance returns (ladder rung 1, rematch stage). His patience is geological and never cruel; fear 45 is for the burial chambers and the names, not for his own bones — desecration of a named grave is his breaking point, not his death. Trust is deeply negative because he has learned the protagonist hears every word and continues anyway ('it is not ignorance in you; it is choice'). Respect is slightly negative: he concedes nothing to a man who will not step off a grave. Deltas sum to current dimensions. namedState is the compiler-facing resolution of a guardian who has stopped pleading and started grieving; tone arc per char_bone_reliquary_king pressure profile."
+}

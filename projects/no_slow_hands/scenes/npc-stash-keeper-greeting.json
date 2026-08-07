@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "contentHash": "sha256:scene-npc-stash-keeper-greeting-v1",
+  "id": "scene_npc_stash_keeper_greeting",
+  "label": "Calloway's first greeting — the discrepancy question",
+  "sceneType": "npc-first-greeting",
+  "participants": [
+    {
+      "characterId": "char_stash_keeper",
+      "stateId": "state_stash_keeper__default",
+      "relationshipIds": [
+        "rel_stash_keeper__player"
+      ],
+      "role": "speaker"
+    }
+  ],
+  "boundQuestStages": [],
+  "purpose": {
+    "key": "scene_npc_stash_keeper_greeting_purpose",
+    "value": "Calloway processes the hero's deposit with impeccable procedure and one dry discrepancy note: the vault sits on the old diplomatic banking network, and the 'seized instruments of evil' keep being bowls, toys, fishing hooks, and family portraits.",
+    "lang": "en"
+  },
+  "requiredFacts": [
+    "fact_banking_uses_diplomatic_network"
+  ],
+  "hintableFacts": [],
+  "forbiddenRevelations": [],
+  "emotionalProgression": [
+    {
+      "order": 1,
+      "emotion": "courteous procedure",
+      "note": "Item, quantity, provenance; the ledger is open and the manners are flawless."
+    },
+    {
+      "order": 2,
+      "emotion": "dry discrepancy",
+      "note": "Shall she file the glazed bowl under 'instruments of evil' or under 'bowl'? The question is filed like a discrepancy note."
+    },
+    {
+      "order": 3,
+      "emotion": "frozen disapproval",
+      "note": "He answers that the artifacts still call to their servants; she enters his words verbatim and initials them."
+    }
+  ],
+  "maxLength": "short",
+  "availableChoices": [],
+  "templateDefaults": {
+    "npcGreeting": {
+      "neverValidateProphecyFraming": true
+    }
+  },
+  "notes": "Misunderstanding pair (Lore.md): 'Please return what you took' → 'The artifacts still call to their servants.' She only SUSPECTS the book is a children's comedy, so she must never state it — no book reference from her in either scene. The vault is where banked goods land on the diplomatic network; the previous owners cannot reach it, and she notes that he knows that. Never validate the hero's prophecy framing: there is no canon fact supporting 'the realms are evil', and that absence is itself the guard."
+}

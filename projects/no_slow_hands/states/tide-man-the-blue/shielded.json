@@ -1,0 +1,39 @@
+{
+  "id": "state_tide_man_the_blue__shielded",
+  "characterId": "char_tide_man_the_blue",
+  "label": "Shielded — holding the floodgates",
+  "mood": "dogged stewardship",
+  "location": "The Drowned Vault, the floodgates and inner dock",
+  "injuries": [
+    "Currents fraying at the edges from holding gates meant to open and close, not bar"
+  ],
+  "activeQuestStages": [
+    "quest_rung_04_drowned_vault__stage_2",
+    "quest_rung_04_drowned_vault__stage_3"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_tide_man_the_blue_sh_ev1",
+      "value": "The ferryfolk are carrying the young and the stores up-causeway; the inner dock is his to hold.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_tide_man_the_blue_sh_cf1",
+      "value": "Every weapon he has is a rescue tool; he is fighting a passenger with a lifeboat.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-tide-man-the-blue-shielded-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_tide_man_the_blue_sh_obj",
+    "value": "Hold the floodgates and the inner dock until the causeway is clear.",
+    "lang": "en"
+  },
+  "phase": "shielded"
+}

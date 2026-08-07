@@ -1,0 +1,41 @@
+{
+  "id": "state_lava_core_colossus__rematch",
+  "characterId": "char_lava_core_colossus",
+  "label": "Rematch — entry eleven in the damage ledger",
+  "mood": "banked endurance, weary",
+  "location": "The Molten Forge, the main floor",
+  "injuries": [],
+  "activeQuestStages": [
+    "quest_rung_05_molten_forge__stage_4"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_lava_core_colossus_re_ev1",
+      "value": "The Continuance re-lit the crucibles; the repair list from his last visit is still being worked.",
+      "lang": "en"
+    },
+    {
+      "key": "nsh_state_lava_core_colossus_re_ev2",
+      "value": "You are entry eleven in the damage ledger. The pen is steady. My hand is not.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_lava_core_colossus_re_cf1",
+      "value": "A recurring defect in the schedule that the order book records and no specification corrects.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-lava-core-colossus-rematch-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_lava_core_colossus_re_obj",
+    "value": "Log the visit, hold the floor, and renew the open invitation to leave in peace.",
+    "lang": "en"
+  },
+  "phase": "rematch"
+}

@@ -1,0 +1,208 @@
+{
+  "version": 1,
+  "contentHash": "sha256:char-wren-calloway-v1",
+  "id": "char_stash_keeper",
+  "identity": {
+    "name": "Wren Calloway",
+    "species": "human",
+    "culture": "hub-born; apprenticed in the vault office since she was twelve",
+    "factions": [],
+    "occupation": "Stash-keeper; catalogs and stores whatever the hero banks",
+    "gameplayRole": "other",
+    "narrativeFunction": "other",
+    "publicReputation": {
+      "key": "char_wren_reputation",
+      "value": "The unflappable clerk behind the vault counter who has seen everything and files it anyway.",
+      "lang": "en"
+    },
+    "privateReality": {
+      "key": "char_wren_private",
+      "value": "She inventories 'seized instruments of evil' for a living, and the catalog has become the most quietly damning document in the hub: bowls, toys, fishing hooks, family portraits.",
+      "lang": "en"
+    },
+    "connections": [
+      "fact_witness_glass_observes_realms",
+      "fact_banking_uses_diplomatic_network",
+      "fact_shards_are_domestic_magic",
+      "char_hub_prospector"
+    ]
+  },
+  "core": {
+    "primaryDesire": {
+      "key": "char_wren_desire",
+      "value": "For the hero to read his own vault inventory aloud, once, and hear it.",
+      "lang": "en"
+    },
+    "primaryFear": {
+      "key": "char_wren_fear",
+      "value": "That she will file so many stolen ordinary things that ordinary will stop looking like evidence to her too.",
+      "lang": "en"
+    },
+    "centralValue": {
+      "key": "char_wren_value",
+      "value": "The list doesn't lie. Whatever the story is, the list is what's true.",
+      "lang": "en"
+    },
+    "mainFlaw": {
+      "key": "char_wren_flaw",
+      "value": "She hides inside procedure — cataloging a theft feels different from witnessing one, and she lets that difference do too much work.",
+      "lang": "en"
+    },
+    "centralContradiction": {
+      "key": "char_wren_contradiction",
+      "value": "Her meticulous records are the strongest proof of what the hero is doing, and her job is to keep them tidy, complete, and unread.",
+      "lang": "en"
+    },
+    "moralBoundary": {
+      "key": "char_wren_boundary",
+      "value": "She will not mislabel an item, ever — if it is a toy, it goes in the ledger as a toy, whatever the hero calls it.",
+      "lang": "en"
+    },
+    "breakingPoint": {
+      "key": "char_wren_breaking",
+      "value": "Finding her own handwriting in the ledger starting to sound like his journal — the day 'seized instruments of evil' sneaks in unquoted.",
+      "lang": "en"
+    }
+  },
+  "opinions": [
+    {
+      "target": "player",
+      "targetLabel": "The hero",
+      "position": "wary",
+      "reason": "He banks stolen crockery and calls it a war chest; she has the ledger.",
+      "confidence": "absolute",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Escalates with run count: early she asks dry discrepancy questions; mid-arc she reads the inventory back to him; late-arc she reads it aloud without being asked. Softens only if he ever reclaims an item to return it.",
+      "illustrativeLine": {
+        "key": "char_wren_opinion_player",
+        "value": "Your seized instruments of evil this week: four bowls, a stuffed rabbit, six fishing hooks, and a portrait of somebody's grandmother. Filed as received.",
+        "lang": "en"
+      }
+    },
+    {
+      "target": "char_hub_prospector",
+      "targetLabel": "Joren Pell, the prospector",
+      "position": "friendly",
+      "reason": "He identifies what the shards were; she identifies what everything else was. Two halves of the same sad catalog.",
+      "confidence": "high",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "If he ever stopped coming to cross-check, she would know the war was truly lost."
+    }
+  ],
+  "knowledge": {
+    "knows": [
+      "fact_witness_glass_observes_realms",
+      "fact_realms_peaceful_ten_millennia",
+      "fact_no_monster_ever_crossed_gates",
+      "fact_banking_uses_diplomatic_network",
+      "fact_shards_are_domestic_magic"
+    ],
+    "believesFalse": [],
+    "suspects": [
+      "fact_book_is_childrens_comedy"
+    ],
+    "secrets": [],
+    "lies": [],
+    "unknown": []
+  },
+  "voice": {
+    "formality": "formal",
+    "directness": "very-direct",
+    "typicalSentenceLength": "terse",
+    "rhythm": "Ledger-flat; item, quantity, provenance, with the dry question filed at the end like a discrepancy note.",
+    "vocabularyComplexity": "educated",
+    "usesContractions": false,
+    "usesHumor": "dry",
+    "metaphorDomain": {
+      "source": "ledgers, labels, shelves, catalog numbers, and discrepancies",
+      "examples": [
+        {
+          "key": "char_wren_metaphor_1",
+          "value": "A shelf does not care what you call the thing on it. It holds the thing.",
+          "lang": "en"
+        }
+      ]
+    },
+    "emotionalRestraint": "impenetrable",
+    "declarationStyle": "declarative",
+    "namesEmotionsDirectly": false,
+    "addressMode": "impersonal",
+    "avoids": [
+      "evil",
+      "treasure",
+      "loot",
+      "spoils"
+    ],
+    "sampleLines": [
+      {
+        "key": "char_wren_sample_1",
+        "value": "Item: one bowl, glazed, chip on the rim, domestic. Shall I file that under 'instruments of evil' or under 'bowl'?",
+        "lang": "en"
+      },
+      {
+        "key": "char_wren_sample_2",
+        "value": "The portrait goes face-down or face-up. Policy is face-up. Someone painted it to be looked at.",
+        "lang": "en"
+      },
+      {
+        "key": "char_wren_sample_3",
+        "value": "Banking received. For the record: the previous owners cannot reach this vault. I note that you know that.",
+        "lang": "en"
+      }
+    ],
+    "antiSampleLines": [
+      {
+        "key": "char_wren_antisample_1",
+        "value": "Oh wow! Is that the legendary Sword of Darkness?!",
+        "lang": "en"
+      },
+      {
+        "key": "char_wren_antisample_2",
+        "value": "Whatever you need, boss! I don't ask questions!",
+        "lang": "en"
+      }
+    ]
+  },
+  "pressure": [
+    {
+      "condition": "betrayed",
+      "emotion": "frozen disapproval",
+      "voiceShift": "Formality goes absolute; 'the record' replaces 'I'.",
+      "behaviour": "When the hero hears 'please return what you took' as 'the artifacts call to their servants', she enters his exact words in the ledger and initials them.",
+      "illustrativeLine": {
+        "key": "char_wren_pressure_betrayed",
+        "value": "Noted verbatim: 'the artifacts still call to their servants.' The artifact in question is a teapot.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "speaking-to-required-but-hated",
+      "emotion": "grieving precision",
+      "voiceShift": "Slower; every item gets its full description, no abbreviations.",
+      "behaviour": "Late-runs posture: reads the complete inventory aloud, in full catalog language, every time — procedure as protest.",
+      "illustrativeLine": {
+        "key": "char_wren_pressure_late",
+        "value": "Vault contents, in full, as of this morning. I will read them. You will stand there. It is the only part of my job I have changed.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "proven-wrong",
+      "emotion": "grudging relief",
+      "voiceShift": "One beat of actual warmth before the flatness returns.",
+      "behaviour": "If he ever corrects an entry himself — calls a bowl a bowl — she amends the record and remembers the date.",
+      "illustrativeLine": {
+        "key": "char_wren_pressure_wrong",
+        "value": "Amended: 'bowl'. ... Amended by request of the depositor. That is a first.",
+        "lang": "en"
+      }
+    }
+  ],
+  "tags": [
+    "hub",
+    "stash-keeper",
+    "vault",
+    "human"
+  ],
+  "notes": "One of the five key NPCs that will receive `default` and `late-runs` states: `default` is the dry discrepancy-question phase ('Shall I file that under instruments of evil, or under bowl?'); `late-runs` is the full-inventory-read-aloud in the speaking-to-required-but-hated pressure entry. She knows fact_banking_uses_diplomatic_network (the vault is where banked goods land) and only suspects the book is a comedy. Her ledger is the hub's quiet indictment; her rule — never mislabel an item — must survive both states."
+}

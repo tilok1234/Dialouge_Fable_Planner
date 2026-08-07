@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "contentHash": "sha256:scene-npc-field-belt-guard-greeting-v1",
+  "id": "scene_npc_field_belt_guard_greeting",
+  "label": "Ruth Callan's first greeting — the quiet-beat offer",
+  "sceneType": "npc-first-greeting",
+  "participants": [
+    {
+      "characterId": "char_field_belt_guard",
+      "stateId": "state_field_belt_guard__default",
+      "relationshipIds": [
+        "rel_field_belt_guard__player"
+      ],
+      "role": "speaker"
+    }
+  ],
+  "boundQuestStages": [],
+  "purpose": {
+    "key": "scene_npc_field_belt_guard_greeting_purpose",
+    "value": "Ruth walks the hero down her lane and offers the de-escalation she offers everyone: nothing has ever come through the Fungal Field gate, so there is nothing out there that needs fighting.",
+    "lang": "en"
+  },
+  "requiredFacts": [
+    "fact_no_monster_ever_crossed_gates"
+  ],
+  "hintableFacts": [],
+  "forbiddenRevelations": [],
+  "emotionalProgression": [
+    {
+      "order": 1,
+      "emotion": "easy patrol warmth",
+      "note": "Farmhouse dogs, harvest news, a lost traveler pointed home — her belt at its best is boring."
+    },
+    {
+      "order": 2,
+      "emotion": "de-escalating offer",
+      "note": "She frames standing down as the reasonable compromise between neighbors, the way she settles fence disputes."
+    },
+    {
+      "order": 3,
+      "emotion": "quiet worry",
+      "note": "He accepts her 'local intelligence' gratefully and asks which lane is quietest — meaning easiest to slip through; she walks the rest of the way in silence."
+    }
+  ],
+  "maxLength": "short",
+  "availableChoices": [],
+  "templateDefaults": {
+    "npcGreeting": {
+      "neverValidateProphecyFraming": true
+    }
+  },
+  "notes": "Grounded bewilderment, patrol register: her flaw is the engine — she keeps offering compromises he cannot even hear as offers. She knows the Fungal Field is commons, but this early scene keeps to the gate fact; the waves on the Glass are gardeners, not armies. Never validate the hero's prophecy framing: there is no canon fact supporting 'the realms are evil', and that absence is itself the guard."
+}

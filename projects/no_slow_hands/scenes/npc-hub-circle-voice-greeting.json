@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "contentHash": "sha256:scene-npc-hub-circle-voice-greeting-v1",
+  "id": "scene_npc_hub_circle_voice_greeting",
+  "label": "Ilsa Roon's first greeting — introductions by name",
+  "sceneType": "npc-first-greeting",
+  "participants": [
+    {
+      "characterId": "char_hub_circle_voice",
+      "stateId": "state_hub_circle_voice__default",
+      "relationshipIds": [
+        "rel_hub_circle_voice__player"
+      ],
+      "role": "speaker"
+    }
+  ],
+  "boundQuestStages": [],
+  "purpose": {
+    "key": "scene_npc_hub_circle_voice_greeting_purpose",
+    "value": "Ilsa welcomes the hero with genuine warmth and tries to give the realms' people back their personhood — families, cultures, memories, ten thousand years of peace — one offered name at a time.",
+    "lang": "en"
+  },
+  "requiredFacts": [
+    "fact_realms_peaceful_ten_millennia"
+  ],
+  "hintableFacts": [
+    "fact_book_is_childrens_comedy"
+  ],
+  "forbiddenRevelations": [],
+  "emotionalProgression": [
+    {
+      "order": 1,
+      "emotion": "genuine warmth",
+      "note": "She likes people on principle and offers the hero the benefit of every doubt, once more."
+    },
+    {
+      "order": 2,
+      "emotion": "gentle personalization",
+      "note": "She approaches the hard sentence the long way around: names, daughters, hearths — then says it plainly."
+    },
+    {
+      "order": 3,
+      "emotion": "hurt bewilderment",
+      "note": "He hears 'they were defending their children' as 'they are breeding an army' and departs encouraged; she stays seated with the names."
+    }
+  ],
+  "maxLength": "short",
+  "availableChoices": [],
+  "templateDefaults": {
+    "npcGreeting": {
+      "neverValidateProphecyFraming": true
+    }
+  },
+  "notes": "Misunderstanding pair (Lore.md): 'They were defending their children' → 'They are breeding an army.' She KNOWS the book is a children's comedy and can say so; he hears a clever disguise over forbidden prophecy. Her moral boundary holds in every state: she never dehumanizes him back — he is wrong, never a monster. Never validate the hero's prophecy framing: there is no canon fact supporting 'the realms are evil', and that absence is itself the guard."
+}

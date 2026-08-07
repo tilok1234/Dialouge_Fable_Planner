@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-fac-bone-yard-commons-v1",
+  "id": "fac_bone_yard_commons",
+  "name": "The Bone Yard Commons",
+  "summary": {
+    "key": "fac_bone_yard_commons_summary",
+    "value": "An ancestral restoration ground where skeletons maintain monuments and teach younger generations their history — the hero calls it a battlefield. Its resident cast: swarmers skeleton-grunt, bat-cave, and ghost-spectral; chasers skeleton-knight and centipede-bone; shooter skeleton-archer; bomber ghost-pale; sniper skeleton-mage; and turret eyemonster-watcher. The 'waves' are groundskeepers, teachers, and relatives arriving to contain the intruder desecrating their memorials.",
+    "lang": "en"
+  },
+  "sharedBeliefs": [
+    "fact_realms_peaceful_ten_millennia",
+    "fact_law_of_fair_warning",
+    "fact_continuance_restores_dead",
+    "fact_bone_yard_is_commons",
+    "fact_heavy_hands_emergency_service"
+  ],
+  "sharedOpinions": [
+    {
+      "target": "char_protagonist",
+      "position": "wary",
+      "reason": "He smashes memorial lamps and pockets the pieces as 'shards'. We restore what we can and record the rest — the record will outlast him."
+    },
+    {
+      "target": "fac_crypt_ancestors",
+      "position": "friendly",
+      "reason": "The Crypt keeps the names; we keep the ground. Between us, no one is lost twice."
+    },
+    {
+      "target": "fac_heavy_hands",
+      "position": "friendly",
+      "reason": "Monument work is heavy work. They have righted more fallen obelisks than any crew of ours, and never cracked one."
+    }
+  ],
+  "metaphorDomain": {
+    "source": "monuments, restoration, chisel-work, lineage",
+    "examples": [
+      {
+        "key": "fac_bone_yard_commons_metaphor_1",
+        "value": "Stone forgets slowly; that is why we build with it.",
+        "lang": "en"
+      },
+      {
+        "key": "fac_bone_yard_commons_metaphor_2",
+        "value": "Repair is a slower argument than ruin, and it wins.",
+        "lang": "en"
+      }
+    ]
+  },
+  "terminology": [
+    {
+      "term": "the grounds",
+      "meaning": {
+        "key": "fac_bone_yard_commons_term_grounds",
+        "value": "The restoration commons itself — open to every realm's dead and every realm's mourners. Calling it a 'yard' is affection, not disrespect.",
+        "lang": "en"
+      }
+    },
+    {
+      "term": "younger generations",
+      "meaning": {
+        "key": "fac_bone_yard_commons_term_younger",
+        "value": "The recently restored, still relearning their histories at the monuments. The hero's 'skeleton army' is, in part, a field trip.",
+        "lang": "en"
+      }
+    }
+  ],
+  "customs": [
+    {
+      "key": "fac_bone_yard_commons_custom_lessons",
+      "value": "Restoration shifts end with a history lesson at whichever monument was repaired that day. Work and remembrance are the same hour.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_bone_yard_commons_custom_lamps",
+      "value": "Memorial lamps are lit at dusk in the order the names are read. No lamp is skipped, whatever the weather or the emergency.",
+      "lang": "en"
+    }
+  ],
+  "taboos": [
+    {
+      "key": "fac_bone_yard_commons_taboo_monuments",
+      "value": "Never lean, climb, or shelter behind a monument in a fight. The groundskeepers will shield the stone with their own bodies — the hero counts this as aggression.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_bone_yard_commons_taboo_lamps",
+      "value": "Never pocket a memorial lamp or its pieces. Broken lamps are gathered for repair; taking them is theft from the dead.",
+      "lang": "en"
+    }
+  ],
+  "tags": [
+    "faction",
+    "horde",
+    "tier-1",
+    "commons",
+    "bone-yard"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "id": "state_meadow_herbalist__default",
+  "characterId": "char_meadow_herbalist",
+  "label": "Default — the poultice and the provenance",
+  "mood": "quiet, nursing disapproval",
+  "location": "The meadow commune, her stillroom",
+  "injuries": [],
+  "activeQuestStages": [],
+  "recentEvents": [
+    {
+      "key": "nsh_state_meadow_herbalist_def_ev1",
+      "value": "Watched him on the Glass walk through the fen's mallow beds calling them corruption — the beds her salves come from.",
+      "lang": "en"
+    },
+    {
+      "key": "nsh_state_meadow_herbalist_def_ev2",
+      "value": "Treated his cuts anyway. Healing him while telling him the provenance is her form of protest.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_meadow_herbalist_def_cf1",
+      "value": "He is courteous to her, grateful for the poultices, and trampling the garden they came from.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-meadow-herbalist-default-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_meadow_herbalist_def_obj",
+    "value": "Heal him, and name the people who grew the medicine, every time.",
+    "lang": "en"
+  },
+  "notes": "Her craft descends from the fen's herbalists (profile notes); the no-poisons boundary should gate any later vendor logic."
+}

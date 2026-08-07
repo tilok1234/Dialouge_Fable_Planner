@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-rel-tide-man-the-blue-player-v1",
+  "id": "rel_tide_man_the_blue__player",
+  "partyA": "char_tide_man_the_blue",
+  "partyB": "player",
+  "dimensions": {
+    "trust": -45,
+    "respect": 0,
+    "affection": 15,
+    "fear": 35,
+    "suspicion": 40,
+    "debt": 0
+  },
+  "namedState": "unboarded-fare",
+  "history": [
+    {
+      "event": {
+        "key": "rel_tide_man_the_blue_h1",
+        "value": "Gate alarm on the floodways; the Ferrymaster's first read was a confused fare. He offered the crossing out, explained the water, asked him to leave his weapon on the dock — the way out was running and the ride was free.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -5,
+        "affection": 10,
+        "suspicion": 10
+      }
+    },
+    {
+      "event": {
+        "key": "rel_tide_man_the_blue_h2",
+        "value": "First fight: his surf walls washed the intruder safely back toward the entrance nine times; the protagonist read rescue as attack and fought his way inland against the current. The strangest crossing the Ferrymaster has ever worked.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -25,
+        "affection": 5,
+        "fear": 20,
+        "suspicion": 20
+      }
+    },
+    {
+      "event": {
+        "key": "rel_tide_man_the_blue_h3",
+        "value": "Continuance return: he remembers every refused crossing. 'I have washed you to the door nine times. The tenth ride is also free.' The ferryfolk carry the young and the stores up-causeway when the amulet glows.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -15,
+        "fear": 15,
+        "suspicion": 10
+      }
+    }
+  ],
+  "notes": "Modeled at rematch stage (rung 4). Calibration call: the Ferrymaster pities more than he hates — affection 15 is a ferryman's professional compassion for the one passenger who will not board, will not leave, and will not drown. Fear 35 is moderate and specific: his horror is a drowning on his route, and he will not cause one even in defense, so the man is a problem he cannot solve with his tools. Trust deeply negative post-realization ('You understand every word I say, don't you?'). Deltas sum to current dimensions."
+}

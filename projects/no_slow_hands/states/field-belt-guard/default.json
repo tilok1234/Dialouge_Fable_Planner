@@ -1,0 +1,39 @@
+{
+  "id": "state_field_belt_guard__default",
+  "characterId": "char_field_belt_guard",
+  "label": "Default — a quiet belt",
+  "mood": "dry, concerned correction",
+  "location": "The field belt, the lane by the Fungal Field gate",
+  "injuries": [],
+  "activeQuestStages": [],
+  "recentEvents": [
+    {
+      "key": "nsh_state_field_belt_guard_def_ev1",
+      "value": "Watched his latest run on the Glass: the 'battlefield' past the gate is a pollination common; the 'waves' were gardeners coming to see what the shouting was.",
+      "lang": "en"
+    },
+    {
+      "key": "nsh_state_field_belt_guard_def_ev2",
+      "value": "The farmers now ask her if the gardeners will take revenge on the lane. That is his legacy on her belt.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_field_belt_guard_def_cf1",
+      "value": "He tips his helmet to the farmers and is the single largest source of incident reports on her belt.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-field-belt-guard-default-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_field_belt_guard_def_obj",
+    "value": "Keep the belt quiet, and keep telling him what the Glass shows daily: nothing comes out; only he goes in, angry.",
+    "lang": "en"
+  },
+  "notes": "She knows fact_fungal_field_is_commons specifically — that gate sits on her belt (profile notes)."
+}

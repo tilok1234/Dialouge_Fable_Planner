@@ -1,0 +1,39 @@
+{
+  "id": "state_ancient_mirejaw__shielded",
+  "characterId": "char_ancient_mirejaw",
+  "label": "Shielded — the whole length of it",
+  "mood": "cornered stillness",
+  "location": "The Sunken Mire, over the deepest pools",
+  "injuries": [
+    "Harrowed hide from blows taken holding position over the deepest pools"
+  ],
+  "activeQuestStages": [
+    "quest_rung_07_sunken_mire__stage_2",
+    "quest_rung_07_sunken_mire__stage_3"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_ancient_mirejaw_sh_ev1",
+      "value": "It put its whole length between the intruder and the deepest spawning pools and did not move. The small things went quiet behind it.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_ancient_mirejaw_sh_cf1",
+      "value": "A foot in the spawning pools is the one intrusion it cannot absorb.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-ancient-mirejaw-shielded-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_ancient_mirejaw_sh_obj",
+    "value": "Not past.",
+    "lang": "en"
+  },
+  "phase": "shielded"
+}

@@ -1,0 +1,209 @@
+{
+  "version": 1,
+  "contentHash": "sha256:char-sorrel-dane-v1",
+  "id": "char_meadow_herbalist",
+  "identity": {
+    "name": "Sorrel Dane",
+    "species": "human",
+    "culture": "meadow communes outside the capital",
+    "factions": [],
+    "occupation": "Meadow herbalist",
+    "gameplayRole": "ambient-npc",
+    "narrativeFunction": "ambient",
+    "publicReputation": {
+      "key": "char_sorrel_reputation",
+      "value": "The soft-spoken herbalist whose poultices work better than they should and whose opinions about the gates are unwelcome at dinner.",
+      "lang": "en"
+    },
+    "privateReality": {
+      "key": "char_sorrel_private",
+      "value": "Half her pharmacopoeia came down the old diplomatic roads from the Drowned Fen's own herbalists — the hero has been trampling her teachers' garden.",
+      "lang": "en"
+    },
+    "connections": [
+      "fact_witness_glass_observes_realms",
+      "fact_drowned_fen_is_commons",
+      "char_hub_circle_voice"
+    ]
+  },
+  "core": {
+    "primaryDesire": {
+      "key": "char_sorrel_desire",
+      "value": "To trade cuttings with the fen herbalists again someday, the way her teacher did.",
+      "lang": "en"
+    },
+    "primaryFear": {
+      "key": "char_sorrel_fear",
+      "value": "That the hero will reach the fen's spawning pools, and the wetland will close itself to everyone forever in response.",
+      "lang": "en"
+    },
+    "centralValue": {
+      "key": "char_sorrel_value",
+      "value": "You don't pull a plant up to check the roots. You watch, you wait, you learn what it's telling you.",
+      "lang": "en"
+    },
+    "mainFlaw": {
+      "key": "char_sorrel_flaw",
+      "value": "She is so gentle that the hero files her under 'harmless' and hears nothing she says.",
+      "lang": "en"
+    },
+    "centralContradiction": {
+      "key": "char_sorrel_contradiction",
+      "value": "Everything healing in her satchel traces back to the realms, and the man she treats keeps marching off to hurt the people who taught her.",
+      "lang": "en"
+    },
+    "moralBoundary": {
+      "key": "char_sorrel_boundary",
+      "value": "She will not prepare anything meant to harm — no poisons, no 'monster banes', whatever he offers.",
+      "lang": "en"
+    },
+    "breakingPoint": {
+      "key": "char_sorrel_breaking",
+      "value": "Recognizing a fen-grown cutting — her teacher's cultivar — in a handful of 'reagents' the hero ripped up.",
+      "lang": "en"
+    }
+  },
+  "opinions": [
+    {
+      "target": "player",
+      "targetLabel": "The hero",
+      "position": "sympathetic",
+      "reason": "He is courteous to her, grateful for the poultices, and trampling the garden they came from.",
+      "confidence": "high",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Escalates with run count: early she offers the fen's history with the medicine; mid-arc she names each plant and its grower; late-arc she treats him and states whose garden paid for it. Softens instantly if he asks her to teach him one plant name.",
+      "illustrativeLine": {
+        "key": "char_sorrel_opinion_player",
+        "value": "That salve is fen-grown mallow. The fen folk bred it gentler over two hundred years. You walked through their beds yesterday calling it corruption.",
+        "lang": "en"
+      }
+    },
+    {
+      "target": "char_hub_circle_voice",
+      "targetLabel": "Ilsa Roon of the Circle",
+      "position": "friendly",
+      "reason": "Ilsa taught her the fen herbalists' names; Sorrel teaches the plants back. Same grief, two dialects.",
+      "confidence": "high",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "If Ilsa ever burns out, Sorrel would carry the names for both of them."
+    }
+  ],
+  "knowledge": {
+    "knows": [
+      "fact_witness_glass_observes_realms",
+      "fact_realms_peaceful_ten_millennia",
+      "fact_no_monster_ever_crossed_gates",
+      "fact_drowned_fen_is_commons",
+      "fact_mirejaw_is_marsh_guardian"
+    ],
+    "believesFalse": [],
+    "suspects": [
+      "fact_book_is_childrens_comedy"
+    ],
+    "secrets": [],
+    "lies": [],
+    "unknown": [
+      "fact_amulet_is_diplomatic_concord"
+    ]
+  },
+  "voice": {
+    "formality": "neutral",
+    "directness": "indirect",
+    "typicalSentenceLength": "medium",
+    "rhythm": "Soft and unhurried; tends the sentence like a cutting, pruning rather than pushing.",
+    "vocabularyComplexity": "common",
+    "usesContractions": true,
+    "usesHumor": "rare",
+    "metaphorDomain": {
+      "source": "roots, cuttings, seasons, soil, and dosage",
+      "examples": [
+        {
+          "key": "char_sorrel_metaphor_1",
+          "value": "Truth is like comfrey — plant it and leave it alone. Digging at it every day just kills the root.",
+          "lang": "en"
+        }
+      ]
+    },
+    "emotionalRestraint": "open",
+    "declarationStyle": "balanced",
+    "namesEmotionsDirectly": true,
+    "addressMode": "by-name",
+    "avoids": [
+      "monster",
+      "evil",
+      "battle",
+      "smite"
+    ],
+    "sampleLines": [
+      {
+        "key": "char_sorrel_sample_1",
+        "value": "The fen is a refuge, not a battlefield. The wardens there grow more medicine in a season than my whole commune.",
+        "lang": "en"
+      },
+      {
+        "key": "char_sorrel_sample_2",
+        "value": "Mirejaw has never once left the mire. Do you know what we call a guardian that never pursues? A boundary, dear. You keep crossing it.",
+        "lang": "en"
+      },
+      {
+        "key": "char_sorrel_sample_3",
+        "value": "Hold still. This will sting less than what you did to the people who grew it.",
+        "lang": "en"
+      }
+    ],
+    "antiSampleLines": [
+      {
+        "key": "char_sorrel_antisample_1",
+        "value": "Beware, hero! The swamp witch hungers for your life-force!",
+        "lang": "en"
+      },
+      {
+        "key": "char_sorrel_antisample_2",
+        "value": "Take this potion of demon-slaying, mighty champion!",
+        "lang": "en"
+      }
+    ]
+  },
+  "pressure": [
+    {
+      "condition": "betrayed",
+      "emotion": "quiet hurt",
+      "voiceShift": "Softer, not louder — the volume of someone stopping trying.",
+      "behaviour": "When he hears 'that was a garden' as 'corrupted thicket', she finishes the bandage and names the grower, once.",
+      "illustrativeLine": {
+        "key": "char_sorrel_pressure_betrayed",
+        "value": "A thicket. Her name was Wen, and she kept bees. But yes. A thicket.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "speaking-to-required-but-hated",
+      "emotion": "gentle steel",
+      "voiceShift": "Same softness, but the dosages of truth get stronger.",
+      "behaviour": "Late-runs posture: still treats him — that is the boundary she will not cross — but every treatment comes with provenance.",
+      "illustrativeLine": {
+        "key": "char_sorrel_pressure_late",
+        "value": "They drill evacuations when your amulet glows, the fen children too. Drink this. It's mallow. You know whose.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "praised",
+      "emotion": "sad",
+      "voiceShift": "Deflects to her teachers.",
+      "behaviour": "Cannot take credit for knowledge she is watching him destroy at the source.",
+      "illustrativeLine": {
+        "key": "char_sorrel_pressure_praised",
+        "value": "Don't thank me. Thank the fen. Better yet, stop going there.",
+        "lang": "en"
+      }
+    }
+  ],
+  "tags": [
+    "hub",
+    "herbalist",
+    "meadow",
+    "human"
+  ],
+  "notes": "Her knowledge is specialty-scoped: she knows the Drowned Fen and Mirejaw facts because her craft descends from the fen's herbalists, but only suspects the book is a comedy and doesn't know the amulet's nature. The moral boundary (no poisons, no 'monster banes') should gate any vendor logic attached to her later. Her treatment of the hero continues in every state — healing him while telling him the provenance is her form of protest."
+}

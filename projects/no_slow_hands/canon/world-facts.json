@@ -1,0 +1,706 @@
+[
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-realms-peaceful-ten-millennia-v1",
+    "id": "fact_realms_peaceful_ten_millennia",
+    "label": "The Ten Quiet Realms have known peace for ten thousand years",
+    "statement": {
+      "key": "canon_realms_peaceful_ten_millennia",
+      "value": "The Ten Quiet Realms have lived in peace for roughly ten thousand years. They have never invaded one another or threatened the outside world, and most inhabitants have forgotten war entirely.",
+      "lang": "en"
+    },
+    "veracity": "objective-truth",
+    "visibility": "public",
+    "inWorldDate": "~10,000 years before present to present",
+    "references": [
+      "fact_gates_are_diplomatic"
+    ],
+    "tags": [
+      "realms",
+      "peace",
+      "history",
+      "world-law"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-no-monster-ever-crossed-gates-v1",
+    "id": "fact_no_monster_ever_crossed_gates",
+    "label": "No creature has ever crossed the gates outward",
+    "statement": {
+      "key": "canon_no_monster_ever_crossed_gates",
+      "value": "In ten thousand years, no creature from the Ten Quiet Realms has ever crossed the gates outward. The protagonist alone interprets this long peace as evidence of secret preparation.",
+      "lang": "en"
+    },
+    "veracity": "objective-truth",
+    "visibility": "public",
+    "inWorldDate": "~10,000 years before present to present",
+    "references": [
+      "fact_realms_peaceful_ten_millennia",
+      "fact_gates_are_diplomatic"
+    ],
+    "tags": [
+      "gates",
+      "peace",
+      "history",
+      "world-law"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-gates-are-diplomatic-v1",
+    "id": "fact_gates_are_diplomatic",
+    "label": "The gates are diplomatic seals, not prisons",
+    "statement": {
+      "key": "canon_gates_are_diplomatic",
+      "value": "The ancient enchanted gates between the Ten Quiet Realms and the outside world are diplomatic seals placed by mutual agreement, not prisons or containment wards. They were built to make peaceful travel possible for trusted envoys.",
+      "lang": "en"
+    },
+    "veracity": "objective-truth",
+    "visibility": "known-to-few",
+    "inWorldDate": "~10,000 years before present",
+    "references": [
+      "fact_realms_peaceful_ten_millennia"
+    ],
+    "tags": [
+      "gates",
+      "diplomacy",
+      "world-law"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-law-of-fair-warning-v1",
+    "id": "fact_law_of_fair_warning",
+    "label": "The Law of Fair Warning governs all combat",
+    "statement": {
+      "key": "canon_law_of_fair_warning",
+      "value": "The Ten Realms share one ancient moral law: no blow may fall before its path has been shown. Defenders must clearly indicate where an attack will land and leave a means of escape. Inhabitants try to restrain, repel, or exhaust the intruder — never to execute him.",
+      "lang": "en"
+    },
+    "veracity": "world-rule",
+    "visibility": "public",
+    "inWorldDate": "ancient, predates present",
+    "references": [
+      "fact_realms_peaceful_ten_millennia"
+    ],
+    "tags": [
+      "law-of-fair-warning",
+      "combat",
+      "telegraphs",
+      "world-law"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-continuance-restores-dead-v1",
+    "id": "fact_continuance_restores_dead",
+    "label": "The Continuance reconstructs the dead",
+    "statement": {
+      "key": "canon_continuance_restores_dead",
+      "value": "The Continuance is an ancient restorative magic created so disease, accidents, and disasters could never permanently destroy the isolated realms. It slowly reconstructs anyone who dies inside a realm: it restores the body but does not erase pain or memory. This is why defeated guardians return — and why they remember the hero.",
+      "lang": "en"
+    },
+    "veracity": "objective-truth",
+    "visibility": "public",
+    "inWorldDate": "created ~10,000 years before present",
+    "references": [
+      "fact_gates_are_diplomatic"
+    ],
+    "tags": [
+      "continuance",
+      "death",
+      "restoration",
+      "world-law"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-witness-glass-observes-realms-v1",
+    "id": "fact_witness_glass_observes_realms",
+    "label": "The Witness Glass observes everything beyond the gates",
+    "statement": {
+      "key": "canon_witness_glass_observes_realms",
+      "value": "The Witness Glass is an ancient diplomatic device in the hub, built to protect envoys and prevent misunderstandings between realms. It lets hub NPCs watch everything the player does beyond the gates, in real time.",
+      "lang": "en"
+    },
+    "veracity": "objective-truth",
+    "visibility": "known-to-few",
+    "inWorldDate": "ancient, predates present",
+    "references": [
+      "fact_gates_are_diplomatic"
+    ],
+    "tags": [
+      "witness-glass",
+      "hub",
+      "observation",
+      "diplomacy"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-amulet-is-diplomatic-concord-v1",
+    "id": "fact_amulet_is_diplomatic_concord",
+    "label": "The amulet is the Amulet of Concord, a diplomatic artifact",
+    "statement": {
+      "key": "canon_amulet_is_diplomatic_concord",
+      "value": "The player's amulet is the Amulet of Concord, an artifact carried by diplomatic envoys to make peaceful travel between the Ten Realms possible. It translates every language and simple animal intent, opens diplomatic roads and sealed gates, recalls a seriously injured bearer, and transfers objects safely between realms. The protagonist's name for it — the Amulet of Righteous Judgment — is his own invention.",
+      "lang": "en"
+    },
+    "veracity": "objective-truth",
+    "visibility": "known-to-few",
+    "inWorldDate": "lost outside the gates centuries before present",
+    "references": [
+      "fact_gates_are_diplomatic"
+    ],
+    "tags": [
+      "amulet",
+      "artifact",
+      "diplomacy",
+      "envoy"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-amulet-translation-is-accurate-v1",
+    "id": "fact_amulet_translation_is_accurate",
+    "label": "The amulet's translation is perfect",
+    "statement": {
+      "key": "canon_amulet_translation_is_accurate",
+      "value": "The Amulet of Concord translates flawlessly. There is no magical mistranslation: the hero hears every plea, warning, and explanation verbatim and still misinterprets all of it through his heroic worldview.",
+      "lang": "en"
+    },
+    "veracity": "objective-truth",
+    "visibility": "known-to-few",
+    "references": [
+      "fact_amulet_is_diplomatic_concord"
+    ],
+    "tags": [
+      "amulet",
+      "translation",
+      "dramatic-irony"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-book-is-childrens-comedy-v1",
+    "id": "fact_book_is_childrens_comedy",
+    "label": "\"The Ten Dread Sovereigns\" is a children's comedy",
+    "statement": {
+      "key": "canon_book_is_childrens_comedy",
+      "value": "\"The Ten Dread Sovereigns\" is a millennia-old children's adventure comedy, not a prophecy. Its villains are affectionate caricatures of the realms' rulers and guardians: the Bone King was called sinister for telling long stories about dead relatives, the Goblin Crown became a warlord because goblin fireworks were unusually loud, and the Tide-Man became a sea tyrant because he once canceled a ferry crossing in bad weather.",
+      "lang": "en"
+    },
+    "veracity": "objective-truth",
+    "visibility": "known-to-few",
+    "inWorldDate": "written thousands of years before present",
+    "references": [],
+    "tags": [
+      "book",
+      "childrens-comedy",
+      "dramatic-irony",
+      "artifact"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-shards-are-domestic-magic-v1",
+    "id": "fact_shards_are_domestic_magic",
+    "label": "\"Shards\" are fragments of domestic magic",
+    "statement": {
+      "key": "canon_shards_are_domestic_magic",
+      "value": "What the hero calls shards — concentrated evil — are fragments of damaged domestic magic: broken heating stones, irrigation runes, memorial lamps, cracked protective charms, bits of workshop enchantments, and splinters from the Continuance network.",
+      "lang": "en"
+    },
+    "veracity": "objective-truth",
+    "visibility": "public",
+    "references": [
+      "fact_continuance_restores_dead"
+    ],
+    "tags": [
+      "shards",
+      "economy",
+      "domestic-magic"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-trophies-are-gate-seals-v1",
+    "id": "fact_trophies_are_gate_seals",
+    "label": "\"Trophies\" are gate seals",
+    "statement": {
+      "key": "canon_trophies_are_gate_seals",
+      "value": "What the hero calls trophies are gate seals carried by senior wardens and emergency responders. A gate seal identifies someone trusted to travel between realms during a crisis. Feeding them into the amulet forces open gates they were never meant to open for him.",
+      "lang": "en"
+    },
+    "veracity": "objective-truth",
+    "visibility": "known-to-few",
+    "references": [
+      "fact_gates_are_diplomatic",
+      "fact_amulet_is_diplomatic_concord"
+    ],
+    "tags": [
+      "trophies",
+      "gate-seals",
+      "economy",
+      "wardens"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-banking-uses-diplomatic-network-v1",
+    "id": "fact_banking_uses_diplomatic_network",
+    "label": "Banking moves loot through the diplomatic network",
+    "statement": {
+      "key": "canon_banking_uses_diplomatic_network",
+      "value": "Banking (holding E) makes the Amulet of Concord transfer everything the player carries out through the diplomatic network, beyond its owners' reach. If the player dies before banking, the inhabitants simply recover their own property.",
+      "lang": "en"
+    },
+    "veracity": "objective-truth",
+    "visibility": "known-to-few",
+    "references": [
+      "fact_amulet_is_diplomatic_concord"
+    ],
+    "tags": [
+      "banking",
+      "economy",
+      "amulet",
+      "theft"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-heavy-hands-emergency-service-v1",
+    "id": "fact_heavy_hands_emergency_service",
+    "label": "The Heavy Hands are an inter-realm emergency service",
+    "statement": {
+      "key": "canon_heavy_hands_emergency_service",
+      "value": "The creatures the hero calls Ogre Crushers are the Heavy Hands, an ancient inter-realm emergency service that responds to fires, floods, collapsed buildings, dangerous animals, and threats too powerful for ordinary guards. Their large silhouette is deliberately recognizable so frightened civilians know help has arrived.",
+      "lang": "en"
+    },
+    "veracity": "objective-truth",
+    "visibility": "public",
+    "inWorldDate": "ancient, predates present",
+    "references": [],
+    "tags": [
+      "heavy-hands",
+      "ogre-crusher",
+      "emergency-service",
+      "horde"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-ogre-seals-are-credentials-v1",
+    "id": "fact_ogre_seals_are_credentials",
+    "label": "Every Heavy Hand carries a gate seal as credentials",
+    "statement": {
+      "key": "canon_ogre_seals_are_credentials",
+      "value": "Every Heavy Hand carries a prominent gate seal as emergency credentials so they can cross realm boundaries during a crisis. These seals are what the player collects as horde trophies — meaning the hero has begun specifically targeting emergency workers for their identification badges.",
+      "lang": "en"
+    },
+    "veracity": "objective-truth",
+    "visibility": "public",
+    "references": [
+      "fact_heavy_hands_emergency_service",
+      "fact_trophies_are_gate_seals"
+    ],
+    "tags": [
+      "heavy-hands",
+      "gate-seals",
+      "trophies",
+      "horde"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-reliquary-king-is-caretaker-v1",
+    "id": "fact_reliquary_king_is_caretaker",
+    "label": "Bone Reliquary King is a sanctuary caretaker",
+    "statement": {
+      "key": "canon_reliquary_king_is_caretaker",
+      "value": "The Bone Reliquary King (rung 1) is the patient caretaker of an ancestral sanctuary. The skeletons around him are willing ancestors, scribes, and tomb attendants. His \"necromancy\" is remembrance; he opens graves beneath a stationary intruder only because standing still threatens the burial chambers.",
+      "lang": "en"
+    },
+    "veracity": "objective-truth",
+    "visibility": "public",
+    "references": [
+      "fact_law_of_fair_warning"
+    ],
+    "tags": [
+      "boss",
+      "rung-1",
+      "reliquary-crypt",
+      "true-identity"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-goblin-crown-is-festival-marshal-v1",
+    "id": "fact_goblin_crown_is_festival_marshal",
+    "label": "Goblin War Crown is an elected festival marshal",
+    "statement": {
+      "key": "canon_goblin_crown_is_festival_marshal",
+      "value": "The Goblin War Crown (rung 2) is an elected festival marshal responsible for protecting a goblin settlement. His powder kegs are fireworks and quarry charges, and the palisade exists to keep dangerous wildlife out. The hero arrives during the Lantern Feast.",
+      "lang": "en"
+    },
+    "veracity": "objective-truth",
+    "visibility": "public",
+    "references": [
+      "fact_law_of_fair_warning"
+    ],
+    "tags": [
+      "boss",
+      "rung-2",
+      "palisade-camp",
+      "lantern-feast",
+      "true-identity"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-living-pyre-is-communal-hearth-v1",
+    "id": "fact_living_pyre_is_communal_hearth",
+    "label": "The Living Pyre is a communal hearth and lighthouse",
+    "statement": {
+      "key": "canon_living_pyre_is_communal_hearth",
+      "value": "The Living Pyre (rung 3) is a sentient communal hearth and lighthouse that has warmed the Ashen people for millennia. Its wisps are sparks carrying heat to homes and furnaces, not weapons.",
+      "lang": "en"
+    },
+    "veracity": "objective-truth",
+    "visibility": "public",
+    "references": [
+      "fact_law_of_fair_warning"
+    ],
+    "tags": [
+      "boss",
+      "rung-3",
+      "ashen-shrine",
+      "true-identity"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-tide-man-is-ferryman-v1",
+    "id": "fact_tide_man_is_ferryman",
+    "label": "Tide-Man the Blue is a ferryman and floodgate keeper",
+    "statement": {
+      "key": "canon_tide_man_is_ferryman",
+      "value": "Tide-Man the Blue (rung 4) is a ferryman and keeper of the floodgates. His surf walls are intended to wash an intruder safely back toward the entrance, not to drown him.",
+      "lang": "en"
+    },
+    "veracity": "objective-truth",
+    "visibility": "public",
+    "references": [
+      "fact_law_of_fair_warning"
+    ],
+    "tags": [
+      "boss",
+      "rung-4",
+      "drowned-vault",
+      "true-identity"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-lava-core-colossus-is-forge-steward-v1",
+    "id": "fact_lava_core_colossus_is_forge_steward",
+    "label": "Lava-Core Colossus is an ancient forge steward",
+    "statement": {
+      "key": "canon_lava_core_colossus_is_forge_steward",
+      "value": "The Lava-Core Colossus (rung 5) is an ancient forge steward that creates farming tools, building materials, and heating stones. Its \"heavy ordnance\" is industrial machinery turned toward emergency defense.",
+      "lang": "en"
+    },
+    "veracity": "objective-truth",
+    "visibility": "public",
+    "references": [
+      "fact_law_of_fair_warning"
+    ],
+    "tags": [
+      "boss",
+      "rung-5",
+      "molten-forge",
+      "true-identity"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-dryad-is-nursery-keeper-v1",
+    "id": "fact_dryad_is_nursery_keeper",
+    "label": "Dryad of Nature keeps a forest nursery",
+    "statement": {
+      "key": "canon_dryad_is_nursery_keeper",
+      "value": "The Dryad of Nature (rung 6) is the keeper of a vast forest nursery. Her curving projectiles deliberately avoid ancient trees and guide intruders away from nesting grounds; she bends shots around cover only because the hero keeps hiding near vulnerable trees.",
+      "lang": "en"
+    },
+    "veracity": "objective-truth",
+    "visibility": "public",
+    "references": [
+      "fact_law_of_fair_warning"
+    ],
+    "tags": [
+      "boss",
+      "rung-6",
+      "verdant-ward",
+      "true-identity"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-mirejaw-is-marsh-guardian-v1",
+    "id": "fact_mirejaw_is_marsh_guardian",
+    "label": "Ancient Mirejaw is a protective marsh guardian",
+    "statement": {
+      "key": "canon_mirejaw_is_marsh_guardian",
+      "value": "Ancient Mirejaw (rung 7) is a peaceful but fiercely protective marsh creature guarding spawning pools and smaller wetland animals. It never leaves the mire and never attacks anyone who stays outside its territory.",
+      "lang": "en"
+    },
+    "veracity": "objective-truth",
+    "visibility": "public",
+    "references": [
+      "fact_law_of_fair_warning"
+    ],
+    "tags": [
+      "boss",
+      "rung-7",
+      "sunken-mire",
+      "true-identity"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-night-elf-prince-is-young-diplomat-v1",
+    "id": "fact_night_elf_prince_is_young_diplomat",
+    "label": "Royal Night-Elf Prince is a young ruler untrained in war",
+    "statement": {
+      "key": "canon_night_elf_prince_is_young_diplomat",
+      "value": "The Royal Night-Elf Prince (rung 8) is a young ruler trained in ceremony, diplomacy, and performance rather than war. His mirrored combat style exists because he learns how to fight by copying the protagonist — the hero literally introduces him to violence.",
+      "lang": "en"
+    },
+    "veracity": "objective-truth",
+    "visibility": "public",
+    "references": [
+      "fact_law_of_fair_warning"
+    ],
+    "tags": [
+      "boss",
+      "rung-8",
+      "moonlit-court",
+      "true-identity"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-griffin-is-road-guardian-v1",
+    "id": "fact_griffin_is_road_guardian",
+    "label": "Sun-Crown Griffin guards the highland roads",
+    "statement": {
+      "key": "canon_griffin_is_road_guardian",
+      "value": "The Sun-Crown Griffin (rung 9) is the guardian of the highland roads, a weather shepherd, and protector of cliffside roosts. Its gusts normally guide travelers away from dangerous drops; it intercepts the hero's movement to herd him back toward the exit.",
+      "lang": "en"
+    },
+    "veracity": "objective-truth",
+    "visibility": "public",
+    "references": [
+      "fact_law_of_fair_warning"
+    ],
+    "tags": [
+      "boss",
+      "rung-9",
+      "highlands",
+      "true-identity"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-scorpion-empress-is-matriarch-v1",
+    "id": "fact_scorpion_empress_is_matriarch",
+    "label": "Scorpion-Empress is a peaceful matriarch",
+    "statement": {
+      "key": "canon_scorpion_empress_is_matriarch",
+      "value": "The Scorpion-Empress (rung 10) is the matriarch of a peaceful desert civilization. Her pincer strategy is a containment maneuver designed to keep the hero away from nurseries and evacuation tunnels.",
+      "lang": "en"
+    },
+    "veracity": "objective-truth",
+    "visibility": "public",
+    "references": [
+      "fact_law_of_fair_warning"
+    ],
+    "tags": [
+      "boss",
+      "rung-10",
+      "desert",
+      "true-identity"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-kraken-is-reef-keeper-v1",
+    "id": "fact_kraken_is_reef_keeper",
+    "label": "Abyssal-Crown Kraken tends reefs and ships",
+    "statement": {
+      "key": "canon_kraken_is_reef_keeper",
+      "value": "The Abyssal-Crown Kraken (bench boss) maintains reefs, redirects storms, and carries damaged ships toward safe water. Its frightening name is a title from the protagonist's heroic journal, not an objective description.",
+      "lang": "en"
+    },
+    "veracity": "objective-truth",
+    "visibility": "public",
+    "references": [],
+    "tags": [
+      "boss",
+      "bench",
+      "ocean",
+      "true-identity"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-forge-titan-is-legendary-builder-v1",
+    "id": "fact_forge_titan_is_legendary_builder",
+    "label": "Cyclops Forge-Titan is a legendary builder",
+    "statement": {
+      "key": "canon_forge_titan_is_legendary_builder",
+      "value": "The Cyclops Forge-Titan (bench boss) is a legendary builder responsible for bridges, aqueducts, tools, and mountain roads. Its frightening name is a title from the protagonist's heroic journal, not an objective description.",
+      "lang": "en"
+    },
+    "veracity": "objective-truth",
+    "visibility": "public",
+    "references": [],
+    "tags": [
+      "boss",
+      "bench",
+      "mountains",
+      "true-identity"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-pit-fiend-is-rescue-guardian-v1",
+    "id": "fact_pit_fiend_is_rescue_guardian",
+    "label": "Pit-Fiend Juggernaut is a subterranean rescue guardian",
+    "statement": {
+      "key": "canon_pit_fiend_is_rescue_guardian",
+      "value": "The Pit-Fiend Juggernaut (bench boss) is a subterranean rescue guardian that clears cave-ins and supports the foundations of the deep settlements. Its frightening name is a title from the protagonist's heroic journal, not an objective description.",
+      "lang": "en"
+    },
+    "veracity": "objective-truth",
+    "visibility": "public",
+    "references": [],
+    "tags": [
+      "boss",
+      "bench",
+      "underground",
+      "true-identity"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-fungal-field-is-commons-v1",
+    "id": "fact_fungal_field_is_commons",
+    "label": "Fungal Field is a farming common",
+    "statement": {
+      "key": "canon_fungal_field_is_commons",
+      "value": "The Fungal Field (horde tier 0) is a farming and pollination common inhabited by fungi, insects, frogs, and gardeners. Its \"waves\" are residents arriving to contain an armed intruder, not an invading army.",
+      "lang": "en"
+    },
+    "veracity": "objective-truth",
+    "visibility": "public",
+    "references": [],
+    "tags": [
+      "horde",
+      "tier-0",
+      "commons",
+      "fungal-field"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-bone-yard-is-commons-v1",
+    "id": "fact_bone_yard_is_commons",
+    "label": "Bone Yard is an ancestral restoration ground",
+    "statement": {
+      "key": "canon_bone_yard_is_commons",
+      "value": "The Bone Yard (horde tier 1) is an ancestral restoration ground where skeletons maintain monuments and teach younger generations their history. Its \"waves\" are residents arriving to contain an armed intruder, not an invading army.",
+      "lang": "en"
+    },
+    "veracity": "objective-truth",
+    "visibility": "public",
+    "references": [
+      "fact_reliquary_king_is_caretaker"
+    ],
+    "tags": [
+      "horde",
+      "tier-1",
+      "commons",
+      "bone-yard"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-drowned-fen-is-commons-v1",
+    "id": "fact_drowned_fen_is_commons",
+    "label": "Drowned Fen is a protected wetland refuge",
+    "statement": {
+      "key": "canon_drowned_fen_is_commons",
+      "value": "The Drowned Fen (horde tier 2) is a protected wetland refuge filled with amphibians, aquatic creatures, herbalists, and marsh wardens. Its \"waves\" are residents arriving to contain an armed intruder, not an invading army.",
+      "lang": "en"
+    },
+    "veracity": "objective-truth",
+    "visibility": "public",
+    "references": [
+      "fact_mirejaw_is_marsh_guardian"
+    ],
+    "tags": [
+      "horde",
+      "tier-2",
+      "commons",
+      "drowned-fen"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-ashen-court-is-commons-v1",
+    "id": "fact_ashen_court_is_commons",
+    "label": "Ashen Court is a fire-adapted civic district",
+    "statement": {
+      "key": "canon_ashen_court_is_commons",
+      "value": "The Ashen Court (horde tier 3) is a fire-adapted civic district built around communal furnaces, statues, workshops, and heat-loving wildlife. Its \"waves\" are residents arriving to contain an armed intruder, not an invading army.",
+      "lang": "en"
+    },
+    "veracity": "objective-truth",
+    "visibility": "public",
+    "references": [
+      "fact_living_pyre_is_communal_hearth"
+    ],
+    "tags": [
+      "horde",
+      "tier-3",
+      "commons",
+      "ashen-court"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-reception-hall-awaits-first-visitor-v1",
+    "id": "fact_reception_hall_awaits_first_visitor",
+    "label": "An untouched reception hall awaits the first visitor",
+    "statement": {
+      "key": "canon_reception_hall_awaits_first_visitor",
+      "value": "Beyond the Scorpion-Empress stands an untouched diplomatic reception hall prepared thousands of years ago for the first visitor from outside. It holds gifts from all ten realms, a long table set for a peace feast, a faded banner reading \"WELCOME, FRIEND BEYOND THE GATE\", and murals of the ten guardians helping one another.",
+      "lang": "en"
+    },
+    "veracity": "objective-truth",
+    "visibility": "secret",
+    "inWorldDate": "prepared thousands of years before present",
+    "references": [
+      "fact_gates_are_diplomatic",
+      "fact_scorpion_empress_is_matriarch"
+    ],
+    "tags": [
+      "reception-hall",
+      "endgame",
+      "diplomacy",
+      "dramatic-irony"
+    ]
+  }
+]

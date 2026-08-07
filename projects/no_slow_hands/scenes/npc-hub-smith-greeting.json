@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "contentHash": "sha256:scene-npc-hub-smith-greeting-v1",
+  "id": "scene_npc_hub_smith_greeting",
+  "label": "Hetta Cole's first greeting — the work talks",
+  "sceneType": "npc-first-greeting",
+  "participants": [
+    {
+      "characterId": "char_hub_smith",
+      "stateId": "state_hub_smith__default",
+      "relationshipIds": [
+        "rel_hub_smith__player"
+      ],
+      "role": "speaker"
+    }
+  ],
+  "boundQuestStages": [],
+  "purpose": {
+    "key": "scene_npc_hub_smith_greeting_purpose",
+    "value": "Hetta serves the hero curtly and lets the work do the talking: the 'dark shards' he snaps under boot are craftsmanship she has re-set for Joren Pell and quietly admires.",
+    "lang": "en"
+  },
+  "requiredFacts": [],
+  "hintableFacts": [
+    "fact_shards_are_domestic_magic"
+  ],
+  "forbiddenRevelations": [],
+  "emotionalProgression": [
+    {
+      "order": 1,
+      "emotion": "curt courtesy",
+      "note": "She talks about as much as the anvil does; the repair quote is short and fair."
+    },
+    {
+      "order": 2,
+      "emotion": "pointed through the work",
+      "note": "She names the maker's technique on a broken hinge charm — better than hers, some years — and says nothing plainer."
+    },
+    {
+      "order": 3,
+      "emotion": "withdrawn silence",
+      "note": "He hears a craftsman's compliment to his trophy collection; she goes back to the forge having said everything she knows how to say."
+    }
+  ],
+  "maxLength": "short",
+  "availableChoices": [],
+  "templateDefaults": {
+    "npcGreeting": {
+      "neverValidateProphecyFraming": true
+    }
+  },
+  "notes": "Grounded bewilderment, smith register: her main flaw is that she says everything through the work and the hero has never once understood her — the scene should dramatize exactly that. She knows the shards are domestic magic (hintable via technique-talk, not lecture). She does NOT know the book's genre — no book reference. Never validate the hero's prophecy framing: there is no canon fact supporting 'the realms are evil', and that absence is itself the guard."
+}

@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "contentHash": "sha256:beat-rk-defeat-v1",
+  "id": "beat_reliquary_king_defeat",
+  "sceneId": "scene_reliquary_king_defeat",
+  "beats": [
+    {
+      "order": 1,
+      "speakerId": "char_bone_reliquary_king",
+      "intent": "Name the exhaustion honestly: the wards are spent, not broken.",
+      "landsOn": [],
+      "emotion": "spent pleading"
+    },
+    {
+      "order": 2,
+      "speakerId": "char_bone_reliquary_king",
+      "intent": "One last honest plea: nothing here belongs to the stranger.",
+      "landsOn": [],
+      "emotion": "spent pleading"
+    },
+    {
+      "order": 3,
+      "speakerId": "char_bone_reliquary_king",
+      "intent": "State the Continuance plainly; the return is certain.",
+      "landsOn": [
+        "fact_continuance_restores"
+      ],
+      "emotion": "quiet dignity"
+    },
+    {
+      "order": 4,
+      "speakerId": "char_bone_reliquary_king",
+      "intent": "The defeated promise: they will still ask him to leave in peace.",
+      "landsOn": [],
+      "emotion": "quiet dignity"
+    }
+  ],
+  "avoids": [
+    "divine-judgment framing",
+    "cursing the player"
+  ],
+  "contextPackageId": "ctx_reliquary_king_defeat"
+}

@@ -1,0 +1,42 @@
+{
+  "id": "state_night_elf_prince__rematch",
+  "characterId": "char_night_elf_prince",
+  "label": "Rematch — the mirror answers",
+  "mood": "studied dread, frightening aptitude",
+  "location": "The Moonlit Court, the mirror-gallery",
+  "injuries": [],
+  "activeQuestStages": [
+    "quest_rung_08_moonlit_court__stage_4"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_night_elf_prince_re_ev1",
+      "value": "The Continuance returned him; so did the lesson. He has been practicing in the mirror-gallery.",
+      "lang": "en"
+    },
+    {
+      "key": "nsh_state_night_elf_prince_re_ev2",
+      "value": "He greeted the gate-bell with the intruder's own words — 'Have at you, foul evil!' — and then apologized to his court for how natural it sounded.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_night_elf_prince_re_cf1",
+      "value": "He is becoming a copy of the thing destroying his court — and he has begun to catch himself admiring the technique.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-night-elf-prince-rematch-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_night_elf_prince_re_obj",
+    "value": "End the duel with the intruder's own techniques before the court learns them by watching him.",
+    "lang": "en"
+  },
+  "phase": "rematch",
+  "notes": "ESCALATION-BY-MIMICRY (required): he learns violence by copying the hero — kit, cadence, and now the hero's own heroic clichés, always with a beat of self-awareness: 'Forgive me. I heard it so many times it began to sound like language.'"
+}

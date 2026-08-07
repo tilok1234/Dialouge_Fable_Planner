@@ -1,0 +1,39 @@
+{
+  "id": "state_hub_warden__default",
+  "characterId": "char_hub_warden",
+  "label": "Default — keeper of the gate treaties",
+  "mood": "concerned correction",
+  "location": "The hub, the treaty archive by the Witness Glass",
+  "injuries": [],
+  "activeQuestStages": [],
+  "recentEvents": [
+    {
+      "key": "nsh_state_hub_warden_def_ev1",
+      "value": "Watched his latest run on the Witness Glass with four thousand years of signed treaties open on her knee.",
+      "lang": "en"
+    },
+    {
+      "key": "nsh_state_hub_warden_def_ev2",
+      "value": "Heard him rename a village an enemy settlement in real time, in his own cheerful words.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_hub_warden_def_cf1",
+      "value": "He hears every correction and files it as fear; 'You may have misunderstood what those gates are' lands on him as encouragement.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-hub-warden-default-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_hub_warden_def_obj",
+    "value": "Get him to read one treaty page — or one archive label — before the next gate opens.",
+    "lang": "en"
+  },
+  "notes": "Early-run era: the gentle correction phase (treaties, the book on the children's shelf, third shelf)."
+}

@@ -1,0 +1,208 @@
+{
+  "version": 1,
+  "contentHash": "sha256:char-tamsin-vale-v1",
+  "id": "char_settlement_trader",
+  "identity": {
+    "name": "Tamsin Vale",
+    "species": "human",
+    "culture": "road-born; her family's wagon has run the settlements for four generations",
+    "factions": [],
+    "occupation": "Traveling settlement trader",
+    "gameplayRole": "merchant",
+    "narrativeFunction": "merchant",
+    "publicReputation": {
+      "key": "char_tamsin_reputation",
+      "value": "A warm, sharp-eyed trader who knows every settlement between the gates and carries news with the stock.",
+      "lang": "en"
+    },
+    "privateReality": {
+      "key": "char_tamsin_private",
+      "value": "She traded with the realms before the hero was born, on the old diplomatic roads — some of the people behind those gates are her customers and her friends.",
+      "lang": "en"
+    },
+    "connections": [
+      "fact_witness_glass_observes_realms",
+      "char_capital_merchant",
+      "fact_gates_are_diplomatic"
+    ]
+  },
+  "core": {
+    "primaryDesire": {
+      "key": "char_tamsin_desire",
+      "value": "For the roads to be what they were: routes between people who are glad to see her wagon.",
+      "lang": "en"
+    },
+    "primaryFear": {
+      "key": "char_tamsin_fear",
+      "value": "That one day she will arrive at a settlement she has supplied for years and recognize it from the Witness Glass footage instead.",
+      "lang": "en"
+    },
+    "centralValue": {
+      "key": "char_tamsin_value",
+      "value": "A road is a promise between two places. You don't break it from either end.",
+      "lang": "en"
+    },
+    "mainFlaw": {
+      "key": "char_tamsin_flaw",
+      "value": "She keeps hoping warmth will work where evidence failed — she feeds the hero, jokes with him, and calls that a strategy.",
+      "lang": "en"
+    },
+    "centralContradiction": {
+      "key": "char_tamsin_contradiction",
+      "value": "The hero is the only traveler on her roads, and every mile he travels makes the roads less safe for everyone else.",
+      "lang": "en"
+    },
+    "moralBoundary": {
+      "key": "char_tamsin_boundary",
+      "value": "She will not carry his loot — her wagon moves honest goods, never 'liberated treasure'.",
+      "lang": "en"
+    },
+    "breakingPoint": {
+      "key": "char_tamsin_breaking",
+      "value": "Being offered, as trade goods, something she sold to a realm herself.",
+      "lang": "en"
+    }
+  },
+  "opinions": [
+    {
+      "target": "player",
+      "targetLabel": "The hero",
+      "position": "sympathetic",
+      "reason": "A courteous young man who always pays fair, tips the mule, and is ruining everything she loves.",
+      "confidence": "high",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Escalates with run count: early she hides the truth in jokes and stories; mid-arc the warmth gets effortful and the news darker; late-arc she keeps the smile as her last open door. Softens instantly if he asks after a settlement by name.",
+      "illustrativeLine": {
+        "key": "char_tamsin_opinion_player",
+        "value": "You're polite, you pay fair, and you're kind to my mule. I keep the list where I can see it, love. It's getting shorter than the other one.",
+        "lang": "en"
+      }
+    },
+    {
+      "target": "concept_the_roads",
+      "targetLabel": "The trade roads",
+      "position": "devoted",
+      "reason": "Four generations of her family kept them; they are the closest thing she has to a religion.",
+      "confidence": "absolute",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Never."
+    }
+  ],
+  "knowledge": {
+    "knows": [
+      "fact_witness_glass_observes_realms",
+      "fact_realms_peaceful_ten_millennia",
+      "fact_no_monster_ever_crossed_gates",
+      "fact_gates_are_diplomatic"
+    ],
+    "believesFalse": [],
+    "suspects": [
+      "fact_book_is_childrens_comedy"
+    ],
+    "secrets": [],
+    "lies": [],
+    "unknown": [
+      "fact_amulet_is_diplomatic_concord"
+    ]
+  },
+  "voice": {
+    "formality": "very-casual",
+    "directness": "indirect",
+    "typicalSentenceLength": "medium",
+    "rhythm": "Warm and rambling; the point arrives inside a story about somewhere else.",
+    "vocabularyComplexity": "plain",
+    "usesContractions": true,
+    "usesHumor": "frequent",
+    "metaphorDomain": {
+      "source": "roads, weather, wagonloads, and the seasons",
+      "examples": [
+        {
+          "key": "char_tamsin_metaphor_1",
+          "value": "You can shout at the weather all day, love. The road still goes where it goes.",
+          "lang": "en"
+        }
+      ]
+    },
+    "emotionalRestraint": "open",
+    "declarationStyle": "balanced",
+    "namesEmotionsDirectly": true,
+    "addressMode": "by-name",
+    "avoids": [
+      "hero",
+      "quest",
+      "evil"
+    ],
+    "sampleLines": [
+      {
+        "key": "char_tamsin_sample_1",
+        "value": "Salt, ribbon, lamp oil, and a side of news. The news is free today. It's also bad. Sit down anyway.",
+        "lang": "en"
+      },
+      {
+        "key": "char_tamsin_sample_2",
+        "value": "I used to sell ribbon to a goblin lady past the second gate. Paid in jam. Best jam on the road. She's 'the enemy' now, I hear.",
+        "lang": "en"
+      },
+      {
+        "key": "char_tamsin_sample_3",
+        "value": "You know what's funny? Four generations of my family worked those roads and nobody ever once needed a sword for it.",
+        "lang": "en"
+      }
+    ],
+    "antiSampleLines": [
+      {
+        "key": "char_tamsin_antisample_1",
+        "value": "Greetings, chosen one! My humble wares await your glorious quest!",
+        "lang": "en"
+      },
+      {
+        "key": "char_tamsin_antisample_2",
+        "value": "Buy! Buy! Everything must go, no questions asked!",
+        "lang": "en"
+      }
+    ]
+  },
+  "pressure": [
+    {
+      "condition": "betrayed",
+      "emotion": "wounded warmth",
+      "voiceShift": "The stories dry up mid-sentence.",
+      "behaviour": "When he hears 'that was a village' as 'enemy settlement', she goes quiet, wraps his purchases slowly, and says what the village was called.",
+      "illustrativeLine": {
+        "key": "char_tamsin_pressure_betrayed",
+        "value": "Village. The word was 'village', love. It had a name, too. Still does.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "speaking-to-required-but-hated",
+      "emotion": "worn kindness",
+      "voiceShift": "Same warmth, visibly maintained, like a lamp she has to keep trimming.",
+      "behaviour": "Late-runs posture: she keeps the door open because an open door is the only tool she has left, and says so.",
+      "illustrativeLine": {
+        "key": "char_tamsin_pressure_late",
+        "value": "They drill for you now, past the gates. Little ones, filing out quiet. I still smile at you, love. Do you want to know what it costs?",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "praised",
+      "emotion": "pleased despite herself",
+      "voiceShift": "Softens, then catches it.",
+      "behaviour": "Accepts kindness to the mule and the wagon as genuine; refuses praise that sounds like recruitment.",
+      "illustrativeLine": {
+        "key": "char_tamsin_pressure_praised",
+        "value": "You can compliment the mule all day. Just don't ask her to carry anything you 'liberated'.",
+        "lang": "en"
+      }
+    }
+  ],
+  "tags": [
+    "hub",
+    "merchant",
+    "vendor",
+    "traveler",
+    "human"
+  ],
+  "notes": "The reusable settlement trader: same profile serves any settlement stop. She only suspects the book is a comedy (she has heard the Warden say it) and does not know the amulet's true nature. Her moral boundary — never carrying 'liberated treasure' — is the reason the wagon can't be used as a banking shortcut; keep that intact in any vendor logic."
+}

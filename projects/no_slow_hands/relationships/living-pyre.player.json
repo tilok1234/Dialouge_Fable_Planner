@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-rel-living-pyre-player-v1",
+  "id": "rel_living_pyre__player",
+  "partyA": "char_living_pyre",
+  "partyB": "player",
+  "dimensions": {
+    "trust": -50,
+    "respect": 0,
+    "affection": 5,
+    "fear": 50,
+    "suspicion": 45,
+    "debt": 0
+  },
+  "namedState": "banked-hearth-besieged",
+  "history": [
+    {
+      "event": {
+        "key": "rel_living_pyre_h1",
+        "value": "The gate opened and the alarms of the hearth-cities went up; the Hearthmother's first response was to light the exit and offer warmth to the cold, armed traveler — a guest to be warmed and turned back.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -5,
+        "affection": 10,
+        "suspicion": 10
+      }
+    },
+    {
+      "event": {
+        "key": "rel_living_pyre_h2",
+        "value": "First fight: it warmed him and lit his way home even as its wisps fenced him toward the door; he called the supper-heat sparks hellfire and attacked the shrine. It stopped offering him warmth and spent it shielding the hearth-keepers instead.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -30,
+        "affection": -5,
+        "fear": 30,
+        "suspicion": 25
+      }
+    },
+    {
+      "event": {
+        "key": "rel_living_pyre_h3",
+        "value": "Continuance return: relit by the Continuance, it remembers each extinguishing. 'You come back colder each time, little ember.' When the amulet glows, it banks itself around the inner shrine before he reaches the door.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -15,
+        "fear": 20,
+        "suspicion": 10
+      }
+    }
+  ],
+  "notes": "Modeled at rematch stage (rung 3). Affection stays faintly POSITIVE on purpose: its defining flaw is that it cannot stop warming the intruder even while driving him out — a hearth does not learn to hate the cold. Fear 50 is the fear of going out and leaving ten thousand hearths dark, not of pain; its EXPOSED window is exhaustion from spending warmth on defense instead of homes. Trust is deeply negative since the realization phase: it knows the protagonist understands every word. Deltas sum to current dimensions."
+}

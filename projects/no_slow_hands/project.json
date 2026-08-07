@@ -1,0 +1,22 @@
+{
+  "id": "project_no_slow_hands",
+  "version": 1,
+  "contentHash": "sha256:uncommitted",
+  "name": "No_Slow_Hands",
+  "summary": {
+    "value": "The Hero of the Ten Quiet Realms — a bullet-heaven in which a sincerely deluded hero invades ten peaceful realms, mistaking their gentle guardians for evil sovereigns.",
+    "lang": "en"
+  },
+  "schemaVersion": "1.0.0",
+  "promptTemplateVersion": "1.0.0",
+  "defaultProvider": "claude-cli",
+  "defaultModel": "claude-opus-5",
+  "defaultReasoningEffort": "normal",
+  "locks": {
+    "characterProfileFields": {},
+    "dialogueLines": {},
+    "canonFacts": [],
+    "questFacts": {}
+  },
+  "locKeyPrefix": "no_slow_hands"
+}

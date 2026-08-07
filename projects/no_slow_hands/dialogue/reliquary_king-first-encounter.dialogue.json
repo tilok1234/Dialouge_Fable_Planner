@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "contentHash": "sha256:dlg-rk-first-enc-v1",
+  "id": "dlg_reliquary_king_first_encounter",
+  "sceneId": "scene_reliquary_king_first_encounter",
+  "approvalStatus": "accepted",
+  "lines": [
+    {
+      "id": "l1",
+      "beatOrder": 1,
+      "speakerId": "char_bone_reliquary_king",
+      "text": {
+        "key": "dlg_rk_first_enc_l1",
+        "value": "The road welcomed you as an envoy. Why have you arrived armed?",
+        "lang": "en"
+      },
+      "humanEdited": false
+    },
+    {
+      "id": "l2",
+      "beatOrder": 2,
+      "speakerId": "char_bone_reliquary_king",
+      "text": {
+        "key": "dlg_rk_first_enc_l2",
+        "value": "You are standing on Marrow-Aunt Sefla, who mended wells. Beside her lie her sons. Every name here is a candle, stranger, and I have kept them lit longer than your country has had a name.",
+        "lang": "en"
+      },
+      "humanEdited": false
+    },
+    {
+      "id": "l3",
+      "beatOrder": 3,
+      "speakerId": "char_bone_reliquary_king",
+      "text": {
+        "key": "dlg_rk_first_enc_l3",
+        "value": "Turn back through the gate. It will cost you nothing; the ledger forgives what does not happen.",
+        "lang": "en"
+      },
+      "humanEdited": false
+    },
+    {
+      "id": "l4",
+      "beatOrder": 4,
+      "speakerId": "char_bone_reliquary_king",
+      "text": {
+        "key": "dlg_rk_first_enc_l4",
+        "value": "So. You heard the whole of the warning, and you raise the bow regardless. Then watch my hands, envoy — the law requires that I show you where every blow will fall, and I have never once broken it.",
+        "lang": "en"
+      },
+      "humanEdited": false
+    }
+  ],
+  "provenance": {
+    "characterProfiles": [
+      {
+        "id": "char_bone_reliquary_king",
+        "version": 1
+      }
+    ],
+    "characterStates": [
+      {
+        "id": "state_bone_reliquary_king__pre_encounter",
+        "version": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "rel_bone_reliquary_king__player",
+        "version": 1
+      }
+    ],
+    "scene": {
+      "id": "scene_reliquary_king_first_encounter",
+      "version": 1
+    },
+    "canonSnapshot": [
+      {
+        "id": "fact_law_of_fair_warning",
+        "version": 1
+      }
+    ],
+    "schemaVersion": "1.0.0",
+    "promptTemplateVersion": "1.0.0",
+    "provider": "claude-code-session",
+    "model": "claude-fable-5",
+    "reasoningEffort": "high",
+    "generatedAt": "2026-08-07T22:30:00Z"
+  },
+  "stale": false,
+  "notes": "Authored in-session by the game-dev agent at user direction (the studio's claude-cli provider is blocked by an org 403 on headless auth). Honors the brief: mercy offered (l3), weakness never revealed, fair-warning law stated (l4), remembrance-not-necromancy flavor, no book revelation. Review or regenerate in studio at will.",
+  "beatPlanId": "beat_reliquary_king_first_encounter",
+  "contextPackageId": "ctx_reliquary_king_first_encounter"
+}

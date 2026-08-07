@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-fac-heavy-hands-v1",
+  "id": "fac_heavy_hands",
+  "name": "The Heavy Hands",
+  "summary": {
+    "key": "fac_heavy_hands_summary",
+    "value": "An ancient inter-realm emergency service — fires, floods, collapsed buildings, dangerous animals, anything too big for ordinary guards. The hero calls them Ogre Crushers. Their large silhouette is deliberately recognizable so frightened civilians know help has arrived, and every member carries a prominent gate seal: emergency credentials to cross realm boundaries in a crisis. That seal is the player's 'trophy'. The hero has begun specifically targeting rescue workers for their identification badges.",
+    "lang": "en"
+  },
+  "sharedBeliefs": [
+    "fact_realms_peaceful_ten_millennia",
+    "fact_law_of_fair_warning",
+    "fact_continuance_restores_dead",
+    "fact_heavy_hands_emergency_service",
+    "fact_ogre_seals_are_credentials",
+    "fact_trophies_are_gate_seals"
+  ],
+  "sharedOpinions": [
+    {
+      "target": "char_protagonist",
+      "position": "wary",
+      "reason": "He hunts us for our seals while we carry his victims out from under him. We will not stop responding. That is the whole point of us."
+    },
+    {
+      "target": "fac_fungal_field_commons",
+      "position": "friendly",
+      "reason": "Barn fires, root cellar collapses, one memorable wasp-yellowjacket swarm. Good people, generous soup."
+    },
+    {
+      "target": "fac_bone_yard_commons",
+      "position": "friendly",
+      "reason": "We right their fallen monuments; they remind us whose names are on them. Heavy work and long memory go well together."
+    },
+    {
+      "target": "fac_drowned_fen_commons",
+      "position": "friendly",
+      "reason": "Flood season, every year, sandbags and soup. The fen wardens are the finest dike crew in the realms."
+    },
+    {
+      "target": "fac_ashen_court_commons",
+      "position": "friendly",
+      "reason": "The only district that licenses us to touch their main sluice without asking. Trust like that is earned in steam."
+    }
+  ],
+  "metaphorDomain": {
+    "source": "lifting, bracing, arrival, the open hand",
+    "examples": [
+      {
+        "key": "fac_heavy_hands_metaphor_1",
+        "value": "Nothing is too heavy if enough hands arrive.",
+        "lang": "en"
+      },
+      {
+        "key": "fac_heavy_hands_metaphor_2",
+        "value": "You can tell a Heavy Hand by their silhouette — that is the point. Help should be visible from far away.",
+        "lang": "en"
+      }
+    ]
+  },
+  "terminology": [
+    {
+      "term": "the seal",
+      "meaning": {
+        "key": "fac_heavy_hands_term_seal",
+        "value": "The gate seal every member wears prominently: emergency credentials to cross realm boundaries in a crisis. Never hidden, never surrendered — until the hero started taking them.",
+        "lang": "en"
+      }
+    },
+    {
+      "term": "a call",
+      "meaning": {
+        "key": "fac_heavy_hands_term_call",
+        "value": "Any emergency summons, from a kitchen fire to a cave-in. Heavy Hands do not rank calls by size; they rank them by who is trapped.",
+        "lang": "en"
+      }
+    }
+  ],
+  "customs": [
+    {
+      "key": "fac_heavy_hands_custom_arrival",
+      "value": "On arriving at an emergency, a Heavy Hand announces themselves loudly and shows their seal first. Frightened people should never have to guess who just came through the wall.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_heavy_hands_custom_soup",
+      "value": "After a call, the crew eats whatever the rescued community offers, sitting with them until the shaking stops. The meal is part of the job.",
+      "lang": "en"
+    }
+  ],
+  "taboos": [
+    {
+      "key": "fac_heavy_hands_taboo_refusal",
+      "value": "Never refuse a call. Distance, danger, and the caller's politics are all equally irrelevant.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_heavy_hands_taboo_seal",
+      "value": "Never use the seal for personal travel. It opens gates for emergencies only; the trust of ten realms rides on that restraint.",
+      "lang": "en"
+    }
+  ],
+  "tags": [
+    "faction",
+    "emergency-service",
+    "heavy-hands",
+    "inter-realm"
+  ]
+}

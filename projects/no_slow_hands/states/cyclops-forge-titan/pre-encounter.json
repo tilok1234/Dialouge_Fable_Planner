@@ -1,0 +1,40 @@
+{
+  "id": "state_cyclops_forge_titan__pre_encounter",
+  "characterId": "char_cyclops_forge_titan",
+  "label": "Pre-encounter — news along the roads",
+  "mood": "heavy foreboding",
+  "location": "The mountain realm, the north pass works",
+  "injuries": [],
+  "activeQuestStages": [],
+  "recentEvents": [
+    {
+      "key": "nsh_state_cyclops_forge_titan_pre_ev1",
+      "value": "Word came along his own roads: ten realms broken into, their guardians' work smashed and pocketed as 'shards'.",
+      "lang": "en"
+    },
+    {
+      "key": "nsh_state_cyclops_forge_titan_pre_ev2",
+      "value": "He has doubled the inspection rounds on the aqueduct sluices and taught the valley crews the evacuation bells.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_cyclops_forge_titan_pre_cf1",
+      "value": "A stranger is using good roads to march on their builders. Ornig built those roads.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-cyclops-forge-titan-pre-encounter-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_cyclops_forge_titan_pre_obj",
+    "value": "Check every span, brace every arch, and finish the north pass aqueduct before the road brings the hero to it.",
+    "lang": "en"
+  },
+  "phase": "pre-encounter",
+  "notes": "Future content (rungs 11+); no quest stages exist yet, so activeQuestStages is empty. Distant awareness via the roads he maintains."
+}

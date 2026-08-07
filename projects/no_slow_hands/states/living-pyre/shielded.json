@@ -1,0 +1,39 @@
+{
+  "id": "state_living_pyre__shielded",
+  "characterId": "char_living_pyre",
+  "label": "Shielded — banked around the inner shrine",
+  "mood": "fierce steadiness",
+  "location": "The Ashen Shrine, the inner shrine",
+  "injuries": [
+    "Burning low: strength spent on walls that was meant for hearths"
+  ],
+  "activeQuestStages": [
+    "quest_rung_03_ashen_shrine__stage_2",
+    "quest_rung_03_ashen_shrine__stage_3"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_living_pyre_sh_ev1",
+      "value": "The hearth-keepers are evacuating down the warm-galleries; wisps that should be carrying supper-heat are fencing the intruder instead.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_living_pyre_sh_cf1",
+      "value": "Every beam laid as a wall is a home going cold somewhere in the hearth-cities.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-living-pyre-shielded-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_living_pyre_sh_obj",
+    "value": "Hold the inner shrine until the last hearth-keeper is down the gallery.",
+    "lang": "en"
+  },
+  "phase": "shielded"
+}

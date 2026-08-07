@@ -1,0 +1,39 @@
+{
+  "id": "state_capital_gate_guard__default",
+  "characterId": "char_capital_gate_guard",
+  "label": "Default — the gate log",
+  "mood": "formal, concerned correction",
+  "location": "The capital gate, his post",
+  "injuries": [],
+  "activeQuestStages": [],
+  "recentEvents": [
+    {
+      "key": "nsh_state_capital_gate_guard_def_ev1",
+      "value": "Watched the Glass with the off-watch, then wrote the log entry: hero departed, armed, singing. Return entry pending.",
+      "lang": "en"
+    },
+    {
+      "key": "nsh_state_capital_gate_guard_def_ev2",
+      "value": "Nothing has ever come through those gates. It is in the log. He wrote most of it.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_capital_gate_guard_def_cf1",
+      "value": "He hears the log read aloud and salutes it as proof of his vigilance.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-capital-gate-guard-default-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_capital_gate_guard_def_obj",
+    "value": "Say it at every departure: the gates are a door, and he is the only one who has ever used it wrong.",
+    "lang": "en"
+  },
+  "notes": "His signature line — 'Nothing has ever come through those gates' — is the default greeting (profile notes)."
+}

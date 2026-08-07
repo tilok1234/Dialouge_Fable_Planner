@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-rel-capital-merchant-player-v1",
+  "id": "rel_capital_merchant__player",
+  "partyA": "char_capital_merchant",
+  "partyB": "player",
+  "dimensions": {
+    "trust": -5,
+    "respect": 5,
+    "affection": 10,
+    "fear": 5,
+    "suspicion": 15,
+    "debt": 0
+  },
+  "namedState": "bewildered-trade",
+  "history": [
+    {
+      "event": {
+        "key": "rel_capital_merchant_h1",
+        "value": "Sold him boots and greaves, fitted well, lecture included: protective equipment is not permission to invade another realm. He called the realms' defenders 'the enemy rank and file' and her prices 'fair dealing in dark times'. The sale completed. She knows what that makes her.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -5,
+        "respect": 5,
+        "affection": 10,
+        "fear": 5,
+        "suspicion": 15
+      }
+    }
+  ],
+  "notes": "Modeled at the EARLY stage: the lecture-with-teeth phase, and the sale always completes — her central contradiction (she arms the man she is trying to stop, telling herself protected men take fewer stupid risks). Vendor-tier calibration: milder than the reps — bewildered, not yet grieving; affection 10 because he is a courteous, fair-paying customer and that is precisely the horror. Escalation per profile: mid-arc she prices in disapproval and says why; late-runs each sale comes with one flat sentence about what she watched him do in the last kit. Her breaking point is already queued: recognizing her own stitch-work in the Glass footage on the body of a man kicking in a bakery door. Boundary: nothing whose only purpose is killing. Deltas sum to current dimensions."
+}

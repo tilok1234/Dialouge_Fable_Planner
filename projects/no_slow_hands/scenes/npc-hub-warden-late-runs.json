@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "contentHash": "sha256:scene-npc-hub-warden-late-runs-v1",
+  "id": "scene_npc_hub_warden_late_runs",
+  "label": "Warden Merrow, late runs — testimony from the record",
+  "sceneType": "npc-repeat-greeting",
+  "participants": [
+    {
+      "characterId": "char_hub_warden",
+      "stateId": "state_hub_warden__late_runs",
+      "relationshipIds": [
+        "rel_hub_warden__player"
+      ],
+      "role": "speaker"
+    }
+  ],
+  "boundQuestStages": [],
+  "purpose": {
+    "key": "scene_npc_hub_warden_late_runs_purpose",
+    "value": "Merrow has stopped correcting the hero and now testifies at him from the record: the gates are still diplomatic doors, nothing has ever crossed them but him, and the record now includes what the realms do when his amulet glows.",
+    "lang": "en"
+  },
+  "requiredFacts": [
+    "fact_no_monster_ever_crossed_gates",
+    "fact_gates_are_diplomatic"
+  ],
+  "hintableFacts": [
+    "fact_book_is_childrens_comedy"
+  ],
+  "forbiddenRevelations": [],
+  "emotionalProgression": [
+    {
+      "order": 1,
+      "emotion": "exhausted candor",
+      "note": "No more documents offered; shorter sentences, citations replaced by plain statements of what she watched."
+    },
+    {
+      "order": 2,
+      "emotion": "grief",
+      "note": "'You entered a bakery and killed everyone who tried to protect the ovens. That is not my interpretation. It is the record.' Grief is also a record; she keeps it straight."
+    }
+  ],
+  "maxLength": "short",
+  "availableChoices": [],
+  "templateDefaults": {
+    "npcGreeting": {
+      "neverValidateProphecyFraming": true,
+      "bluntIndictment": true
+    }
+  },
+  "notes": "The escalation endpoint for the treaty arc: same facts as the greeting, delivered as indictment ('They have begun holding evacuation drills whenever your amulet starts glowing. That is also in the record now.'). The last honest attempt. The hero's reply will still be some variant of 'At last, the enemy respects me.' — that framing belongs to his side of the exchange (notes only), never to an NPC line. Never validate the hero's prophecy framing: there is no canon fact supporting 'the realms are evil', and that absence is itself the guard."
+}

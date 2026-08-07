@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "contentHash": "sha256:scene-npc-outpost-guard-greeting-v1",
+  "id": "scene_npc_outpost_guard_greeting",
+  "label": "Ket's first greeting — the scorekeeper",
+  "sceneType": "npc-first-greeting",
+  "participants": [
+    {
+      "characterId": "char_outpost_guard",
+      "stateId": "state_outpost_guard__default",
+      "relationshipIds": [
+        "rel_outpost_guard__player"
+      ],
+      "role": "speaker"
+    }
+  ],
+  "boundQuestStages": [],
+  "purpose": {
+    "key": "scene_npc_outpost_guard_greeting_purpose",
+    "value": "Ket acknowledges the hero with minimum courtesy and one blunt fact: he watches the Glass too, and nothing has ever come out of the gates — the traffic is all one way, and it is the hero.",
+    "lang": "en"
+  },
+  "requiredFacts": [
+    "fact_no_monster_ever_crossed_gates"
+  ],
+  "hintableFacts": [],
+  "forbiddenRevelations": [],
+  "emotionalProgression": [
+    {
+      "order": 1,
+      "emotion": "surly acknowledgment",
+      "note": "A nod that costs him something; the fire and the opinion are shared whether or not you ask."
+    },
+    {
+      "order": 2,
+      "emotion": "blunt scorekeeping",
+      "note": "Nothing out, one man in, every time. He says it like weather he has stopped expecting to change."
+    },
+    {
+      "order": 3,
+      "emotion": "closed dismissal",
+      "note": "The hero hears a hardened sentry's respect for a fellow campaigner; Ket turns back to the Glass and keeps score out loud to no one."
+    }
+  ],
+  "maxLength": "short",
+  "availableChoices": [],
+  "templateDefaults": {
+    "npcGreeting": {
+      "neverValidateProphecyFraming": true
+    }
+  },
+  "notes": "Grounded bewilderment, outpost register: he has already decided the hero is beyond reach, so the correction comes out as scorekeeping, not persuasion. He knows the Heavy Hands are an emergency service, but that wound is reserved — this scene asserts only the gate fact. Never validate the hero's prophecy framing: there is no canon fact supporting 'the realms are evil', and that absence is itself the guard."
+}

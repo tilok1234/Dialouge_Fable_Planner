@@ -1,0 +1,44 @@
+{
+  "id": "state_bone_reliquary_king__phase_two",
+  "characterId": "char_bone_reliquary_king",
+  "label": "Phase two — the realization",
+  "mood": "disbelief hardening into grief",
+  "location": "The Reliquary Crypt, inner sanctuary",
+  "injuries": [],
+  "activeQuestStages": [
+    "quest_rung_01_reliquary_crypt__stage_2"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_bone_reliquary_king_p2_ev1",
+      "value": "He read the stranger the names of the chambers he stood on; the stranger heard every word and answered with his blade.",
+      "lang": "en"
+    },
+    {
+      "key": "nsh_state_bone_reliquary_king_p2_ev2",
+      "value": "The genealogies have stopped. The pauses grow longer.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [
+    "fact_amulet_translation_is_accurate"
+  ],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_bone_reliquary_king_p2_cf1",
+      "value": "It is not ignorance in the intruder. It is choice.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-bone-reliquary-king-phase-two-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_bone_reliquary_king_p2_obj",
+    "value": "Stop lecturing and start interposing himself between the intruder and the chambers.",
+    "lang": "en"
+  },
+  "phase": "phase-two",
+  "notes": "The suspicion in his profile's suspects bucket is confirmed here: 'You understand every word I say, don't you? Then it is not ignorance in you. It is choice.'"
+}

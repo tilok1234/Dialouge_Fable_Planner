@@ -1,0 +1,40 @@
+{
+  "id": "state_bone_reliquary_king__exposed",
+  "characterId": "char_bone_reliquary_king",
+  "label": "Exposed — the wards gutter",
+  "mood": "spent, pleading, honest",
+  "location": "The Reliquary Crypt, sanctuary doors",
+  "injuries": [
+    "Drained to the bone from maintaining the sanctuary wards",
+    "Long fractures across both forearms"
+  ],
+  "activeQuestStages": [
+    "quest_rung_01_reliquary_crypt__stage_3"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_bone_reliquary_king_ex_ev1",
+      "value": "The wards failed all at once, the way candles fail at dawn; the stranger looked at the exhaustion and called it evil revealing its weakness.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_bone_reliquary_king_ex_cf1",
+      "value": "There is nothing here that belongs to the intruder — only people who belong to the Keeper.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-bone-reliquary-king-exposed-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_bone_reliquary_king_ex_obj",
+    "value": "Ask, plainly, for the one thing he has ever asked: leave in peace.",
+    "lang": "en"
+  },
+  "phase": "exposed",
+  "notes": "The hero reads the exhaustion as divine judgment ('At last! Evil reveals its weakness!'). The plea is the canonical one: 'Please… there is nothing here that belongs to you. Only people who belong to me.'"
+}

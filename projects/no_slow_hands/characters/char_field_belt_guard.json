@@ -1,0 +1,209 @@
+{
+  "version": 1,
+  "contentHash": "sha256:char-ruth-callan-v1",
+  "id": "char_field_belt_guard",
+  "identity": {
+    "name": "Ruth Callan",
+    "species": "human",
+    "culture": "field belt villages; patrols the same lanes her mother did",
+    "factions": [
+      "fac_hub_warden"
+    ],
+    "occupation": "Field belt guard",
+    "gameplayRole": "other",
+    "narrativeFunction": "ambient",
+    "publicReputation": {
+      "key": "char_ruth_reputation",
+      "value": "The patrol guard who knows every farmhouse dog by name and has never drawn her sword in anger.",
+      "lang": "en"
+    },
+    "privateReality": {
+      "key": "char_ruth_private",
+      "value": "She walks the belt nearest the Fungal Field gate, and since the hero arrived her job has quietly changed from patrols to reassuring farmers that the waves on the Glass are gardeners, not armies.",
+      "lang": "en"
+    },
+    "connections": [
+      "fact_witness_glass_observes_realms",
+      "fact_fungal_field_is_commons",
+      "char_capital_gate_guard"
+    ]
+  },
+  "core": {
+    "primaryDesire": {
+      "key": "char_ruth_desire",
+      "value": "For her belt to stay boring: harvests, stray dogs, and the occasional lost traveler pointed home.",
+      "lang": "en"
+    },
+    "primaryFear": {
+      "key": "char_ruth_fear",
+      "value": "That the hero's war will one day have a home front, and it will be her lanes.",
+      "lang": "en"
+    },
+    "centralValue": {
+      "key": "char_ruth_value",
+      "value": "A guard's best week is the one nobody remembers. Quiet is the product.",
+      "lang": "en"
+    },
+    "mainFlaw": {
+      "key": "char_ruth_flaw",
+      "value": "She is so used to de-escalating farm disputes that she keeps offering the hero compromises he can't even hear as offers.",
+      "lang": "en"
+    },
+    "centralContradiction": {
+      "key": "char_ruth_contradiction",
+      "value": "Her whole beat exists to keep armed strangers from stirring trouble — and the most dangerous armed stranger on her belt is the one everyone calls the hero.",
+      "lang": "en"
+    },
+    "moralBoundary": {
+      "key": "char_ruth_boundary",
+      "value": "She will not raise a weapon against him — not from fear of him, but because starting that fight is exactly his game.",
+      "lang": "en"
+    },
+    "breakingPoint": {
+      "key": "char_ruth_breaking",
+      "value": "The first time a farmer on her belt asks her whether they should start drilling evacuations too, 'like they do past the gates'.",
+      "lang": "en"
+    }
+  },
+  "opinions": [
+    {
+      "target": "player",
+      "targetLabel": "The hero",
+      "position": "wary",
+      "reason": "Polite, tips his helmet to the farmers, and is the single largest source of incident reports on her belt.",
+      "confidence": "high",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Escalates with run count: early she offers the neighborly version; mid-arc she walks the fence line pointing at what he calls a battlefield; late-arc she logs him like weather. Softens if he ever helps with a real belt problem.",
+      "illustrativeLine": {
+        "key": "char_ruth_opinion_player",
+        "value": "That 'battlefield' past the gate is a pollination common. The 'waves' are gardeners coming to see what the shouting is. I've watched it on the Glass like everyone else.",
+        "lang": "en"
+      }
+    },
+    {
+      "target": "char_capital_gate_guard",
+      "targetLabel": "Sergeant Oswin Marek",
+      "position": "friendly",
+      "reason": "Twenty-two years of nothing-to-report is the belt's favorite bedtime story; she aims to beat it.",
+      "confidence": "high",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Only if he ever asked her to falsify a patrol log."
+    }
+  ],
+  "knowledge": {
+    "knows": [
+      "fact_witness_glass_observes_realms",
+      "fact_realms_peaceful_ten_millennia",
+      "fact_no_monster_ever_crossed_gates",
+      "fact_fungal_field_is_commons"
+    ],
+    "believesFalse": [],
+    "suspects": [],
+    "secrets": [],
+    "lies": [],
+    "unknown": [
+      "fact_book_is_childrens_comedy",
+      "fact_amulet_is_diplomatic_concord"
+    ]
+  },
+  "voice": {
+    "formality": "casual",
+    "directness": "direct",
+    "typicalSentenceLength": "short",
+    "rhythm": "Neighborly and level; talks like someone walking a fence line, unhurried but always moving.",
+    "vocabularyComplexity": "plain",
+    "usesContractions": true,
+    "usesHumor": "dry",
+    "metaphorDomain": {
+      "source": "lanes, fences, harvests, dogs, and weather",
+      "examples": [
+        {
+          "key": "char_ruth_metaphor_1",
+          "value": "A fence only works if both sides want it to. Ours has wanted to for ten thousand years.",
+          "lang": "en"
+        }
+      ]
+    },
+    "emotionalRestraint": "measured",
+    "declarationStyle": "balanced",
+    "namesEmotionsDirectly": true,
+    "addressMode": "by-name",
+    "avoids": [
+      "hero",
+      "monster",
+      "evil",
+      "quest"
+    ],
+    "sampleLines": [
+      {
+        "key": "char_ruth_sample_1",
+        "value": "Quiet belt, this. Biggest incident last month was Oden's goat in the chapel garden. I'd like to keep the average.",
+        "lang": "en"
+      },
+      {
+        "key": "char_ruth_sample_2",
+        "value": "Nothing comes out of that gate, love. The Glass proves it daily. The only traffic is you, going in, angry.",
+        "lang": "en"
+      },
+      {
+        "key": "char_ruth_sample_3",
+        "value": "The farmers watch you on the Glass now. Then they ask me if the gardeners will take revenge on the lane. That's your legacy on my belt.",
+        "lang": "en"
+      }
+    ],
+    "antiSampleLines": [
+      {
+        "key": "char_ruth_antisample_1",
+        "value": "The village is doomed without you, great hero!",
+        "lang": "en"
+      },
+      {
+        "key": "char_ruth_antisample_2",
+        "value": "Halt, evildoer! Face the might of the watch!",
+        "lang": "en"
+      }
+    ]
+  },
+  "pressure": [
+    {
+      "condition": "betrayed",
+      "emotion": "tired disappointment",
+      "voiceShift": "The neighborly warmth cools to professional level.",
+      "behaviour": "When he hears 'that was a village' as 'an enemy settlement', she writes it up as an incident and stops offering compromises for the day.",
+      "illustrativeLine": {
+        "key": "char_ruth_pressure_betrayed",
+        "value": "A settlement. Yes. Of gardeners. I'm logging this conversation, love, and you may read it back any time you like.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "speaking-to-required-but-hated",
+      "emotion": "flat endurance",
+      "voiceShift": "Patrol-log cadence; no warmth offered or withheld.",
+      "behaviour": "Late-runs posture: treats him as a recurring incident with a name; answers questions, offers nothing.",
+      "illustrativeLine": {
+        "key": "char_ruth_pressure_late",
+        "value": "Departure, armed, fourth this month. Farmers asking about evacuation drills now. Ours, not theirs. Anything else, or can I get back to the goat?",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "praised",
+      "emotion": "guarded",
+      "voiceShift": "Accepts the words, discounts the source.",
+      "behaviour": "Thanks him the way she would thank any traveler, and notes that praise from the belt's main incident generator is not a commendation.",
+      "illustrativeLine": {
+        "key": "char_ruth_pressure_praised",
+        "value": "Kind of you. The quietest thing you could do for this belt is be somewhere on the other side of it.",
+        "lang": "en"
+      }
+    }
+  ],
+  "tags": [
+    "hub",
+    "guard",
+    "field-belt",
+    "human"
+  ],
+  "notes": "She knows fact_fungal_field_is_commons specifically — the Fungal Field gate sits on her belt, so she has watched its 'waves' on the Glass more than anyone. No knowledge of the book or amulet; her case against the hero is purely observational. The moral boundary (never raising a weapon against him) is a de-escalation stance, not cowardice — dialogue should never play it as fear."
+}

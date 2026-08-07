@@ -1,0 +1,39 @@
+{
+  "id": "state_night_elf_prince__phase_two",
+  "characterId": "char_night_elf_prince",
+  "label": "Phase two — the lesson begins",
+  "mood": "performer's dread",
+  "location": "The Moonlit Court, the ballroom",
+  "injuries": [],
+  "activeQuestStages": [
+    "quest_rung_08_moonlit_court__stage_2"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_night_elf_prince_p2_ev1",
+      "value": "He recited the envoy's rites in full; the stranger heard every word and answered in clichés about judgment. The prince has started taking notes.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [
+    "fact_amulet_translation_is_accurate"
+  ],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_night_elf_prince_p2_cf1",
+      "value": "The only fighter he has ever watched is the man destroying his court.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-night-elf-prince-phase-two-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_night_elf_prince_p2_obj",
+    "value": "Watch: stance, grip, timing. If this is a lesson, learn it faster than it is taught.",
+    "lang": "en"
+  },
+  "phase": "phase-two",
+  "notes": "'You understand every word I say, don't you? Then this is a lesson, and I had better learn it.'"
+}

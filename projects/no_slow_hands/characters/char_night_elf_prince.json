@@ -1,0 +1,265 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-char-night-elf-prince-v1",
+  "id": "char_night_elf_prince",
+  "identity": {
+    "name": "Prince Lunareth of the Moonlit Court",
+    "species": "night-elf",
+    "culture": "The Moonlit Court",
+    "factions": [
+      "fac_moonlit_court"
+    ],
+    "occupation": "Young ruler of the Moonlit Court — trained in ceremony, diplomacy, and performance; rung 8 of the ladder",
+    "gameplayRole": "boss",
+    "narrativeFunction": "boss",
+    "publicReputation": {
+      "key": "char_prince_reputation",
+      "value": "A gracious young sovereign: flawless at the ceremony, brilliant at the pageant, untested at everything else.",
+      "lang": "en"
+    },
+    "privateReality": {
+      "key": "char_prince_private",
+      "value": "Styled 'the Royal Night-Elf Prince' in the hero's journal as a decadent warlord. He has never fought a war; his mirrored combat style exists because he is learning how to fight by copying the protagonist — the hero is literally introducing him to violence.",
+      "lang": "en"
+    },
+    "connections": [
+      "fact_night_elf_prince_is_young_diplomat",
+      "char_protagonist"
+    ]
+  },
+  "core": {
+    "primaryDesire": {
+      "key": "char_prince_desire",
+      "value": "To rule beautifully — to be the gracious prince his court rehearsed him to be, and to keep his people safe behind the curtain of ceremony.",
+      "lang": "en"
+    },
+    "primaryFear": {
+      "key": "char_prince_fear",
+      "value": "That the performance is not enough — that a prince trained for pageants cannot protect a court from a man with a sword.",
+      "lang": "en"
+    },
+    "centralValue": {
+      "key": "char_prince_value",
+      "value": "Grace under ceremony: a ruler's first weapon is the dignity of his court.",
+      "lang": "en"
+    },
+    "mainFlaw": {
+      "key": "char_prince_flaw",
+      "value": "He learns by mirroring — and the only fighter he has ever watched is the hero, so he is becoming a copy of the very thing destroying his court.",
+      "lang": "en"
+    },
+    "centralContradiction": {
+      "key": "char_prince_contradiction",
+      "value": "Every duel makes him better at the one thing his realm never wanted him to know: the hero's violence, reflected back as education.",
+      "lang": "en"
+    },
+    "moralBoundary": {
+      "key": "char_prince_boundary",
+      "value": "He still observes the forms — every mirrored strike carries the Law of Fair Warning his tutors drilled into him, even copied from a man who ignores it.",
+      "lang": "en"
+    },
+    "breakingPoint": {
+      "key": "char_prince_breaking",
+      "value": "The day he catches himself enjoying the duel — the moment the reflection stops being defense and starts being appetite.",
+      "lang": "en"
+    }
+  },
+  "opinions": [
+    {
+      "target": "player",
+      "targetLabel": "The intruder (the player)",
+      "position": "wary",
+      "reason": "First visit: an armed boor at a pageant. Rematches: something worse — a tutor. He has begun to admire the intruder's technique even as he grieves what it teaches him.",
+      "confidence": "high",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Never toward welcome — but warily shaded with admiration: each rematch he mirrors more of the hero's kit and more of his rhetoric.",
+      "illustrativeLine": {
+        "key": "char_prince_op_player",
+        "value": "You fight like a festival dance I was never taught. Watch closely — I learn fast.",
+        "lang": "en"
+      }
+    },
+    {
+      "target": "fac_moonlit_court",
+      "targetLabel": "The Moonlit Court",
+      "position": "devoted",
+      "reason": "They rehearsed him for grace; he owes them a performance worth surviving for.",
+      "confidence": "absolute",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Never.",
+      "illustrativeLine": {
+        "key": "char_prince_op_people",
+        "value": "My court has never seen war. They will not see it reach the ballroom while I hold the door.",
+        "lang": "en"
+      }
+    }
+  ],
+  "knowledge": {
+    "knows": [
+      "fact_night_elf_prince_is_young_diplomat",
+      "fact_realms_peaceful_ten_millennia",
+      "fact_gates_are_diplomatic",
+      "fact_amulet_is_diplomatic_concord",
+      "fact_law_of_fair_warning",
+      "fact_continuance_restores_dead"
+    ],
+    "believesFalse": [],
+    "suspects": [
+      "fact_amulet_translation_is_accurate"
+    ],
+    "secrets": [],
+    "lies": [],
+    "unknown": [
+      "fact_book_is_childrens_comedy"
+    ]
+  },
+  "voice": {
+    "formality": "very-formal",
+    "directness": "indirect",
+    "typicalSentenceLength": "medium",
+    "rhythm": "Courtly and performative, with a duelist's flourishes — and, across rematches, an eerie echo of heroic cliché creeping into the phrasing.",
+    "vocabularyComplexity": "ornate",
+    "usesContractions": false,
+    "usesHumor": "dry",
+    "metaphorDomain": {
+      "source": "ceremony, performance, dance, moonlight, mirrors",
+      "examples": [
+        {
+          "key": "char_prince_metaphor_1",
+          "value": "A duel is a duet, sir, and you have been teaching me your part.",
+          "lang": "en"
+        },
+        {
+          "key": "char_prince_metaphor_2",
+          "value": "The mirror does not hate what it reflects. It simply becomes it.",
+          "lang": "en"
+        }
+      ]
+    },
+    "emotionalRestraint": "measured",
+    "declarationStyle": "balanced",
+    "namesEmotionsDirectly": true,
+    "addressMode": "by-title",
+    "avoids": [
+      "blood for the throne",
+      "dark powers",
+      "elven superiority",
+      "mere human"
+    ],
+    "sampleLines": [
+      {
+        "key": "char_prince_sample_1",
+        "value": "The road welcomed you as an envoy, sir. This court has a protocol for envoys. It has none for whatever you are rehearsing to be.",
+        "lang": "en"
+      },
+      {
+        "key": "char_prince_sample_2",
+        "value": "You understand every word I say, don't you? Then hear this one clearly: the ballroom empties before the blades come out.",
+        "lang": "en"
+      },
+      {
+        "key": "char_prince_sample_3",
+        "value": "Observe. Your lunge, your turn, your flourish — mine now. You should be flattered. I am told you believe flattery is a weapon.",
+        "lang": "en"
+      },
+      {
+        "key": "char_prince_sample_4",
+        "value": "Have at you, foul evil! …Forgive me. I heard it so many times it began to sound like language.",
+        "lang": "en"
+      }
+    ],
+    "antiSampleLines": [
+      {
+        "key": "char_prince_antisample_1",
+        "value": "Kneel before the dark powers of the night, worm! (decadent-warlord framing — he is a diplomat in a borrowed war)",
+        "lang": "en"
+      },
+      {
+        "key": "char_prince_antisample_2",
+        "value": "I have slaughtered a thousand like you. (he has never fought anyone before the hero; his violence is all borrowed)",
+        "lang": "en"
+      },
+      {
+        "key": "char_prince_antisample_3",
+        "value": "Yes — I am the villain of your prophecy! (must never confirm the prophecy framing — he has never heard of the book)",
+        "lang": "en"
+      }
+    ]
+  },
+  "pressure": [
+    {
+      "condition": "threatened",
+      "emotion": "courtly alarm",
+      "voiceShift": "More ceremonial, not less; protocol is his armor.",
+      "behaviour": "Phase one — receives the armed stranger as a protocol problem: offers the envoy's rites, the wine, the exit, in that order.",
+      "illustrativeLine": {
+        "key": "char_prince_pressure_threatened",
+        "value": "Sir, you are armed at a pageant. The rites of welcome take ninety seconds and cost you nothing.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "proven-wrong",
+      "emotion": "performer's dread",
+      "voiceShift": "The courtliness thins; something studious moves underneath it.",
+      "behaviour": "Phase two — realization that the intruder understands and continues; the prince stops reciting and starts watching: stance, grip, timing. He is taking notes.",
+      "illustrativeLine": {
+        "key": "char_prince_pressure_wrong",
+        "value": "You understand every word I say, don't you? Then this is a lesson, and I had better learn it.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "gaining-advantage",
+      "emotion": "frightening aptitude",
+      "voiceShift": "His cadence begins to rhyme with the hero's.",
+      "behaviour": "Containment response by mirror: he duels the intruder with the intruder's own kit, copied mid-fight — the Court's honor guard reforms behind the reflection while the ballroom empties.",
+      "illustrativeLine": {
+        "key": "char_prince_pressure_advantage",
+        "value": "Your guard is excellent, sir. I know — it is also mine.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "losing-control",
+      "emotion": "gracious desperation",
+      "voiceShift": "Formality held up like a shield; the strain shows at the edges.",
+      "behaviour": "Shielded phase: holds the ballroom door with his honor guard while the court withdraws through the moon-gallery.",
+      "illustrativeLine": {
+        "key": "char_prince_pressure_shielded",
+        "value": "Stay behind me. I will hold him here.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "facing-death",
+      "emotion": "unmasked pleading",
+      "voiceShift": "The performance falls away entirely; what remains is young.",
+      "behaviour": "EXPOSED window — spent from holding the door, he drops the protocol and asks plainly, perhaps for the first time in his reign.",
+      "illustrativeLine": {
+        "key": "char_prince_pressure_exposed",
+        "value": "Please… there is nothing here that belongs to you. There is barely anything here that belongs to me.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "defeated",
+      "emotion": "studied grief",
+      "voiceShift": "Quiet, precise, and — worst of all — practiced.",
+      "behaviour": "Remembers every rematch as curriculum. The Continuance returns him; so does the lesson.",
+      "illustrativeLine": {
+        "key": "char_prince_pressure_defeated",
+        "value": "When you return, we will still ask you to leave in peace. But you should know — I have been practicing.",
+        "lang": "en"
+      }
+    }
+  ],
+  "tags": [
+    "boss",
+    "rung-8",
+    "moonlit-court",
+    "mirror-duelist",
+    "night-elf"
+  ],
+  "notes": "REAL identity: a young ruler trained in ceremony, diplomacy, and performance rather than war. THE MIRROR (load-bearing): his mirrored combat style exists because he learns to fight by copying the protagonist — the hero literally introduces him to violence. Mechanically his kit reflects the player's; dramatically his VOICE reflects it too: across rematches his courtly register picks up heroic clichés overheard from the hero ('Have at you, foul evil!'), always with a beat of self-awareness. He is the ladder's clearest statement of the theme: violence taught is violence learned. KNOWLEDGE: he especially must NOT know about the children's book — fact_book_is_childrens_comedy in unknown; if he ever learned the hero's war is based on a comedy, the lesson he has paid for in grief would curdle. Suspects fact_amulet_translation_is_accurate from phase two onward."
+}

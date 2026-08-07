@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "contentHash": "sha256:scene-night_elf_prince-rematch-v1",
+  "id": "scene_night_elf_prince_rematch",
+  "label": "Royal Night-Elf Prince rematch",
+  "sceneType": "boss-rematch",
+  "participants": [
+    {
+      "characterId": "char_night_elf_prince",
+      "stateId": "state_night_elf_prince__rematch",
+      "relationshipIds": [
+        "rel_night_elf_prince__player"
+      ],
+      "role": "speaker"
+    }
+  ],
+  "boundQuestStages": [
+    "quest_rung_08_moonlit_court__stage_4"
+  ],
+  "purpose": {
+    "key": "scene_night_elf_prince_rematch_purpose",
+    "value": "The Continuance restored the guardian but kept its pain and memory: it remembers him, and dread and weary recognition replace pleading.",
+    "lang": "en"
+  },
+  "requiredFacts": [
+    "fact_continuance_restores_dead"
+  ],
+  "hintableFacts": [
+    "fact_night_elf_prince_is_young_diplomat"
+  ],
+  "forbiddenRevelations": [
+    "fact_book_is_childrens_comedy"
+  ],
+  "emotionalProgression": [
+    {
+      "order": 1,
+      "emotion": "recognition",
+      "note": "The guardian knows the sound of his return and what it costs."
+    },
+    {
+      "order": 2,
+      "emotion": "grim hospitality",
+      "note": "The warning is still given, law-bound, but without hope it will be heard."
+    }
+  ],
+  "maxLength": "short",
+  "availableChoices": [],
+  "templateDefaults": {
+    "bossRematch": {
+      "remembersPlayer": true
+    }
+  },
+  "notes": "They remember him: the Continuance restores the body but does not erase pain or memory, so rematches carry dread, not fresh pleading. The fair warning is still spoken because the law binds them. Flavor: the ballroom and its great mirror. ESCALATION-BY-MIMICRY: he greets the hero in the hero's OWN heroic clichés, practiced in the mirror — he learned how to fight by copying the protagonist, and this scene is where it shows."
+}

@@ -1,0 +1,104 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-fac-ashen-court-commons-v1",
+  "id": "fac_ashen_court_commons",
+  "name": "The Ashen Court Commons",
+  "summary": {
+    "key": "fac_ashen_court_commons_summary",
+    "value": "A fire-adapted civic district built around communal furnaces, statues, workshops, and heat-loving wildlife — the hero calls it a battlefield. Its resident cast: swarmers imp-fiend, moth-ember, and wasp-hornet; chasers goblin-brute and golem-lava; shooter imp-pyro (whose rings are heat warnings); bomber slime-magma; sniper demon-warlock; and turret gargoyle-obsidian. The 'waves' are district residents, guild wardens, and furnace crews answering the alarm.",
+    "lang": "en"
+  },
+  "sharedBeliefs": [
+    "fact_realms_peaceful_ten_millennia",
+    "fact_law_of_fair_warning",
+    "fact_continuance_restores_dead",
+    "fact_ashen_court_is_commons",
+    "fact_heavy_hands_emergency_service"
+  ],
+  "sharedOpinions": [
+    {
+      "target": "char_protagonist",
+      "position": "resolute",
+      "reason": "He loots our workshops and calls the guildhall a war-court. The district has voted: the furnaces stay lit, the statues stay up, and he stays unwelcome."
+    },
+    {
+      "target": "fac_ashen_hearth_cities",
+      "position": "friendly",
+      "reason": "The Court is the cities' civic ground — same people, wider square. Their hearth-sparks light our furnaces on festival days."
+    },
+    {
+      "target": "fac_forge_stewardry",
+      "position": "friendly",
+      "reason": "Our furnaces and their forge are sister institutions. We trade calibrations the way other districts trade bread."
+    },
+    {
+      "target": "fac_heavy_hands",
+      "position": "friendly",
+      "reason": "A district built on communal fire keeps the Heavy Hands on speed-bell. They are the only outsiders licensed to touch the main sluice."
+    }
+  ],
+  "metaphorDomain": {
+    "source": "furnaces, guild-work, statues, civic heat",
+    "examples": [
+      {
+        "key": "fac_ashen_court_commons_metaphor_1",
+        "value": "A furnace shared is a winter halved.",
+        "lang": "en"
+      },
+      {
+        "key": "fac_ashen_court_commons_metaphor_2",
+        "value": "Statues are the district's way of saying: we were here, and we intend to remain.",
+        "lang": "en"
+      }
+    ]
+  },
+  "terminology": [
+    {
+      "term": "the court",
+      "meaning": {
+        "key": "fac_ashen_court_commons_term_court",
+        "value": "The civic district itself — furnaces, workshops, and plaza. 'Court' here means a place where things are made and judged, not a throne room.",
+        "lang": "en"
+      }
+    },
+    {
+      "term": "guild warden",
+      "meaning": {
+        "key": "fac_ashen_court_commons_term_guild_warden",
+        "value": "A senior craftsperson deputized for emergencies, carrying a gate seal. The hero's 'elite monsters with keys' are foremen with credentials.",
+        "lang": "en"
+      }
+    }
+  ],
+  "customs": [
+    {
+      "key": "fac_ashen_court_commons_custom_furnace",
+      "value": "The communal furnaces are lit, banked, and blessed by rotation among the guilds. Missing your guild's shift is the district's one real scandal.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_ashen_court_commons_custom_statues",
+      "value": "Every guild maintains one statue in the plaza — of a worker, never a ruler. New statues are unveiled on Founders' Day with the furnaces at full blaze.",
+      "lang": "en"
+    }
+  ],
+  "taboos": [
+    {
+      "key": "fac_ashen_court_commons_taboo_workshops",
+      "value": "Never enter a workshop uninvited or take from its benches. The hero's 'treasure room' is somebody's livelihood with the door open.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_ashen_court_commons_taboo_furnace",
+      "value": "Never let a communal furnace go cold through neglect. It has not happened in recorded history, and the district means to keep it that way.",
+      "lang": "en"
+    }
+  ],
+  "tags": [
+    "faction",
+    "horde",
+    "tier-3",
+    "commons",
+    "ashen-court"
+  ]
+}

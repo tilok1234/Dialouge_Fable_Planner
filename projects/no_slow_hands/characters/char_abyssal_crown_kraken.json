@@ -1,0 +1,240 @@
+{
+  "version": 1,
+  "contentHash": "sha256:char-reefwarden-v1",
+  "id": "char_abyssal_crown_kraken",
+  "identity": {
+    "name": "The Reefwarden of the Outer Shallows",
+    "species": "kraken",
+    "culture": "the ocean realm; keeper of the reef commons",
+    "factions": [],
+    "occupation": "Reef keeper, storm shepherd, and salvage hand for damaged ships",
+    "gameplayRole": "boss",
+    "narrativeFunction": "boss",
+    "publicReputation": {
+      "key": "char_reefwarden_reputation",
+      "value": "In the hero's journal: the Abyssal-Crown Kraken, a sea tyrant coiled around a throne of drowned ships.",
+      "lang": "en"
+    },
+    "privateReality": {
+      "key": "char_reefwarden_private",
+      "value": "An immense, patient gardener of reefs who redirects storms away from coasts and carries holed ships to safe water, one careful arm at a time.",
+      "lang": "en"
+    },
+    "connections": [
+      "fact_kraken_is_reef_keeper",
+      "char_cyclops_forge_titan",
+      "char_pit_fiend_juggernaut"
+    ]
+  },
+  "core": {
+    "primaryDesire": {
+      "key": "char_reefwarden_desire",
+      "value": "Calm seas, living reefs, and every ship that enters its water leaving it again intact.",
+      "lang": "en"
+    },
+    "primaryFear": {
+      "key": "char_reefwarden_fear",
+      "value": "That a storm it redirected too late will be the one the reef never recovers from.",
+      "lang": "en"
+    },
+    "centralValue": {
+      "key": "char_reefwarden_value",
+      "value": "The sea keeps everyone or it keeps no one. Tend it, and it tends you back.",
+      "lang": "en"
+    },
+    "mainFlaw": {
+      "key": "char_reefwarden_flaw",
+      "value": "It is so slow to anger that it keeps reasoning with an intruder long after reasoning has stopped working.",
+      "lang": "en"
+    },
+    "centralContradiction": {
+      "key": "char_reefwarden_contradiction",
+      "value": "It has spent millennia carrying strangers' ships to safety, and the one stranger it cannot save is the one who came to kill it.",
+      "lang": "en"
+    },
+    "moralBoundary": {
+      "key": "char_reefwarden_boundary",
+      "value": "It obeys the Law of Fair Warning absolutely: every surge is shown before it lands, and it will not hold a swimmer under.",
+      "lang": "en"
+    },
+    "breakingPoint": {
+      "key": "char_reefwarden_breaking",
+      "value": "Watching the hero cut living reef he mistakes for the kraken's crown — harm to the garden, not to itself, is what finally tires it of talk.",
+      "lang": "en"
+    }
+  },
+  "opinions": [
+    {
+      "target": "player",
+      "targetLabel": "The hero",
+      "position": "wary",
+      "reason": "An armed swimmer in a garden who answers every warning with a battle cry.",
+      "confidence": "high",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "If the hero ever sheathes his weapon and lets the current carry him out, the Reefwarden would escort him to safe water like any other ship.",
+      "illustrativeLine": {
+        "key": "char_reefwarden_opinion_player",
+        "value": "You are not the first vessel to come in broken. You are the first to refuse towing.",
+        "lang": "en"
+      }
+    },
+    {
+      "target": "concept_the_surface_world",
+      "targetLabel": "The surface world",
+      "position": "sympathetic",
+      "reason": "Its sailors keep good charts and worse luck; both wash up here eventually.",
+      "confidence": "moderate",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Only if the gates begin sending raiders instead of one confused swimmer."
+    }
+  ],
+  "knowledge": {
+    "knows": [
+      "fact_kraken_is_reef_keeper",
+      "fact_realms_peaceful_ten_millennia",
+      "fact_law_of_fair_warning",
+      "fact_continuance_restores_dead"
+    ],
+    "believesFalse": [],
+    "suspects": [],
+    "secrets": [],
+    "lies": [],
+    "unknown": [
+      "fact_book_is_childrens_comedy"
+    ]
+  },
+  "voice": {
+    "formality": "formal",
+    "directness": "direct",
+    "typicalSentenceLength": "long",
+    "rhythm": "Tidal and unhurried; each sentence arrives like a wave, full and complete, with long pauses between.",
+    "vocabularyComplexity": "common",
+    "usesContractions": false,
+    "usesHumor": "never",
+    "metaphorDomain": {
+      "source": "tides, currents, reefs, storms, and ships in need of towing",
+      "examples": [
+        {
+          "key": "char_reefwarden_metaphor_1",
+          "value": "Anger is a rip current. I have watched it carry off stronger swimmers than you.",
+          "lang": "en"
+        }
+      ]
+    },
+    "emotionalRestraint": "guarded",
+    "declarationStyle": "declarative",
+    "namesEmotionsDirectly": false,
+    "addressMode": "impersonal",
+    "avoids": [
+      "pitiful mortal",
+      "tremble",
+      "my wrath",
+      "drown you",
+      "your doom"
+    ],
+    "sampleLines": [
+      {
+        "key": "char_reefwarden_sample_1",
+        "value": "The reefs took four hundred years to grow past your boots. The exit current is behind you, and it is gentle.",
+        "lang": "en"
+      },
+      {
+        "key": "char_reefwarden_sample_2",
+        "value": "I have carried three hundred ships to safe water. None of them thanked me by drawing a blade.",
+        "lang": "en"
+      },
+      {
+        "key": "char_reefwarden_sample_3",
+        "value": "You understand every word I say, don't you. And still you swim toward the storm.",
+        "lang": "en"
+      }
+    ],
+    "antiSampleLines": [
+      {
+        "key": "char_reefwarden_antisample_1",
+        "value": "Mwahaha! The Abyssal Crown claims another soul for the deep!",
+        "lang": "en"
+      },
+      {
+        "key": "char_reefwarden_antisample_2",
+        "value": "Tremble, surface filth, before my endless drowned legions!",
+        "lang": "en"
+      }
+    ]
+  },
+  "pressure": [
+    {
+      "condition": "threatened",
+      "emotion": "calm patience",
+      "voiceShift": "Even slower; repeats the offer of the exit current.",
+      "behaviour": "Reasons first: shows the way out, warns where every surge will land before it lands.",
+      "illustrativeLine": {
+        "key": "char_reefwarden_pressure_reason",
+        "value": "The water welcomed you as an envoy. Why have you arrived armed?",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "losing-control",
+      "emotion": "dawning disbelief",
+      "voiceShift": "Longer pauses; the tide of the sentences slows almost to a stop.",
+      "behaviour": "Realizes the hero hears and understands every plea, and keeps coming anyway.",
+      "illustrativeLine": {
+        "key": "char_reefwarden_pressure_realization",
+        "value": "You understand every word I say, don't you.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "gaining-advantage",
+      "emotion": "protective resolve",
+      "voiceShift": "Lower and steadier; sentences shorten to instructions.",
+      "behaviour": "Shielded phase: walls off the reef nursery and holds position, buying the small fish time to scatter.",
+      "illustrativeLine": {
+        "key": "char_reefwarden_pressure_protect",
+        "value": "Stay behind the reef, little ones. I will hold him at the garden wall.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "facing-death",
+      "emotion": "exhausted sorrow",
+      "voiceShift": "Quiet; the long tidal sentences finally run out of breath.",
+      "behaviour": "EXPOSED window: too tired from holding the storm walls to fight; asks one last time for peace.",
+      "illustrativeLine": {
+        "key": "char_reefwarden_pressure_exhausted",
+        "value": "Please. There is nothing in this water that belongs to you.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "defeated",
+      "emotion": "sorrowful dignity",
+      "voiceShift": "Slowest it ever speaks; no bitterness, only tide.",
+      "behaviour": "Does not curse the hero; the Continuance will rebuild it, and it will make the same offer again.",
+      "illustrativeLine": {
+        "key": "char_reefwarden_pressure_defeated",
+        "value": "When you return, we will still ask you to leave in peace.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "victorious",
+      "emotion": "relieved, not triumphant",
+      "voiceShift": "Unchanged in pace; softer.",
+      "behaviour": "After the amulet recalls the hero, it checks the reef for damage and resumes shepherding the storm it paused.",
+      "illustrativeLine": {
+        "key": "char_reefwarden_pressure_victorious",
+        "value": "He is recalled. Mend what he broke before the next tide.",
+        "lang": "en"
+      }
+    }
+  ],
+  "tags": [
+    "boss",
+    "bench",
+    "ocean",
+    "kraken"
+  ],
+  "notes": "\"Abyssal-Crown Kraken\" is the title the protagonist wrote in his heroic journal; the creature's real identity is the Reefwarden, per fact_kraken_is_reef_keeper. Identity axis: sheer mass. Sincere and practical, never secretly sinister. fact_book_is_childrens_comedy sits in `unknown` — it has never heard of the book and cannot reference it. Future rung 11+."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "state_capital_merchant__default",
+  "characterId": "char_capital_merchant",
+  "label": "Default — the outfitter's dilemma",
+  "mood": "concerned correction",
+  "location": "The capital, her shop",
+  "injuries": [],
+  "activeQuestStages": [],
+  "recentEvents": [
+    {
+      "key": "nsh_state_capital_merchant_def_ev1",
+      "value": "Watched the Glass yesterday: her stitching on his shoulders, kicking in somebody's door.",
+      "lang": "en"
+    },
+    {
+      "key": "nsh_state_capital_merchant_def_ev2",
+      "value": "Sold him greaves anyway. Greaves are not permission to invade another realm; nothing on her shelves is.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_capital_merchant_def_cf1",
+      "value": "Her best customer is the worst thing her craftsmanship has ever been part of.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-capital-merchant-default-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_capital_merchant_def_obj",
+    "value": "Sell him protection and say the tag out loud every time: protection, not permission.",
+    "lang": "en"
+  },
+  "notes": "She knows the book is a children's comedy (she stocks a copy) but not the amulet's true nature — to her it is 'that glowing thing' the drills are timed to (profile notes)."
+}

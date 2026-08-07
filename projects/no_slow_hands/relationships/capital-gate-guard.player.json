@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-rel-capital-gate-guard-player-v1",
+  "id": "rel_capital_gate_guard__player",
+  "partyA": "char_capital_gate_guard",
+  "partyB": "player",
+  "dimensions": {
+    "trust": -10,
+    "respect": 5,
+    "affection": 0,
+    "fear": 5,
+    "suspicion": 20,
+    "debt": 0
+  },
+  "namedState": "polite-alarm",
+  "history": [
+    {
+      "event": {
+        "key": "rel_capital_gate_guard_h1",
+        "value": "Answered his question with the log: nothing has ever come through those gates — twenty-two years on this post, and he wrote most of it. The hero concluded they must be massing in secret. Oswin entered the misquote in the log, verbatim, attributed.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -10,
+        "respect": 5,
+        "suspicion": 15
+      }
+    },
+    {
+      "event": {
+        "key": "rel_capital_gate_guard_h2",
+        "value": "Log entry, fourteenth of the month: hero departed, armed, singing, through a diplomatic gate going the wrong direction. Return entry pending. The salute is correct and held a beat too long.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "fear": 5,
+        "suspicion": 5
+      }
+    }
+  ],
+  "notes": "Modeled at the EARLY stage: the polite-alarm of a procedure man — answers with the log, 'sir' deployed as punctuation rather than respect. His entire career is the statistical proof the protagonist refuses to hear, which is why suspicion 20 outruns trust -10: twenty-two years of 'nothing to report' is the achievement, and the hero is the only person who has ever weaponized his gate, going the wrong way. Respect 5 is narrow — the man salutes correctly and is brave; the horror is that he is otherwise everything the watch would want. Escalation per profile: mid-arc he answers before being asked; late-runs he reads the log aloud like testimony before every departure, so that someone official has said it out loud. Softens only if the hero returns having broken nothing. Deltas sum to current dimensions."
+}

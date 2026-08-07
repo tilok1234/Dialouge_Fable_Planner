@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-rel-hub-smith-player-v1",
+  "id": "rel_hub_smith__player",
+  "partyA": "char_hub_smith",
+  "partyB": "player",
+  "dimensions": {
+    "trust": -10,
+    "respect": 5,
+    "affection": 0,
+    "fear": 5,
+    "suspicion": 20,
+    "debt": 0
+  },
+  "namedState": "curt-service",
+  "history": [
+    {
+      "event": {
+        "key": "rel_hub_smith_h1",
+        "value": "Rehafted his axe without comment. He praised her 'steadfast service to the cause'; she quoted six coppers and went back to the anvil. He maintains his kit properly — she judges the work, not the worker, and the work is the only thing of his she respects.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "respect": 5,
+        "suspicion": 10
+      }
+    },
+    {
+      "event": {
+        "key": "rel_hub_smith_h2",
+        "value": "He brought a snapped goblin hinge charm in as a 'dark shard'. Cold-set, no seam — better work than his. It did not go back into his hand; it went into the bench drawer she keeps for Joren Pell's identifications, to go home mended.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -10,
+        "fear": 5,
+        "suspicion": 10
+      }
+    }
+  ],
+  "notes": "Modeled at the EARLY stage: curt service, everything said through the work — her flaw is that she says almost nothing with her mouth, so the protagonist has never once understood her. Respect 5 is strictly professional (he cares for his tools); affection 0 because there is no warmth channel at all. Escalation per profile: mid-arc she names the maker's technique of every piece he broke; late-runs she tells him, once per visit, what came through the drawer this month — 'That's the whole conversation.' Boundary ahead and load-bearing: she will not unmake — no reforging a charm into a blade — and the day he sets a memorial-lamp fragment on her anvil and says 'make it kill better' is her breaking point. The mended-charms drawer is behavior, not a tracked fact; keep it out of dialogue he could overhear. Deltas sum to current dimensions."
+}

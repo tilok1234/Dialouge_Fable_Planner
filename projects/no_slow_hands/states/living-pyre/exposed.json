@@ -1,0 +1,40 @@
+{
+  "id": "state_living_pyre__exposed",
+  "characterId": "char_living_pyre",
+  "label": "Exposed — guttering",
+  "mood": "guttering plea",
+  "location": "The Ashen Shrine, the inner shrine",
+  "injuries": [
+    "Dimmed to coals from maintaining the wards",
+    "Its light no longer reaches the shrine doors"
+  ],
+  "activeQuestStages": [
+    "quest_rung_03_ashen_shrine__stage_3"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_living_pyre_ex_ev1",
+      "value": "Hearths across the cities are going dark unfed; the stranger watched it gutter and named it divine judgment.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_living_pyre_ex_cf1",
+      "value": "There is nothing here that belongs to him — only warmth that belongs to others.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-living-pyre-exposed-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_living_pyre_ex_obj",
+    "value": "Ask for the smallest mercy a fire can ask.",
+    "lang": "en"
+  },
+  "phase": "exposed",
+  "notes": "The EXPOSED window is exhaustion from spending warmth on defense instead of hearths (profile breakingPoint). 'Please… there is nothing here that belongs to you. Only warmth that belongs to others.'"
+}

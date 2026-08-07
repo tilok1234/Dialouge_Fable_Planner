@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "contentHash": "sha256:scene-npc-dock-fisher-greeting-v1",
+  "id": "scene_npc_dock_fisher_greeting",
+  "label": "Nels Brine's first greeting — what the Glass showed",
+  "sceneType": "npc-first-greeting",
+  "participants": [
+    {
+      "characterId": "char_dock_fisher",
+      "stateId": "state_dock_fisher__default",
+      "relationshipIds": [
+        "rel_dock_fisher__player"
+      ],
+      "role": "speaker"
+    }
+  ],
+  "boundQuestStages": [],
+  "purpose": {
+    "key": "scene_npc_dock_fisher_greeting_purpose",
+    "value": "Nels nods at the hero from his nets and points at the Witness Glass: he watched yesterday's 'battle' in the fen, and it looked like fishing badly with extra steps.",
+    "lang": "en"
+  },
+  "requiredFacts": [],
+  "hintableFacts": [],
+  "forbiddenRevelations": [],
+  "emotionalProgression": [
+    {
+      "order": 1,
+      "emotion": "neighborly nod",
+      "note": "Weather, bait, and a seat on the pier — the old dockside courtesies are still on offer."
+    },
+    {
+      "order": 2,
+      "emotion": "pointed plain-talk",
+      "note": "He says what he saw, the way you'd point at a squall: wading into people's waters armed and calling the residents monsters capsizes boats."
+    },
+    {
+      "order": 3,
+      "emotion": "uneasy worry",
+      "note": "The hero hears a colorful local blessing on the hunt; Nels looks at the ocean gate and says nothing more."
+    }
+  ],
+  "maxLength": "short",
+  "availableChoices": [],
+  "templateDefaults": {
+    "npcGreeting": {
+      "neverValidateProphecyFraming": true
+    }
+  },
+  "notes": "Ambient worry, uninformed register: Nels knows only what the Glass shows — no treaty, shard, banking, or book facts from him (he suspects the kraken keeps the reef, but that suspicion is not this scene's business). Pair: his plain pointing is heard as a fisherman's tall tale in his honor. Never validate the hero's prophecy framing: there is no canon fact supporting 'the realms are evil', and that absence is itself the guard."
+}

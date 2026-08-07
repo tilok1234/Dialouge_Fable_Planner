@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-rel-scorpion-empress-player-v1",
+  "id": "rel_scorpion_empress__player",
+  "partyA": "char_scorpion_empress",
+  "partyB": "player",
+  "dimensions": {
+    "trust": -70,
+    "respect": 0,
+    "affection": -40,
+    "fear": 75,
+    "suspicion": 60,
+    "debt": 0
+  },
+  "namedState": "brood-before-crown",
+  "history": [
+    {
+      "event": {
+        "key": "rel_scorpion_empress_h1",
+        "value": "Gate breach on the desert march; nursery alarm. Hatchery-mothers woken, east tunnels sealed, and the Matriarch named him envoy, named the exits, and named the law — a trespasser to be expelled by decree.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -10,
+        "fear": 25,
+        "suspicion": 15
+      }
+    },
+    {
+      "event": {
+        "key": "rel_scorpion_empress_h2",
+        "value": "First siege: nine doors asked him to stop; she was the tenth, and she asked. Her pincers closed from both sides — a corridor maneuver walking him away from the hatchery and back toward his own gate, both claws telegraphed.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -40,
+        "affection": -30,
+        "fear": 35,
+        "suspicion": 35
+      }
+    },
+    {
+      "event": {
+        "key": "rel_scorpion_empress_h3",
+        "value": "Continuance return: a siege that returns by season. She buries what the Continuance cannot restore and renews the law's invitation from the floor of her own hall — 'That door behind me will still be waiting for a friend.'",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -20,
+        "affection": -10,
+        "fear": 15,
+        "suspicion": 10
+      }
+    }
+  ],
+  "notes": "Modeled at rematch stage (rung 10, end of the ladder). Calibration call per brief: her fear 75 — the highest on the ladder — is ENTIRELY for the nurseries; the hatchery is the one room in her realm she cannot evacuate quickly, and a step toward it is her breaking point. Personal fear is effectively nil. Trust -70 is the deepest on the ladder: he walked past nine guardians' warnings to reach her, still armed, still coming, and her children are seeing their first war. namedState 'brood-before-crown' is her central value: a matriarch is the wall her children never have to see. SECRET held: she knows what stands beyond her hall (the reception hall prepared for the first visitor) and will never reveal it to him — the defeated line quoted in h3 is as close as she comes. Deltas sum to current dimensions."
+}

@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-rel-field-belt-guard-player-v1",
+  "id": "rel_field_belt_guard__player",
+  "partyA": "char_field_belt_guard",
+  "partyB": "player",
+  "dimensions": {
+    "trust": 0,
+    "respect": 5,
+    "affection": 5,
+    "fear": 10,
+    "suspicion": 15,
+    "debt": 0
+  },
+  "namedState": "neighborly-warning",
+  "history": [
+    {
+      "event": {
+        "key": "rel_field_belt_guard_h1",
+        "value": "Offered the neighborly version: the 'battlefield' past the gate is a pollination common, and the 'waves' are gardeners coming to see what the shouting is — she has watched it on the Glass like everyone else. He tipped his helmet and promised to clear the common of corruption.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "respect": 5,
+        "affection": 5,
+        "fear": 5,
+        "suspicion": 15
+      }
+    },
+    {
+      "event": {
+        "key": "rel_field_belt_guard_h2",
+        "value": "Farmers on her belt watched the Glass, then asked her whether they should start drilling evacuations too, 'like they do past the gates'. Her job has quietly changed from patrols to reassuring people that the waves are gardeners, not armies.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "fear": 5
+      }
+    }
+  ],
+  "notes": "Modeled at the EARLY stage: neighborly de-escalation from a guard whose best week is the one nobody remembers. Guard-tier mild calibration — trust 0, suspicion 15 — because her case against the protagonist is purely observational (no book, no amulet knowledge), and he is polite and tips his helmet to the farmers, which is the horror in miniature. Fear 10 is forward-looking and specific: that his war will one day have a home front, and it will be her lanes — h2 is her breaking point arriving early. Escalation per profile: mid-arc she walks the fence line pointing at what he calls a battlefield; late-runs she logs him like weather ('Departure, armed, fourth this month'). Boundary, and a direction note: she will not raise a weapon against him — that is de-escalation, not cowardice; never play it as fear. Softens if he ever helps with a real belt problem. Deltas sum to current dimensions."
+}

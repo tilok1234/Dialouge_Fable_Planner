@@ -1,0 +1,42 @@
+{
+  "id": "state_bone_reliquary_king__rematch",
+  "characterId": "char_bone_reliquary_king",
+  "label": "Rematch — the returned desecration",
+  "mood": "dread and weary recognition",
+  "location": "The Reliquary Crypt, inner sanctuary",
+  "injuries": [],
+  "activeQuestStages": [
+    "quest_rung_01_reliquary_crypt__stage_4"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_bone_reliquary_king_re_ev1",
+      "value": "The Continuance rebuilt him at his ledger; the graves that could not be re-laid are recorded in a new and careful hand.",
+      "lang": "en"
+    },
+    {
+      "key": "nsh_state_bone_reliquary_king_re_ev2",
+      "value": "The gate bell sounded again, and every attendant in the crypt knew the rhythm of the boots before the second stair.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_bone_reliquary_king_re_cf1",
+      "value": "A desecration that keeps returning, wearing an envoy's amulet and calling remembrance necromancy.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-bone-reliquary-king-rematch-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_bone_reliquary_king_re_obj",
+    "value": "Ask him again to leave in peace — and stand between him and the chambers while asking.",
+    "lang": "en"
+  },
+  "phase": "rematch",
+  "notes": "The Continuance restores the body but keeps pain and memory (fact_continuance_restores_dead): he remembers every visit, and still renews the invitation."
+}

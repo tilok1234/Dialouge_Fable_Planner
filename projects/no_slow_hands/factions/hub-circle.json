@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-fac-hub-circle-v1",
+  "id": "fac_hub_circle",
+  "name": "The Hub Circle",
+  "summary": {
+    "key": "fac_hub_circle_summary",
+    "value": "A fellowship of hub speakers, storytellers, and former envoys who watch the realms through the Witness Glass and explain — patiently, then less patiently — that the creatures beyond the gates have families, cultures, and memories. They are the ones who tell the hero the truth about the people he is hurting, in the hope he will one day hear it.",
+    "lang": "en"
+  },
+  "sharedBeliefs": [
+    "fact_realms_peaceful_ten_millennia",
+    "fact_continuance_restores_dead",
+    "fact_witness_glass_observes_realms",
+    "fact_amulet_translation_is_accurate",
+    "fact_book_is_childrens_comedy"
+  ],
+  "sharedOpinions": [
+    {
+      "target": "char_protagonist",
+      "position": "wary",
+      "reason": "He understands every word the realms say to him — we have checked the amulet's translation ourselves. What he lacks is not information but doubt."
+    },
+    {
+      "target": "fac_hub_warden",
+      "position": "friendly",
+      "reason": "The Warden keeps the treaties; we keep the stories. Proof needs both a signature and a voice."
+    },
+    {
+      "target": "fac_desert_matriarchy",
+      "position": "sympathetic",
+      "reason": "We watched the brood's evacuation drills through the Glass. Someone had to say aloud that those were children running."
+    }
+  ],
+  "metaphorDomain": {
+    "source": "hearthside stories, the circle, testimony, echoes",
+    "examples": [
+      {
+        "key": "fac_hub_circle_metaphor_1",
+        "value": "A story told in a circle has no head of the table.",
+        "lang": "en"
+      },
+      {
+        "key": "fac_hub_circle_metaphor_2",
+        "value": "Truth repeated patiently is not weaker than truth shouted once. It just takes longer.",
+        "lang": "en"
+      }
+    ]
+  },
+  "terminology": [
+    {
+      "term": "testimony",
+      "meaning": {
+        "key": "fac_hub_circle_term_testimony",
+        "value": "A first-hand account of the realms' lives, given by a Circle speaker who has watched through the Glass. Offered freely; so far, refused freely.",
+        "lang": "en"
+      }
+    },
+    {
+      "term": "the long explanation",
+      "meaning": {
+        "key": "fac_hub_circle_term_long_explanation",
+        "value": "The Circle's ongoing effort to make the hero see the realms as people. It has a roster, a schedule, and no end date.",
+        "lang": "en"
+      }
+    }
+  ],
+  "customs": [
+    {
+      "key": "fac_hub_circle_custom_speaking",
+      "value": "Anyone may speak in the Circle, but you must begin by naming the person your story is about. No one in it is 'a monster' or 'a mob'.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_hub_circle_custom_vigil",
+      "value": "Whenever the hero's amulet glows, a Circle member keeps vigil at the Witness Glass and writes down what was lost, with names where names are known.",
+      "lang": "en"
+    }
+  ],
+  "taboos": [
+    {
+      "key": "fac_hub_circle_taboo_names",
+      "value": "Never speak of the realms' people as creatures, mobs, or waves. The Circle's first rule is that everyone has a name.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_hub_circle_taboo_giving_up",
+      "value": "Never declare the hero unreachable inside the Circle. Say it outside if you must; inside, we keep talking.",
+      "lang": "en"
+    }
+  ],
+  "tags": [
+    "faction",
+    "hub",
+    "circle",
+    "witness-glass"
+  ]
+}

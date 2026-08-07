@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-fac-forge-stewardry-v1",
+  "id": "fac_forge_stewardry",
+  "name": "The Molten Forge Stewardry",
+  "summary": {
+    "key": "fac_forge_stewardry_summary",
+    "value": "The industrial stewards of the Molten Forge, who work alongside the ancient Lava-Core Colossus to produce farming tools, heating stones, and building materials for the realms. What the hero calls heavy ordnance is their machinery turned toward emergency defense — presses, pour-channels, and slag gates repurposed to slow an armed intruder.",
+    "lang": "en"
+  },
+  "sharedBeliefs": [
+    "fact_realms_peaceful_ten_millennia",
+    "fact_law_of_fair_warning",
+    "fact_continuance_restores_dead",
+    "fact_lava_core_colossus_is_forge_steward",
+    "fact_shards_are_domestic_magic"
+  ],
+  "sharedOpinions": [
+    {
+      "target": "char_protagonist",
+      "position": "wary",
+      "reason": "He smashed a week's pour of plowshares and called it dismantling a war machine. We will rebuild; we always rebuild."
+    },
+    {
+      "target": "fac_ashen_hearth_cities",
+      "position": "friendly",
+      "reason": "Our heating stones warm their outlying homes. Fire workers keep faith with fire workers."
+    },
+    {
+      "target": "fac_heavy_hands",
+      "position": "friendly",
+      "reason": "Half our safety drills are their curriculum. When a pour-channel bursts, a Heavy Hand is the second thing you see after the steam."
+    }
+  ],
+  "metaphorDomain": {
+    "source": "forge, tempering, pour, calibration",
+    "examples": [
+      {
+        "key": "fac_forge_stewardry_metaphor_1",
+        "value": "Hot iron forgives nothing; neither does a hasty word.",
+        "lang": "en"
+      },
+      {
+        "key": "fac_forge_stewardry_metaphor_2",
+        "value": "A tool is judged by the hand it feeds, not the hand that swings it.",
+        "lang": "en"
+      }
+    ]
+  },
+  "terminology": [
+    {
+      "term": "the pour",
+      "meaning": {
+        "key": "fac_forge_stewardry_term_pour",
+        "value": "The scheduled casting runs that supply the realms' tools and heating stones. Stopping the pour mid-run is a genuine emergency.",
+        "lang": "en"
+      }
+    },
+    {
+      "term": "steward's mark",
+      "meaning": {
+        "key": "fac_forge_stewardry_term_mark",
+        "value": "The small stamped sigil on every tool and stone the forge ships. The hero's 'shards' often carry one — broken workshop enchantments, not evil.",
+        "lang": "en"
+      }
+    }
+  ],
+  "customs": [
+    {
+      "key": "fac_forge_stewardry_custom_shift",
+      "value": "Every shift begins by naming what the day's work is for — a plow, a roof, a warming stone — so no one forgets the forge serves tables, not thrones.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_forge_stewardry_custom_warning",
+      "value": "Any moving machinery is announced with bell, banner, and marked floor. The Law of Fair Warning is the forge's oldest safety rule.",
+      "lang": "en"
+    }
+  ],
+  "taboos": [
+    {
+      "key": "fac_forge_stewardry_taboo_weapon",
+      "value": "Never forge a weapon. The stewardry makes tools for living; the one time its machinery turned on a person, it was to drive him out, not to harm him.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_forge_stewardry_taboo_waste",
+      "value": "Never quench a pour early out of panic. Cool it by the book, or someone colder than you pays for it downstream.",
+      "lang": "en"
+    }
+  ],
+  "tags": [
+    "faction",
+    "realm-people",
+    "molten-forge",
+    "rung-5"
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-fac-goblin-festival-settlement-v1",
+  "id": "fac_goblin_festival_settlement",
+  "name": "The Palisade Camp Festival Settlement",
+  "summary": {
+    "key": "fac_goblin_festival_settlement_summary",
+    "value": "A goblin settlement behind a timber palisade that keeps dangerous wildlife out, not armies in. Its leader is an elected festival marshal whose powder kegs are fireworks and quarry charges. The goblin-scout warband chasers are volunteer runners who chase intruders back toward the gate. The hero arrives during the Lantern Feast, the loudest and happiest night of their year.",
+    "lang": "en"
+  },
+  "sharedBeliefs": [
+    "fact_realms_peaceful_ten_millennia",
+    "fact_law_of_fair_warning",
+    "fact_continuance_restores_dead",
+    "fact_goblin_crown_is_festival_marshal"
+  ],
+  "sharedOpinions": [
+    {
+      "target": "char_protagonist",
+      "position": "frightened",
+      "reason": "He entered mid-feast and started shooting. The children recognize the sound of his boots now."
+    },
+    {
+      "target": "fac_heavy_hands",
+      "position": "friendly",
+      "reason": "When a firework goes wrong, they are the ones who arrive before the thatch catches."
+    },
+    {
+      "target": "fac_fungal_field_commons",
+      "position": "friendly",
+      "reason": "We trade lantern oil for their spore-flour every autumn. Good neighbors, loud like us."
+    }
+  ],
+  "metaphorDomain": {
+    "source": "fireworks, festival, timber, lantern-light",
+    "examples": [
+      {
+        "key": "fac_goblin_festival_settlement_metaphor_1",
+        "value": "A good argument ends like a good firework: loud, bright, and nobody burned.",
+        "lang": "en"
+      },
+      {
+        "key": "fac_goblin_festival_settlement_metaphor_2",
+        "value": "A palisade is a promise you build out of trees.",
+        "lang": "en"
+      }
+    ]
+  },
+  "terminology": [
+    {
+      "term": "the Lantern Feast",
+      "meaning": {
+        "key": "fac_goblin_festival_settlement_term_lantern_feast",
+        "value": "The settlement's great festival of lanterns and fireworks. The marshal's duties during it are ceremonial — which is why the hero met him smiling.",
+        "lang": "en"
+      }
+    },
+    {
+      "term": "marshal's kegs",
+      "meaning": {
+        "key": "fac_goblin_festival_settlement_term_kegs",
+        "value": "The festival marshal's powder store: fireworks for feast nights and quarry charges for stumps and stone. Never aimed at people before the hero.",
+        "lang": "en"
+      }
+    }
+  ],
+  "customs": [
+    {
+      "key": "fac_goblin_festival_settlement_custom_election",
+      "value": "The festival marshal is elected each year by who can organize the best feast, not by strength of arm.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_goblin_festival_settlement_custom_guest",
+      "value": "Any stranger who arrives during the Lantern Feast is handed a lantern before they are asked a single question.",
+      "lang": "en"
+    }
+  ],
+  "taboos": [
+    {
+      "key": "fac_goblin_festival_settlement_taboo_fire",
+      "value": "Never light a charge indoors or near the little ones' tents. Fire is a guest, not a tool, on feast nights.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_goblin_festival_settlement_taboo_gate",
+      "value": "Never bar the palisade gate against a traveler — only against wildlife. Barring it against the hero shamed the whole camp.",
+      "lang": "en"
+    }
+  ],
+  "tags": [
+    "faction",
+    "realm-people",
+    "palisade-camp",
+    "lantern-feast",
+    "rung-2"
+  ]
+}

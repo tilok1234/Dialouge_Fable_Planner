@@ -1,0 +1,203 @@
+[
+  {
+    "version": 1,
+    "contentHash": "sha256:tl-nsh-gates-sealed",
+    "date": "~10,000 years BP",
+    "event": {
+      "key": "tl_nsh_gates_sealed",
+      "value": "The enchanted gates are sealed by mutual diplomacy between the Ten Quiet Realms and the outside world. The Continuance is created so that isolation, disease, and disaster can never permanently destroy the realms.",
+      "lang": "en"
+    },
+    "establishes": [
+      "fact_gates_are_diplomatic",
+      "fact_no_monster_ever_crossed_gates",
+      "fact_realms_peaceful_ten_millennia",
+      "fact_continuance_restores_dead"
+    ],
+    "order": -10000,
+    "tags": [
+      "gates",
+      "continuance",
+      "history"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:tl-nsh-reception-hall-prepared",
+    "date": "thousands of years BP",
+    "event": {
+      "key": "tl_nsh_reception_hall_prepared",
+      "value": "A diplomatic reception hall is prepared beyond the tenth gate for the first visitor from outside: gifts from all ten realms, a peace-feast table, and a banner reading \"WELCOME, FRIEND BEYOND THE GATE\". It is never used.",
+      "lang": "en"
+    },
+    "establishes": [
+      "fact_reception_hall_awaits_first_visitor"
+    ],
+    "order": -5000,
+    "tags": [
+      "reception-hall",
+      "diplomacy",
+      "history"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:tl-nsh-book-written",
+    "date": "millennia BP",
+    "event": {
+      "key": "tl_nsh_book_written",
+      "value": "\"The Ten Dread Sovereigns\" is written as a children's adventure comedy, gently mocking the realms' rulers as affectionate caricatures.",
+      "lang": "en"
+    },
+    "establishes": [
+      "fact_book_is_childrens_comedy"
+    ],
+    "order": -3000,
+    "tags": [
+      "book",
+      "childrens-comedy",
+      "history"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:tl-nsh-amulet-lost",
+    "date": "centuries BP",
+    "event": {
+      "key": "tl_nsh_amulet_lost",
+      "value": "The Amulet of Concord, an envoy's diplomatic artifact, is lost outside the gates.",
+      "lang": "en"
+    },
+    "establishes": [
+      "fact_amulet_is_diplomatic_concord"
+    ],
+    "order": -300,
+    "tags": [
+      "amulet",
+      "history"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:tl-nsh-hero-finds-amulet",
+    "date": "recent past",
+    "event": {
+      "key": "tl_nsh_hero_finds_amulet",
+      "value": "The protagonist finds the Amulet of Concord and a battered copy of \"The Ten Dread Sovereigns\". He concludes the book is a prophecy, renames the amulet the Amulet of Righteous Judgment, and sets out to destroy the ten great evils.",
+      "lang": "en"
+    },
+    "establishes": [
+      "fact_amulet_translation_is_accurate"
+    ],
+    "order": 0,
+    "tags": [
+      "protagonist",
+      "amulet",
+      "book",
+      "dramatic-irony"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:tl-nsh-invasion-rungs-1-3",
+    "date": "present — rungs 1-3",
+    "event": {
+      "key": "tl_nsh_invasion_rungs_1_3",
+      "value": "The hero invades the Reliquary Crypt, the Palisade Camp (mid-Lantern Feast), and the Ashen Shrine, defeating the sanctuary caretaker, the festival marshal, and the communal hearth. Each returns via the Continuance, remembering him.",
+      "lang": "en"
+    },
+    "establishes": [
+      "fact_reliquary_king_is_caretaker",
+      "fact_goblin_crown_is_festival_marshal",
+      "fact_living_pyre_is_communal_hearth"
+    ],
+    "order": 1,
+    "tags": [
+      "invasion",
+      "rungs",
+      "present"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:tl-nsh-invasion-rungs-4-6",
+    "date": "present — rungs 4-6",
+    "event": {
+      "key": "tl_nsh_invasion_rungs_4_6",
+      "value": "The hero invades the Drowned Vault, the Molten Forge, and the Verdant Ward, defeating the ferryman, the forge steward, and the nursery keeper. Each returns via the Continuance, remembering him.",
+      "lang": "en"
+    },
+    "establishes": [
+      "fact_tide_man_is_ferryman",
+      "fact_lava_core_colossus_is_forge_steward",
+      "fact_dryad_is_nursery_keeper"
+    ],
+    "order": 2,
+    "tags": [
+      "invasion",
+      "rungs",
+      "present"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:tl-nsh-invasion-rungs-7-9",
+    "date": "present — rungs 7-9",
+    "event": {
+      "key": "tl_nsh_invasion_rungs_7_9",
+      "value": "The hero invades the Sunken Mire, the Moonlit Court, and the highland roads, defeating the marsh guardian, the young prince (who learns violence by copying him), and the road guardian. Each returns via the Continuance, remembering him.",
+      "lang": "en"
+    },
+    "establishes": [
+      "fact_mirejaw_is_marsh_guardian",
+      "fact_night_elf_prince_is_young_diplomat",
+      "fact_griffin_is_road_guardian"
+    ],
+    "order": 3,
+    "tags": [
+      "invasion",
+      "rungs",
+      "present"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:tl-nsh-invasion-rung-10",
+    "date": "present — rung 10",
+    "event": {
+      "key": "tl_nsh_invasion_rung_10",
+      "value": "The hero invades the desert civilization and defeats the Scorpion-Empress, whose containment maneuvers were only ever meant to keep him from nurseries and evacuation tunnels. The tenth gate opens.",
+      "lang": "en"
+    },
+    "establishes": [
+      "fact_scorpion_empress_is_matriarch"
+    ],
+    "order": 4,
+    "tags": [
+      "invasion",
+      "rungs",
+      "present"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:tl-nsh-reception-hall-reached",
+    "date": "present — end of the ladder",
+    "event": {
+      "key": "tl_nsh_reception_hall_reached",
+      "value": "The hero reaches the untouched reception hall, studies the gifts, the peace-feast table, and the banner, and declares it \"a false history\". A new road opens toward the Kraken, the Forge-Titan, and the Pit-Fiend. \"The world is not safe yet.\"",
+      "lang": "en"
+    },
+    "establishes": [
+      "fact_kraken_is_reef_keeper",
+      "fact_forge_titan_is_legendary_builder",
+      "fact_pit_fiend_is_rescue_guardian"
+    ],
+    "order": 5,
+    "tags": [
+      "reception-hall",
+      "endgame",
+      "dramatic-irony"
+    ]
+  }
+]

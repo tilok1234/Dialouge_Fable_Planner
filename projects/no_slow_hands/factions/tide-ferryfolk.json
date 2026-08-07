@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-fac-tide-ferryfolk-v1",
+  "id": "fac_tide_ferryfolk",
+  "name": "The Drowned Vault Ferryfolk",
+  "summary": {
+    "key": "fac_tide_ferryfolk_summary",
+    "value": "The ferryfolk of the Drowned Vault run the ferries and keep the floodgates that regulate their realm's waters. Their keeper, Tide-Man the Blue, was once caricatured as a sea tyrant for canceling a crossing in bad weather — a story they still tell on themselves. His surf walls exist to wash an intruder safely back toward the entrance, never to drown him.",
+    "lang": "en"
+  },
+  "sharedBeliefs": [
+    "fact_realms_peaceful_ten_millennia",
+    "fact_law_of_fair_warning",
+    "fact_continuance_restores_dead",
+    "fact_tide_man_is_ferryman"
+  ],
+  "sharedOpinions": [
+    {
+      "target": "char_protagonist",
+      "position": "resolute",
+      "reason": "He refuses every ferry back to the entrance and calls the floodgates a trap. We will keep offering the crossing; that is what ferryfolk do."
+    },
+    {
+      "target": "fac_drowned_fen_commons",
+      "position": "friendly",
+      "reason": "Their wetlands feed our waterways. A fen warden and a floodgate keeper drink from the same river."
+    },
+    {
+      "target": "fac_heavy_hands",
+      "position": "friendly",
+      "reason": "When the spring flood took the lower docks, they waded in before the bells finished ringing."
+    }
+  ],
+  "metaphorDomain": {
+    "source": "tide, crossings, fares, floodgates",
+    "examples": [
+      {
+        "key": "fac_tide_ferryfolk_metaphor_1",
+        "value": "Every argument has a far shore; the trick is arriving dry.",
+        "lang": "en"
+      },
+      {
+        "key": "fac_tide_ferryfolk_metaphor_2",
+        "value": "The tide keeps no grudges. It only keeps schedule.",
+        "lang": "en"
+      }
+    ]
+  },
+  "terminology": [
+    {
+      "term": "the fare",
+      "meaning": {
+        "key": "fac_tide_ferryfolk_term_fare",
+        "value": "Not coin — a story, a song, or a hand at the oar. Nobody is ever refused a crossing for want of payment.",
+        "lang": "en"
+      }
+    },
+    {
+      "term": "canceled crossing",
+      "meaning": {
+        "key": "fac_tide_ferryfolk_term_canceled",
+        "value": "Their idiom for an act of care mistaken for cruelty, after the old story about the Tide-Man and the storm.",
+        "lang": "en"
+      }
+    }
+  ],
+  "customs": [
+    {
+      "key": "fac_tide_ferryfolk_custom_weather",
+      "value": "A ferryman who cancels a crossing for weather owes every waiting passenger a meal and an explanation. The Tide-Man still honors this, centuries on.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_tide_ferryfolk_custom_gates",
+      "value": "Floodgate keepers announce every gate movement three times before the water moves — warning is a habit older than the law.",
+      "lang": "en"
+    }
+  ],
+  "taboos": [
+    {
+      "key": "fac_tide_ferryfolk_taboo_swimmer",
+      "value": "Never leave a swimmer in the water, whatever they have done. You pull them out first and argue after.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_tide_ferryfolk_taboo_gates",
+      "value": "Never open a floodgate in anger. The water does not know whom it drowns.",
+      "lang": "en"
+    }
+  ],
+  "tags": [
+    "faction",
+    "realm-people",
+    "drowned-vault",
+    "rung-4"
+  ]
+}

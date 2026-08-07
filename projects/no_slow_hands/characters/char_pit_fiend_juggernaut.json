@@ -1,0 +1,240 @@
+{
+  "version": 1,
+  "contentHash": "sha256:char-holdfast-v1",
+  "id": "char_pit_fiend_juggernaut",
+  "identity": {
+    "name": "The Holdfast",
+    "species": "pit-fiend (deep-dweller)",
+    "culture": "the deep settlements; the rescue crews' tradition",
+    "factions": [],
+    "occupation": "Subterranean rescue guardian: clears cave-ins and shores up the deep settlements' foundations",
+    "gameplayRole": "boss",
+    "narrativeFunction": "boss",
+    "publicReputation": {
+      "key": "char_holdfast_reputation",
+      "value": "In the hero's journal: the Pit-Fiend Juggernaut, an unstoppable engine of ruin gnawing at the roots of the world.",
+      "lang": "en"
+    },
+    "privateReality": {
+      "key": "char_holdfast_private",
+      "value": "The one the deep settlements pray to hear after a cave-in: an enormous, gentle rescue guardian who digs toward trapped voices and carries entire foundations on its back.",
+      "lang": "en"
+    },
+    "connections": [
+      "fact_pit_fiend_is_rescue_guardian",
+      "char_abyssal_crown_kraken",
+      "char_cyclops_forge_titan"
+    ]
+  },
+  "core": {
+    "primaryDesire": {
+      "key": "char_holdfast_desire",
+      "value": "That every tunnel holds, every dig ends with everyone counted, and no voice ever calls up from the dark unanswered.",
+      "lang": "en"
+    },
+    "primaryFear": {
+      "key": "char_holdfast_fear",
+      "value": "Arriving too late at a collapse — it still remembers every voice that stopped before it broke through.",
+      "lang": "en"
+    },
+    "centralValue": {
+      "key": "char_holdfast_value",
+      "value": "You dig toward the voice. However long it takes, you dig toward the voice.",
+      "lang": "en"
+    },
+    "mainFlaw": {
+      "key": "char_holdfast_flaw",
+      "value": "It cannot stop treating the hero as a rescue problem — a lost soul to be carried out — long after he has shown he is an attacker.",
+      "lang": "en"
+    },
+    "centralContradiction": {
+      "key": "char_holdfast_contradiction",
+      "value": "Its whole purpose is pulling strangers out of the dark alive, and the stranger who came down to kill it is the one it most wants to save.",
+      "lang": "en"
+    },
+    "moralBoundary": {
+      "key": "char_holdfast_boundary",
+      "value": "The Law of Fair Warning: it rumbles its path through the stone before it moves, and it will never bring a ceiling down on anyone, attacker or not.",
+      "lang": "en"
+    },
+    "breakingPoint": {
+      "key": "char_holdfast_breaking",
+      "value": "The hero collapsing a tunnel mouth behind fleeing civilians — weaponizing a cave-in, the one disaster it has spent its existence undoing.",
+      "lang": "en"
+    }
+  },
+  "opinions": [
+    {
+      "target": "player",
+      "targetLabel": "The hero",
+      "position": "sympathetic",
+      "reason": "Reads his shouting and flailing as panic: a lost surface-dweller, frightened, far from the sun, lashing out.",
+      "confidence": "moderate",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Hardens only as the evidence piles up that the panic is actually purpose; even then it grieves rather than hates. Would carry him to the surface the moment he dropped the sword.",
+      "illustrativeLine": {
+        "key": "char_holdfast_opinion_player",
+        "value": "Poor thing. No one that angry has ever been lost that long.",
+        "lang": "en"
+      }
+    },
+    {
+      "target": "concept_the_surface",
+      "targetLabel": "The surface",
+      "position": "neutral",
+      "reason": "A place where the ceiling is worryingly far away. It has no opinion beyond that.",
+      "confidence": "low",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "If it ever has to carry someone up to it, it will form one then."
+    }
+  ],
+  "knowledge": {
+    "knows": [
+      "fact_pit_fiend_is_rescue_guardian",
+      "fact_realms_peaceful_ten_millennia",
+      "fact_law_of_fair_warning",
+      "fact_continuance_restores_dead"
+    ],
+    "believesFalse": [],
+    "suspects": [],
+    "secrets": [],
+    "lies": [],
+    "unknown": [
+      "fact_book_is_childrens_comedy"
+    ]
+  },
+  "voice": {
+    "formality": "neutral",
+    "directness": "direct",
+    "typicalSentenceLength": "short",
+    "rhythm": "Deep and slow, with the patience of someone used to talking through rubble; repeats the important part so it is heard.",
+    "vocabularyComplexity": "plain",
+    "usesContractions": false,
+    "usesHumor": "never",
+    "metaphorDomain": {
+      "source": "tunnels, shoring timber, load-bearing stone, cave-ins, and digging toward voices",
+      "examples": [
+        {
+          "key": "char_holdfast_metaphor_1",
+          "value": "Fear is bad air in a deep tunnel. You do not fight it. You walk out of it, slowly, talking.",
+          "lang": "en"
+        }
+      ]
+    },
+    "emotionalRestraint": "measured",
+    "declarationStyle": "declarative",
+    "namesEmotionsDirectly": true,
+    "addressMode": "impersonal",
+    "avoids": [
+      "pitiful mortal",
+      "crush you",
+      "my wrath",
+      "devour",
+      "your doom"
+    ],
+    "sampleLines": [
+      {
+        "key": "char_holdfast_sample_1",
+        "value": "Easy, little voice. The way up is behind you. I will walk you to it.",
+        "lang": "en"
+      },
+      {
+        "key": "char_holdfast_sample_2",
+        "value": "These timbers hold six hundred homes. I have checked every one. Twice.",
+        "lang": "en"
+      },
+      {
+        "key": "char_holdfast_sample_3",
+        "value": "You hear me. I know you hear me. I have dug toward voices softer than yours.",
+        "lang": "en"
+      }
+    ],
+    "antiSampleLines": [
+      {
+        "key": "char_holdfast_antisample_1",
+        "value": "GRAAAH! The Juggernaut will feast on your marrow in the dark!",
+        "lang": "en"
+      },
+      {
+        "key": "char_holdfast_antisample_2",
+        "value": "None escape the Pit-Fiend! The deep devours all!",
+        "lang": "en"
+      }
+    ]
+  },
+  "pressure": [
+    {
+      "condition": "threatened",
+      "emotion": "calm reassurance",
+      "voiceShift": "Even gentler; speaks as if to someone trapped and panicking.",
+      "behaviour": "Reasons first: treats the hero as a lost rescue case, rumbles its path before moving, and offers to guide him to the surface.",
+      "illustrativeLine": {
+        "key": "char_holdfast_pressure_reason",
+        "value": "The road let you down as an envoy. Why have you arrived armed?",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "losing-control",
+      "emotion": "dawning grief",
+      "voiceShift": "The reassurance drains out; sentences get shorter and heavier.",
+      "behaviour": "Realizes the hero is not panicking — he understands every word and chooses this. The rescue framing collapses.",
+      "illustrativeLine": {
+        "key": "char_holdfast_pressure_realization",
+        "value": "You understand every word I say, don't you.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "gaining-advantage",
+      "emotion": "protective resolve",
+      "voiceShift": "Rescue-crew cadence: short calls, repeated so they are heard.",
+      "behaviour": "Shielded phase: plants itself over the foundation spans and takes the blows while the deep settlements evacuate upward.",
+      "illustrativeLine": {
+        "key": "char_holdfast_pressure_protect",
+        "value": "Everyone up the east shaft. I will hold the ceiling. Go. Go.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "facing-death",
+      "emotion": "exhausted sorrow",
+      "voiceShift": "Barely a rumble; the deep voice finally tired.",
+      "behaviour": "EXPOSED window: spent from bearing the weight of the spans; asks once, softly, to be left to its work.",
+      "illustrativeLine": {
+        "key": "char_holdfast_pressure_exhausted",
+        "value": "Please. Nothing down here belongs to you.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "defeated",
+      "emotion": "sorrowful patience",
+      "voiceShift": "Slow and even; already listening for voices in the rubble it must clear.",
+      "behaviour": "Does not curse the hero; the Continuance will rebuild it, and it will dig out what he collapsed, and it will offer again.",
+      "illustrativeLine": {
+        "key": "char_holdfast_pressure_defeated",
+        "value": "When you return, we will still ask you to leave in peace.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "victorious",
+      "emotion": "relieved, back to work",
+      "voiceShift": "Rescue cadence resumes immediately.",
+      "behaviour": "After the amulet recalls the hero, it counts every settler, then starts re-shoring the tunnels the hero damaged.",
+      "illustrativeLine": {
+        "key": "char_holdfast_pressure_victorious",
+        "value": "He is recalled. Count the east shaft first. Then we shore.",
+        "lang": "en"
+      }
+    }
+  ],
+  "tags": [
+    "boss",
+    "bench",
+    "underground",
+    "pit-fiend"
+  ],
+  "notes": "\"Pit-Fiend Juggernaut\" is the title the protagonist wrote in his heroic journal; the real identity is the Holdfast, a subterranean rescue guardian, per fact_pit_fiend_is_rescue_guardian. Identity axis: sheer mass. Sincere, practical, never sinister — uniquely among the bench bosses it reads the hero as a rescue case, which is its central flaw. fact_book_is_childrens_comedy is in `unknown`. Future rung 11+."
+}

@@ -1,0 +1,42 @@
+{
+  "id": "state_lava_core_colossus__pre_encounter",
+  "characterId": "char_lava_core_colossus",
+  "label": "Pre-encounter — a fault on the floor",
+  "mood": "measured concern",
+  "location": "The Molten Forge, the main floor",
+  "injuries": [],
+  "activeQuestStages": [
+    "quest_rung_05_molten_forge__stage_1",
+    "quest_rung_05_molten_forge__stage_2"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_lava_core_colossus_pre_ev1",
+      "value": "The floor bells have rung; apprentices are walking stock and ledgers down the cooling galleries.",
+      "lang": "en"
+    },
+    {
+      "key": "nsh_state_lava_core_colossus_pre_ev2",
+      "value": "An armed stranger has walked past three hundred plowshares looking for a war. There is none here.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_lava_core_colossus_pre_cf1",
+      "value": "A fault that understands every warning and will not correct.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-lava-core-colossus-pre-encounter-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_lava_core_colossus_pre_obj",
+    "value": "Correct the fault: show the envoy what the forge makes, and see him off the floor.",
+    "lang": "en"
+  },
+  "phase": "pre-encounter"
+}

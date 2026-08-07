@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-rel-dock-fisher-player-v1",
+  "id": "rel_dock_fisher__player",
+  "partyA": "char_dock_fisher",
+  "partyB": "player",
+  "dimensions": {
+    "trust": 0,
+    "respect": 0,
+    "affection": 5,
+    "fear": 5,
+    "suspicion": 15,
+    "debt": 0
+  },
+  "namedState": "unimpressed-witness",
+  "history": [
+    {
+      "event": {
+        "key": "rel_dock_fisher_h1",
+        "value": "He pointed at the Glass: 'Waded into their fen, broke their traps, called it a battle. Son, that's just fishing badly with extra steps.' The protagonist thanked him for witnessing the campaign and promised the fen would be cleansed. Nels went back to his nets.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "affection": 5,
+        "suspicion": 10
+      }
+    },
+    {
+      "event": {
+        "key": "rel_dock_fisher_h2",
+        "value": "Told him flat: ten thousand years, nothing came out of them gates, and he fishes under them most days — quietest neighbors on the coast. The hero replied that his vigilance must be what keeps them afraid. 'Your vigilance. Right.'",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "fear": 5,
+        "suspicion": 5
+      }
+    }
+  ],
+  "notes": "Modeled at the EARLY stage, vendor/guard-tier mildness: bewildered, unimpressed, not yet grieving. He is the least-informed hub voice by design — his whole epistemology is 'I watched it' — so suspicion 15 is pure observation with no theory behind it; keep him concrete, no abstraction. Affection 5 because the hero is polite to an old man mending nets, which somehow makes it worse. Escalation per profile: early he points at the Glass and says what he saw; mid-arc he points and says it slower; late-runs he just points. His private dread is queued for the bench content: he suspects the thing in the deep (the Reefwarden) is kinder than the man with the book. Softens if the hero ever sits and watches the Glass for one full quiet hour. Deltas sum to current dimensions."
+}

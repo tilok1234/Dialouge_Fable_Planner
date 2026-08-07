@@ -1,0 +1,40 @@
+{
+  "id": "state_goblin_war_crown__exposed",
+  "characterId": "char_goblin_war_crown",
+  "label": "Exposed — out of kegs, out of breath",
+  "mood": "spent honesty",
+  "location": "The Palisade Camp, the empty feast ground",
+  "injuries": [
+    "Lungs burning from smoke and shouting",
+    "An empty satchel where the quarry charges were"
+  ],
+  "activeQuestStages": [
+    "quest_rung_02_palisade_camp__stage_3"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_goblin_war_crown_ex_ev1",
+      "value": "The last firework went up as a wall instead of a flower; the stranger saluted the exhaustion as evil revealing weakness.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_goblin_war_crown_ex_cf1",
+      "value": "Just stew, and songs, and us — and a man who wants none of it and takes all of it.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-goblin-war-crown-exposed-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_goblin_war_crown_ex_obj",
+    "value": "Say the plainest thing he knows and hope it lands once.",
+    "lang": "en"
+  },
+  "phase": "exposed",
+  "notes": "'Please… there is nothing here that belongs to you. Just stew, and songs, and us.'"
+}

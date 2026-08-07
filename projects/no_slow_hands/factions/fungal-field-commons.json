@@ -1,0 +1,104 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-fac-fungal-field-commons-v1",
+  "id": "fac_fungal_field_commons",
+  "name": "The Fungal Field Commons",
+  "summary": {
+    "key": "fac_fungal_field_commons_summary",
+    "value": "A farming and pollination common — the hero calls it a battlefield. Its resident cast: swarmers bat-moss, wasp-yellowjacket, and moth-plague; chasers zombie-shambler and frog-bog; the cultist-acolyte shooters (gardeners, in truth); bomber shroom-violet; sniper spider-forest; and turret shroom-earth. When the bells ring, these are the neighbors who arrive to contain the intruder — volunteers first, then wardens, then specialists, then a Heavy Hand.",
+    "lang": "en"
+  },
+  "sharedBeliefs": [
+    "fact_realms_peaceful_ten_millennia",
+    "fact_law_of_fair_warning",
+    "fact_continuance_restores_dead",
+    "fact_fungal_field_is_commons",
+    "fact_heavy_hands_emergency_service"
+  ],
+  "sharedOpinions": [
+    {
+      "target": "char_protagonist",
+      "position": "frightened",
+      "reason": "He tramples the pollination rows and calls our harvesters a horde. The pauses between our waves shrink because the whole valley keeps arriving to help."
+    },
+    {
+      "target": "fac_forest_nursery",
+      "position": "friendly",
+      "reason": "Their groves take our spores; our pollinators service their saplings. We are one long growing season apart."
+    },
+    {
+      "target": "fac_goblin_festival_settlement",
+      "position": "friendly",
+      "reason": "They trade lantern oil for spore-flour every autumn and always overstay for the harvest dance."
+    },
+    {
+      "target": "fac_heavy_hands",
+      "position": "friendly",
+      "reason": "A barn fire or a collapsed root cellar brings them over the hill before the smoke does. Their seal means help; the hero thinks it means loot."
+    }
+  ],
+  "metaphorDomain": {
+    "source": "soil, spores, harvest, pollination",
+    "examples": [
+      {
+        "key": "fac_fungal_field_commons_metaphor_1",
+        "value": "You do not own a field; you borrow it from next year.",
+        "lang": "en"
+      },
+      {
+        "key": "fac_fungal_field_commons_metaphor_2",
+        "value": "Bad news travels like spores — everywhere, and before you see it coming.",
+        "lang": "en"
+      }
+    ]
+  },
+  "terminology": [
+    {
+      "term": "the commons",
+      "meaning": {
+        "key": "fac_fungal_field_commons_term_commons",
+        "value": "Shared ground worked by everyone and owned by no one. The hero hears 'battlefield'; the residents hear 'lunch'.",
+        "lang": "en"
+      }
+    },
+    {
+      "term": "bell shift",
+      "meaning": {
+        "key": "fac_fungal_field_commons_term_bell_shift",
+        "value": "The emergency muster when the warning bells ring — residents drop tools and walk toward the trouble, in the order the bells call them.",
+        "lang": "en"
+      }
+    }
+  ],
+  "customs": [
+    {
+      "key": "fac_fungal_field_commons_custom_harvest",
+      "value": "First baskets of every harvest go to the commons storehouse before any private larder. No one in the valley has gone hungry in living memory.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_fungal_field_commons_custom_bells",
+      "value": "Whoever rings the warning bell stays to direct the arrivals. You summon help, you organize it.",
+      "lang": "en"
+    }
+  ],
+  "taboos": [
+    {
+      "key": "fac_fungal_field_commons_taboo_storehouse",
+      "value": "Never take from the commons storehouse without logging it. The hero's 'treasure detour' is our winter food.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_fungal_field_commons_taboo_trample",
+      "value": "Never cut across a planted row, whatever the hurry. Fences here are suggestions; rows are law.",
+      "lang": "en"
+    }
+  ],
+  "tags": [
+    "faction",
+    "horde",
+    "tier-0",
+    "commons",
+    "fungal-field"
+  ]
+}

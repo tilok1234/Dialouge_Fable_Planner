@@ -1,0 +1,39 @@
+{
+  "id": "state_scorpion_empress__phase_two",
+  "characterId": "char_scorpion_empress",
+  "label": "Phase two — seal the east tunnels",
+  "mood": "stillness before the closing",
+  "location": "The desert hall before the hatchery tunnels",
+  "injuries": [],
+  "activeQuestStages": [
+    "quest_rung_10_scorpion_empress__stage_2"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_scorpion_empress_p2_ev1",
+      "value": "She decreed the exits and the law in plain words; he heard every one and advanced, so she stopped addressing him and started addressing her tunnels.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [
+    "fact_amulet_translation_is_accurate"
+  ],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_scorpion_empress_p2_cf1",
+      "value": "He is not deceived. He is decided.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-scorpion-empress-phase-two-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_scorpion_empress_p2_obj",
+    "value": "Seal the east tunnels. Wake the hatchery-mothers. Close from both sides.",
+    "lang": "en"
+  },
+  "phase": "phase-two",
+  "notes": "'You understand every word I say, don't you? Seal the east tunnels. Wake the hatchery-mothers.'"
+}

@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "contentHash": "sha256:beat-rk-first_encounter-v1",
+  "id": "beat_reliquary_king_first_encounter",
+  "sceneId": "scene_reliquary_king_first_encounter",
+  "beats": [
+    {
+      "order": 1,
+      "speakerId": "char_bone_reliquary_king",
+      "intent": "Greet the armed stranger as the road's envoy and ask why he comes armed.",
+      "landsOn": [],
+      "emotion": "courteous warning"
+    },
+    {
+      "order": 2,
+      "speakerId": "char_bone_reliquary_king",
+      "intent": "Name the dead underfoot; establish remembrance, not necromancy.",
+      "landsOn": [
+        "fact_reliquary_king_is_caretaker"
+      ],
+      "emotion": "courteous warning"
+    },
+    {
+      "order": 3,
+      "speakerId": "char_bone_reliquary_king",
+      "intent": "Offer the mercy exit through the gate, without cost.",
+      "landsOn": [],
+      "emotion": "courteous warning"
+    },
+    {
+      "order": 4,
+      "speakerId": "char_bone_reliquary_king",
+      "intent": "Acknowledge the ignored warning; state the Law of Fair Warning.",
+      "landsOn": [
+        "fact_law_of_fair_warning"
+      ],
+      "emotion": "offended disbelief"
+    }
+  ],
+  "avoids": [
+    "cackling-necromancer framing",
+    "threats of cruelty",
+    "confirming any prophecy"
+  ],
+  "contextPackageId": "ctx_reliquary_king_first_encounter"
+}

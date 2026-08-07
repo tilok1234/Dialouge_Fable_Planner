@@ -1,0 +1,42 @@
+{
+  "id": "state_dryad_of_nature__pre_encounter",
+  "characterId": "char_dryad_of_nature",
+  "label": "Pre-encounter — a blade in the nursery",
+  "mood": "gardener's patience, alarmed",
+  "location": "The Verdant Ward, the nursery rows",
+  "injuries": [],
+  "activeQuestStages": [
+    "quest_rung_06_verdant_ward__stage_1",
+    "quest_rung_06_verdant_ward__stage_2"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_dryad_of_nature_pre_ev1",
+      "value": "The rookeries have gone silent; fledglings and seedlings are being moved deeper into the Ward.",
+      "lang": "en"
+    },
+    {
+      "key": "nsh_state_dryad_of_nature_pre_ev2",
+      "value": "A walker with a drawn blade is straying off the swept path, toward the nests.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_dryad_of_nature_pre_cf1",
+      "value": "An armed stranger who understands every word and keeps trampling toward the nesting rows.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-dryad-of-nature-pre-encounter-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_dryad_of_nature_pre_obj",
+    "value": "Guide the walker back onto the swept path and out of the nursery.",
+    "lang": "en"
+  },
+  "phase": "pre-encounter"
+}

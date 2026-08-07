@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "contentHash": "sha256:scene-dryad-rematch-v1",
+  "id": "scene_dryad_rematch",
+  "label": "Dryad of Nature rematch",
+  "sceneType": "boss-rematch",
+  "participants": [
+    {
+      "characterId": "char_dryad_of_nature",
+      "stateId": "state_dryad_of_nature__rematch",
+      "relationshipIds": [
+        "rel_dryad_of_nature__player"
+      ],
+      "role": "speaker"
+    }
+  ],
+  "boundQuestStages": [
+    "quest_rung_06_verdant_ward__stage_4"
+  ],
+  "purpose": {
+    "key": "scene_dryad_rematch_purpose",
+    "value": "The Continuance restored the guardian but kept its pain and memory: it remembers him, and dread and weary recognition replace pleading.",
+    "lang": "en"
+  },
+  "requiredFacts": [
+    "fact_continuance_restores_dead"
+  ],
+  "hintableFacts": [
+    "fact_dryad_is_nursery_keeper"
+  ],
+  "forbiddenRevelations": [
+    "fact_book_is_childrens_comedy"
+  ],
+  "emotionalProgression": [
+    {
+      "order": 1,
+      "emotion": "recognition",
+      "note": "The guardian knows the sound of his return and what it costs."
+    },
+    {
+      "order": 2,
+      "emotion": "grim hospitality",
+      "note": "The warning is still given, law-bound, but without hope it will be heard."
+    }
+  ],
+  "maxLength": "short",
+  "availableChoices": [],
+  "templateDefaults": {
+    "bossRematch": {
+      "remembersPlayer": true
+    }
+  },
+  "notes": "They remember him: the Continuance restores the body but does not erase pain or memory, so rematches carry dread, not fresh pleading. The fair warning is still spoken because the law binds them. Flavor: the nursery rows."
+}

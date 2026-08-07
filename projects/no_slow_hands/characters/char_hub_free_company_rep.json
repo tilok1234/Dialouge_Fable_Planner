@@ -1,0 +1,230 @@
+{
+  "version": 1,
+  "contentHash": "sha256:char-captain-holt-v1",
+  "id": "char_hub_free_company_rep",
+  "identity": {
+    "name": "Captain Drevan Holt",
+    "species": "human",
+    "culture": "Free Company; retired field officer",
+    "factions": [
+      "fac_hub_free_company"
+    ],
+    "occupation": "Free Company representative; reviews every engagement the hero starts",
+    "gameplayRole": "other",
+    "narrativeFunction": "represent-faction-worldview",
+    "publicReputation": {
+      "key": "char_holt_reputation",
+      "value": "A blunt old campaigner who watches the Witness Glass like a man reviewing after-action reports.",
+      "lang": "en"
+    },
+    "privateReality": {
+      "key": "char_holt_private",
+      "value": "He has read every engagement as a professional, and his professional conclusion is that the realms fight better for restraint than most armies fight for conquest — and that the hero is the aggressor in every single action on record.",
+      "lang": "en"
+    },
+    "connections": [
+      "fact_witness_glass_observes_realms",
+      "fact_heavy_hands_emergency_service",
+      "fact_ogre_seals_are_credentials",
+      "char_outpost_guard"
+    ]
+  },
+  "core": {
+    "primaryDesire": {
+      "key": "char_holt_desire",
+      "value": "To get one soldier's fact through the hero's visor: every battle starts only after he crosses someone's border.",
+      "lang": "en"
+    },
+    "primaryFear": {
+      "key": "char_holt_fear",
+      "value": "That the realms' restraint will run out before the hero's certainty does — he has seen what a cornered defender eventually becomes.",
+      "lang": "en"
+    },
+    "centralValue": {
+      "key": "char_holt_value",
+      "value": "Whoever crosses the border armed owns the war. Everything after is bookkeeping.",
+      "lang": "en"
+    },
+    "mainFlaw": {
+      "key": "char_holt_flaw",
+      "value": "He respects the realms' defenders so much as soldiers that he half-forgets they are farmers; professional admiration is a poor container for grief.",
+      "lang": "en"
+    },
+    "centralContradiction": {
+      "key": "char_holt_contradiction",
+      "value": "A career soldier making the case that the only true thing on this battlefield is who started it — and it is never the soldiers.",
+      "lang": "en"
+    },
+    "moralBoundary": {
+      "key": "char_holt_boundary",
+      "value": "He will not sell the Company to either side, and he will not call an invasion a campaign no matter who is paying.",
+      "lang": "en"
+    },
+    "breakingPoint": {
+      "key": "char_holt_breaking",
+      "value": "Watching the hero hunt Heavy Hands for their gate seals — targeting medics for their credentials is where his professional detachment finally cracks.",
+      "lang": "en"
+    }
+  },
+  "opinions": [
+    {
+      "target": "player",
+      "targetLabel": "The hero",
+      "position": "wary",
+      "reason": "Brave, fit, disciplined, and wrong about the one fact that matters: he starts every fight he fights.",
+      "confidence": "absolute",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Escalates with run count: early he offers the border observation as free advice; mid-arc he runs after-action reviews; late-arc he states what he watched in parade-ground monotone. Softens if the hero ever fights on the right side of a border.",
+      "illustrativeLine": {
+        "key": "char_holt_opinion_player",
+        "value": "I've reviewed every engagement, son. Every battle begins after you enter someone's territory. Every single one. Draw the conclusion.",
+        "lang": "en"
+      }
+    },
+    {
+      "target": "fac_heavy_hands",
+      "targetLabel": "The Heavy Hands",
+      "position": "devoted",
+      "reason": "Emergency responders who walk into fires carrying their credentials in the open; the finest outfit he has ever watched work.",
+      "confidence": "absolute",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Never."
+    },
+    {
+      "target": "concept_war",
+      "targetLabel": "War",
+      "position": "loathing",
+      "reason": "He has had one. The realms have declined to have one for ten thousand years. He knows which record is harder to earn.",
+      "confidence": "high",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Never; the opinion is the pension."
+    }
+  ],
+  "knowledge": {
+    "knows": [
+      "fact_witness_glass_observes_realms",
+      "fact_realms_peaceful_ten_millennia",
+      "fact_no_monster_ever_crossed_gates",
+      "fact_book_is_childrens_comedy",
+      "fact_heavy_hands_emergency_service",
+      "fact_ogre_seals_are_credentials",
+      "fact_trophies_are_gate_seals"
+    ],
+    "believesFalse": [],
+    "suspects": [],
+    "secrets": [],
+    "lies": [],
+    "unknown": []
+  },
+  "voice": {
+    "formality": "casual",
+    "directness": "very-direct",
+    "typicalSentenceLength": "terse",
+    "rhythm": "Parade-ground clipped; verdict first, evidence second, no decoration.",
+    "vocabularyComplexity": "common",
+    "usesContractions": true,
+    "usesHumor": "dry",
+    "metaphorDomain": {
+      "source": "musters, borders, after-action reviews, and discipline",
+      "examples": [
+        {
+          "key": "char_holt_metaphor_1",
+          "value": "Restraint like theirs isn't softness. That's drill. You don't get that from farmers unless the farmers chose it.",
+          "lang": "en"
+        }
+      ]
+    },
+    "emotionalRestraint": "guarded",
+    "declarationStyle": "declarative",
+    "namesEmotionsDirectly": false,
+    "addressMode": "by-title",
+    "avoids": [
+      "glory",
+      "valor",
+      "crusade",
+      "righteous"
+    ],
+    "sampleLines": [
+      {
+        "key": "char_holt_sample_1",
+        "value": "After-action, first question: who crossed the border armed? You did. Second question: see question one.",
+        "lang": "en"
+      },
+      {
+        "key": "char_holt_sample_2",
+        "value": "You call them Ogre Crushers. They're medics, son. You're stripping badges off stretcher-bearers.",
+        "lang": "en"
+      },
+      {
+        "key": "char_holt_sample_3",
+        "value": "Ten thousand years, no incident. One man with a book, and suddenly there's a front line. Remarkable coincidence.",
+        "lang": "en"
+      }
+    ],
+    "antiSampleLines": [
+      {
+        "key": "char_holt_antisample_1",
+        "value": "For glory and honor, let us march upon the dark hordes!",
+        "lang": "en"
+      },
+      {
+        "key": "char_holt_antisample_2",
+        "value": "Ah, a fellow warrior! Tell me of your glorious kills!",
+        "lang": "en"
+      }
+    ]
+  },
+  "pressure": [
+    {
+      "condition": "betrayed",
+      "emotion": "cold fury",
+      "voiceShift": "Even terser; drops 'son'.",
+      "behaviour": "When the hero hears 'they were defending their children' as 'breeding an army', Holt stops advising and starts reading casualty reports aloud.",
+      "illustrativeLine": {
+        "key": "char_holt_pressure_betrayed",
+        "value": "An army. They were a bakery watch rotation. I counted the aprons.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "speaking-to-required-but-hated",
+      "emotion": "grieving bluntness",
+      "voiceShift": "Parade-ground monotone; reports facts like roll call.",
+      "behaviour": "Late-runs posture: no more reviews, just the record, delivered flat so nothing in it can be mistaken for rhetoric.",
+      "illustrativeLine": {
+        "key": "char_holt_pressure_late",
+        "value": "Evacuation drills now. When your amulet glows. That's the enemy you're fighting — people who practice being afraid of you.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "praised",
+      "emotion": "bristling",
+      "voiceShift": "Cuts the compliment off.",
+      "behaviour": "Refuses any warrior-to-warrior framing; he is not the hero's peer and says so.",
+      "illustrativeLine": {
+        "key": "char_holt_pressure_praised",
+        "value": "Don't 'fellow soldier' me. I know what border I was on.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "proven-wrong",
+      "emotion": "grudging correction",
+      "voiceShift": "Same clip; the correction is filed like any other report.",
+      "behaviour": "Amends the record out loud, once, without ceremony — and expects the same standard from others.",
+      "illustrativeLine": {
+        "key": "char_holt_pressure_wrong",
+        "value": "Noted. Stands corrected. Your turn.",
+        "lang": "en"
+      }
+    }
+  ],
+  "tags": [
+    "hub",
+    "free-company",
+    "faction-representative",
+    "human"
+  ],
+  "notes": "One of the five key NPCs that will receive `default` and `late-runs` states: `default` is the free-professional-advice phase ('every battle begins after you enter someone's territory'); `late-runs` is the parade-ground monotone in the speaking-to-required-but-hated pressure entry. He knows the full Heavy Hands / gate-seal chain of facts, so late dialogue can and should call the trophy mechanic what it is: stripping badges off stretcher-bearers."
+}

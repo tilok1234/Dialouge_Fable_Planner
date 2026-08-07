@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "contentHash": "sha256:scene-reception-hall-v1",
+  "id": "scene_reception_hall",
+  "label": "Reception hall revelation",
+  "sceneType": "monologue",
+  "participants": [
+    {
+      "characterId": "char_protagonist",
+      "stateId": "state_protagonist__default",
+      "relationshipIds": [],
+      "role": "player-proxy"
+    }
+  ],
+  "boundQuestStages": [
+    "quest_rung_10_scorpion_empress__stage_5",
+    "quest_epilogue_false_history__stage_1"
+  ],
+  "purpose": {
+    "key": "scene_reception_hall_purpose",
+    "value": "The truth is laid out in full — gifts from all ten realms, the peace-feast table, the banner, the murals of the guardians helping one another — and the hero studies it and delivers his verdict: \"A false history. Their deception is even greater than I feared.\"",
+    "lang": "en"
+  },
+  "requiredFacts": [
+    "fact_reception_hall_awaits_first_visitor"
+  ],
+  "hintableFacts": [],
+  "forbiddenRevelations": [],
+  "emotionalProgression": [
+    {
+      "order": 1,
+      "emotion": "hushed awe",
+      "note": "The player's awe: the hall waited five thousand years for a friend."
+    },
+    {
+      "order": 2,
+      "emotion": "serene certainty",
+      "note": "The hero's verdict lands, calm and utterly wrong."
+    }
+  ],
+  "maxLength": "medium",
+  "availableChoices": [],
+  "templateDefaults": {
+    "monologue": {
+      "environmentAsSpeaker": true
+    }
+  },
+  "notes": "sceneType note: the enum has no revelation/discovery type; \"monologue\" is the closest longer-form fit — the hall itself is the de facto speaker (banner, gifts, murals) and the hero's verdict is the scene's one spoken line, so char_protagonist is the sole participant in his default state. NO realm characters are present: the hall is empty; it waited five thousand years for its first visitor. Content: gifts from all ten realms, the long peace-feast table, the faded banner reading \"WELCOME, FRIEND BEYOND THE GATE\", and murals of the guardians helping one another — the Colossus building bridges, the Tide-Man ending a flood, the Griffin guiding travelers, the Dryad restoring burned land, the Reliquary King preserving the names of the dead. forbiddenRevelations is intentionally EMPTY: this is the one scene where the whole truth is on the table — and the hero still reads it as a false history."
+}

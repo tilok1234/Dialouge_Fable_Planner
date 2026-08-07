@@ -1,0 +1,234 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-char-ancient-mirejaw-v1",
+  "id": "char_ancient_mirejaw",
+  "identity": {
+    "name": "The Poolwarden",
+    "species": "ancient marsh creature",
+    "culture": "The Sunken Mire",
+    "factions": [
+      "fac_mire_wetlands"
+    ],
+    "occupation": "Guardian of the spawning pools and the small wetland animals, rung 7 of the ladder",
+    "gameplayRole": "boss",
+    "narrativeFunction": "boss",
+    "publicReputation": {
+      "key": "char_mirejaw_reputation",
+      "value": "The old stillness of the mire: it never leaves the water, never crosses its own boundary, and never harms anything that stays outside the pools.",
+      "lang": "en"
+    },
+    "privateReality": {
+      "key": "char_mirejaw_private",
+      "value": "Named 'Ancient Mirejaw' in the hero's journal as an ambush predator. Its 'ambush' is its body: it IS the mire's answer to intrusion, surfacing only where the pools are threatened.",
+      "lang": "en"
+    },
+    "connections": [
+      "fact_mirejaw_is_marsh_guardian",
+      "fact_drowned_fen_is_commons",
+      "char_protagonist"
+    ]
+  },
+  "core": {
+    "primaryDesire": {
+      "key": "char_mirejaw_desire",
+      "value": "Stillness: pools undisturbed, spawn unbroken, the small things left to grow.",
+      "lang": "en"
+    },
+    "primaryFear": {
+      "key": "char_mirejaw_fear",
+      "value": "A foot in the spawning pools — the one intrusion it cannot absorb.",
+      "lang": "en"
+    },
+    "centralValue": {
+      "key": "char_mirejaw_value",
+      "value": "The boundary is the peace: what stays outside the mire is none of its concern; what enters is all of it.",
+      "lang": "en"
+    },
+    "mainFlaw": {
+      "key": "char_mirejaw_flaw",
+      "value": "It cannot explain itself — it has no diplomacy, only patience and presence, and patience reads to the hero as malice.",
+      "lang": "en"
+    },
+    "centralContradiction": {
+      "key": "char_mirejaw_contradiction",
+      "value": "The most peaceful guardian on the ladder looks the most like a monster: it has never once attacked anything that stayed outside its water.",
+      "lang": "en"
+    },
+    "moralBoundary": {
+      "key": "char_mirejaw_boundary",
+      "value": "It never leaves the mire and never pursues beyond it; even surfacing, its movements telegraph per the Law of Fair Warning.",
+      "lang": "en"
+    }
+  },
+  "opinions": [
+    {
+      "target": "player",
+      "targetLabel": "The intruder (the player)",
+      "position": "wary",
+      "reason": "A splashing in the water that returns by season. It does not judge him; it registers him, the way the mire registers weather.",
+      "confidence": "absolute",
+      "publiclyAdmitted": false,
+      "canChangeCondition": "Never — it does not plead and does not harden; it simply rises earlier each time, because it remembers.",
+      "illustrativeLine": {
+        "key": "char_mirejaw_op_player",
+        "value": "You again. The pools remember.",
+        "lang": "en"
+      }
+    },
+    {
+      "target": "fac_mire_wetlands",
+      "targetLabel": "The spawning pools and wetland creatures",
+      "position": "devoted",
+      "reason": "The pools are its whole world and its whole duty.",
+      "confidence": "absolute",
+      "publiclyAdmitted": false,
+      "canChangeCondition": "Never."
+    }
+  ],
+  "knowledge": {
+    "knows": [
+      "fact_mirejaw_is_marsh_guardian",
+      "fact_drowned_fen_is_commons",
+      "fact_realms_peaceful_ten_millennia",
+      "fact_law_of_fair_warning",
+      "fact_continuance_restores_dead"
+    ],
+    "believesFalse": [],
+    "suspects": [],
+    "secrets": [],
+    "lies": [],
+    "unknown": [
+      "fact_book_is_childrens_comedy",
+      "fact_amulet_is_diplomatic_concord",
+      "fact_amulet_translation_is_accurate"
+    ]
+  },
+  "voice": {
+    "formality": "very-casual",
+    "directness": "very-direct",
+    "typicalSentenceLength": "terse",
+    "rhythm": "Sparse, ancient, slow-surfacing; long silences are part of the sentence.",
+    "vocabularyComplexity": "plain",
+    "usesContractions": false,
+    "usesHumor": "never",
+    "metaphorDomain": {
+      "source": "the mire itself: still water, silt, seasons, the boundary of the pools",
+      "examples": [
+        {
+          "key": "char_mirejaw_metaphor_1",
+          "value": "Still water is not empty water.",
+          "lang": "en"
+        }
+      ]
+    },
+    "emotionalRestraint": "impenetrable",
+    "declarationStyle": "declarative",
+    "namesEmotionsDirectly": false,
+    "addressMode": "impersonal",
+    "avoids": [
+      "speeches",
+      "threats",
+      "pleading",
+      "explanations"
+    ],
+    "sampleLines": [
+      {
+        "key": "char_mirejaw_sample_1",
+        "value": "Out of the pools.",
+        "lang": "en"
+      },
+      {
+        "key": "char_mirejaw_sample_2",
+        "value": "The bank was yours. The water is not.",
+        "lang": "en"
+      },
+      {
+        "key": "char_mirejaw_sample_3",
+        "value": "You again. The pools remember.",
+        "lang": "en"
+      }
+    ],
+    "antiSampleLines": [
+      {
+        "key": "char_mirejaw_antisample_1",
+        "value": "Graaagh! Fresh meat for the swamp! I'll swallow you whole! (predator-monster framing — it guards, it does not hunt)",
+        "lang": "en"
+      },
+      {
+        "key": "char_mirejaw_antisample_2",
+        "value": "Let me explain at length why you should leave, traveller. (it is a creature of few words; dialogue is mostly action)",
+        "lang": "en"
+      },
+      {
+        "key": "char_mirejaw_antisample_3",
+        "value": "The prophecy foretold your coming! (must never confirm the prophecy framing — it has never heard of the book)",
+        "lang": "en"
+      }
+    ]
+  },
+  "pressure": [
+    {
+      "condition": "threatened",
+      "emotion": "surfacing attention",
+      "voiceShift": "None — it was already terse; the silences simply move closer.",
+      "behaviour": "Phase one — warns by presence: it rises where the intruder wades and shows him the bank. That is its entire first argument.",
+      "illustrativeLine": {
+        "key": "char_mirejaw_pressure_threatened",
+        "value": "Out of the pools.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "gaining-advantage",
+      "emotion": "territorial certainty",
+      "voiceShift": "None.",
+      "behaviour": "Containment response: its ambush IS its body — the mire itself surfaces beneath him to carry him toward the bank; every rise telegraphs per the Law of Fair Warning.",
+      "illustrativeLine": {
+        "key": "char_mirejaw_pressure_advantage",
+        "value": "The bank. Now.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "losing-control",
+      "emotion": "cornered stillness",
+      "voiceShift": "None — only its position changes.",
+      "behaviour": "Shielded phase: it puts its whole length between the intruder and the deepest spawning pools and simply does not move.",
+      "illustrativeLine": {
+        "key": "char_mirejaw_pressure_shielded",
+        "value": "Not past.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "facing-death",
+      "emotion": "sinking endurance",
+      "voiceShift": "Quieter than quiet.",
+      "behaviour": "EXPOSED window — spent from holding the pools, it says the closest thing it owns to a plea.",
+      "illustrativeLine": {
+        "key": "char_mirejaw_pressure_exposed",
+        "value": "Nothing here is yours.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "defeated",
+      "emotion": "returning stillness",
+      "voiceShift": "None.",
+      "behaviour": "Sinks. Trusts the Continuance. Will be under the same water, remembering, when he returns.",
+      "illustrativeLine": {
+        "key": "char_mirejaw_pressure_defeated",
+        "value": "The pools remember.",
+        "lang": "en"
+      }
+    }
+  ],
+  "tags": [
+    "boss",
+    "rung-7",
+    "sunken-mire",
+    "marsh-guardian",
+    "few-words"
+  ],
+  "notes": "REAL identity: a peaceful but fiercely protective marsh creature guarding spawning pools and smaller wetland animals. It never leaves the mire and never attacks anyone who stays outside its territory. Its ambush IS its body — the boss-as-projectile design is the mire surfacing to carry intruders back to the bank. VOICE: a creature of few words; most of its 'dialogue' is action and position. Do not give it speeches; the anti-samples are load-bearing. KNOWLEDGE: it does not reason about the intruder's motives, so suspects is empty and both amulet facts are unknown — it registers his presence, not his words. Never heard of the children's book (unknown)."
+}

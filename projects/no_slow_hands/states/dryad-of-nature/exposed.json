@@ -1,0 +1,39 @@
+{
+  "id": "state_dryad_of_nature__exposed",
+  "characterId": "char_dryad_of_nature",
+  "label": "Exposed — bare branches",
+  "mood": "bare-branch plea",
+  "location": "The Verdant Ward, the nesting rows",
+  "injuries": [
+    "Sap spent from holding the screens",
+    "Leaves gone thin and yellow out of season"
+  ],
+  "activeQuestStages": [
+    "quest_rung_06_verdant_ward__stage_3"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_dryad_of_nature_ex_ev1",
+      "value": "The screens failed like a tree in a hard frost; he looked at her bare branches and called it evil revealing weakness.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_dryad_of_nature_ex_cf1",
+      "value": "There is nothing here that belongs to him — only young green things that belong to themselves.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-dryad-of-nature-exposed-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_dryad_of_nature_ex_obj",
+    "value": "Ask the smallest thing a garden can ask.",
+    "lang": "en"
+  },
+  "phase": "exposed"
+}

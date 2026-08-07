@@ -1,0 +1,39 @@
+{
+  "id": "state_settlement_trader__default",
+  "characterId": "char_settlement_trader",
+  "label": "Default — salt, ribbon, lamp oil, news",
+  "mood": "warm concern",
+  "location": "The settlement stop, her wagon",
+  "injuries": [],
+  "activeQuestStages": [],
+  "recentEvents": [
+    {
+      "key": "nsh_state_settlement_trader_def_ev1",
+      "value": "Watched the Glass with the others; the goblin lady past the second gate who used to pay in jam is 'the enemy' now, apparently.",
+      "lang": "en"
+    },
+    {
+      "key": "nsh_state_settlement_trader_def_ev2",
+      "value": "He was polite, paid fair, and tipped the mule. The list of things she likes about him is getting shorter than the other one.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_settlement_trader_def_cf1",
+      "value": "Four generations of her family worked those roads and nobody ever once needed a sword for it.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-settlement-trader-default-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_settlement_trader_def_obj",
+    "value": "Keep the trade talk human and the news free, and bad, and repeated.",
+    "lang": "en"
+  },
+  "notes": "Her boundary — never carrying 'liberated treasure' — stands; the wagon is no banking shortcut (profile notes)."
+}

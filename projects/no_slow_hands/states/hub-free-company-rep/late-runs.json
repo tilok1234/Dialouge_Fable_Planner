@@ -1,0 +1,39 @@
+{
+  "id": "state_hub_free_company_rep__late_runs",
+  "characterId": "char_hub_free_company_rep",
+  "label": "Late runs — parade-ground monotone",
+  "mood": "exhausted candor, professional to the end",
+  "location": "The hub, the Free Company board",
+  "injuries": [],
+  "activeQuestStages": [],
+  "recentEvents": [
+    {
+      "key": "nsh_state_hub_free_company_rep_late_ev1",
+      "value": "After-action, run fifty-something: who crossed the border armed? Same answer. Every single one.",
+      "lang": "en"
+    },
+    {
+      "key": "nsh_state_hub_free_company_rep_late_ev2",
+      "value": "He calls them Ogre Crushers. They are medics. He is stripping badges off stretcher-bearers, and the review board has watched it on the Glass in detail.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_hub_free_company_rep_late_cf1",
+      "value": "Speaking to him is required by the charter and hated by the speaker. Both facts are in the minutes.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-hub-free-company-rep-late-runs-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_hub_free_company_rep_late_obj",
+    "value": "Deliver the review in full monotone, no advice left in it: he starts every fight he fights.",
+    "lang": "en"
+  },
+  "notes": "The escalation endpoint: the parade-ground monotone from the speaking-to-required-but-hated pressure entry. He knows the full Heavy Hands / gate-seal chain, so the trophy mechanic is named plainly."
+}

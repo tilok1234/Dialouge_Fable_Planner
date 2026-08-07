@@ -1,0 +1,39 @@
+{
+  "id": "state_night_elf_prince__exposed",
+  "characterId": "char_night_elf_prince",
+  "label": "Exposed — unmasked",
+  "mood": "unmasked pleading",
+  "location": "The Moonlit Court, the ballroom door",
+  "injuries": [
+    "Spent from holding the door; the flourishes cost more than they return"
+  ],
+  "activeQuestStages": [
+    "quest_rung_08_moonlit_court__stage_3"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_night_elf_prince_ex_ev1",
+      "value": "The performance fell away entirely; what remains is young, and it asked plainly, perhaps for the first time in his reign.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_night_elf_prince_ex_cf1",
+      "value": "There is barely anything here that belongs to anyone — and he will take it anyway.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-night-elf-prince-exposed-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_night_elf_prince_ex_obj",
+    "value": "Ask, without protocol, for him to go.",
+    "lang": "en"
+  },
+  "phase": "exposed",
+  "notes": "'Please… there is nothing here that belongs to you. There is barely anything here that belongs to me.'"
+}

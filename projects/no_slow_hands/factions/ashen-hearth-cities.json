@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-fac-ashen-hearth-cities-v1",
+  "id": "fac_ashen_hearth_cities",
+  "name": "The Ashen Hearth Cities",
+  "summary": {
+    "key": "fac_ashen_hearth_cities_summary",
+    "value": "The Ashen people have built their cities around the Living Pyre, a sentient communal hearth and lighthouse that has warmed them for millennia. Its imp-pyro wisps are sparks that carry heat out to homes and furnaces — and, in emergencies, stand as warden turrets along the shrine's approaches. Hearth culture runs deep: no Ashen home is without a flame lit from the Pyre's own.",
+    "lang": "en"
+  },
+  "sharedBeliefs": [
+    "fact_realms_peaceful_ten_millennia",
+    "fact_law_of_fair_warning",
+    "fact_continuance_restores_dead",
+    "fact_living_pyre_is_communal_hearth",
+    "fact_ashen_court_is_commons"
+  ],
+  "sharedOpinions": [
+    {
+      "target": "char_protagonist",
+      "position": "wary",
+      "reason": "He struck at our hearth and called our warmth a siege engine. A city does not forgive a hand at its fire, but the law still governs ours."
+    },
+    {
+      "target": "fac_ashen_court_commons",
+      "position": "friendly",
+      "reason": "The Court is our civic ground — our furnaces, statues, and workshops. When its bells ring, our wardens answer."
+    },
+    {
+      "target": "fac_forge_stewardry",
+      "position": "friendly",
+      "reason": "The Colossus's heating stones keep our outlying homes warm when the Pyre's light runs thin. Firefolk understand firefolk."
+    }
+  ],
+  "metaphorDomain": {
+    "source": "hearth, lamplight, embers, warmth carried home",
+    "examples": [
+      {
+        "key": "fac_ashen_hearth_cities_metaphor_1",
+        "value": "No one owns a flame; you only carry it a while.",
+        "lang": "en"
+      },
+      {
+        "key": "fac_ashen_hearth_cities_metaphor_2",
+        "value": "A cold house is a question nobody answered.",
+        "lang": "en"
+      }
+    ]
+  },
+  "terminology": [
+    {
+      "term": "hearth-spark",
+      "meaning": {
+        "key": "fac_ashen_hearth_cities_term_spark",
+        "value": "A flame lit directly from the Living Pyre and carried home to seed a family's own hearth. The wisps' nightly errand.",
+        "lang": "en"
+      }
+    },
+    {
+      "term": "the Long Warmth",
+      "meaning": {
+        "key": "fac_ashen_hearth_cities_term_warmth",
+        "value": "The millennia the Pyre has burned for the cities; the Ashen measure their history in it the way others count kings.",
+        "lang": "en"
+      }
+    }
+  ],
+  "customs": [
+    {
+      "key": "fac_ashen_hearth_cities_custom_flame",
+      "value": "Guests are offered a coal from the hearth to carry to their own fire — the deepest courtesy an Ashen household can give.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_ashen_hearth_cities_custom_beacon",
+      "value": "On storm nights every household keeps a lamp in the window, answering the Pyre's beacon so no traveler walks unguided.",
+      "lang": "en"
+    }
+  ],
+  "taboos": [
+    {
+      "key": "fac_ashen_hearth_cities_taboo_extinguish",
+      "value": "Never deliberately put out another's hearth-fire. It is the closest thing the Ashen have to a crime.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_ashen_hearth_cities_taboo_pyre",
+      "value": "Never raise a weapon within sight of the Pyre. It has warmed ten thousand years of children; it will not be menaced.",
+      "lang": "en"
+    }
+  ],
+  "tags": [
+    "faction",
+    "realm-people",
+    "ashen-shrine",
+    "rung-3"
+  ]
+}

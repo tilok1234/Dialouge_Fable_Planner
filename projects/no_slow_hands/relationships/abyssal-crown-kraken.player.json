@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-rel-abyssal-crown-kraken-player-v1",
+  "id": "rel_abyssal_crown_kraken__player",
+  "partyA": "char_abyssal_crown_kraken",
+  "partyB": "player",
+  "dimensions": {
+    "trust": -15,
+    "respect": 0,
+    "affection": 0,
+    "fear": 25,
+    "suspicion": 20,
+    "debt": 0
+  },
+  "namedState": "distant-dread",
+  "history": [
+    {
+      "event": {
+        "key": "rel_abyssal_crown_kraken_h1",
+        "value": "News crossed the currents: someone has opened the sealed gates of the ten realms and is fighting guardians who ask him to leave. The Reefwarden has never seen him; it has seen what the news does to the water.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -5,
+        "fear": 10,
+        "suspicion": 15
+      }
+    },
+    {
+      "event": {
+        "key": "rel_abyssal_crown_kraken_h2",
+        "value": "The ten names arrive one by one — fallen, returned by the Continuance, and waiting for him again. The Reefwarden tends the reefs harder, rehearses the exit current, and keeps the storm it is shepherding a little further from the coast.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -10,
+        "fear": 15,
+        "suspicion": 5
+      }
+    }
+  ],
+  "notes": "BENCH boss — he has NOT fought the protagonist yet, so this is news-of-the-ten-realms dread, not a battle relationship: all dimensions are shallow compared to the ladder. namedState 'distant-dread' is the bracing posture of a reef gardener listening to the weather. Its profile's canChangeCondition stands and is the hope in the file: if the protagonist ever sheathes his weapon and lets the current carry him out, the Reefwarden would escort him to safe water like any other ship. When the bench rungs open (post-ladder road), re-derive this file from the same arc shape as the ladder bosses. Deltas sum to current dimensions."
+}

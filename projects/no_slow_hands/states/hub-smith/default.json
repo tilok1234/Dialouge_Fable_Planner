@@ -1,0 +1,39 @@
+{
+  "id": "state_hub_smith__default",
+  "characterId": "char_hub_smith",
+  "label": "Default — the repair bench",
+  "mood": "flat, concerned correction",
+  "location": "The hub forge",
+  "injuries": [],
+  "activeQuestStages": [],
+  "recentEvents": [
+    {
+      "key": "nsh_state_hub_smith_def_ev1",
+      "value": "Watched the Glass, then received the pieces: a goblin hinge charm, cold-set, no seam — snapped with a boot. Better work than his.",
+      "lang": "en"
+    },
+    {
+      "key": "nsh_state_hub_smith_def_ev2",
+      "value": "She has re-set four of the realms' makers' marks for Joren now. All four arrived in pieces.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_hub_smith_def_cf1",
+      "value": "He breaks excellent work and calls the pieces evil; she has repaired what he breaks, so she knows exactly how good it was.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-hub-smith-default-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_hub_smith_def_obj",
+    "value": "Mend what she can, and tell him exactly how good the work was that he broke.",
+    "lang": "en"
+  },
+  "notes": "She KNOWS fact_shards_are_domestic_magic — she has physically re-set the realms' charms (profile notes). She has never read the book."
+}

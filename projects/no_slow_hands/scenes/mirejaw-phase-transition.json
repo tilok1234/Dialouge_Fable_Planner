@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "contentHash": "sha256:scene-mirejaw-phase-trans-v1",
+  "id": "scene_mirejaw_phase_transition",
+  "label": "Ancient Mirejaw phase transition",
+  "sceneType": "boss-phase-transition",
+  "participants": [
+    {
+      "characterId": "char_ancient_mirejaw",
+      "stateId": "state_ancient_mirejaw__phase_two",
+      "relationshipIds": [
+        "rel_ancient_mirejaw__player"
+      ],
+      "role": "speaker"
+    }
+  ],
+  "boundQuestStages": [
+    "quest_rung_07_sunken_mire__stage_2"
+  ],
+  "purpose": {
+    "key": "scene_mirejaw_phase_trans_purpose",
+    "value": "The realization lands — \"You understand every word I say, don't you?\" — and the guardian stops reasoning with the hero and starts containing him.",
+    "lang": "en"
+  },
+  "requiredFacts": [
+    "fact_amulet_translation_is_accurate"
+  ],
+  "hintableFacts": [
+    "fact_mirejaw_is_marsh_guardian"
+  ],
+  "forbiddenRevelations": [
+    "fact_book_is_childrens_comedy",
+    "fact_amulet_is_diplomatic_concord"
+  ],
+  "emotionalProgression": [
+    {
+      "order": 1,
+      "emotion": "disbelief",
+      "note": "Every plea was understood. None of it mattered."
+    },
+    {
+      "order": 2,
+      "emotion": "grief",
+      "note": "The guardian grieves that words have failed."
+    },
+    {
+      "order": 3,
+      "emotion": "resolve",
+      "note": "Reasoning ends; containment of the intruder begins."
+    }
+  ],
+  "maxLength": "short",
+  "availableChoices": [],
+  "templateDefaults": {
+    "bossPhaseTransition": {
+      "realizationBeatsReasoning": true
+    }
+  },
+  "notes": "The pivotal line is the guardian realizing the amulet translates perfectly and the hero CHOSE to keep swinging. Keep it short: the turn from appeal to containment. Flavor: the spawning pools. DEVIATION: fact_amulet_translation_is_accurate sits in Mirejaw's unknown list, but the scene must convey it; it is demonstrated by the hero's comprehension, not recited by Mirejaw, so it is required here and omitted from forbiddenRevelations."
+}

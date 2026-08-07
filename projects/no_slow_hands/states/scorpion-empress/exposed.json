@@ -1,0 +1,39 @@
+{
+  "id": "state_scorpion_empress__exposed",
+  "characterId": "char_scorpion_empress",
+  "label": "Exposed — the door behind her",
+  "mood": "undisguised pleading",
+  "location": "The desert hall, before the door at its far end",
+  "injuries": [
+    "Spent from holding the corridor; the great pincers hang open and trembling"
+  ],
+  "activeQuestStages": [
+    "quest_rung_10_scorpion_empress__stage_3"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_scorpion_empress_ex_ev1",
+      "value": "The corridor failed; for the first time in her reign there is nothing between him and the door behind her hall — and she will not speak of what stands beyond it.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_scorpion_empress_ex_cf1",
+      "value": "Please… there is nothing here that belongs to you. — and behind her, a door she will neither open nor explain.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-scorpion-empress-exposed-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_scorpion_empress_ex_obj",
+    "value": "Ask the smallest thing in the realms — and keep her body over the tunnel mouths while asking.",
+    "lang": "en"
+  },
+  "phase": "exposed",
+  "notes": "THE DOOR (secret, fact_reception_hall_awaits_first_visitor, kept in her profile's secrets bucket): the reception hall beyond her was prepared for the first visitor — him. She knows; she will never reveal it. This state is where the door is most undefended and most unspeakable."
+}

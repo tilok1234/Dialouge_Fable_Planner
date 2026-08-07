@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-rel-dryad-of-nature-player-v1",
+  "id": "rel_dryad_of_nature__player",
+  "partyA": "char_dryad_of_nature",
+  "partyB": "player",
+  "dimensions": {
+    "trust": -60,
+    "respect": 0,
+    "affection": -30,
+    "fear": 60,
+    "suspicion": 55,
+    "debt": 0
+  },
+  "namedState": "dreaded-annual-storm",
+  "history": [
+    {
+      "event": {
+        "key": "rel_dryad_of_nature_h1",
+        "value": "Gate breach in the Verdant Ward; the Aldermother guided before she resisted — showed the walker the path out, swept clear of nests, and the reason for it. A strayed animal to be turned, not an enemy.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -10,
+        "suspicion": 15
+      }
+    },
+    {
+      "event": {
+        "key": "rel_dryad_of_nature_h2",
+        "value": "First fight: he hid beside the ancient trunks because he had learned she will not strike them, and her thorns bent around the alders and around his cover both. 'A coward's lesson, taught by a gardener's mercy.' She stopped guiding and started screening the nests.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -35,
+        "affection": -25,
+        "fear": 40,
+        "suspicion": 30
+      }
+    },
+    {
+      "event": {
+        "key": "rel_dryad_of_nature_h3",
+        "value": "Continuance return: 'The saplings you trampled last spring have not forgotten the shape of you. Neither have I.' She catalogs what must be replanted and rings the nesting rows deeper when the amulet glows.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -15,
+        "affection": -5,
+        "fear": 20,
+        "suspicion": 10
+      }
+    }
+  ],
+  "notes": "Modeled at rematch stage (rung 6) — he returns by season and is remembered ring by ring, hence namedState 'dreaded-annual-storm' (her own seasonal framing of the rematch cycle). Fear 60 is fire-in-the-nursery-rows fear: her profile's primaryFear says a man with a blade is the same thing walking. Trust -60 because he weaponized her one mercy (refusing to shoot through trees) as cover — the deepest single betrayal on her ladder rung. Respect 0: she concedes nothing to a man whose tactical insight is 'hide behind what she loves'. Deltas sum to current dimensions."
+}

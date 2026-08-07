@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-rel-outpost-guard-player-v1",
+  "id": "rel_outpost_guard__player",
+  "partyA": "char_outpost_guard",
+  "partyB": "player",
+  "dimensions": {
+    "trust": -50,
+    "respect": -10,
+    "affection": -30,
+    "fear": 25,
+    "suspicion": 60,
+    "debt": 0
+  },
+  "namedState": "openly-hostile",
+  "history": [
+    {
+      "event": {
+        "key": "rel_outpost_guard_h1",
+        "value": "Years back, on the Glass, he watched a Heavy Hand pull a collapsed barn off a trapped family. He has never told anyone what it meant to him. The wound predates the hero; the hero is what happened to it.",
+        "lang": "en"
+      }
+    },
+    {
+      "event": {
+        "key": "rel_outpost_guard_h2",
+        "value": "Watched the protagonist strip a gate seal off a Heavy Hand on the Glass and call it a trophy. Ket calls it mugging a paramedic: 'You collect 'em like ears. Off my post.' He added a mark to the tally stick by the fire.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -50,
+        "respect": -10,
+        "affection": -30,
+        "fear": 25,
+        "suspicion": 60
+      }
+    }
+  ],
+  "notes": "Ket STARTS hostile — deliberately further along the arc than every other hub NPC; his 'early' is already mid-arc (see profile: position hostile, confidence absolute). All dimensions are hub-extremes: suspicion 60 (he trusts the Glass more than people and has watched everything), trust -50, affection -30, respect -10 ('We do different work'). Fear 25 is specific, not personal: the outpost keeps a gate seal for emergencies, and he knows the hero collects them — his primaryFear is the hero coming to collect theirs. h1 carries no deltas on purpose: the barn rescue is the wound, not an interaction with the player. Escalation per profile: mid-arc he lists the runs back like charges; late-runs he barely speaks, just watches him pass with the fire between them. He will NOT draw — that would be the hero's game ('Log says you always want 'em to draw. Nah.'). Softens only if the hero ever hands a gate seal back. Deltas sum to current dimensions."
+}

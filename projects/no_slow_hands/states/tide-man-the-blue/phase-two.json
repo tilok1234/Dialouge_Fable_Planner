@@ -1,0 +1,39 @@
+{
+  "id": "state_tide_man_the_blue__phase_two",
+  "characterId": "char_tide_man_the_blue",
+  "label": "Phase two — the strangest crossing",
+  "mood": "quiet ache",
+  "location": "The Drowned Vault, the ferry landing",
+  "injuries": [],
+  "activeQuestStages": [
+    "quest_rung_04_drowned_vault__stage_2"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_tide_man_the_blue_p2_ev1",
+      "value": "He explained that the surf walls wash toward the door, never under; the stranger heard him and named a rescue an attack.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [
+    "fact_amulet_translation_is_accurate"
+  ],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_tide_man_the_blue_p2_cf1",
+      "value": "The passenger understands the schedule perfectly and refuses it on principle.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-tide-man-the-blue-phase-two-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_tide_man_the_blue_p2_obj",
+    "value": "Stop offering the ride; start steering the water.",
+    "lang": "en"
+  },
+  "phase": "phase-two",
+  "notes": "'You understand every word I say, don't you? Then this is the strangest crossing I have ever worked.'"
+}

@@ -1,0 +1,39 @@
+{
+  "id": "state_dock_fisher__default",
+  "characterId": "char_dock_fisher",
+  "label": "Default — quietest neighbors on the coast",
+  "mood": "wary, concrete concern",
+  "location": "The docks, under the gates' shadow",
+  "injuries": [],
+  "activeQuestStages": [],
+  "recentEvents": [
+    {
+      "key": "nsh_state_dock_fisher_def_ev1",
+      "value": "Saw him on the Glass wade into the fen, break their traps, and call it a battle. That is just fishing badly with extra steps.",
+      "lang": "en"
+    },
+    {
+      "key": "nsh_state_dock_fisher_def_ev2",
+      "value": "Fishes under the gates most days. Ten thousand years, and nothing has come out of them.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_dock_fisher_def_cf1",
+      "value": "He waves back a sword at people who wave him off. Nels has seen friendlier tides.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-dock-fisher-default-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_dock_fisher_def_obj",
+    "value": "Tell him what the water actually shows, plainly, as one working man to another.",
+    "lang": "en"
+  },
+  "notes": "The least-informed hub voice by design: his whole epistemology is 'I watched it' — keep him concrete (profile notes)."
+}

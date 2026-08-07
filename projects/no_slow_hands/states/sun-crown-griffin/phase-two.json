@@ -1,0 +1,39 @@
+{
+  "id": "state_sun_crown_griffin__phase_two",
+  "characterId": "char_sun_crown_griffin",
+  "label": "Phase two — not lost, but weather",
+  "mood": "cold comprehension",
+  "location": "The highland pass, above the road",
+  "injuries": [],
+  "activeQuestStages": [
+    "quest_rung_09_highland_march__stage_2"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_sun_crown_griffin_p2_ev1",
+      "value": "It called the turn three times, plain as a gust-call; the traveler heard, and walked on. Then he is not lost. He is weather.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [
+    "fact_amulet_translation_is_accurate"
+  ],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_sun_crown_griffin_p2_cf1",
+      "value": "It keeps solving him as a navigation problem; he has stopped being one.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-sun-crown-griffin-phase-two-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_sun_crown_griffin_p2_obj",
+    "value": "Stop directing. Start barring.",
+    "lang": "en"
+  },
+  "phase": "phase-two",
+  "notes": "'You hear me. You walk on anyway. Then you are not lost. You are weather.'"
+}

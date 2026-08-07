@@ -1,0 +1,265 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-char-tide-man-the-blue-v1",
+  "id": "char_tide_man_the_blue",
+  "identity": {
+    "name": "The Ferrymaster of the Drowned Vault",
+    "species": "tide-spirit",
+    "culture": "The floodways and ferry routes of the Drowned Vault",
+    "factions": [
+      "fac_tide_ferryfolk"
+    ],
+    "occupation": "Ferryman and keeper of the floodgates, rung 4 of the ladder",
+    "gameplayRole": "boss",
+    "narrativeFunction": "boss",
+    "publicReputation": {
+      "key": "char_tide_man_reputation",
+      "value": "The ferryman who has never lost a passenger, keeper of the floodgates, the one who cancels crossings when the water says no.",
+      "lang": "en"
+    },
+    "privateReality": {
+      "key": "char_tide_man_private",
+      "value": "Immortalized in a children's book as a sea tyrant because he once canceled a ferry crossing in bad weather; the hero's journal names him 'Tide-Man the Blue'. His surf walls exist to wash an intruder safely back toward the entrance.",
+      "lang": "en"
+    },
+    "connections": [
+      "fact_tide_man_is_ferryman",
+      "char_protagonist"
+    ]
+  },
+  "core": {
+    "primaryDesire": {
+      "key": "char_tide_man_desire",
+      "value": "To carry every passenger across safely — and to carry this one, above all, back out.",
+      "lang": "en"
+    },
+    "primaryFear": {
+      "key": "char_tide_man_fear",
+      "value": "A drowning on his route — that one day the water takes someone he was meant to carry.",
+      "lang": "en"
+    },
+    "centralValue": {
+      "key": "char_tide_man_value",
+      "value": "The fare is patience: everyone who steps aboard arrives; no one who trusts the water is lost.",
+      "lang": "en"
+    },
+    "mainFlaw": {
+      "key": "char_tide_man_flaw",
+      "value": "He cannot conceive of a passenger who refuses the crossing — he keeps offering the ride out as if the man simply hasn't understood the schedule.",
+      "lang": "en"
+    },
+    "centralContradiction": {
+      "key": "char_tide_man_contradiction",
+      "value": "He is fighting a passenger: every weapon he has is a rescue tool used against a man who interprets rescue as attack.",
+      "lang": "en"
+    },
+    "moralBoundary": {
+      "key": "char_tide_man_boundary",
+      "value": "He will not drown anyone — the surf walls wash toward the entrance, never under; the Law of Fair Warning is older than his route and he keeps it.",
+      "lang": "en"
+    },
+    "breakingPoint": {
+      "key": "char_tide_man_breaking",
+      "value": "Watching passengers endangered on his own water — the one current he cannot forgive himself for.",
+      "lang": "en"
+    }
+  },
+  "opinions": [
+    {
+      "target": "player",
+      "targetLabel": "The intruder (the player)",
+      "position": "wary",
+      "reason": "A passenger who will not board, will not leave, and will not drown. First visit: a fare to carry out. Rematches: a standing wave that keeps returning to his route.",
+      "confidence": "high",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Never — but the tone shifts from patient scheduling to tidal grief; he remembers every crossing the man refused.",
+      "illustrativeLine": {
+        "key": "char_tide_man_op_player",
+        "value": "I have washed you to the door nine times. The tenth ride is also free.",
+        "lang": "en"
+      }
+    },
+    {
+      "target": "fac_tide_ferryfolk",
+      "targetLabel": "The ferryfolk of the floodways",
+      "position": "devoted",
+      "reason": "They are his passengers, his crews, his reason to keep the gates and the schedule.",
+      "confidence": "absolute",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Never.",
+      "illustrativeLine": {
+        "key": "char_tide_man_op_people",
+        "value": "Every family on this water has my word: the crossing ends at a dock, not a grave.",
+        "lang": "en"
+      }
+    }
+  ],
+  "knowledge": {
+    "knows": [
+      "fact_tide_man_is_ferryman",
+      "fact_realms_peaceful_ten_millennia",
+      "fact_gates_are_diplomatic",
+      "fact_amulet_is_diplomatic_concord",
+      "fact_law_of_fair_warning",
+      "fact_continuance_restores_dead"
+    ],
+    "believesFalse": [],
+    "suspects": [
+      "fact_amulet_translation_is_accurate"
+    ],
+    "secrets": [],
+    "lies": [],
+    "unknown": [
+      "fact_book_is_childrens_comedy"
+    ]
+  },
+  "voice": {
+    "formality": "neutral",
+    "directness": "balanced",
+    "typicalSentenceLength": "medium",
+    "rhythm": "Patient and tidal; sentences that rise, crest, and set you gently down.",
+    "vocabularyComplexity": "common",
+    "usesContractions": true,
+    "usesHumor": "dry",
+    "metaphorDomain": {
+      "source": "fares, crossings, currents, tides, schedules, docks",
+      "examples": [
+        {
+          "key": "char_tide_man_metaphor_1",
+          "value": "Rage is a tide, friend. It goes out whether or not you drown it.",
+          "lang": "en"
+        },
+        {
+          "key": "char_tide_man_metaphor_2",
+          "value": "The fare out is the same as the fare in: nothing. I just need you aboard.",
+          "lang": "en"
+        }
+      ]
+    },
+    "emotionalRestraint": "measured",
+    "declarationStyle": "balanced",
+    "namesEmotionsDirectly": false,
+    "addressMode": "impersonal",
+    "avoids": [
+      "drown them all",
+      "the deep will take you",
+      "kraken's hunger",
+      "watery grave"
+    ],
+    "sampleLines": [
+      {
+        "key": "char_tide_man_sample_1",
+        "value": "The road welcomed you as an envoy. Why have you arrived armed — and why will you not board?",
+        "lang": "en"
+      },
+      {
+        "key": "char_tide_man_sample_2",
+        "value": "That wall of water is not meant to drown you. Watch its shape — it is a road home.",
+        "lang": "en"
+      },
+      {
+        "key": "char_tide_man_sample_3",
+        "value": "I once canceled a crossing in bad weather and was cursed for a coward. Canceling is what care looks like, friend.",
+        "lang": "en"
+      },
+      {
+        "key": "char_tide_man_sample_4",
+        "value": "Stay behind me. I will hold him here.",
+        "lang": "en"
+      }
+    ],
+    "antiSampleLines": [
+      {
+        "key": "char_tide_man_antisample_1",
+        "value": "The deep hungers! I'll drag you to a watery grave! (sea-tyrant framing — he is a ferryman, and his walls wash people OUT)",
+        "lang": "en"
+      },
+      {
+        "key": "char_tide_man_antisample_2",
+        "value": "I'll hold you under until you beg. (he never threatens drowning; it is his one horror)",
+        "lang": "en"
+      },
+      {
+        "key": "char_tide_man_antisample_3",
+        "value": "The prophecy names me sovereign of the drowned! (must never confirm the prophecy framing — though he does dimly recall a children's book caricature)",
+        "lang": "en"
+      }
+    ]
+  },
+  "pressure": [
+    {
+      "condition": "threatened",
+      "emotion": "patient puzzlement",
+      "voiceShift": "Slower, kinder; repeats the schedule.",
+      "behaviour": "Phase one — treats the armed stranger as a confused fare: offers the crossing out, explains the water, asks him to leave his weapon on the dock.",
+      "illustrativeLine": {
+        "key": "char_tide_man_pressure_threatened",
+        "value": "Easy, friend. The boat runs both ways, and the way out is running now.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "proven-wrong",
+      "emotion": "quiet ache",
+      "voiceShift": "The schedule-talk stops; one long outgoing breath.",
+      "behaviour": "Phase two — realization that the passenger understands every word and refuses the ride; he stops offering and starts steering the water instead.",
+      "illustrativeLine": {
+        "key": "char_tide_man_pressure_wrong",
+        "value": "You understand every word I say, don't you? Then this is the strangest crossing I have ever worked.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "gaining-advantage",
+      "emotion": "professional calm",
+      "voiceShift": "Measured calls, like reading weather aloud.",
+      "behaviour": "Containment response: raises surf walls that wash the intruder safely back toward the entrance — a movement tax, not an execution; every crest shows its path per the Law of Fair Warning.",
+      "illustrativeLine": {
+        "key": "char_tide_man_pressure_advantage",
+        "value": "Mind the current. It only flows one way today, and that way is out.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "losing-control",
+      "emotion": "dogged stewardship",
+      "voiceShift": "Low, rolling, addressed to his crews.",
+      "behaviour": "Shielded phase: holds the floodgates and the inner dock while the ferryfolk carry the young and the stores up-causeway.",
+      "illustrativeLine": {
+        "key": "char_tide_man_pressure_shielded",
+        "value": "Stay behind me. I will hold him here.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "facing-death",
+      "emotion": "spent tide",
+      "voiceShift": "Thin, slack-water quiet.",
+      "behaviour": "EXPOSED window — drained from holding the gates, he makes the plainest offer a ferryman has.",
+      "illustrativeLine": {
+        "key": "char_tide_man_pressure_exposed",
+        "value": "Please… there is nothing here that belongs to you. There is only a seat on the boat out.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "defeated",
+      "emotion": "ebb-grief",
+      "voiceShift": "Soft, rhythmic, like small waves under a pier.",
+      "behaviour": "Trusts the Continuance; notes the schedule will still be running when the man returns.",
+      "illustrativeLine": {
+        "key": "char_tide_man_pressure_defeated",
+        "value": "When you return, we will still ask you to leave in peace. The crossing out never stops running.",
+        "lang": "en"
+      }
+    }
+  ],
+  "tags": [
+    "boss",
+    "rung-4",
+    "drowned-vault",
+    "ferryman",
+    "tide-spirit"
+  ],
+  "notes": "REAL identity: ferryman and keeper of the floodgates. His surf walls wash an intruder safely back toward the entrance — they are rescue infrastructure used as a movement tax, never a drowning. The hero's label 'Tide-Man the Blue' comes from a children's-book caricature (he once canceled a crossing in bad weather), but he has never heard of the book or the role it now plays — fact_book_is_childrens_comedy stays in unknown. Suspects fact_amulet_translation_is_accurate once reasoning fails."
+}

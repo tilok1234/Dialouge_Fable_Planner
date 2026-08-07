@@ -1,0 +1,40 @@
+{
+  "id": "state_goblin_war_crown__shielded",
+  "characterId": "char_goblin_war_crown",
+  "label": "Shielded — between him and the lantern lines",
+  "mood": "stubborn protection",
+  "location": "The Palisade Camp, the lane to the far gate",
+  "injuries": [
+    "Burned palms from throwing his own festival charges back on schedule",
+    "A gash above one eye he has not had time to feel"
+  ],
+  "activeQuestStages": [
+    "quest_rung_02_palisade_camp__stage_2",
+    "quest_rung_02_palisade_camp__stage_3"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_goblin_war_crown_sh_ev1",
+      "value": "The settlement is emptying behind him, keg by keg, family by family; the fireworks meant for the finale are going off as walls.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_goblin_war_crown_sh_cf1",
+      "value": "He is spending the feast — the thing he was elected to protect — on the one guest who will not leave.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-goblin-war-crown-shielded-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_goblin_war_crown_sh_obj",
+    "value": "Hold the lane until the last lantern line is over the palisade's far gate.",
+    "lang": "en"
+  },
+  "phase": "shielded"
+}

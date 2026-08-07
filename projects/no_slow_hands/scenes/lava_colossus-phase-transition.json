@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "contentHash": "sha256:scene-lava_colossus-phase-trans-v1",
+  "id": "scene_lava_colossus_phase_transition",
+  "label": "Lava-Core Colossus phase transition",
+  "sceneType": "boss-phase-transition",
+  "participants": [
+    {
+      "characterId": "char_lava_core_colossus",
+      "stateId": "state_lava_core_colossus__phase_two",
+      "relationshipIds": [
+        "rel_lava_core_colossus__player"
+      ],
+      "role": "speaker"
+    }
+  ],
+  "boundQuestStages": [
+    "quest_rung_05_molten_forge__stage_2"
+  ],
+  "purpose": {
+    "key": "scene_lava_colossus_phase_trans_purpose",
+    "value": "The realization lands — \"You understand every word I say, don't you?\" — and the guardian stops reasoning with the hero and starts containing him.",
+    "lang": "en"
+  },
+  "requiredFacts": [
+    "fact_amulet_translation_is_accurate"
+  ],
+  "hintableFacts": [
+    "fact_lava_core_colossus_is_forge_steward"
+  ],
+  "forbiddenRevelations": [
+    "fact_book_is_childrens_comedy"
+  ],
+  "emotionalProgression": [
+    {
+      "order": 1,
+      "emotion": "disbelief",
+      "note": "Every plea was understood. None of it mattered."
+    },
+    {
+      "order": 2,
+      "emotion": "grief",
+      "note": "The guardian grieves that words have failed."
+    },
+    {
+      "order": 3,
+      "emotion": "resolve",
+      "note": "Reasoning ends; containment of the intruder begins."
+    }
+  ],
+  "maxLength": "short",
+  "availableChoices": [],
+  "templateDefaults": {
+    "bossPhaseTransition": {
+      "realizationBeatsReasoning": true
+    }
+  },
+  "notes": "The pivotal line is the guardian realizing the amulet translates perfectly and the hero CHOSE to keep swinging. Keep it short: the turn from appeal to containment. Flavor: furnaces and temper."
+}

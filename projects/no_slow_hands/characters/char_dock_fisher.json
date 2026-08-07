@@ -1,0 +1,202 @@
+{
+  "version": 1,
+  "contentHash": "sha256:char-nels-brine-v1",
+  "id": "char_dock_fisher",
+  "identity": {
+    "name": "Nels Brine",
+    "species": "human",
+    "culture": "dockside; third boat from the end, same as his father",
+    "factions": [],
+    "occupation": "Dock fisher",
+    "gameplayRole": "ambient-npc",
+    "narrativeFunction": "ambient",
+    "publicReputation": {
+      "key": "char_nels_reputation",
+      "value": "An old fisher who mends nets near the Witness Glass and has opinions about weather, bait, and lately the hero.",
+      "lang": "en"
+    },
+    "privateReality": {
+      "key": "char_nels_private",
+      "value": "He watches the Glass because there is nothing else to watch on the docks, and what he has watched has taken the fun out of the sea stories he used to tell.",
+      "lang": "en"
+    },
+    "connections": [
+      "fact_witness_glass_observes_realms",
+      "char_capital_gate_guard"
+    ]
+  },
+  "core": {
+    "primaryDesire": {
+      "key": "char_nels_desire",
+      "value": "Full nets, a quiet pier, and a day when the Glass shows nothing worse than weather.",
+      "lang": "en"
+    },
+    "primaryFear": {
+      "key": "char_nels_fear",
+      "value": "That the hero will open the ocean gate and find out what Nels already suspects: the thing in the deep is kinder than the man with the book.",
+      "lang": "en"
+    },
+    "centralValue": {
+      "key": "char_nels_value",
+      "value": "The sea feeds people who respect it and drowns people who don't. Works the same on land.",
+      "lang": "en"
+    },
+    "mainFlaw": {
+      "key": "char_nels_flaw",
+      "value": "He assumes everyone eventually understands the obvious if you just point at it long enough.",
+      "lang": "en"
+    },
+    "centralContradiction": {
+      "key": "char_nels_contradiction",
+      "value": "He has spent his life reading water, and he cannot read the one man whose weather never changes.",
+      "lang": "en"
+    },
+    "moralBoundary": {
+      "key": "char_nels_boundary",
+      "value": "He will not fish the realms' waters, whatever the hero says is in them.",
+      "lang": "en"
+    }
+  },
+  "opinions": [
+    {
+      "target": "player",
+      "targetLabel": "The hero",
+      "position": "wary",
+      "reason": "Walks into other people's waters armed and calls the residents monsters; Nels has seen this temperament capsize boats.",
+      "confidence": "moderate",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Escalates with run count: early, he points at the Glass and says what he saw; mid-arc he points and says it slower; late-arc he just points. Softens if the hero ever sits and watches the Glass for one full quiet hour.",
+      "illustrativeLine": {
+        "key": "char_nels_opinion_player",
+        "value": "Saw you on the Glass yesterday. Waded into their fen, broke their traps, called it a battle. Son, that's just fishing badly with extra steps.",
+        "lang": "en"
+      }
+    },
+    {
+      "target": "concept_the_sea",
+      "targetLabel": "The sea",
+      "position": "devoted",
+      "reason": "Sixty years of it; the only authority he answers to.",
+      "confidence": "absolute",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Never."
+    }
+  ],
+  "knowledge": {
+    "knows": [
+      "fact_witness_glass_observes_realms",
+      "fact_realms_peaceful_ten_millennia",
+      "fact_no_monster_ever_crossed_gates"
+    ],
+    "believesFalse": [],
+    "suspects": [
+      "fact_kraken_is_reef_keeper"
+    ],
+    "secrets": [],
+    "lies": [],
+    "unknown": [
+      "fact_book_is_childrens_comedy",
+      "fact_amulet_is_diplomatic_concord"
+    ]
+  },
+  "voice": {
+    "formality": "very-casual",
+    "directness": "direct",
+    "typicalSentenceLength": "short",
+    "rhythm": "Unhurried dockside drawl; long pauses that are not hesitation, just tide-time.",
+    "vocabularyComplexity": "plain",
+    "usesContractions": true,
+    "usesHumor": "dry",
+    "metaphorDomain": {
+      "source": "nets, tides, bait, weather, and boats",
+      "examples": [
+        {
+          "key": "char_nels_metaphor_1",
+          "value": "Man who won't look at the water he's sailing is just swimming with extra boat.",
+          "lang": "en"
+        }
+      ]
+    },
+    "emotionalRestraint": "guarded",
+    "declarationStyle": "declarative",
+    "namesEmotionsDirectly": false,
+    "addressMode": "by-name",
+    "avoids": [
+      "hero",
+      "monster",
+      "quest",
+      "evil"
+    ],
+    "sampleLines": [
+      {
+        "key": "char_nels_sample_1",
+        "value": "Ten thousand years, nothing came out of them gates. I fish under 'em most days. Quietest neighbors on the coast.",
+        "lang": "en"
+      },
+      {
+        "key": "char_nels_sample_2",
+        "value": "Glass showed the lot of it. They waved you off, you waved back a sword. I've seen friendlier tides.",
+        "lang": "en"
+      },
+      {
+        "key": "char_nels_sample_3",
+        "value": "Whatever's in the deep water past the third gate — it's been pulling wrecked boats to harbor since before my grandfather. You do what you want with that.",
+        "lang": "en"
+      }
+    ],
+    "antiSampleLines": [
+      {
+        "key": "char_nels_antisample_1",
+        "value": "Arr, the deep be curséd, matey! Sea devils in them waters!",
+        "lang": "en"
+      },
+      {
+        "key": "char_nels_antisample_2",
+        "value": "Gods protect us from the dread beast of the abyss!",
+        "lang": "en"
+      }
+    ]
+  },
+  "pressure": [
+    {
+      "condition": "betrayed",
+      "emotion": "disgusted patience",
+      "voiceShift": "The pauses get longer; the drawl gets flatter.",
+      "behaviour": "When the hero hears 'they have never attacked us' as 'my vigilance keeps them afraid', Nels reels the conversation in and goes back to his nets.",
+      "illustrativeLine": {
+        "key": "char_nels_pressure_betrayed",
+        "value": "Your vigilance. Right. Ten thousand years of peace, all down to a man with a book who's been here a month.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "speaking-to-required-but-hated",
+      "emotion": "worn bluntness",
+      "voiceShift": "Fewer words, no drawl left.",
+      "behaviour": "Late-runs posture: he just points at the Glass and says what day it was.",
+      "illustrativeLine": {
+        "key": "char_nels_pressure_late",
+        "value": "Tuesday. You, their fen, their traps. Kids practicing hiding, the day after. It's all up there, son. Look any time.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "praised",
+      "emotion": "unmoved",
+      "voiceShift": "Answers the net, not the man.",
+      "behaviour": "Treats the hero's respect as weather — noted, not trusted.",
+      "illustrativeLine": {
+        "key": "char_nels_pressure_praised",
+        "value": "Mm. Wind says that too, some days.",
+        "lang": "en"
+      }
+    }
+  ],
+  "tags": [
+    "hub",
+    "fisher",
+    "docks",
+    "human"
+  ],
+  "notes": "Deliberately the least-informed hub voice: he knows the three base facts because everyone watched the Glass, suspects the kraken is a reef-keeper from sixty years of watching deep water pull wrecks to harbor, and has never read the book or heard of the amulet's true nature. His whole epistemology is 'I watched it' — keep him concrete, no abstraction."
+}

@@ -1,0 +1,44 @@
+{
+  "id": "state_bone_reliquary_king__shielded",
+  "characterId": "char_bone_reliquary_king",
+  "label": "Shielded — holding the sanctuary doors",
+  "mood": "grim guardianship",
+  "location": "The Reliquary Crypt, sanctuary doors",
+  "injuries": [
+    "A hairline crack along the left forearm from turning a blade off a grave marker"
+  ],
+  "activeQuestStages": [
+    "quest_rung_01_reliquary_crypt__stage_2",
+    "quest_rung_01_reliquary_crypt__stage_3"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_bone_reliquary_king_sh_ev1",
+      "value": "The tomb attendants are past the second door now; only the deepest ledger-vault remains to be emptied.",
+      "lang": "en"
+    },
+    {
+      "key": "nsh_state_bone_reliquary_king_sh_ev2",
+      "value": "He holds the doors and speaks over his shoulder to the ancestors: rest easy, he is still between the stranger and their doors.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_bone_reliquary_king_sh_cf1",
+      "value": "The intruder presses toward the occupied chambers and will not be reasoned with.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-bone-reliquary-king-shielded-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_bone_reliquary_king_sh_obj",
+    "value": "Hold the doors until every name is carried deep.",
+    "lang": "en"
+  },
+  "phase": "shielded"
+}

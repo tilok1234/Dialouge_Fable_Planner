@@ -1,0 +1,38 @@
+{
+  "id": "state_sun_crown_griffin__exposed",
+  "characterId": "char_sun_crown_griffin",
+  "label": "Exposed — thin air",
+  "mood": "thin-air plea",
+  "location": "The highland pass, the saddle",
+  "injuries": [
+    "Winged-out from holding the pass; each interception lands heavier than the last"
+  ],
+  "activeQuestStages": [
+    "quest_rung_09_highland_march__stage_3"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_sun_crown_griffin_ex_ev1",
+      "value": "Its shadow wobbled before a dive and it nearly missed its own line; the traveler looked up and thanked his god for the weakness.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_sun_crown_griffin_ex_cf1",
+      "value": "There is nothing here that belongs to him. Only road.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-sun-crown-griffin-exposed-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_sun_crown_griffin_ex_obj",
+    "value": "Say the plainest thing in its sky: only road here. Go home.",
+    "lang": "en"
+  },
+  "phase": "exposed"
+}

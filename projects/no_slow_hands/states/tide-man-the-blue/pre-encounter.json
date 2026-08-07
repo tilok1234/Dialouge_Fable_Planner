@@ -1,0 +1,42 @@
+{
+  "id": "state_tide_man_the_blue__pre_encounter",
+  "characterId": "char_tide_man_the_blue",
+  "label": "Pre-encounter — a fare who will not board",
+  "mood": "patient puzzlement, still hopeful",
+  "location": "The Drowned Vault, the ferry landing",
+  "injuries": [],
+  "activeQuestStages": [
+    "quest_rung_04_drowned_vault__stage_1",
+    "quest_rung_04_drowned_vault__stage_2"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_tide_man_the_blue_pre_ev1",
+      "value": "Crossings are suspended; the passengers who were mid-route were set down at the far docks and the boats turned back empty.",
+      "lang": "en"
+    },
+    {
+      "key": "nsh_state_tide_man_the_blue_pre_ev2",
+      "value": "An armed stranger stands on his water, refusing the crossing out.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_tide_man_the_blue_pre_cf1",
+      "value": "A passenger who will not board, will not leave, and will not drown — and who understands every word.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-tide-man-the-blue-pre-encounter-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_tide_man_the_blue_pre_obj",
+    "value": "Carry this passenger, above all, back out.",
+    "lang": "en"
+  },
+  "phase": "pre-encounter"
+}

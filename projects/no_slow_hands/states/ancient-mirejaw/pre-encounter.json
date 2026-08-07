@@ -1,0 +1,38 @@
+{
+  "id": "state_ancient_mirejaw__pre_encounter",
+  "characterId": "char_ancient_mirejaw",
+  "label": "Pre-encounter — a splashing in the water",
+  "mood": "surfacing attention",
+  "location": "The Sunken Mire, at the spawning pools",
+  "injuries": [],
+  "activeQuestStages": [
+    "quest_rung_07_sunken_mire__stage_1",
+    "quest_rung_07_sunken_mire__stage_2"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_ancient_mirejaw_pre_ev1",
+      "value": "Ripples where no ripples should be. Something armed is wading toward the pools.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_ancient_mirejaw_pre_cf1",
+      "value": "It does not reason about him. It registers him, the way the mire registers weather — and the weather is coming closer.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-ancient-mirejaw-pre-encounter-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_ancient_mirejaw_pre_obj",
+    "value": "Show him the bank.",
+    "lang": "en"
+  },
+  "phase": "pre-encounter",
+  "notes": "VOICE (profile): a creature of few words; most of its dialogue is action and position. It does not reason about the intruder's motives, so factsLearned stays empty in every state — both amulet facts remain in its unknown bucket."
+}

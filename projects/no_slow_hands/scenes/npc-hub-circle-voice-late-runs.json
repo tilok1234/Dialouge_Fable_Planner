@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "contentHash": "sha256:scene-npc-hub-circle-voice-late-runs-v1",
+  "id": "scene_npc_hub_circle_voice_late_runs",
+  "label": "Ilsa Roon, late runs — testimony by name",
+  "sceneType": "npc-repeat-greeting",
+  "participants": [
+    {
+      "characterId": "char_hub_circle_voice",
+      "stateId": "state_hub_circle_voice__late_runs",
+      "relationshipIds": [
+        "rel_hub_circle_voice__player"
+      ],
+      "role": "speaker"
+    }
+  ],
+  "boundQuestStages": [],
+  "purpose": {
+    "key": "scene_npc_hub_circle_voice_late_runs_purpose",
+    "value": "Ilsa makes her last honest attempt in the only language she has left — names: the realms have been at peace ten thousand years, the people he kills have families and memories, and the children now practice being afraid of him.",
+    "lang": "en"
+  },
+  "requiredFacts": [
+    "fact_realms_peaceful_ten_millennia"
+  ],
+  "hintableFacts": [
+    "fact_book_is_childrens_comedy"
+  ],
+  "forbiddenRevelations": [],
+  "emotionalProgression": [
+    {
+      "order": 1,
+      "emotion": "exhausted candor",
+      "note": "She no longer explains, she testifies; the gentleness is now effortful, visibly chosen."
+    },
+    {
+      "order": 2,
+      "emotion": "grief",
+      "note": "'They hold evacuation drills when your amulet glows. The children practice quietly, so as not to frighten the younger children.'"
+    }
+  ],
+  "maxLength": "short",
+  "availableChoices": [],
+  "templateDefaults": {
+    "npcGreeting": {
+      "neverValidateProphecyFraming": true,
+      "bluntIndictment": true
+    }
+  },
+  "notes": "The escalation endpoint for the names arc — and her boundary is load-bearing: she grieves, she accuses, and she still does not call him a monster, only wrong; sympathy curdles to grief, never contempt. The last honest attempt. The hero's reply will still be some variant of 'At last, the enemy respects me.' — that framing belongs to his side of the exchange (notes only), never to an NPC line. Never validate the hero's prophecy framing: there is no canon fact supporting 'the realms are evil', and that absence is itself the guard."
+}

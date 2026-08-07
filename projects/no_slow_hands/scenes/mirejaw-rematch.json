@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "contentHash": "sha256:scene-mirejaw-rematch-v1",
+  "id": "scene_mirejaw_rematch",
+  "label": "Ancient Mirejaw rematch",
+  "sceneType": "boss-rematch",
+  "participants": [
+    {
+      "characterId": "char_ancient_mirejaw",
+      "stateId": "state_ancient_mirejaw__rematch",
+      "relationshipIds": [
+        "rel_ancient_mirejaw__player"
+      ],
+      "role": "speaker"
+    }
+  ],
+  "boundQuestStages": [
+    "quest_rung_07_sunken_mire__stage_4"
+  ],
+  "purpose": {
+    "key": "scene_mirejaw_rematch_purpose",
+    "value": "The Continuance restored the guardian but kept its pain and memory: it remembers him, and dread and weary recognition replace pleading.",
+    "lang": "en"
+  },
+  "requiredFacts": [
+    "fact_continuance_restores_dead"
+  ],
+  "hintableFacts": [
+    "fact_mirejaw_is_marsh_guardian"
+  ],
+  "forbiddenRevelations": [
+    "fact_book_is_childrens_comedy",
+    "fact_amulet_is_diplomatic_concord",
+    "fact_amulet_translation_is_accurate"
+  ],
+  "emotionalProgression": [
+    {
+      "order": 1,
+      "emotion": "recognition",
+      "note": "The guardian knows the sound of his return and what it costs."
+    },
+    {
+      "order": 2,
+      "emotion": "grim hospitality",
+      "note": "The warning is still given, law-bound, but without hope it will be heard."
+    }
+  ],
+  "maxLength": "short",
+  "availableChoices": [],
+  "templateDefaults": {
+    "bossRematch": {
+      "remembersPlayer": true
+    }
+  },
+  "notes": "They remember him: the Continuance restores the body but does not erase pain or memory, so rematches carry dread, not fresh pleading. The fair warning is still spoken because the law binds them. Flavor: the spawning pools."
+}

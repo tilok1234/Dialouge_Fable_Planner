@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-fac-hub-warden-v1",
+  "id": "fac_hub_warden",
+  "name": "The Hub Warden",
+  "summary": {
+    "key": "fac_hub_warden_summary",
+    "value": "Keeper of the hub's historical treaties and watcher at the Witness Glass. The Warden's office holds ten thousand years of signed peace between the realms, and shows the hero proof that nothing has ever emerged from the gates — records the hero reads as evidence the enemy is patient.",
+    "lang": "en"
+  },
+  "sharedBeliefs": [
+    "fact_realms_peaceful_ten_millennia",
+    "fact_no_monster_ever_crossed_gates",
+    "fact_gates_are_diplomatic",
+    "fact_witness_glass_observes_realms",
+    "fact_book_is_childrens_comedy"
+  ],
+  "sharedOpinions": [
+    {
+      "target": "char_protagonist",
+      "position": "resolute",
+      "reason": "I have shown him treaties older than his family name. He called them a false history. I will keep showing him; the records do not tire."
+    },
+    {
+      "target": "fac_hub_circle",
+      "position": "friendly",
+      "reason": "They speak for the people; I keep the paper that proves the people exist. Between us the truth is well documented and poorly received."
+    },
+    {
+      "target": "fac_moonlit_court",
+      "position": "sympathetic",
+      "reason": "Their oldest signatures are in my archive. When I say the realms keep their word, the Moonlit Court is my first exhibit."
+    }
+  ],
+  "metaphorDomain": {
+    "source": "archives, signatures, seals, ledgers",
+    "examples": [
+      {
+        "key": "fac_hub_warden_metaphor_1",
+        "value": "A treaty is a promise with a filing system.",
+        "lang": "en"
+      },
+      {
+        "key": "fac_hub_warden_metaphor_2",
+        "value": "Ten thousand years of signatures outweigh one morning of suspicion.",
+        "lang": "en"
+      }
+    ]
+  },
+  "terminology": [
+    {
+      "term": "the record",
+      "meaning": {
+        "key": "fac_hub_warden_term_record",
+        "value": "The complete treaty archive of the hub. The Warden's answer to nearly every accusation begins with 'the record shows'.",
+        "lang": "en"
+      }
+    },
+    {
+      "term": "watching",
+      "meaning": {
+        "key": "fac_hub_warden_term_watching",
+        "value": "Observing the realms through the Witness Glass — a diplomatic duty meant to protect envoys, now a front-row seat to the hero's invasions.",
+        "lang": "en"
+      }
+    }
+  ],
+  "customs": [
+    {
+      "key": "fac_hub_warden_custom_proof",
+      "value": "Every claim about the realms is answered with a document, not an argument. The Warden fetches the treaty and lets it speak.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_hub_warden_custom_glass",
+      "value": "The Witness Glass is never left unattended while the hero is beyond a gate. Someone always watches, in case he finally listens.",
+      "lang": "en"
+    }
+  ],
+  "taboos": [
+    {
+      "key": "fac_hub_warden_taboo_archive",
+      "value": "Never alter, remove, or 'improve' a treaty record. The archive is the realms' memory, and memory is not edited.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_hub_warden_taboo_despair",
+      "value": "Never tell the hero the situation is hopeless. The Warden has decided, on the record, that it is not.",
+      "lang": "en"
+    }
+  ],
+  "tags": [
+    "faction",
+    "hub",
+    "warden",
+    "witness-glass"
+  ]
+}

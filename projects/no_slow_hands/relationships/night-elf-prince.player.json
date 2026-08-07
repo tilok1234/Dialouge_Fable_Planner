@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-rel-night-elf-prince-player-v1",
+  "id": "rel_night_elf_prince__player",
+  "partyA": "char_night_elf_prince",
+  "partyB": "player",
+  "dimensions": {
+    "trust": -35,
+    "respect": 45,
+    "affection": 5,
+    "fear": 40,
+    "suspicion": 30,
+    "debt": 0
+  },
+  "namedState": "unwilling-mentor",
+  "history": [
+    {
+      "event": {
+        "key": "rel_night_elf_prince_h1",
+        "value": "The gate opened onto a pageant; Prince Lunareth received the armed boor as a protocol problem and offered the envoy's rites, the wine, and the exit, in that order. Courtly alarm, protocol as armor.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -5,
+        "respect": 5,
+        "suspicion": 5
+      }
+    },
+    {
+      "event": {
+        "key": "rel_night_elf_prince_h2",
+        "value": "First duel: realization became curriculum. He stopped reciting and started watching — stance, grip, timing. 'Your lunge, your turn, your flourish — mine now.' The only fighter he has ever watched is the man destroying his court.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -15,
+        "respect": 30,
+        "affection": 10,
+        "fear": 20
+      }
+    },
+    {
+      "event": {
+        "key": "rel_night_elf_prince_h3",
+        "value": "Continuance return: each rematch he mirrors more of the protagonist's kit and overhears more of his rhetoric. The early innocence is gone — suspicion is dawning horror now, and some of it is aimed at his own aptitude.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -15,
+        "respect": 10,
+        "affection": -5,
+        "fear": 20,
+        "suspicion": 25
+      }
+    }
+  ],
+  "notes": "The distinctive calibration on the ladder (rung 8), per brief: respect 45 is UNNATURALLY high and still rising — he learns violence by imitation, so the invader is also the only teacher he has ever had, hence namedState 'unwilling-mentor' (the protagonist does not know he is mentoring). Affection 5 is confused admiration curdling; suspicion starts low (a protocol problem, not a plot) and becomes dawning horror across rematches — modeled here post-curriculum. Fear 40 is tangled with the imitation: half of what he fears is the man, and half is catching himself enjoying the duel (his breaking point). Trust -35 stays shallower than the other bosses because the relationship is no longer simple enmity. He must NEVER learn the hero's war is based on a children's comedy — that knowledge would curdle the lesson he has paid for in grief. Deltas sum to current dimensions."
+}

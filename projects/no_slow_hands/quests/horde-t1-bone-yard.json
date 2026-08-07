@@ -1,0 +1,132 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-quest-horde-t1-bone-yard-v1",
+  "id": "quest_horde_t1_bone_yard",
+  "name": "Horde Tier 1 — The Bone Yard",
+  "premise": {
+    "key": "quest_horde_t1_bone_yard_premise",
+    "value": "The hero believes he has discovered a battlefield — a deeper layer of the enemy's corruption, defended by endless waves. In truth, The Bone Yard is an ancestral restoration ground where skeletons maintain monuments and teach younger generations their history, and the 'waves' are residents arriving from nearby settlements to contain the same armed intruder.",
+    "lang": "en"
+  },
+  "objectiveTruth": "fact_bone_yard_is_commons",
+  "playerInitialKnowledge": [
+    "fact_no_monster_ever_crossed_gates"
+  ],
+  "characterKnowledge": [],
+  "stages": [
+    {
+      "id": "quest_horde_t1_bone_yard__stage_0",
+      "order": 0,
+      "label": "Sealed",
+      "entryCondition": "The hero holds enough 'trophies' — gate seals taken from senior wardens and Heavy Hands emergency responders — to force this tier's gate.",
+      "completionCondition": "The hero feeds the gate seals into the amulet and forces open a gate that was never meant to open for him.",
+      "factsRevealedToPlayer": [
+        "fact_trophies_are_gate_seals",
+        "fact_ogre_seals_are_credentials"
+      ],
+      "transitionsTo": [
+        "quest_horde_t1_bone_yard__stage_1"
+      ],
+      "scenes": [],
+      "notes": "Trophies are credentials identifying someone trusted to cross realms in a crisis. The hero reads them as keys carried by elite monsters."
+    },
+    {
+      "id": "quest_horde_t1_bone_yard__stage_1",
+      "order": 1,
+      "label": "The alarm",
+      "entryCondition": "The gate is forced; the hero steps into The Bone Yard.",
+      "completionCondition": "The warning bells are ringing across the commons; the first defenders have arrived.",
+      "factsRevealedToPlayer": [
+        "fact_bone_yard_is_commons"
+      ],
+      "transitionsTo": [
+        "quest_horde_t1_bone_yard__stage_2"
+      ],
+      "scenes": [],
+      "notes": "The first wave is local volunteers — monument-keepers and their students — not soldiers."
+    },
+    {
+      "id": "quest_horde_t1_bone_yard__stage_2",
+      "order": 2,
+      "label": "The waves rise",
+      "entryCondition": "The alarm has spread beyond the immediate commons.",
+      "completionCondition": "Trained wardens have given way to specialists with defensive equipment.",
+      "factsRevealedToPlayer": [],
+      "transitionsTo": [
+        "quest_horde_t1_bone_yard__stage_3"
+      ],
+      "scenes": [],
+      "notes": "Trained wardens arrive first, then specialists — restoration masons with bracing scaffolds and warding lines. The pauses between waves shrink because news of the attack is spreading and help arrives faster, not because any army is mustering."
+    },
+    {
+      "id": "quest_horde_t1_bone_yard__stage_3",
+      "order": 3,
+      "label": "The champions",
+      "entryCondition": "The commons' strongest defenders have answered the bells.",
+      "completionCondition": "The champions fall protecting the injured; the elites — Heavy Hands emergency responders carrying gate seals — drop the next tier's 'trophies.'",
+      "factsRevealedToPlayer": [
+        "fact_heavy_hands_emergency_service"
+      ],
+      "transitionsTo": [
+        "quest_horde_t1_bone_yard__stage_4"
+      ],
+      "scenes": [],
+      "notes": "Champions position themselves over the wounded. The Heavy Hands' silhouette is deliberately recognizable so frightened civilians know help has arrived; the hero has learned it means loot."
+    },
+    {
+      "id": "quest_horde_t1_bone_yard__stage_4",
+      "order": 4,
+      "label": "Bank or lose",
+      "entryCondition": "The hero is laden with shards and trophies deep in the commons.",
+      "completionCondition": "The hero holds E and banks everything through the amulet — or dies first, and the inhabitants recover their property.",
+      "factsRevealedToPlayer": [
+        "fact_banking_uses_diplomatic_network",
+        "fact_shards_are_domestic_magic"
+      ],
+      "transitionsTo": [],
+      "scenes": [],
+      "notes": "Banking moves the loot out through the diplomatic network, beyond its owners' reach. If he dies first, the game says 'Your pot was lost'; the inhabitants say 'Their property was returned.' Stage graph models one run; a fresh run re-enters quest_horde_t1_bone_yard__stage_1 in-engine."
+    }
+  ],
+  "choices": [
+    {
+      "id": "choice_horde_t1_leave_the_commons",
+      "label": {
+        "key": "choice_horde_t1_leave_the_commons",
+        "value": "Leave the commons and stop ringing the bells",
+        "lang": "en"
+      },
+      "resultingStage": "quest_horde_t1_bone_yard__stage_0",
+      "consequences": [
+        {
+          "key": "choice_horde_t1_leave_c1",
+          "value": "The warning bells fall silent behind him; the residents tend their injured and rebuild what he broke.",
+          "lang": "en"
+        },
+        {
+          "key": "choice_horde_t1_leave_c2",
+          "value": "The hero's journal records: 'The horde scatters before my might.' His framing, not the truth.",
+          "lang": "en"
+        }
+      ],
+      "variablesChanged": [
+        {
+          "key": "bone_yard_commons_left_in_peace",
+          "from": "false",
+          "to": "true"
+        }
+      ],
+      "affectsCharacters": [
+        "char_protagonist"
+      ]
+    }
+  ],
+  "participatingCharacters": [],
+  "tags": [
+    "quest",
+    "horde",
+    "tier-1",
+    "dramatic-irony"
+  ],
+  "notes": "The commons' faction is fac_bone_yard_commons (no faction field exists on Quest in v1, so it is recorded here). There is no single representative character per commons, so participatingCharacters and characterKnowledge are empty — both are schema-legal defaults. fact_shards_are_domestic_magic therefore reaches the player as a stage reveal (stage_4) instead of through a faction rep's knowledge bucket. As with the rungs, the hero's delusions live in char_protagonist's profile opinions, not in playerInitialKnowledge."
+}

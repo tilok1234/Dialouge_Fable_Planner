@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "contentHash": "sha256:beat-rk-rematch-v1",
+  "id": "beat_reliquary_king_rematch",
+  "sceneId": "scene_reliquary_king_rematch",
+  "beats": [
+    {
+      "order": 1,
+      "speakerId": "char_bone_reliquary_king",
+      "intent": "Weary recognition: the sanctuary knows his tread now.",
+      "landsOn": [],
+      "emotion": "recognition"
+    },
+    {
+      "order": 2,
+      "speakerId": "char_bone_reliquary_king",
+      "intent": "The Continuance kept the memory and the pain.",
+      "landsOn": [
+        "fact_continuance_restores"
+      ],
+      "emotion": "recognition"
+    },
+    {
+      "order": 3,
+      "speakerId": "char_bone_reliquary_king",
+      "intent": "Speak the fair warning again because the law binds; re-offer the door.",
+      "landsOn": [
+        "fact_law_of_fair_warning"
+      ],
+      "emotion": "grim hospitality"
+    }
+  ],
+  "avoids": [
+    "fresh pleading",
+    "hatred"
+  ],
+  "contextPackageId": "ctx_reliquary_king_rematch"
+}

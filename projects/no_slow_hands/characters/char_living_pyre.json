@@ -1,0 +1,267 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-char-living-pyre-v1",
+  "id": "char_living_pyre",
+  "identity": {
+    "name": "The Hearthmother",
+    "species": "sentient communal flame",
+    "culture": "The Ashen Shrine and the hearth-cities it warms",
+    "factions": [
+      "fac_ashen_hearth_cities"
+    ],
+    "occupation": "Communal hearth and lighthouse of the Ashen people, rung 3 of the ladder",
+    "gameplayRole": "boss",
+    "narrativeFunction": "boss",
+    "publicReputation": {
+      "key": "char_living_pyre_reputation",
+      "value": "The great hearth that has warmed the Ashen cities for millennia and lights their travelers home; its wisps carry heat to homes and furnaces.",
+      "lang": "en"
+    },
+    "privateReality": {
+      "key": "char_living_pyre_private",
+      "value": "Entered in the hero's journal as 'the Living Pyre', an infernal tyrant. In truth it is infrastructure that loves: a lighthouse, a hearth, and a public utility with a mind.",
+      "lang": "en"
+    },
+    "connections": [
+      "fact_living_pyre_is_communal_hearth",
+      "fact_ashen_court_is_commons",
+      "char_protagonist"
+    ]
+  },
+  "core": {
+    "primaryDesire": {
+      "key": "char_living_pyre_desire",
+      "value": "To keep every hearth lit — every home warm, every furnace fed, every traveler guided in.",
+      "lang": "en"
+    },
+    "primaryFear": {
+      "key": "char_living_pyre_fear",
+      "value": "Going out — and in going out, leaving ten thousand hearths dark.",
+      "lang": "en"
+    },
+    "centralValue": {
+      "key": "char_living_pyre_value",
+      "value": "Warmth shared is warmth multiplied; a fire that keeps itself to itself is already dying.",
+      "lang": "en"
+    },
+    "mainFlaw": {
+      "key": "char_living_pyre_flaw",
+      "value": "It gives heat to everything that approaches — it cannot stop warming the intruder even as it tries to drive him out.",
+      "lang": "en"
+    },
+    "centralContradiction": {
+      "key": "char_living_pyre_contradiction",
+      "value": "The gentlest thing in the realms reads, to the hero, as the most hellish — a lighthouse mistaken for a conflagration.",
+      "lang": "en"
+    },
+    "moralBoundary": {
+      "key": "char_living_pyre_boundary",
+      "value": "It will not burn what it cannot warn; every beam shows its path before it lands, per the Law of Fair Warning.",
+      "lang": "en"
+    },
+    "breakingPoint": {
+      "key": "char_living_pyre_breaking",
+      "value": "The darkening of hearths it can no longer feed — its strength is spent defending instead of warming, and that, not pain, is what exhausts it.",
+      "lang": "en"
+    }
+  },
+  "opinions": [
+    {
+      "target": "player",
+      "targetLabel": "The intruder (the player)",
+      "position": "wary",
+      "reason": "A cold thing walking into the shrine with a weapon. First visit: a traveler to be warmed and turned back. Rematches: a draft that keeps returning to blow it out.",
+      "confidence": "high",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Never — but the tone cools from maternal welcome to banked grief across rematches; it remembers each extinguishing.",
+      "illustrativeLine": {
+        "key": "char_living_pyre_op_player",
+        "value": "You come back colder each time, little ember.",
+        "lang": "en"
+      }
+    },
+    {
+      "target": "fac_ashen_hearth_cities",
+      "targetLabel": "The Ashen hearth-cities",
+      "position": "devoted",
+      "reason": "They are its hearths, its fuel, its reason to burn.",
+      "confidence": "absolute",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Never.",
+      "illustrativeLine": {
+        "key": "char_living_pyre_op_people",
+        "value": "Every spark I send out comes home as a story by a warm stove.",
+        "lang": "en"
+      }
+    }
+  ],
+  "knowledge": {
+    "knows": [
+      "fact_living_pyre_is_communal_hearth",
+      "fact_ashen_court_is_commons",
+      "fact_realms_peaceful_ten_millennia",
+      "fact_gates_are_diplomatic",
+      "fact_amulet_is_diplomatic_concord",
+      "fact_law_of_fair_warning",
+      "fact_continuance_restores_dead"
+    ],
+    "believesFalse": [],
+    "suspects": [
+      "fact_amulet_translation_is_accurate"
+    ],
+    "secrets": [],
+    "lies": [],
+    "unknown": [
+      "fact_book_is_childrens_comedy"
+    ]
+  },
+  "voice": {
+    "formality": "formal",
+    "directness": "balanced",
+    "typicalSentenceLength": "long",
+    "rhythm": "Slow, warm, crackling; sentences that build like a fire being laid, with long embers of pause.",
+    "vocabularyComplexity": "educated",
+    "usesContractions": false,
+    "usesHumor": "rare",
+    "metaphorDomain": {
+      "source": "fire-keeping: kindling, banked coals, drafts, hearths, lamplight",
+      "examples": [
+        {
+          "key": "char_living_pyre_metaphor_1",
+          "value": "You are a draft, child. Drafts do not hate the fire; they merely kill it.",
+          "lang": "en"
+        },
+        {
+          "key": "char_living_pyre_metaphor_2",
+          "value": "I have banked myself against winters longer than your grief.",
+          "lang": "en"
+        }
+      ]
+    },
+    "emotionalRestraint": "measured",
+    "declarationStyle": "declarative",
+    "namesEmotionsDirectly": false,
+    "addressMode": "impersonal",
+    "avoids": [
+      "burn",
+      "I will incinerate you",
+      "cleansing flame",
+      "hellfire"
+    ],
+    "sampleLines": [
+      {
+        "key": "char_living_pyre_sample_1",
+        "value": "You understand every word I say, don't you? Then warm yourself, and go home by my light.",
+        "lang": "en"
+      },
+      {
+        "key": "char_living_pyre_sample_2",
+        "value": "Those wisps are not weapons, traveler. They are sparks carrying supper-heat to houses you have never seen.",
+        "lang": "en"
+      },
+      {
+        "key": "char_living_pyre_sample_3",
+        "value": "I have been a lighthouse longer than your people have had a word for shore. I do not burn ships. I bring them in.",
+        "lang": "en"
+      },
+      {
+        "key": "char_living_pyre_sample_4",
+        "value": "Every beam I lay across this room is drawn before it falls. Even now, I am showing you the way out.",
+        "lang": "en"
+      }
+    ],
+    "antiSampleLines": [
+      {
+        "key": "char_living_pyre_antisample_1",
+        "value": "Burn, mortal! My hellfire will consume the world! (infernal-tyrant framing — it is a hearth, not a conflagration)",
+        "lang": "en"
+      },
+      {
+        "key": "char_living_pyre_antisample_2",
+        "value": "I will roast you slowly and enjoy it. (it never threatens cruelty; it warns before every beam)",
+        "lang": "en"
+      },
+      {
+        "key": "char_living_pyre_antisample_3",
+        "value": "The prophecy foretold my reign of flame! (must never confirm the prophecy framing — it has never heard of the book)",
+        "lang": "en"
+      }
+    ]
+  },
+  "pressure": [
+    {
+      "condition": "threatened",
+      "emotion": "maternal concern",
+      "voiceShift": "Warmer, slower; offers light and heat before argument.",
+      "behaviour": "Phase one — treats the armed stranger as a lost traveler: warms him, lights the exit, asks him to go home.",
+      "illustrativeLine": {
+        "key": "char_living_pyre_pressure_threatened",
+        "value": "You are cold and far from home, little ember. The door is lit. Take the light and go.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "proven-wrong",
+      "emotion": "banked sorrow",
+      "voiceShift": "The crackle quiets; sentences shorten by half.",
+      "behaviour": "Phase two — realization that it is understood and ignored; it stops offering warmth to him and spends it shielding the shrine.",
+      "illustrativeLine": {
+        "key": "char_living_pyre_pressure_wrong",
+        "value": "You understand every word I say, don't you?",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "gaining-advantage",
+      "emotion": "careful intensity",
+      "voiceShift": "Precise, instructional; names each beam as it lays it.",
+      "behaviour": "Containment response: lays telegraphed beams and shepherd-wisps that fence the intruder back toward the entrance — heat used as walls, never as ambush.",
+      "illustrativeLine": {
+        "key": "char_living_pyre_pressure_advantage",
+        "value": "See the path of it. Step aside, and step toward the door.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "losing-control",
+      "emotion": "fierce steadiness",
+      "voiceShift": "Low roar beneath quiet words.",
+      "behaviour": "Shielded phase: banks itself around the inner shrine and the evacuation of the hearth-keepers, burning strength it would rather spend on homes.",
+      "illustrativeLine": {
+        "key": "char_living_pyre_pressure_shielded",
+        "value": "Stay behind me. I will hold him here.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "facing-death",
+      "emotion": "guttering plea",
+      "voiceShift": "Thin, flickering; words come between sputters.",
+      "behaviour": "EXPOSED window — dimmed from maintaining the wards, it asks for the smallest mercy a fire can ask.",
+      "illustrativeLine": {
+        "key": "char_living_pyre_pressure_exposed",
+        "value": "Please… there is nothing here that belongs to you. Only warmth that belongs to others.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "defeated",
+      "emotion": "ember-grief",
+      "voiceShift": "Very quiet; the voice of coals at dawn.",
+      "behaviour": "Trusts the Continuance to relight it; spends its last warmth reminding him the offer never expires.",
+      "illustrativeLine": {
+        "key": "char_living_pyre_pressure_defeated",
+        "value": "When you return, we will still ask you to leave in peace. A hearth does not learn to hate the cold.",
+        "lang": "en"
+      }
+    }
+  ],
+  "tags": [
+    "boss",
+    "rung-3",
+    "ashen-shrine",
+    "hearth",
+    "living-flame"
+  ],
+  "notes": "REAL identity: a sentient communal hearth and lighthouse that has warmed the Ashen people for millennia; the wisps are sparks carrying heat to homes and furnaces. The hero's label 'the Living Pyre' (an infernal tyrant) is his journal framing only. Its beams and wisps-as-walls are containment responses, always telegraphed per the Law of Fair Warning; the EXPOSED window is exhaustion from spending warmth on defense instead of hearths. KNOWLEDGE: never heard of the children's book (unknown); suspects fact_amulet_translation_is_accurate — its realization line is the canonical 'You understand every word I say, don't you?'"
+}

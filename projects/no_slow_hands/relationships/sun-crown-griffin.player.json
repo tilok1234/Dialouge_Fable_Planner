@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-rel-sun-crown-griffin-player-v1",
+  "id": "rel_sun_crown_griffin__player",
+  "partyA": "char_sun_crown_griffin",
+  "partyB": "player",
+  "dimensions": {
+    "trust": -45,
+    "respect": 0,
+    "affection": -5,
+    "fear": 35,
+    "suspicion": 30,
+    "debt": 0
+  },
+  "namedState": "recurring-headwind",
+  "history": [
+    {
+      "event": {
+        "key": "rel_sun_crown_griffin_h1",
+        "value": "Gate breach on the highland march; the High Roadwarden read him as a traveler walking the wrong way on purpose. It shadowed him, pointed the downhill road, and blocked the wrong turns.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -5,
+        "suspicion": 10
+      }
+    },
+    {
+      "event": {
+        "key": "rel_sun_crown_griffin_h2",
+        "value": "First fight: herding failed. It slammed down into his path — the same maneuver it uses to turn hikers from cliff edges — and he read the rescue as an ambush. It stopped directing and started barring.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -30,
+        "affection": -5,
+        "fear": 25,
+        "suspicion": 15
+      }
+    },
+    {
+      "event": {
+        "key": "rel_sun_crown_griffin_h3",
+        "value": "Continuance return: 'Eleventh storm out of a clear sky. The road is still behind you.' It counts his returns like storms in a season and holds the saddle of the pass while the roosts evacuate along the cliffs.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -10,
+        "fear": 10,
+        "suspicion": 5
+      }
+    }
+  ],
+  "notes": "Modeled at rematch stage (rung 9). It thinks in trajectories, not motives — so suspicion 30 and fear 35 stay modest: he is not a conspiracy to it, he is weather that keeps coming back against the wind, hence namedState 'recurring-headwind'. What fear there is belongs to the cliffside roosts behind it, not to itself. Trust -45 because he has proved, repeatedly, that he hears the redirection and walks on anyway ('you are not lost; you are weather'). Respect 0: it concedes nothing to a man who experiences rescue as attack. Deltas sum to current dimensions."
+}

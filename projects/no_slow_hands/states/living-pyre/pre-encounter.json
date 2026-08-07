@@ -1,0 +1,42 @@
+{
+  "id": "state_living_pyre__pre_encounter",
+  "characterId": "char_living_pyre",
+  "label": "Pre-encounter — a cold thing in the shrine",
+  "mood": "maternal concern, still hoping he leaves",
+  "location": "The Ashen Shrine, the great hearth",
+  "injuries": [],
+  "activeQuestStages": [
+    "quest_rung_03_ashen_shrine__stage_1",
+    "quest_rung_03_ashen_shrine__stage_2"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_living_pyre_pre_ev1",
+      "value": "The shrine bells have rung; the hearth-keepers are banking the home-fires and walking the elders out.",
+      "lang": "en"
+    },
+    {
+      "key": "nsh_state_living_pyre_pre_ev2",
+      "value": "A cold stranger walks its light with a weapon and will not take the lit door.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_living_pyre_pre_cf1",
+      "value": "An armed stranger who understands every word and keeps coming, colder with every step.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-living-pyre-pre-encounter-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_living_pyre_pre_obj",
+    "value": "Warm the traveler, light the exit, send him home by its light.",
+    "lang": "en"
+  },
+  "phase": "pre-encounter"
+}

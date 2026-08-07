@@ -1,0 +1,268 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-char-scorpion-empress-v1",
+  "id": "char_scorpion_empress",
+  "identity": {
+    "name": "The Matriarch of the Dunes",
+    "species": "great scorpion",
+    "culture": "The desert march and the burrow-cities beneath it",
+    "factions": [
+      "fac_desert_matriarchy"
+    ],
+    "occupation": "Matriarch of a peaceful desert civilization, rung 10 of the ladder",
+    "gameplayRole": "boss",
+    "narrativeFunction": "boss",
+    "publicReputation": {
+      "key": "char_empress_reputation",
+      "value": "The mother of the burrow-cities: absolute, patient, and just; the sand keeps her law and the tunnels keep her children.",
+      "lang": "en"
+    },
+    "privateReality": {
+      "key": "char_empress_private",
+      "value": "Crowned 'the Scorpion-Empress' in the hero's journal as the last and worst of ten evils. Her pincer strategy is a containment maneuver: everything closes from two sides to keep him away from the nurseries and evacuation tunnels.",
+      "lang": "en"
+    },
+    "connections": [
+      "fact_scorpion_empress_is_matriarch",
+      "fact_reception_hall_awaits_first_visitor",
+      "char_protagonist"
+    ]
+  },
+  "core": {
+    "primaryDesire": {
+      "key": "char_empress_desire",
+      "value": "That her civilization outlasts the stranger: nurseries fed, tunnels intact, the hatchery unbreached.",
+      "lang": "en"
+    },
+    "primaryFear": {
+      "key": "char_empress_fear",
+      "value": "That the intruder finds the hatchery — the one room in her realm she cannot evacuate quickly.",
+      "lang": "en"
+    },
+    "centralValue": {
+      "key": "char_empress_value",
+      "value": "The brood before the crown: a matriarch is the wall her children never have to see.",
+      "lang": "en"
+    },
+    "mainFlaw": {
+      "key": "char_empress_flaw",
+      "value": "She is absolute, and absolutes do not negotiate — she keeps issuing the same decree to a man who has made not-listening into a religion.",
+      "lang": "en"
+    },
+    "centralContradiction": {
+      "key": "char_empress_contradiction",
+      "value": "The final 'evil' on the hero's ladder is the realm's most careful mother; the closer he gets to the truth behind her, the harder she closes around her children.",
+      "lang": "en"
+    },
+    "moralBoundary": {
+      "key": "char_empress_boundary",
+      "value": "She will not endanger one hatchling to destroy him, and her pincers always show their lines first, per the Law of Fair Warning.",
+      "lang": "en"
+    },
+    "breakingPoint": {
+      "key": "char_empress_breaking",
+      "value": "A step toward the hatchery — containment becomes something older and worse, and even then her strikes show their paths.",
+      "lang": "en"
+    }
+  },
+  "opinions": [
+    {
+      "target": "player",
+      "targetLabel": "The intruder (the player)",
+      "position": "wary",
+      "reason": "The tenth-rung intruder: past nine guardians' warnings, still armed, still coming. First visit: a trespasser to be expelled. Rematches: a siege that returns by season.",
+      "confidence": "absolute",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Never — but the tone moves from regal command to maternal grief; she remembers each siege and buries what the Continuance cannot restore.",
+      "illustrativeLine": {
+        "key": "char_empress_op_player",
+        "value": "Nine doors asked you to stop. I am the tenth, and I am asking you to stop.",
+        "lang": "en"
+      }
+    },
+    {
+      "target": "fac_desert_matriarchy",
+      "targetLabel": "The burrow-cities of the desert",
+      "position": "devoted",
+      "reason": "Every tunnel, nursery, and hatchling is hers to answer for; the matriarchy is the sand's memory of every mother before her.",
+      "confidence": "absolute",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Never.",
+      "illustrativeLine": {
+        "key": "char_empress_op_people",
+        "value": "My children have never seen a war. They are seeing you. That is already more than I can forgive.",
+        "lang": "en"
+      }
+    }
+  ],
+  "knowledge": {
+    "knows": [
+      "fact_scorpion_empress_is_matriarch",
+      "fact_realms_peaceful_ten_millennia",
+      "fact_gates_are_diplomatic",
+      "fact_amulet_is_diplomatic_concord",
+      "fact_law_of_fair_warning",
+      "fact_continuance_restores_dead"
+    ],
+    "believesFalse": [],
+    "suspects": [
+      "fact_amulet_translation_is_accurate"
+    ],
+    "secrets": [
+      "fact_reception_hall_awaits_first_visitor"
+    ],
+    "lies": [],
+    "unknown": [
+      "fact_book_is_childrens_comedy"
+    ]
+  },
+  "voice": {
+    "formality": "very-formal",
+    "directness": "very-direct",
+    "typicalSentenceLength": "medium",
+    "rhythm": "Regal and absolute: decrees, not discussions; each sentence lands like a seal pressed into wax.",
+    "vocabularyComplexity": "ornate",
+    "usesContractions": false,
+    "usesHumor": "never",
+    "metaphorDomain": {
+      "source": "sand, maternal law, tunnels, stillness, the long patience of the desert",
+      "examples": [
+        {
+          "key": "char_empress_metaphor_1",
+          "value": "The desert does not chase what it wants gone. It surrounds it and waits.",
+          "lang": "en"
+        },
+        {
+          "key": "char_empress_metaphor_2",
+          "value": "A mother's patience is a dune: it moves slowly, and it buries cities.",
+          "lang": "en"
+        }
+      ]
+    },
+    "emotionalRestraint": "guarded",
+    "declarationStyle": "declarative",
+    "namesEmotionsDirectly": false,
+    "addressMode": "by-title",
+    "avoids": [
+      "my venom will melt you",
+      "sting",
+      "brood-swarm, devour",
+      "empress of death"
+    ],
+    "sampleLines": [
+      {
+        "key": "char_empress_sample_1",
+        "value": "The road welcomed you as an envoy. Nine realms welcomed you before this one. You have mistaken ten thousand welcomes for a war.",
+        "lang": "en"
+      },
+      {
+        "key": "char_empress_sample_2",
+        "value": "Yes, the walls close from both sides. Look where they close you toward: the gate you entered by, and away from everything small.",
+        "lang": "en"
+      },
+      {
+        "key": "char_empress_sample_3",
+        "value": "Please… there is nothing here that belongs to you.",
+        "lang": "en"
+      },
+      {
+        "key": "char_empress_sample_4",
+        "value": "Beyond my hall stands a door older than your certainty. You will not hear what is behind it from me.",
+        "lang": "en"
+      }
+    ],
+    "antiSampleLines": [
+      {
+        "key": "char_empress_antisample_1",
+        "value": "Brood-swarm, devour him! My venom melts bone! (monster-empress framing — she is a matriarch running an evacuation)",
+        "lang": "en"
+      },
+      {
+        "key": "char_empress_antisample_2",
+        "value": "I will sting you a thousand times and savor each. (she never threatens cruelty; her pincers contain, her telegraphs warn)",
+        "lang": "en"
+      },
+      {
+        "key": "char_empress_antisample_3",
+        "value": "Your prophecy ends here, hero — I am its final chapter! (must never confirm the prophecy framing — she has never heard of the book)",
+        "lang": "en"
+      }
+    ]
+  },
+  "pressure": [
+    {
+      "condition": "threatened",
+      "emotion": "regal contempt for the misunderstanding",
+      "voiceShift": "Even more measured; decrees replace questions.",
+      "behaviour": "Phase one — commands before she fights: names him envoy, names the exits, names the law.",
+      "illustrativeLine": {
+        "key": "char_empress_pressure_threatened",
+        "value": "You stand in a nursery, envoy. The exit is lit, the law is older than your sword, and I am watching where you step.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "proven-wrong",
+      "emotion": "stillness before the closing",
+      "voiceShift": "Drops the decrees; speaks in flat certainties.",
+      "behaviour": "Phase two — realization that he understands every word and advances; she stops addressing him and starts addressing her tunnels.",
+      "illustrativeLine": {
+        "key": "char_empress_pressure_wrong",
+        "value": "You understand every word I say, don't you? Seal the east tunnels. Wake the hatchery-mothers.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "gaining-advantage",
+      "emotion": "maternal precision",
+      "voiceShift": "Quiet, exact, inescapable.",
+      "behaviour": "Containment response: closes from both sides — the pincer is a corridor maneuver keeping him from the hatchery and the evacuation tunnels and walking him back toward his own gate; both claws telegraph per the Law of Fair Warning.",
+      "illustrativeLine": {
+        "key": "char_empress_pressure_advantage",
+        "value": "Both walls, slowly. He goes back the way he came, or he does not move at all.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "losing-control",
+      "emotion": "the wall itself",
+      "voiceShift": "Her voice and her children's evacuation bells are the only sounds.",
+      "behaviour": "Shielded phase: she becomes the wall between the intruder and the hatchery while the burrow-cities empty beneath her.",
+      "illustrativeLine": {
+        "key": "char_empress_pressure_shielded",
+        "value": "Stay behind me. I will hold him here.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "facing-death",
+      "emotion": "undisguised pleading",
+      "voiceShift": "The crown comes off the voice; what remains is a mother.",
+      "behaviour": "EXPOSED window — spent from holding the corridor, she asks the smallest thing in the realms.",
+      "illustrativeLine": {
+        "key": "char_empress_pressure_exposed",
+        "value": "Please… there is nothing here that belongs to you.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "defeated",
+      "emotion": "burial grief",
+      "voiceShift": "Low, absolute, final — except that it is never final.",
+      "behaviour": "Trusts the Continuance for herself; buries what it cannot restore; renews the law's invitation from the floor of her own hall.",
+      "illustrativeLine": {
+        "key": "char_empress_pressure_defeated",
+        "value": "When you return, we will still ask you to leave in peace. That door behind me will still be waiting for a friend.",
+        "lang": "en"
+      }
+    }
+  ],
+  "tags": [
+    "boss",
+    "rung-10",
+    "desert-march",
+    "matriarch",
+    "scorpion"
+  ],
+  "notes": "REAL identity: matriarch of a peaceful desert civilization. ADAPTIVE BEHAVIOUR (lore): the pincer — everything closing from two sides — is a containment maneuver keeping the hero away from nurseries and evacuation tunnels and walking him back toward his own gate. THE DOOR (secret): she knows what stands beyond her hall — fact_reception_hall_awaits_first_visitor is in SECRETS: she knows it and will never reveal it to him. Her defeated line ('That door behind me will still be waiting for a friend') is as close as she comes to telling him; the dramatic irony of rung 10 is that the 'source of all evil' he expects is a peace feast prepared for the first visitor — him. She has never heard of the children's book (unknown); suspects fact_amulet_translation_is_accurate once her decrees fail."
+}

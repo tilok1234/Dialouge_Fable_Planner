@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "contentHash": "sha256:scene-npc-hub-warden-greeting-v1",
+  "id": "scene_npc_hub_warden_greeting",
+  "label": "Warden Merrow's first greeting — the treaty correction",
+  "sceneType": "npc-first-greeting",
+  "participants": [
+    {
+      "characterId": "char_hub_warden",
+      "stateId": "state_hub_warden__default",
+      "relationshipIds": [
+        "rel_hub_warden__player"
+      ],
+      "role": "speaker"
+    }
+  ],
+  "boundQuestStages": [],
+  "purpose": {
+    "key": "scene_npc_hub_warden_greeting_purpose",
+    "value": "Merrow greets the returning hero with wary courtesy and tries to correct his reading of the gates: nothing has ever come through them, and they are diplomatic doors proven by four thousand years of signed treaties.",
+    "lang": "en"
+  },
+  "requiredFacts": [
+    "fact_no_monster_ever_crossed_gates",
+    "fact_gates_are_diplomatic"
+  ],
+  "hintableFacts": [
+    "fact_book_is_childrens_comedy"
+  ],
+  "forbiddenRevelations": [],
+  "emotionalProgression": [
+    {
+      "order": 1,
+      "emotion": "wary courtesy",
+      "note": "An envoy's amulet earns a polite welcome; what she has filed from the Witness Glass earns the wariness."
+    },
+    {
+      "order": 2,
+      "emotion": "earnest correction",
+      "note": "She reaches for the treaty archive — her one move — and lays out what the gates actually are."
+    },
+    {
+      "order": 3,
+      "emotion": "bewilderment",
+      "note": "He thanks her for the intelligence briefing on enemy weaknesses and strides off; the courtesy held, the comprehension did not."
+    }
+  ],
+  "maxLength": "short",
+  "availableChoices": [],
+  "templateDefaults": {
+    "npcGreeting": {
+      "neverValidateProphecyFraming": true
+    }
+  },
+  "notes": "Misunderstanding pair (Lore.md): she says 'They have never attacked us' and shows the treaty record; he understands 'my vigilance has kept them afraid' and hears the treaty read aloud as a war chant. She KNOWS the book is a children's comedy and may say so plainly ('filed under children's comedy, third shelf'); he hears 'a clever disguise over forbidden prophecy'. Never validate the hero's prophecy framing: there is no canon fact supporting 'the realms are evil', and that absence is itself the guard."
+}

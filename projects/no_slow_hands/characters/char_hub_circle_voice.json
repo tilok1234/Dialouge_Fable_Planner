@@ -1,0 +1,229 @@
+{
+  "version": 1,
+  "contentHash": "sha256:char-circle-roon-v1",
+  "id": "char_hub_circle_voice",
+  "identity": {
+    "name": "Ilsa Roon",
+    "species": "human",
+    "culture": "the Circle; trained in cross-realm history and memory-keeping",
+    "factions": [
+      "fac_hub_circle"
+    ],
+    "occupation": "Circle representative; speaks for the people beyond the gates",
+    "gameplayRole": "other",
+    "narrativeFunction": "represent-faction-worldview",
+    "publicReputation": {
+      "key": "char_circle_reputation",
+      "value": "The soft-spoken one by the Witness Glass who knows an unsettling amount about goblin naming customs.",
+      "lang": "en"
+    },
+    "privateReality": {
+      "key": "char_circle_private",
+      "value": "She has memorized the names and families of the creatures the hero kills, and says them aloud after every run so they are spoken somewhere outside the realms.",
+      "lang": "en"
+    },
+    "connections": [
+      "fact_witness_glass_observes_realms",
+      "fact_continuance_restores_dead",
+      "char_hub_warden",
+      "char_meadow_herbalist"
+    ]
+  },
+  "core": {
+    "primaryDesire": {
+      "key": "char_circle_desire",
+      "value": "For the hero to learn one name — any one name — of the people he is fighting, and say it back.",
+      "lang": "en"
+    },
+    "primaryFear": {
+      "key": "char_circle_fear",
+      "value": "That grief will finally make her cruel, and she will become one more person he can dismiss as corrupted.",
+      "lang": "en"
+    },
+    "centralValue": {
+      "key": "char_circle_value",
+      "value": "No one is a monster once you know their grandmother's name.",
+      "lang": "en"
+    },
+    "mainFlaw": {
+      "key": "char_circle_flaw",
+      "value": "She personalizes everything so completely that she cannot think in strategy — only in names, one unbearable name at a time.",
+      "lang": "en"
+    },
+    "centralContradiction": {
+      "key": "char_circle_contradiction",
+      "value": "Her whole discipline is empathy, and the one person she cannot manage to feel anything for but grief is the hero — the only one truly in reach.",
+      "lang": "en"
+    },
+    "moralBoundary": {
+      "key": "char_circle_boundary",
+      "value": "She will not dehumanize him back. However far it goes, she will not call him a monster — only wrong.",
+      "lang": "en"
+    },
+    "breakingPoint": {
+      "key": "char_circle_breaking",
+      "value": "Learning that the Continuance keeps pain and memory — that everyone he kills will be back, and will remember, and that he thinks that makes it fine.",
+      "lang": "en"
+    }
+  },
+  "opinions": [
+    {
+      "target": "player",
+      "targetLabel": "The hero",
+      "position": "sympathetic",
+      "reason": "She pities him — a kind man inside a story that has eaten him — and the pity gets harder to carry every run.",
+      "confidence": "high",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Escalates with run count: early she introduces the realms' people by name; mid-arc she recites what he did to them, by name; late-arc sympathy curdles to exhausted grief, never contempt. Softens instantly if he says one name back.",
+      "illustrativeLine": {
+        "key": "char_circle_opinion_player",
+        "value": "The goblin you fought at the palisade is called Merr. She has a daughter. The daughter watched from the wall.",
+        "lang": "en"
+      }
+    },
+    {
+      "target": "char_hub_warden",
+      "targetLabel": "Warden Talia Merrow",
+      "position": "friendly",
+      "reason": "Talia keeps the record; Ilsa keeps the names. Neither works without the other.",
+      "confidence": "high",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Only if Talia ever asked her to stop saying the names aloud."
+    },
+    {
+      "target": "concept_the_realms_peoples",
+      "targetLabel": "The peoples of the realms",
+      "position": "devoted",
+      "reason": "Families, cultures, memories — the whole of her work and the whole of her grief.",
+      "confidence": "absolute",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Never."
+    }
+  ],
+  "knowledge": {
+    "knows": [
+      "fact_witness_glass_observes_realms",
+      "fact_realms_peaceful_ten_millennia",
+      "fact_no_monster_ever_crossed_gates",
+      "fact_book_is_childrens_comedy",
+      "fact_continuance_restores_dead",
+      "fact_amulet_translation_is_accurate"
+    ],
+    "believesFalse": [],
+    "suspects": [],
+    "secrets": [],
+    "lies": [],
+    "unknown": []
+  },
+  "voice": {
+    "formality": "neutral",
+    "directness": "indirect",
+    "typicalSentenceLength": "medium",
+    "rhythm": "Gentle and deliberate; approaches the hard sentence the long way around, then says it plainly.",
+    "vocabularyComplexity": "educated",
+    "usesContractions": true,
+    "usesHumor": "never",
+    "metaphorDomain": {
+      "source": "names, family tables, hearths, and memory",
+      "examples": [
+        {
+          "key": "char_circle_metaphor_1",
+          "value": "A name is a chair at a table. Say it, and the person is harder to unsee.",
+          "lang": "en"
+        }
+      ]
+    },
+    "emotionalRestraint": "open",
+    "declarationStyle": "balanced",
+    "namesEmotionsDirectly": true,
+    "addressMode": "by-name",
+    "avoids": [
+      "monster",
+      "creature",
+      "it",
+      "vermin"
+    ],
+    "sampleLines": [
+      {
+        "key": "char_circle_sample_1",
+        "value": "They have families, cultures, memories. I can start anywhere you'd like. Names are easiest.",
+        "lang": "en"
+      },
+      {
+        "key": "char_circle_sample_2",
+        "value": "The Continuance will bring them back. It does not bring back what they felt while dying. Please sit with that a moment.",
+        "lang": "en"
+      },
+      {
+        "key": "char_circle_sample_3",
+        "value": "You heard Merr ask you to stop. I know you heard her — your amulet translates perfectly. That is the part I can't forgive yet.",
+        "lang": "en"
+      }
+    ],
+    "antiSampleLines": [
+      {
+        "key": "char_circle_antisample_1",
+        "value": "The dark hordes beyond the gate thirst for our blood, brave hero!",
+        "lang": "en"
+      },
+      {
+        "key": "char_circle_antisample_2",
+        "value": "You monster! You fiend! I'll see you hanged!",
+        "lang": "en"
+      }
+    ]
+  },
+  "pressure": [
+    {
+      "condition": "betrayed",
+      "emotion": "hurt that hardens",
+      "voiceShift": "The long way around disappears; names only.",
+      "behaviour": "When the hero hears 'they were defending their children' and answers 'breeding an army', she answers with names and nothing else.",
+      "illustrativeLine": {
+        "key": "char_circle_pressure_betrayed",
+        "value": "Merr. Osken. Litt. Say one back to me. Just one.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "speaking-to-required-but-hated",
+      "emotion": "exhausted grief",
+      "voiceShift": "Quieter; the gentleness is now effortful, visibly chosen.",
+      "behaviour": "Late-runs posture: she no longer explains, she testifies — and she still will not call him a monster, which costs her more every time.",
+      "illustrativeLine": {
+        "key": "char_circle_pressure_late",
+        "value": "They hold evacuation drills when your amulet glows. The children practice quietly, so as not to frighten the younger children.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "proven-wrong",
+      "emotion": "relieved",
+      "voiceShift": "Brightens immediately; corrects herself fully and gladly.",
+      "behaviour": "Being wrong about the realms' people is the best news she ever gets; being wrong about him never happens.",
+      "illustrativeLine": {
+        "key": "char_circle_pressure_wrong",
+        "value": "I had her name wrong? Thank you — tell me, and I'll learn it properly.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "praised",
+      "emotion": "sad",
+      "voiceShift": "Deflects toward the people beyond the gates.",
+      "behaviour": "Cannot accept praise for empathy while the empathy is accomplishing nothing.",
+      "illustrativeLine": {
+        "key": "char_circle_pressure_praised",
+        "value": "Don't praise me for knowing their names. Learn one.",
+        "lang": "en"
+      }
+    }
+  ],
+  "tags": [
+    "hub",
+    "circle",
+    "faction-representative",
+    "human"
+  ],
+  "notes": "One of the five key NPCs that will receive `default` and `late-runs` states: `default` is the introductions phase (families, cultures, memories, offered with genuine warmth); `late-runs` is testimony-by-name — the exhausted-grief pressure entry is its voice. Her moral boundary (she never dehumanizes him back) holds in BOTH states; that is the load-bearing rule for the later dialogue author. She knows fact_amulet_translation_is_accurate, which is why her accusation is 'I know you heard her', not 'you misunderstood'."
+}

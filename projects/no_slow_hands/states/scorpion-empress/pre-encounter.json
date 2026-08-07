@@ -1,0 +1,42 @@
+{
+  "id": "state_scorpion_empress__pre_encounter",
+  "characterId": "char_scorpion_empress",
+  "label": "Pre-encounter — the tenth door",
+  "mood": "regal command over rising alarm",
+  "location": "The desert hall before the hatchery tunnels",
+  "injuries": [],
+  "activeQuestStages": [
+    "quest_rung_10_scorpion_empress__stage_1",
+    "quest_rung_10_scorpion_empress__stage_2"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_scorpion_empress_pre_ev1",
+      "value": "Nine realms' warnings arrived ahead of him; the evacuation bells have been ringing since his gate-light touched the sand.",
+      "lang": "en"
+    },
+    {
+      "key": "nsh_state_scorpion_empress_pre_ev2",
+      "value": "The burrow-cities are emptying beneath her; the hatchery-mothers are awake.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_scorpion_empress_pre_cf1",
+      "value": "Past nine guardians' warnings, still armed, still coming — and he understands every word.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-scorpion-empress-pre-encounter-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_scorpion_empress_pre_obj",
+    "value": "Expel the trespasser: name him envoy, name the exits, name the law.",
+    "lang": "en"
+  },
+  "phase": "pre-encounter"
+}

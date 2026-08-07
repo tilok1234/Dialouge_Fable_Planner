@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-fac-desert-matriarchy-v1",
+  "id": "fac_desert_matriarchy",
+  "name": "The Desert Matriarchy",
+  "summary": {
+    "key": "fac_desert_matriarchy_summary",
+    "value": "The peaceful desert civilization of the Scorpion-Empress, a matriarch whose realm is organized around nurseries and evacuation tunnels. The imp-fiend brood the hero fights are her people's young defenders — scarcely more than children with stingers. Her pincer strategy is a containment maneuver, closing from both sides only to keep the intruder away from the hatcheries.",
+    "lang": "en"
+  },
+  "sharedBeliefs": [
+    "fact_realms_peaceful_ten_millennia",
+    "fact_law_of_fair_warning",
+    "fact_continuance_restores_dead",
+    "fact_scorpion_empress_is_matriarch"
+  ],
+  "sharedOpinions": [
+    {
+      "target": "char_protagonist",
+      "position": "frightened",
+      "reason": "He fights toward the nurseries and reads the Empress's containment as aggression. Every evacuation drill now starts when his amulet glows."
+    },
+    {
+      "target": "fac_highland_roosts",
+      "position": "friendly",
+      "reason": "Their passes cool our caravans; our stone warms their fledglings. Ten thousand years and never a harsh word on the road."
+    },
+    {
+      "target": "fac_hub_circle",
+      "position": "sympathetic",
+      "reason": "The Circle speaks for our young ones when we cannot be heard past the gates. Someone outside remembers that broods are children."
+    }
+  ],
+  "metaphorDomain": {
+    "source": "sand, shade, water-carriers, the long tunnel",
+    "examples": [
+      {
+        "key": "fac_desert_matriarchy_metaphor_1",
+        "value": "Shade is the desert's way of sharing.",
+        "lang": "en"
+      },
+      {
+        "key": "fac_desert_matriarchy_metaphor_2",
+        "value": "Dig your tunnels before you need them; the sand does not wait for permission.",
+        "lang": "en"
+      }
+    ]
+  },
+  "terminology": [
+    {
+      "term": "the brood",
+      "meaning": {
+        "key": "fac_desert_matriarchy_term_brood",
+        "value": "The young defenders of the nurseries — imp-fiend youths serving their first watch. The hero's journal calls them a horde; their mothers call them homework unfinished.",
+        "lang": "en"
+      }
+    },
+    {
+      "term": "the cool roads",
+      "meaning": {
+        "key": "fac_desert_matriarchy_term_cool_roads",
+        "value": "The evacuation tunnels, kept stocked with water and shade year-round. Every child learns the way to them before they learn to write.",
+        "lang": "en"
+      }
+    }
+  ],
+  "customs": [
+    {
+      "key": "fac_desert_matriarchy_custom_water",
+      "value": "Water is offered before greetings are exchanged. A traveler refused water is a story that does not exist in the matriarchy.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_desert_matriarchy_custom_drills",
+      "value": "Evacuation drills are held each season, led by the brood so the youngest know the tunnels best. Lately the drills are no longer seasonal.",
+      "lang": "en"
+    }
+  ],
+  "taboos": [
+    {
+      "key": "fac_desert_matriarchy_taboo_nursery",
+      "value": "Never bring a quarrel within sight of a nursery. The Empress's pincers exist to enforce exactly this, and nothing else about her is inflexible.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_desert_matriarchy_taboo_tunnels",
+      "value": "Never block or collapse an evacuation tunnel. It is the one act the whole civilization agrees is unforgivable.",
+      "lang": "en"
+    }
+  ],
+  "tags": [
+    "faction",
+    "realm-people",
+    "desert",
+    "rung-10"
+  ]
+}

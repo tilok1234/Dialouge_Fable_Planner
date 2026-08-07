@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "contentHash": "sha256:dlg-rk-rematch-v1",
+  "id": "dlg_reliquary_king_rematch",
+  "sceneId": "scene_reliquary_king_rematch",
+  "approvalStatus": "accepted",
+  "lines": [
+    {
+      "id": "l1",
+      "beatOrder": 1,
+      "speakerId": "char_bone_reliquary_king",
+      "text": {
+        "key": "dlg_rk_rematch_l1",
+        "value": "Ah. The boots. The attendants know your tread now — they begin carrying the ledgers down at the sound of it.",
+        "lang": "en"
+      },
+      "humanEdited": false
+    },
+    {
+      "id": "l2",
+      "beatOrder": 2,
+      "speakerId": "char_bone_reliquary_king",
+      "text": {
+        "key": "dlg_rk_rematch_l2",
+        "value": "I remember the arrows. The Continuance restores the flesh and keeps the lesson. A thorough clerk, that one.",
+        "lang": "en"
+      },
+      "humanEdited": false
+    },
+    {
+      "id": "l3",
+      "beatOrder": 3,
+      "speakerId": "char_bone_reliquary_king",
+      "text": {
+        "key": "dlg_rk_rematch_l3",
+        "value": "The law binds me still: watch my hands, and they will tell you where every blow falls. The door, as ever, is behind you.",
+        "lang": "en"
+      },
+      "humanEdited": false
+    }
+  ],
+  "provenance": {
+    "characterProfiles": [
+      {
+        "id": "char_bone_reliquary_king",
+        "version": 1
+      }
+    ],
+    "characterStates": [
+      {
+        "id": "state_bone_reliquary_king__rematch",
+        "version": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "rel_bone_reliquary_king__player",
+        "version": 1
+      }
+    ],
+    "scene": {
+      "id": "scene_reliquary_king_rematch",
+      "version": 1
+    },
+    "canonSnapshot": [
+      {
+        "id": "fact_law_of_fair_warning",
+        "version": 1
+      }
+    ],
+    "schemaVersion": "1.0.0",
+    "promptTemplateVersion": "1.0.0",
+    "provider": "claude-code-session",
+    "model": "claude-fable-5",
+    "reasoningEffort": "high",
+    "generatedAt": "2026-08-07T22:36:00Z"
+  },
+  "stale": false,
+  "notes": "Authored in-session at user direction (provider blocked, org 403). Recognition and grim hospitality per brief — dread, not fresh pleading; the fair warning still spoken because the law binds; mercy re-offered dryly in l3.",
+  "beatPlanId": "beat_reliquary_king_rematch",
+  "contextPackageId": "ctx_reliquary_king_rematch"
+}

@@ -1,0 +1,40 @@
+{
+  "id": "state_pit_fiend_juggernaut__pre_encounter",
+  "characterId": "char_pit_fiend_juggernaut",
+  "label": "Pre-encounter — news through the stone",
+  "mood": "low, grieving readiness",
+  "location": "The deep settlements, the foundation spans",
+  "injuries": [],
+  "activeQuestStages": [],
+  "recentEvents": [
+    {
+      "key": "nsh_state_pit_fiend_juggernaut_pre_ev1",
+      "value": "The stone carries news from the upper realms: collapses where no cave-in should be, tunnel mouths dropped behind fleeing families.",
+      "lang": "en"
+    },
+    {
+      "key": "nsh_state_pit_fiend_juggernaut_pre_ev2",
+      "value": "It has begun pre-shoring the deep tunnels and drilling the settlements on the way up.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_pit_fiend_juggernaut_pre_cf1",
+      "value": "Somewhere above, a voice is causing the collapses it exists to undo — and it still reads him as a rescue.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-pit-fiend-juggernaut-pre-encounter-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_pit_fiend_juggernaut_pre_obj",
+    "value": "Shore every span and rehearse every evacuation route before the noise comes down.",
+    "lang": "en"
+  },
+  "phase": "pre-encounter",
+  "notes": "Future content (rungs 11+); no quest stages exist yet, so activeQuestStages is empty. Per its profile it cannot stop treating the hero as a rescue case — the dread is real, but so is the flaw."
+}

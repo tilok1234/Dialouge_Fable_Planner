@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "contentHash": "sha256:scene-scorpion_empress-phase-trans-v1",
+  "id": "scene_scorpion_empress_phase_transition",
+  "label": "Scorpion-Empress phase transition",
+  "sceneType": "boss-phase-transition",
+  "participants": [
+    {
+      "characterId": "char_scorpion_empress",
+      "stateId": "state_scorpion_empress__phase_two",
+      "relationshipIds": [
+        "rel_scorpion_empress__player"
+      ],
+      "role": "speaker"
+    }
+  ],
+  "boundQuestStages": [
+    "quest_rung_10_scorpion_empress__stage_2"
+  ],
+  "purpose": {
+    "key": "scene_scorpion_empress_phase_trans_purpose",
+    "value": "The realization lands — \"You understand every word I say, don't you?\" — and the guardian stops reasoning with the hero and starts containing him.",
+    "lang": "en"
+  },
+  "requiredFacts": [
+    "fact_amulet_translation_is_accurate"
+  ],
+  "hintableFacts": [
+    "fact_scorpion_empress_is_matriarch"
+  ],
+  "forbiddenRevelations": [
+    "fact_book_is_childrens_comedy",
+    "fact_reception_hall_awaits_first_visitor"
+  ],
+  "emotionalProgression": [
+    {
+      "order": 1,
+      "emotion": "disbelief",
+      "note": "Every plea was understood. None of it mattered."
+    },
+    {
+      "order": 2,
+      "emotion": "grief",
+      "note": "The guardian grieves that words have failed."
+    },
+    {
+      "order": 3,
+      "emotion": "resolve",
+      "note": "Reasoning ends; containment of the intruder begins."
+    }
+  ],
+  "maxLength": "short",
+  "availableChoices": [],
+  "templateDefaults": {
+    "bossPhaseTransition": {
+      "realizationBeatsReasoning": true
+    }
+  },
+  "notes": "The pivotal line is the guardian realizing the amulet translates perfectly and the hero CHOSE to keep swinging. Keep it short: the turn from appeal to containment. Flavor: the hatchery tunnels."
+}

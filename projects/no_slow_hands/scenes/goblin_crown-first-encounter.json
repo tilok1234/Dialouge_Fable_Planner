@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "contentHash": "sha256:scene-goblin_crown-first-enc-v1",
+  "id": "scene_goblin_crown_first_encounter",
+  "label": "Goblin War Crown first encounter",
+  "sceneType": "boss-first-encounter",
+  "participants": [
+    {
+      "characterId": "char_goblin_war_crown",
+      "stateId": "state_goblin_war_crown__pre_encounter",
+      "relationshipIds": [
+        "rel_goblin_war_crown__player"
+      ],
+      "role": "speaker"
+    }
+  ],
+  "boundQuestStages": [
+    "quest_rung_02_palisade_camp__stage_2"
+  ],
+  "purpose": {
+    "key": "scene_goblin_crown_first_enc_purpose",
+    "value": "In the middle of the Lantern Feast, the elected festival marshal steps through the fireworks to meet the armed stranger and issue the law's fair warning; the hero hears every word and misreads a festival guard as a war camp. The guardian attempts communication first; the hero misreads it as a villain's taunt.",
+    "lang": "en"
+  },
+  "requiredFacts": [
+    "fact_law_of_fair_warning"
+  ],
+  "hintableFacts": [
+    "fact_goblin_crown_is_festival_marshal"
+  ],
+  "forbiddenRevelations": [
+    "fact_book_is_childrens_comedy"
+  ],
+  "emotionalProgression": [
+    {
+      "order": 1,
+      "emotion": "courteous warning",
+      "note": "The guardian announces itself and its duty plainly, framed by fireworks and the Lantern Feast."
+    },
+    {
+      "order": 2,
+      "emotion": "offended disbelief",
+      "note": "The warning was honest and complete; being ignored reads as insult."
+    }
+  ],
+  "maxLength": "medium",
+  "availableChoices": [
+    "choice_rung_02_withdraw"
+  ],
+  "templateDefaults": {
+    "bossFirstEncounter": {
+      "mustOfferMercy": true,
+      "mustNotRevealWeakness": true
+    }
+  },
+  "notes": "The scene MUST establish the guardian announcing itself and warning honestly — the law of fair warning means its attack paths will be shown, not hidden. The mercy exit (withdraw) is offered and never taken. Flavor: fireworks and the Lantern Feast. The player's view may hint the guardian's true role; the hero must not perceive it. REQUIRED LINE SENTIMENT: \"Stranger, lower your weapon. You have entered during the Lantern Feast.\" The scene happens DURING the festival — lanterns, fireworks, children watching from the palisade."
+}

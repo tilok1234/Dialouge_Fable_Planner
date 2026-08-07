@@ -1,0 +1,34 @@
+{
+  "id": "state_hub_circle_voice__default",
+  "characterId": "char_hub_circle_voice",
+  "label": "Default — introductions",
+  "mood": "warm, grieving correction",
+  "location": "The hub, the Circle's table",
+  "injuries": [],
+  "activeQuestStages": [],
+  "recentEvents": [
+    {
+      "key": "nsh_state_hub_circle_voice_def_ev1",
+      "value": "Watched his latest run on the Glass and wrote down the names of everyone he passed: the goblin at the palisade is called Merr. She has a daughter. The daughter watched from the wall.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_hub_circle_voice_def_cf1",
+      "value": "He hears the names and pronounces them 'enemy forces'. She knows he hears them; the amulet translates perfectly.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-hub-circle-voice-default-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_hub_circle_voice_def_obj",
+    "value": "Introduce him to the people beyond the gates by name — families, cultures, memories — starting anywhere he will sit still for.",
+    "lang": "en"
+  },
+  "notes": "Early-run era: the introductions phase, offered with genuine warmth (profile notes)."
+}

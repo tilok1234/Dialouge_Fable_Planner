@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-rel-meadow-herbalist-player-v1",
+  "id": "rel_meadow_herbalist__player",
+  "partyA": "char_meadow_herbalist",
+  "partyB": "player",
+  "dimensions": {
+    "trust": 5,
+    "respect": 5,
+    "affection": 20,
+    "fear": 10,
+    "suspicion": 10,
+    "debt": 0
+  },
+  "namedState": "soft-spoken-dissent",
+  "history": [
+    {
+      "event": {
+        "key": "rel_meadow_herbalist_h1",
+        "value": "Treated his wounds with fen-grown mallow and told him where it came from — bred gentler over two hundred years by the fen folk, her teachers' garden. He was courteous, grateful, and promised to purge the corruption from the garden that grows such gifts. She finished the bandage.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": 5,
+        "respect": 5,
+        "affection": 20,
+        "fear": 10,
+        "suspicion": 10
+      }
+    }
+  ],
+  "notes": "Modeled at the EARLY stage: the fen's history offered with the medicine. The positive numbers are the point — he is courteous to her and grateful for the poultices, and trust 5 / affection 20 sit next to fear 10 because he is trampling the garden those poultices came from; her position is 'sympathetic' and the wound is that she means it. Suspicion 10 is the hub's lowest among the informed: she is so gentle the hero files her under 'harmless' and hears nothing. Escalation per profile: mid-arc she names each plant and its grower; late-runs she treats him and states whose garden paid for it — treatment continues in EVERY state, that boundary she will not cross. Vendor boundary intact: no poisons, no 'monster banes', whatever he offers. Softens instantly if he asks her to teach him one plant name. Single history event is deliberate: the first treatment contains the whole early arc. Deltas sum to current dimensions."
+}

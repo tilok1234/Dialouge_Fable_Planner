@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-rel-goblin-war-crown-player-v1",
+  "id": "rel_goblin_war_crown__player",
+  "partyA": "char_goblin_war_crown",
+  "partyB": "player",
+  "dimensions": {
+    "trust": -60,
+    "respect": 5,
+    "affection": -25,
+    "fear": 55,
+    "suspicion": 55,
+    "debt": 0
+  },
+  "namedState": "besieged-host",
+  "history": [
+    {
+      "event": {
+        "key": "rel_goblin_war_crown_h1",
+        "value": "First meeting, mid-Lantern-Feast: 'Stranger, lower your weapon. You have entered during the Lantern Feast.' Marshal Tibbet greeted the armed intruder as a guest who had wandered into the best night of the year.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -5,
+        "affection": 5,
+        "suspicion": 15
+      }
+    },
+    {
+      "event": {
+        "key": "rel_goblin_war_crown_h2",
+        "value": "First fight: the guest wasn't a guest. He moved the crowd and the children's lantern lines first and argued second, spending festival fireworks and quarry charges to channel the intruder back toward the gate — every fuse showing its path.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -35,
+        "respect": 5,
+        "affection": -25,
+        "fear": 35,
+        "suspicion": 30
+      }
+    },
+    {
+      "event": {
+        "key": "rel_goblin_war_crown_h3",
+        "value": "Tenth visit, via the Continuance: 'The children recognize the sound of your boots now.' He stopped pleading with the man and speaks to the record — hospitality exhausted into worn grief.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -20,
+        "affection": -5,
+        "fear": 20,
+        "suspicion": 10
+      }
+    }
+  ],
+  "notes": "Modeled at the tenth-visit rematch stage (rung 2), per the lore's required arc: Lantern Feast greeting on visit one, the boots line on visit ten. Fear 55 is his palisade-fear — that something gets in among the families on his watch — not fear of death; the Continuance covers death, it does not cover the children remembering. Respect 5 is the small grudging kind: the protagonist is genuinely brave, and that is precisely the horror. Affection began positive (hostly warmth) and has been spent visit by visit. Deltas sum to current dimensions. The two quoted lines are load-bearing; keep them verbatim in any downstream dialogue."
+}

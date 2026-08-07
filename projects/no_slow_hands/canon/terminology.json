@@ -1,0 +1,299 @@
+[
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-term-amulet-of-concord-v1",
+    "term": "Amulet of Concord",
+    "meaning": {
+      "key": "term_amulet_of_concord",
+      "value": "The true name of the player's amulet: an ancient diplomatic envoy artifact that translates all languages, opens diplomatic roads and sealed gates, recalls an injured bearer, and transfers objects between realms.",
+      "lang": "en"
+    },
+    "factions": [],
+    "tags": [
+      "amulet",
+      "artifact",
+      "diplomacy"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-term-amulet-of-righteous-judgment-v1",
+    "term": "Amulet of Righteous Judgment",
+    "meaning": {
+      "key": "term_amulet_of_righteous_judgment",
+      "value": "The protagonist's self-appointed rename of the Amulet of Concord. Canon: his invention, reflecting his delusion; no one else uses this name.",
+      "lang": "en"
+    },
+    "factions": [],
+    "tags": [
+      "amulet",
+      "hero-distortion"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-term-ten-quiet-realms-v1",
+    "term": "The Ten Quiet Realms",
+    "meaning": {
+      "key": "term_ten_quiet_realms",
+      "value": "The ten peaceful realms behind the ancient enchanted gates, at peace for roughly ten thousand years. Skeletons, goblins, living flames, dryads, and stranger creatures maintaining marshes, oceans, deserts, and mountains.",
+      "lang": "en"
+    },
+    "factions": [],
+    "tags": [
+      "realms",
+      "setting"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-term-ten-dread-sovereigns-v1",
+    "term": "The Ten Dread Sovereigns",
+    "meaning": {
+      "key": "term_ten_dread_sovereigns",
+      "value": "A millennia-old children's adventure comedy whose \"villains\" are affectionate caricatures of the realms' rulers. The protagonist mistakes it for an ancient prophecy.",
+      "lang": "en"
+    },
+    "factions": [],
+    "tags": [
+      "book",
+      "childrens-comedy",
+      "dramatic-irony"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-term-law-of-fair-warning-v1",
+    "term": "Law of Fair Warning",
+    "meaning": {
+      "key": "term_law_of_fair_warning",
+      "value": "The realms' one ancient moral law: no blow may fall before its path has been shown. The reason telegraphs never lie and every attack pattern has a learnable movement answer.",
+      "lang": "en"
+    },
+    "factions": [],
+    "tags": [
+      "law",
+      "combat",
+      "telegraphs"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-term-the-continuance-v1",
+    "term": "The Continuance",
+    "meaning": {
+      "key": "term_the_continuance",
+      "value": "The ancient restorative magic sustaining the Ten Realms. It reconstructs the dead — restoring the body but keeping pain and memory — so the isolated realms can never be permanently destroyed.",
+      "lang": "en"
+    },
+    "factions": [],
+    "tags": [
+      "continuance",
+      "magic",
+      "restoration"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-term-witness-glass-v1",
+    "term": "Witness Glass",
+    "meaning": {
+      "key": "term_witness_glass",
+      "value": "An ancient diplomatic device in the hub that lets people observe events beyond the gates in real time. Built to protect envoys; now it lets hub NPCs watch everything the player does.",
+      "lang": "en"
+    },
+    "factions": [
+      "fac_hub_warden",
+      "fac_hub_circle",
+      "fac_hub_free_company",
+      "fac_hub_prospectors"
+    ],
+    "tags": [
+      "witness-glass",
+      "hub",
+      "observation"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-term-the-heavy-hands-v1",
+    "term": "The Heavy Hands",
+    "meaning": {
+      "key": "term_the_heavy_hands",
+      "value": "An ancient inter-realm emergency service responding to fires, floods, collapsed buildings, and dangerous animals. Their large silhouette is deliberately recognizable so civilians know help has arrived.",
+      "lang": "en"
+    },
+    "factions": [
+      "fac_heavy_hands"
+    ],
+    "tags": [
+      "heavy-hands",
+      "emergency-service"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-term-ogre-crusher-v1",
+    "term": "Ogre Crusher",
+    "meaning": {
+      "key": "term_ogre_crusher",
+      "value": "The hero's label for a Heavy Hand. In truth each one is an emergency responder carrying a gate seal as credentials — the player's horde \"trophy\".",
+      "lang": "en"
+    },
+    "factions": [
+      "fac_heavy_hands"
+    ],
+    "tags": [
+      "heavy-hands",
+      "hero-distortion",
+      "horde"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-term-commons-v1",
+    "term": "Commons",
+    "meaning": {
+      "key": "term_commons",
+      "value": "The inhabitants' word for the shared agricultural grounds, memorial spaces, wetlands, and ceremonial plazas the hero calls \"battlefields\". Horde waves are residents arriving to contain an intruder.",
+      "lang": "en"
+    },
+    "factions": [
+      "fac_fungal_field_commons",
+      "fac_bone_yard_commons",
+      "fac_drowned_fen_commons",
+      "fac_ashen_court_commons"
+    ],
+    "tags": [
+      "horde",
+      "commons",
+      "hero-distortion"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-term-shards-v1",
+    "term": "Shards",
+    "meaning": {
+      "key": "term_shards",
+      "value": "Fragments of damaged domestic magic: heating stones, irrigation runes, memorial lamps, protective charms, workshop enchantments, and Continuance splinters. The hero calls them concentrated evil and uses them to improve his weapons.",
+      "lang": "en"
+    },
+    "factions": [],
+    "tags": [
+      "economy",
+      "shards",
+      "hero-distortion"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-term-trophies-v1",
+    "term": "Trophies",
+    "meaning": {
+      "key": "term_trophies",
+      "value": "The hero's word for gate seals taken from senior wardens and emergency responders. He believes elite monsters carried keys to darker territories; in truth he is stripping credentials off rescue workers.",
+      "lang": "en"
+    },
+    "factions": [
+      "fac_heavy_hands",
+      "fac_fungal_field_commons",
+      "fac_bone_yard_commons",
+      "fac_drowned_fen_commons",
+      "fac_ashen_court_commons"
+    ],
+    "tags": [
+      "economy",
+      "gate-seals",
+      "hero-distortion"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-term-banking-v1",
+    "term": "Banking",
+    "meaning": {
+      "key": "term_banking",
+      "value": "Holding E to make the amulet transfer carried loot out through the diplomatic network, beyond its owners' reach. The hero calls it securing dangerous materials; the inhabitants call it theft. Dying before banking lets owners recover their property.",
+      "lang": "en"
+    },
+    "factions": [],
+    "tags": [
+      "economy",
+      "banking",
+      "amulet"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-term-gate-seal-v1",
+    "term": "Gate seal",
+    "meaning": {
+      "key": "term_gate_seal",
+      "value": "A credential carried by senior wardens and emergency responders identifying someone trusted to cross realm boundaries during a crisis. Fed into the amulet, seals force gates open.",
+      "lang": "en"
+    },
+    "factions": [
+      "fac_heavy_hands",
+      "fac_fungal_field_commons",
+      "fac_bone_yard_commons",
+      "fac_drowned_fen_commons",
+      "fac_ashen_court_commons"
+    ],
+    "tags": [
+      "gate-seals",
+      "diplomacy",
+      "credentials"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-term-exposed-v1",
+    "term": "EXPOSED",
+    "meaning": {
+      "key": "term_exposed",
+      "value": "The window when a guardian becomes exhausted from maintaining defenses — protecting civilians, reinforcing barriers, buying time for evacuation. The hero reads exhaustion as divine judgment revealing evil's weakness.",
+      "lang": "en"
+    },
+    "factions": [],
+    "tags": [
+      "combat",
+      "boss",
+      "exhaustion"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-term-the-lantern-feast-v1",
+    "term": "The Lantern Feast",
+    "meaning": {
+      "key": "term_the_lantern_feast",
+      "value": "A goblin festival underway in the Palisade Camp when the hero first arrives. The Goblin War Crown greets him as a stranger who has entered mid-celebration.",
+      "lang": "en"
+    },
+    "factions": [
+      "fac_goblin_festival_settlement"
+    ],
+    "tags": [
+      "goblins",
+      "festival",
+      "rung-2"
+    ]
+  },
+  {
+    "version": 1,
+    "contentHash": "sha256:nsh-term-liberated-treasure-v1",
+    "term": "Liberated treasure",
+    "meaning": {
+      "key": "term_liberated_treasure",
+      "value": "The hero's term for everything he takes from optional treasure detours — in truth family storehouses, ceremonial treasuries, pantries, memorial chambers, workshops, diplomatic gifts, and emergency supplies.",
+      "lang": "en"
+    },
+    "factions": [],
+    "tags": [
+      "economy",
+      "theft",
+      "hero-distortion"
+    ]
+  }
+]

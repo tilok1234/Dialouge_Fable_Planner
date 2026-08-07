@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "contentHash": "sha256:scene-npc-capital-gate-guard-greeting-v1",
+  "id": "scene_npc_capital_gate_guard_greeting",
+  "label": "Sergeant Marek's first greeting — twenty-two years of nothing",
+  "sceneType": "npc-first-greeting",
+  "participants": [
+    {
+      "characterId": "char_capital_gate_guard",
+      "stateId": "state_capital_gate_guard__default",
+      "relationshipIds": [
+        "rel_capital_gate_guard__player"
+      ],
+      "role": "speaker"
+    }
+  ],
+  "boundQuestStages": [],
+  "purpose": {
+    "key": "scene_npc_capital_gate_guard_greeting_purpose",
+    "value": "Marek logs the hero out through the gate and recites the record he is proudest of: twenty-two years on this gate, and nothing has ever come through from the other side.",
+    "lang": "en"
+  },
+  "requiredFacts": [
+    "fact_no_monster_ever_crossed_gates"
+  ],
+  "hintableFacts": [],
+  "forbiddenRevelations": [],
+  "emotionalProgression": [
+    {
+      "order": 1,
+      "emotion": "bored courtesy",
+      "note": "The gate sergeant's professional nod: another departure, another log entry."
+    },
+    {
+      "order": 2,
+      "emotion": "logbook assertion",
+      "note": "Zero incursions, twenty-two years — 'nothing to report' is not boredom, it is the achievement, and he reads it aloud."
+    },
+    {
+      "order": 3,
+      "emotion": "professional bafflement",
+      "note": "The hero salutes him for holding the line against the hordes and marches out to invade them; Marek logs the salute, not the sense."
+    }
+  ],
+  "maxLength": "short",
+  "availableChoices": [],
+  "templateDefaults": {
+    "npcGreeting": {
+      "neverValidateProphecyFraming": true
+    }
+  },
+  "notes": "Grounded bewilderment, watch register: his contradiction is the scene — he is the living statistical proof of the realms' peacefulness, and the hero salutes him on the way out. He only suspects the gates are diplomatic (procedure, not treaty law), so no treaty citations from him. Never validate the hero's prophecy framing: there is no canon fact supporting 'the realms are evil', and that absence is itself the guard."
+}

@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-fac-hub-prospectors-v1",
+  "id": "fac_hub_prospectors",
+  "name": "The Hub Prospectors",
+  "summary": {
+    "key": "fac_hub_prospectors_summary",
+    "value": "Surveyors and salvage appraisers of the hub who know materials the way the Warden knows treaties. They have examined the hero's 'dark shards' and confirm, with instruments and without ambiguity, that they are pieces of irrigation and heating systems — broken domestic magic, not concentrated evil.",
+    "lang": "en"
+  },
+  "sharedBeliefs": [
+    "fact_shards_are_domestic_magic",
+    "fact_banking_uses_diplomatic_network",
+    "fact_trophies_are_gate_seals",
+    "fact_witness_glass_observes_realms",
+    "fact_book_is_childrens_comedy"
+  ],
+  "sharedOpinions": [
+    {
+      "target": "char_protagonist",
+      "position": "resolute",
+      "reason": "We assayed his 'concentrated evil'. It was a heating stone with a steward's mark on it. We showed him the mark. He said the enemy is thorough."
+    },
+    {
+      "target": "fac_forge_stewardry",
+      "position": "friendly",
+      "reason": "We recognize their stamped sigil on half the shards the hero banks. Fine work. It deserves better than his weapon grinder."
+    },
+    {
+      "target": "fac_hub_warden",
+      "position": "friendly",
+      "reason": "The Warden has the treaties; we have the assay reports. Different shelves of the same library."
+    }
+  ],
+  "metaphorDomain": {
+    "source": "assay, ore, markings, the honest scale",
+    "examples": [
+      {
+        "key": "fac_hub_prospectors_metaphor_1",
+        "value": "The scale doesn't care what you hoped the rock was.",
+        "lang": "en"
+      },
+      {
+        "key": "fac_hub_prospectors_metaphor_2",
+        "value": "Every shard has a maker's mark, if you're willing to look smaller than your theory.",
+        "lang": "en"
+      }
+    ]
+  },
+  "terminology": [
+    {
+      "term": "the assay",
+      "meaning": {
+        "key": "fac_hub_prospectors_term_assay",
+        "value": "The Prospectors' formal examination of the hero's banked loot. Every assay so far has come back: domestic magic, damaged, someone else's.",
+        "lang": "en"
+      }
+    },
+    {
+      "term": "maker's mark",
+      "meaning": {
+        "key": "fac_hub_prospectors_term_makers_mark",
+        "value": "The stamped sigil of whatever workshop, forge, or household made the object a shard came from. Proof of provenance the hero treats as a curse-rune.",
+        "lang": "en"
+      }
+    }
+  ],
+  "customs": [
+    {
+      "key": "fac_hub_prospectors_custom_assay",
+      "value": "Any material claim is settled by assay, in duplicate, with the claimant watching. The Prospectors do not ask to be believed; they ask to be watched.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_hub_prospectors_custom_provenance",
+      "value": "Every examined object is logged with its maker's mark and likely home realm, in case it is ever returned. The log is, so far, one-directional.",
+      "lang": "en"
+    }
+  ],
+  "taboos": [
+    {
+      "key": "fac_hub_prospectors_taboo_guess",
+      "value": "Never pronounce on a material you haven't tested. A prospector who guesses is just a gossip with a hammer.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_hub_prospectors_taboo_salting",
+      "value": "Never salt a sample or shade a report to please the paying party — even when the paying party really wants his shards to be evil.",
+      "lang": "en"
+    }
+  ],
+  "tags": [
+    "faction",
+    "hub",
+    "prospectors",
+    "witness-glass"
+  ]
+}

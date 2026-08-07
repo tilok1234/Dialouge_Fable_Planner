@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-rel-pit-fiend-juggernaut-player-v1",
+  "id": "rel_pit_fiend_juggernaut__player",
+  "partyA": "char_pit_fiend_juggernaut",
+  "partyB": "player",
+  "dimensions": {
+    "trust": 5,
+    "respect": 0,
+    "affection": 10,
+    "fear": 15,
+    "suspicion": 5,
+    "debt": 0
+  },
+  "namedState": "rescue-case-inbound",
+  "history": [
+    {
+      "event": {
+        "key": "rel_pit_fiend_juggernaut_h1",
+        "value": "The deep settlements pass the news downward like a cave-in call: someone is moving through the realms above, shouting, armed, far from the sun. The Holdfast listens the way it listens for trapped voices.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "affection": 10,
+        "fear": 5
+      }
+    },
+    {
+      "event": {
+        "key": "rel_pit_fiend_juggernaut_h2",
+        "value": "The reports say the shouting is not panic but purpose. It does not fully believe them. It rumbles its path through the stone a little louder these days, per the Law of Fair Warning, so the lost one can find the way up when he wants it.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": 5,
+        "fear": 10,
+        "suspicion": 5
+      }
+    }
+  ],
+  "notes": "BENCH boss — no meeting yet, and uniquely among the bench it reads the protagonist as a RESCUE CASE, not a threat (its profile position is 'sympathetic'; 'poor thing — no one that angry has ever been lost that long'). Hence the only positive trust on the boss roster: trust 5 and affection 10 are a rescue guardian's professional compassion for a lost soul; fear 15 is the dread of arriving too late at a collapse, transposed onto him. namedState 'rescue-case-inbound' captures that its whole plan for the invasion is to carry the invader out. Its canChangeCondition: hardens only as evidence piles up that the panic is purpose — and even then it grieves rather than hates, and would carry him to the surface the moment he dropped the sword. Deltas sum to current dimensions."
+}

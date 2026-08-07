@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-fac-mire-wetlands-v1",
+  "id": "fac_mire_wetlands",
+  "name": "The Sunken Mire Wetlanders",
+  "summary": {
+    "key": "fac_mire_wetlands_summary",
+    "value": "The marsh dwellers of the Sunken Mire, who live around the spawning pools Ancient Mirejaw guards along with the smaller wetland animals. The zombie-shambler 'drowned prey' of the hero's journal are nothing of the kind — they are marsh folk and volunteers wading out through the water to delay the intruder, the only ones slow enough to be caught doing it. Mirejaw never leaves the mire and harms no one who stays outside it.",
+    "lang": "en"
+  },
+  "sharedBeliefs": [
+    "fact_realms_peaceful_ten_millennia",
+    "fact_law_of_fair_warning",
+    "fact_continuance_restores_dead",
+    "fact_mirejaw_is_marsh_guardian",
+    "fact_drowned_fen_is_commons"
+  ],
+  "sharedOpinions": [
+    {
+      "target": "char_protagonist",
+      "position": "frightened",
+      "reason": "He calls our volunteers drowned prey because they wade slow. They wade slow because the water is waist-deep and the spawning beds are under it."
+    },
+    {
+      "target": "fac_drowned_fen_commons",
+      "position": "friendly",
+      "reason": "The fen is our wider family — herbalists, wardens, frog and jellyfish folk. When its bells ring, the mire answers."
+    },
+    {
+      "target": "fac_tide_ferryfolk",
+      "position": "friendly",
+      "reason": "They keep the floodgates that decide how much water the mire holds. We have never once had to ask twice."
+    }
+  ],
+  "metaphorDomain": {
+    "source": "still water, reeds, spawning, patience",
+    "examples": [
+      {
+        "key": "fac_mire_wetlands_metaphor_1",
+        "value": "Still water is not empty water.",
+        "lang": "en"
+      },
+      {
+        "key": "fac_mire_wetlands_metaphor_2",
+        "value": "A reed bends and keeps its root. That is the whole art of living here.",
+        "lang": "en"
+      }
+    ]
+  },
+  "terminology": [
+    {
+      "term": "the slow wade",
+      "meaning": {
+        "key": "fac_mire_wetlands_term_slow_wade",
+        "value": "The deliberate, careful way marsh folk move through deep water so as not to trample spawning beds. The hero reads it as a mindless shamble.",
+        "lang": "en"
+      }
+    },
+    {
+      "term": "pool season",
+      "meaning": {
+        "key": "fac_mire_wetlands_term_pool_season",
+        "value": "The spawning season, when Mirejaw's guarding is fiercest and every resident volunteers for watch duty along the pools.",
+        "lang": "en"
+      }
+    }
+  ],
+  "customs": [
+    {
+      "key": "fac_mire_wetlands_custom_watch",
+      "value": "During pool season, every able resident takes a turn on pool watch. No one is conscripted; the roster fills itself.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_mire_wetlands_custom_boundary",
+      "value": "Visitors are walked to the mire's edge and told plainly: outside the boundary, Mirejaw owes you nothing and asks nothing. Respect the line and you are safe.",
+      "lang": "en"
+    }
+  ],
+  "taboos": [
+    {
+      "key": "fac_mire_wetlands_taboo_pools",
+      "value": "Never step in a spawning pool, whatever chases you. There is no emergency that excuses crushing next year's marsh.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_mire_wetlands_taboo_mirejaw",
+      "value": "Never bait Mirejaw beyond the mire's edge. It will not follow, and pretending it will is how outsiders talk themselves into stupid deaths.",
+      "lang": "en"
+    }
+  ],
+  "tags": [
+    "faction",
+    "realm-people",
+    "sunken-mire",
+    "rung-7"
+  ]
+}

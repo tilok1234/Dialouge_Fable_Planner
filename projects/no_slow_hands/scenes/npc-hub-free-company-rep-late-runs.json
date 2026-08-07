@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "contentHash": "sha256:scene-npc-hub-free-company-rep-late-runs-v1",
+  "id": "scene_npc_hub_free_company_rep_late_runs",
+  "label": "Captain Holt, late runs — the record in monotone",
+  "sceneType": "npc-repeat-greeting",
+  "participants": [
+    {
+      "characterId": "char_hub_free_company_rep",
+      "stateId": "state_hub_free_company_rep__late_runs",
+      "relationshipIds": [
+        "rel_hub_free_company_rep__player"
+      ],
+      "role": "speaker"
+    }
+  ],
+  "boundQuestStages": [],
+  "purpose": {
+    "key": "scene_npc_hub_free_company_rep_late_runs_purpose",
+    "value": "Holt delivers the after-action record in parade-ground monotone: nothing has ever crossed the gates but the hero, every battle still starts at his border crossing, and the people he fights now drill being afraid of him.",
+    "lang": "en"
+  },
+  "requiredFacts": [
+    "fact_no_monster_ever_crossed_gates"
+  ],
+  "hintableFacts": [
+    "fact_book_is_childrens_comedy"
+  ],
+  "forbiddenRevelations": [],
+  "emotionalProgression": [
+    {
+      "order": 1,
+      "emotion": "exhausted candor",
+      "note": "No more reviews, just the record, delivered flat so nothing in it can be mistaken for rhetoric."
+    },
+    {
+      "order": 2,
+      "emotion": "grief",
+      "note": "'Evacuation drills now. When your amulet glows. That's the enemy you're fighting — people who practice being afraid of you.'"
+    }
+  ],
+  "maxLength": "short",
+  "availableChoices": [],
+  "templateDefaults": {
+    "npcGreeting": {
+      "neverValidateProphecyFraming": true,
+      "bluntIndictment": true
+    }
+  },
+  "notes": "The escalation endpoint for the border arc: professional detachment has cracked; the flatness is the feeling. Late dialogue may also name what the trophy mechanic is (he knows the full Heavy Hands / gate-seal chain): stripping badges off stretcher-bearers. The last honest attempt. The hero's reply will still be some variant of 'At last, the enemy respects me.' — that framing belongs to his side of the exchange (notes only), never to an NPC line. Never validate the hero's prophecy framing: there is no canon fact supporting 'the realms are evil', and that absence is itself the guard."
+}

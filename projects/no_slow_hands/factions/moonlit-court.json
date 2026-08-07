@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-fac-moonlit-court-v1",
+  "id": "fac_moonlit_court",
+  "name": "The Moonlit Court",
+  "summary": {
+    "key": "fac_moonlit_court_summary",
+    "value": "The Night-Elf court of ceremony, diplomacy, and performance, ruled by a young Prince trained in all three — and not in war. His mirrored combat style exists because he learns to fight by copying the protagonist: the hero is literally his first teacher of violence. The court's skeleton-knight honor guard is loaned from the Reliquary Crypt, an old gesture of friendship between the realms.",
+    "lang": "en"
+  },
+  "sharedBeliefs": [
+    "fact_realms_peaceful_ten_millennia",
+    "fact_law_of_fair_warning",
+    "fact_continuance_restores_dead",
+    "fact_night_elf_prince_is_young_diplomat",
+    "fact_reliquary_king_is_caretaker"
+  ],
+  "sharedOpinions": [
+    {
+      "target": "char_protagonist",
+      "position": "wary",
+      "reason": "He mistook a court of dancers for a war council, and now our Prince parries with the hero's own stolen forms. We grieve what our ruler is learning."
+    },
+    {
+      "target": "fac_crypt_ancestors",
+      "position": "friendly",
+      "reason": "Their knights stand our ceremonies with us, and their King taught our Prince that remembrance is a ruler's first duty."
+    },
+    {
+      "target": "fac_hub_warden",
+      "position": "sympathetic",
+      "reason": "The Warden's treaties include our oldest signatures. If anyone can make the outsider read them, it is the keeper of those records."
+    }
+  ],
+  "metaphorDomain": {
+    "source": "moonlight, ceremony, dance, mirrors",
+    "examples": [
+      {
+        "key": "fac_moonlit_court_metaphor_1",
+        "value": "A mirror shows you exactly what you bring into the room.",
+        "lang": "en"
+      },
+      {
+        "key": "fac_moonlit_court_metaphor_2",
+        "value": "Ceremony is just memory performed standing up.",
+        "lang": "en"
+      }
+    ]
+  },
+  "terminology": [
+    {
+      "term": "the mirroring",
+      "meaning": {
+        "key": "fac_moonlit_court_term_mirroring",
+        "value": "The Prince's gift for learning any art by copying a master. It was meant for dance and oratory; the hero gave it nothing else to copy.",
+        "lang": "en"
+      }
+    },
+    {
+      "term": "loaned honor",
+      "meaning": {
+        "key": "fac_moonlit_court_term_loaned_honor",
+        "value": "The skeleton-knight honor guard sent by the Reliquary Crypt for the court's great ceremonies — a standing loan between friends, never a tribute.",
+        "lang": "en"
+      }
+    }
+  ],
+  "customs": [
+    {
+      "key": "fac_moonlit_court_custom_greeting",
+      "value": "Guests are received with a short performed welcome — a verse, a step, a phrase in the guest's own tongue. Refusing to watch it is the court's one true insult.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_moonlit_court_custom_diplomacy",
+      "value": "Every dispute opens with a full restating of the other side's position, performed to their satisfaction, before any answer is given.",
+      "lang": "en"
+    }
+  ],
+  "taboos": [
+    {
+      "key": "fac_moonlit_court_taboo_violence_first",
+      "value": "Never teach a young ruler violence before ceremony. The court blames itself for letting the hero be the Prince's first fencing master.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_moonlit_court_taboo_mockery",
+      "value": "Never mock another realm's ceremonies. Diplomacy has kept ten realms at peace for ten thousand years; the court treats that record as sacred.",
+      "lang": "en"
+    }
+  ],
+  "tags": [
+    "faction",
+    "realm-people",
+    "moonlit-court",
+    "rung-8"
+  ]
+}

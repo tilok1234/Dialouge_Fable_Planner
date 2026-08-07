@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "contentHash": "sha256:scene-mirejaw-first-enc-v1",
+  "id": "scene_mirejaw_first_encounter",
+  "label": "Ancient Mirejaw first encounter",
+  "sceneType": "boss-first-encounter",
+  "participants": [
+    {
+      "characterId": "char_ancient_mirejaw",
+      "stateId": "state_ancient_mirejaw__pre_encounter",
+      "relationshipIds": [
+        "rel_ancient_mirejaw__player"
+      ],
+      "role": "speaker"
+    }
+  ],
+  "boundQuestStages": [
+    "quest_rung_07_sunken_mire__stage_2"
+  ],
+  "purpose": {
+    "key": "scene_mirejaw_first_enc_purpose",
+    "value": "Before the spawning pools, the peaceful but fiercely protective marsh guardian surfaces to issue the law's fair warning to the armed trespasser; the hero hears every word and misreads territorial care as ambush. The guardian attempts communication first; the hero misreads it as a villain's taunt.",
+    "lang": "en"
+  },
+  "requiredFacts": [
+    "fact_law_of_fair_warning"
+  ],
+  "hintableFacts": [
+    "fact_mirejaw_is_marsh_guardian"
+  ],
+  "forbiddenRevelations": [
+    "fact_book_is_childrens_comedy",
+    "fact_amulet_is_diplomatic_concord",
+    "fact_amulet_translation_is_accurate"
+  ],
+  "emotionalProgression": [
+    {
+      "order": 1,
+      "emotion": "courteous warning",
+      "note": "The guardian announces itself and its duty plainly, framed by the spawning pools."
+    },
+    {
+      "order": 2,
+      "emotion": "offended disbelief",
+      "note": "The warning was honest and complete; being ignored reads as insult."
+    }
+  ],
+  "maxLength": "medium",
+  "availableChoices": [
+    "choice_rung_07_withdraw"
+  ],
+  "templateDefaults": {
+    "bossFirstEncounter": {
+      "mustOfferMercy": true,
+      "mustNotRevealWeakness": true
+    }
+  },
+  "notes": "The scene MUST establish the guardian announcing itself and warning honestly — the law of fair warning means its attack paths will be shown, not hidden. The mercy exit (withdraw) is offered and never taken. Flavor: the spawning pools. The player's view may hint the guardian's true role; the hero must not perceive it."
+}

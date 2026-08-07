@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "contentHash": "sha256:scene-forge_titan-first-enc-v1",
+  "id": "scene_forge_titan_first_encounter",
+  "label": "Cyclops Forge-Titan first encounter",
+  "sceneType": "boss-first-encounter",
+  "participants": [
+    {
+      "characterId": "char_cyclops_forge_titan",
+      "stateId": "state_cyclops_forge_titan__pre_encounter",
+      "relationshipIds": [
+        "rel_cyclops_forge_titan__player"
+      ],
+      "role": "speaker"
+    }
+  ],
+  "boundQuestStages": [
+    "quest_epilogue_false_history__stage_2"
+  ],
+  "purpose": {
+    "key": "scene_forge_titan_first_enc_purpose",
+    "value": "Word of the ten realms' fall has reached the Cyclops Forge-Titan; it meets the hero with dread and sheer mass — and still offers the law's fair warning first.",
+    "lang": "en"
+  },
+  "requiredFacts": [
+    "fact_law_of_fair_warning"
+  ],
+  "hintableFacts": [
+    "fact_forge_titan_is_legendary_builder"
+  ],
+  "forbiddenRevelations": [
+    "fact_book_is_childrens_comedy"
+  ],
+  "emotionalProgression": [
+    {
+      "order": 1,
+      "emotion": "dread-tinged courtesy",
+      "note": "It knows exactly what happened to the ten guardians."
+    },
+    {
+      "order": 2,
+      "emotion": "resolute warning",
+      "note": "Mass and warning together: turn back, or be turned."
+    }
+  ],
+  "maxLength": "medium",
+  "availableChoices": [],
+  "templateDefaults": {
+    "bossFirstEncounter": {
+      "mustOfferMercy": true,
+      "mustNotRevealWeakness": true
+    }
+  },
+  "notes": "The bench guardians have heard what happened to the ten realms; the dread is informed, not naive. The fair warning still comes first. True role (bridge- and aqueduct-building) may be hinted to the player; the hero reads only a monster."
+}

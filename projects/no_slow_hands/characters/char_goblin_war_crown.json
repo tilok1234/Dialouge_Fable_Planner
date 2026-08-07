@@ -1,0 +1,265 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-char-goblin-war-crown-v1",
+  "id": "char_goblin_war_crown",
+  "identity": {
+    "name": "Marshal Tibbet of the Lantern Feast",
+    "species": "goblin",
+    "culture": "The Palisade Camp",
+    "factions": [
+      "fac_goblin_festival_settlement"
+    ],
+    "occupation": "Elected festival marshal and settlement protector, rung 2 of the ladder",
+    "gameplayRole": "boss",
+    "narrativeFunction": "boss",
+    "publicReputation": {
+      "key": "char_goblin_crown_reputation",
+      "value": "The elected marshal who runs the Lantern Feast, keeps the powder store dry, and holds the palisade against the wildlife of the deep woods.",
+      "lang": "en"
+    },
+    "privateReality": {
+      "key": "char_goblin_crown_private",
+      "value": "Written into a children's book as a warlord because goblin fireworks are unusually loud; the hero's journal crowns him 'the Goblin War Crown'. His kegs are fireworks and quarry charges; his palisade keeps wolves out, not armies in.",
+      "lang": "en"
+    },
+    "connections": [
+      "fact_goblin_crown_is_festival_marshal",
+      "char_protagonist"
+    ]
+  },
+  "core": {
+    "primaryDesire": {
+      "key": "char_goblin_crown_desire",
+      "value": "To give his settlement one more safe, loud, magnificent Lantern Feast — and to see every child home before the last firework.",
+      "lang": "en"
+    },
+    "primaryFear": {
+      "key": "char_goblin_crown_fear",
+      "value": "That the palisade fails on his watch — that something gets in among the families.",
+      "lang": "en"
+    },
+    "centralValue": {
+      "key": "char_goblin_crown_value",
+      "value": "A marshal's first duty is the crowd: festivals are how a small people teaches itself not to be afraid.",
+      "lang": "en"
+    },
+    "mainFlaw": {
+      "key": "char_goblin_crown_flaw",
+      "value": "He keeps treating the intruder as a guest who has wandered into the celebration, long past the point where hospitality is a survivable policy.",
+      "lang": "en"
+    },
+    "centralContradiction": {
+      "key": "char_goblin_crown_contradiction",
+      "value": "He was elected to keep the peace festive, and is being forced to spend it, keg by keg, on the one guest who will not leave.",
+      "lang": "en"
+    },
+    "moralBoundary": {
+      "key": "char_goblin_crown_boundary",
+      "value": "He will not endanger a bystander to stop the intruder, and every charge he throws shows its path first — the Law of Fair Warning holds even mid-festival.",
+      "lang": "en"
+    },
+    "breakingPoint": {
+      "key": "char_goblin_crown_breaking",
+      "value": "A threat reaching the children's lantern lines — the moment the marshal stops being a host.",
+      "lang": "en"
+    }
+  },
+  "opinions": [
+    {
+      "target": "player",
+      "targetLabel": "The intruder (the player)",
+      "position": "wary",
+      "reason": "First visit: a stranger who has entered during the Lantern Feast and must lower his weapon. Rematches: a recurring disaster with familiar boots.",
+      "confidence": "high",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Never — but the tone hardens from warm pleading to worn grief across rematches; the Continuance lets him, and the children, remember every visit.",
+      "illustrativeLine": {
+        "key": "char_goblin_crown_op_player",
+        "value": "The children recognize the sound of your boots now.",
+        "lang": "en"
+      }
+    },
+    {
+      "target": "fac_goblin_festival_settlement",
+      "targetLabel": "The Palisade Camp settlement",
+      "position": "devoted",
+      "reason": "They elected him; their lanterns are his responsibility.",
+      "confidence": "absolute",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Never.",
+      "illustrativeLine": {
+        "key": "char_goblin_crown_op_people",
+        "value": "Every lantern out there is a family that trusted me tonight.",
+        "lang": "en"
+      }
+    }
+  ],
+  "knowledge": {
+    "knows": [
+      "fact_goblin_crown_is_festival_marshal",
+      "fact_realms_peaceful_ten_millennia",
+      "fact_gates_are_diplomatic",
+      "fact_amulet_is_diplomatic_concord",
+      "fact_law_of_fair_warning",
+      "fact_continuance_restores_dead"
+    ],
+    "believesFalse": [],
+    "suspects": [
+      "fact_amulet_translation_is_accurate"
+    ],
+    "secrets": [],
+    "lies": [],
+    "unknown": [
+      "fact_book_is_childrens_comedy"
+    ]
+  },
+  "voice": {
+    "formality": "casual",
+    "directness": "direct",
+    "typicalSentenceLength": "short",
+    "rhythm": "Bustling, quick, hostly — short calls over the shoulder while doing three things at once.",
+    "vocabularyComplexity": "plain",
+    "usesContractions": true,
+    "usesHumor": "frequent",
+    "metaphorDomain": {
+      "source": "festival logistics, fireworks, kegs, lanterns, hosting",
+      "examples": [
+        {
+          "key": "char_goblin_crown_metaphor_1",
+          "value": "You're tracking mud through the best night of our year, friend.",
+          "lang": "en"
+        },
+        {
+          "key": "char_goblin_crown_metaphor_2",
+          "value": "That keg's for the sky, not for you. Shame it's busy.",
+          "lang": "en"
+        }
+      ]
+    },
+    "emotionalRestraint": "open",
+    "declarationStyle": "balanced",
+    "namesEmotionsDirectly": true,
+    "addressMode": "mixed",
+    "avoids": [
+      "warband",
+      "for the horde",
+      "kill the intruder",
+      "victory or death"
+    ],
+    "sampleLines": [
+      {
+        "key": "char_goblin_crown_sample_1",
+        "value": "Stranger, lower your weapon. You have entered during the Lantern Feast.",
+        "lang": "en"
+      },
+      {
+        "key": "char_goblin_crown_sample_2",
+        "value": "Mind the kegs! They're for the sky — fireworks and quarry charges, not whatever your book told you.",
+        "lang": "en"
+      },
+      {
+        "key": "char_goblin_crown_sample_3",
+        "value": "That palisade faces outward, friend. It's the wolves we keep out. You just happened to qualify.",
+        "lang": "en"
+      },
+      {
+        "key": "char_goblin_crown_sample_4",
+        "value": "The children recognize the sound of your boots now.",
+        "lang": "en"
+      }
+    ],
+    "antiSampleLines": [
+      {
+        "key": "char_goblin_crown_antisample_1",
+        "value": "For the horde! Burn their lands to ash! (warlord framing — he is a festival marshal, not a conqueror)",
+        "lang": "en"
+      },
+      {
+        "key": "char_goblin_crown_antisample_2",
+        "value": "I'll mount your head on the palisade! (he never threatens cruelty; he hosts, then contains)",
+        "lang": "en"
+      },
+      {
+        "key": "char_goblin_crown_antisample_3",
+        "value": "Yes, my war-crown hungers for conquest! (must never confirm the prophecy framing — he has never heard of the book)",
+        "lang": "en"
+      }
+    ]
+  },
+  "pressure": [
+    {
+      "condition": "threatened",
+      "emotion": "hostly alarm",
+      "voiceShift": "Louder, faster; keeps one eye on the crowd.",
+      "behaviour": "Phase one — greets the armed stranger as a guest mid-festival and asks him, plainly, to lower his weapon.",
+      "illustrativeLine": {
+        "key": "char_goblin_crown_pressure_threatened",
+        "value": "Stranger, lower your weapon. You have entered during the Lantern Feast.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "proven-wrong",
+      "emotion": "hurt disbelief",
+      "voiceShift": "The bustle drops out of his voice.",
+      "behaviour": "Phase two — realization that the intruder understands every plea and keeps coming; he moves the crowd first and argues second.",
+      "illustrativeLine": {
+        "key": "char_goblin_crown_pressure_wrong",
+        "value": "You hear me fine, don't you? Lanterns down, little ones inside. The guest isn't a guest.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "gaining-advantage",
+      "emotion": "professional focus",
+      "voiceShift": "Short calls, like a fireworks master running a show.",
+      "behaviour": "Containment response: throws festival fireworks and quarry charges to channel the intruder back toward the gate — every fuse shows its path first, per the Law of Fair Warning.",
+      "illustrativeLine": {
+        "key": "char_goblin_crown_pressure_advantage",
+        "value": "Watch the fuse, watch the fuse — see? Even our explosives have manners. Yours don't.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "losing-control",
+      "emotion": "stubborn protection",
+      "voiceShift": "Low, fierce, stripped of jokes.",
+      "behaviour": "Shielded phase: plants himself between the intruder and the lantern lines while the settlement empties behind him.",
+      "illustrativeLine": {
+        "key": "char_goblin_crown_pressure_shielded",
+        "value": "Stay behind me. I will hold him here.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "facing-death",
+      "emotion": "spent honesty",
+      "voiceShift": "Quiet, winded; still no cruelty in it.",
+      "behaviour": "EXPOSED window — out of breath and out of kegs, he says the plainest thing he knows.",
+      "illustrativeLine": {
+        "key": "char_goblin_crown_pressure_exposed",
+        "value": "Please… there is nothing here that belongs to you. Just stew, and songs, and us.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "defeated",
+      "emotion": "worn grief",
+      "voiceShift": "Flat, tired, older.",
+      "behaviour": "Remembers every rematch. Stops pleading with the man and speaks to the record — the tone is grief now, not hospitality.",
+      "illustrativeLine": {
+        "key": "char_goblin_crown_pressure_defeated",
+        "value": "The children recognize the sound of your boots now.",
+        "lang": "en"
+      }
+    }
+  ],
+  "tags": [
+    "boss",
+    "rung-2",
+    "palisade-camp",
+    "lantern-feast",
+    "goblin"
+  ],
+  "notes": "REAL identity: elected festival marshal. The powder kegs are fireworks and quarry charges; the palisade keeps dangerous wildlife out; the hero arrives during the Lantern Feast. The hero's label 'Goblin War Crown' comes from a children's-book caricature (goblin fireworks are unusually loud) — keep it out of identity and voice. REQUIRED LINES (lore): first visit — 'Stranger, lower your weapon. You have entered during the Lantern Feast.'; tenth visit — 'The children recognize the sound of your boots now.' The rematch arc is the point: the Continuance restores memory, so he, and the children, remember. KNOWLEDGE: never heard of the children's book (unknown); suspects the intruder understands him perfectly (fact_amulet_translation_is_accurate) once reasoning fails."
+}

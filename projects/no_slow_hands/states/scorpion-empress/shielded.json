@@ -1,0 +1,39 @@
+{
+  "id": "state_scorpion_empress__shielded",
+  "characterId": "char_scorpion_empress",
+  "label": "Shielded — the wall itself",
+  "mood": "the wall itself",
+  "location": "The desert hall, across the hatchery corridor",
+  "injuries": [
+    "Carapace starred with cracks from blows taken over the tunnel mouths"
+  ],
+  "activeQuestStages": [
+    "quest_rung_10_scorpion_empress__stage_2",
+    "quest_rung_10_scorpion_empress__stage_3"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_scorpion_empress_sh_ev1",
+      "value": "She has become the wall between the intruder and the hatchery; her voice and the evacuation bells are the only sounds in the hall.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_scorpion_empress_sh_cf1",
+      "value": "The hatchery is the one room she cannot evacuate quickly. He is walking toward it.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-scorpion-empress-shielded-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_scorpion_empress_sh_obj",
+    "value": "Hold the corridor until the burrow-cities are empty beneath her.",
+    "lang": "en"
+  },
+  "phase": "shielded"
+}

@@ -1,0 +1,265 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-char-sun-crown-griffin-v1",
+  "id": "char_sun_crown_griffin",
+  "identity": {
+    "name": "The High Roadwarden",
+    "species": "griffin",
+    "culture": "The highland march",
+    "factions": [
+      "fac_highland_roosts"
+    ],
+    "occupation": "Guardian of the highland roads, weather shepherd, protector of cliffside roosts; rung 9 of the ladder",
+    "gameplayRole": "boss",
+    "narrativeFunction": "boss",
+    "publicReputation": {
+      "key": "char_griffin_reputation",
+      "value": "The shadow on the pass that means the weather is being minded: it turns storms off the roads and travelers off the cliffs.",
+      "lang": "en"
+    },
+    "privateReality": {
+      "key": "char_griffin_private",
+      "value": "Written in the hero's journal as 'the Sun-Crown Griffin', a terror of the peaks. Its gusts normally guide travelers away from dangerous drops; against the hero it intercepts his movement only to herd him back toward the exit.",
+      "lang": "en"
+    },
+    "connections": [
+      "fact_griffin_is_road_guardian",
+      "char_protagonist"
+    ]
+  },
+  "core": {
+    "primaryDesire": {
+      "key": "char_griffin_desire",
+      "value": "Open roads and standing weather: every traveler over the pass, every roost unbothered on its cliff.",
+      "lang": "en"
+    },
+    "primaryFear": {
+      "key": "char_griffin_fear",
+      "value": "A body at the bottom of a drop it was meant to guard — the one entry in its sky-long memory it cannot weather.",
+      "lang": "en"
+    },
+    "centralValue": {
+      "key": "char_griffin_value",
+      "value": "The road is a trust: whoever walks it arrives.",
+      "lang": "en"
+    },
+    "mainFlaw": {
+      "key": "char_griffin_flaw",
+      "value": "It thinks in trajectories, not motives — it keeps solving the hero as a navigation problem long after he has proved he is something else.",
+      "lang": "en"
+    },
+    "centralContradiction": {
+      "key": "char_griffin_contradiction",
+      "value": "Its fiercest-looking maneuver — slamming down into a traveler's path — is the same move it uses to block hikers from a cliff edge. The hero experiences rescue as ambush.",
+      "lang": "en"
+    },
+    "moralBoundary": {
+      "key": "char_griffin_boundary",
+      "value": "It will not strike from a blind sky: every dive shadows its line first, per the Law of Fair Warning.",
+      "lang": "en"
+    },
+    "breakingPoint": {
+      "key": "char_griffin_breaking",
+      "value": "The intruder turning off the road toward the roosts — herding ends and the talons come out, still telegraphed.",
+      "lang": "en"
+    }
+  },
+  "opinions": [
+    {
+      "target": "player",
+      "targetLabel": "The intruder (the player)",
+      "position": "wary",
+      "reason": "A traveler walking the wrong way on purpose. First visit: a lost hiker to be turned. Rematches: weather that keeps coming back against the wind.",
+      "confidence": "high",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Never — but the tone thins from roadwarden's patience to high, cold grief; it counts his returns like storms in a season.",
+      "illustrativeLine": {
+        "key": "char_griffin_op_player",
+        "value": "Eleventh storm out of a clear sky. The road is still behind you.",
+        "lang": "en"
+      }
+    },
+    {
+      "target": "fac_highland_roosts",
+      "targetLabel": "The cliffside roosts and road travelers",
+      "position": "devoted",
+      "reason": "The roosts are its young, the roads its word; both are kept.",
+      "confidence": "absolute",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Never.",
+      "illustrativeLine": {
+        "key": "char_griffin_op_people",
+        "value": "No egg cools on my cliffs. No traveler drops on my road.",
+        "lang": "en"
+      }
+    }
+  ],
+  "knowledge": {
+    "knows": [
+      "fact_griffin_is_road_guardian",
+      "fact_realms_peaceful_ten_millennia",
+      "fact_gates_are_diplomatic",
+      "fact_amulet_is_diplomatic_concord",
+      "fact_law_of_fair_warning",
+      "fact_continuance_restores_dead"
+    ],
+    "believesFalse": [],
+    "suspects": [
+      "fact_amulet_translation_is_accurate"
+    ],
+    "secrets": [],
+    "lies": [],
+    "unknown": [
+      "fact_book_is_childrens_comedy"
+    ]
+  },
+  "voice": {
+    "formality": "neutral",
+    "directness": "very-direct",
+    "typicalSentenceLength": "terse",
+    "rhythm": "High-altitude economy: short, wind-bitten statements, dropped from a height.",
+    "vocabularyComplexity": "common",
+    "usesContractions": false,
+    "usesHumor": "never",
+    "metaphorDomain": {
+      "source": "weather, wind, altitude, roads, thermals, seasons",
+      "examples": [
+        {
+          "key": "char_griffin_metaphor_1",
+          "value": "You are walking into weather, traveler. Weather does not argue.",
+          "lang": "en"
+        },
+        {
+          "key": "char_griffin_metaphor_2",
+          "value": "A headwind is not hatred. It is a direction.",
+          "lang": "en"
+        }
+      ]
+    },
+    "emotionalRestraint": "guarded",
+    "declarationStyle": "declarative",
+    "namesEmotionsDirectly": false,
+    "addressMode": "impersonal",
+    "avoids": [
+      "my talons will tear you",
+      "the skies belong to me",
+      "prey",
+      "scream"
+    ],
+    "sampleLines": [
+      {
+        "key": "char_griffin_sample_1",
+        "value": "The road welcomed you as an envoy. It runs both ways. Take the downhill one.",
+        "lang": "en"
+      },
+      {
+        "key": "char_griffin_sample_2",
+        "value": "Watch my shadow before I dive. Everything I do over these roads is announced. It keeps travelers alive.",
+        "lang": "en"
+      },
+      {
+        "key": "char_griffin_sample_3",
+        "value": "You walk straight, so I land in front of you. That is not an attack. That is a gate.",
+        "lang": "en"
+      },
+      {
+        "key": "char_griffin_sample_4",
+        "value": "The gusts that push you down the pass are the same ones that lift fledglings off the edge. Learn the difference. Go home.",
+        "lang": "en"
+      }
+    ],
+    "antiSampleLines": [
+      {
+        "key": "char_griffin_antisample_1",
+        "value": "Scream, prey! My talons will tear you from the sky! (terror-of-the-peaks framing — it is a roadwarden, and it never hunts)",
+        "lang": "en"
+      },
+      {
+        "key": "char_griffin_antisample_2",
+        "value": "I'll drop you off the highest cliff! (it guards against exactly this; the threat is unthinkable to it)",
+        "lang": "en"
+      },
+      {
+        "key": "char_griffin_antisample_3",
+        "value": "The prophecy crowned me terror of the sun! (must never confirm the prophecy framing — it has never heard of the book)",
+        "lang": "en"
+      }
+    ]
+  },
+  "pressure": [
+    {
+      "condition": "threatened",
+      "emotion": "watchful patience",
+      "voiceShift": "None — it was already terse; the circles above simply tighten.",
+      "behaviour": "Phase one — redirects before it resists: shadows the traveler, points the downhill road, blocks the wrong turns.",
+      "illustrativeLine": {
+        "key": "char_griffin_pressure_threatened",
+        "value": "Wrong way, traveler. The pass behind you is open.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "proven-wrong",
+      "emotion": "cold comprehension",
+      "voiceShift": "Fewer words; longer silences between them.",
+      "behaviour": "Phase two — realization that the traveler understands and presses on anyway; it stops directing and starts barring.",
+      "illustrativeLine": {
+        "key": "char_griffin_pressure_wrong",
+        "value": "You hear me. You walk on anyway. Then you are not lost. You are weather.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "gaining-advantage",
+      "emotion": "herding focus",
+      "voiceShift": "Single-word warnings, like gust-calls.",
+      "behaviour": "Containment response: intercepts the hero's straight movement — slamming into his path to herd him back toward the exit, the same maneuver it uses to turn hikers from cliff edges; every dive shadows its line first.",
+      "illustrativeLine": {
+        "key": "char_griffin_pressure_advantage",
+        "value": "Shadow first. Then me. Turn.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "losing-control",
+      "emotion": "headwind resolve",
+      "voiceShift": "Low, steady, addressed to the roosts behind it.",
+      "behaviour": "Shielded phase: holds the saddle of the pass while the roosts evacuate deeper along the cliffs.",
+      "illustrativeLine": {
+        "key": "char_griffin_pressure_shielded",
+        "value": "Stay behind me. I will hold him here.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "facing-death",
+      "emotion": "thin-air plea",
+      "voiceShift": "Quiet, winded, nearly gentle.",
+      "behaviour": "EXPOSED window — winged-out from holding the pass, it says the plainest thing in its sky.",
+      "illustrativeLine": {
+        "key": "char_griffin_pressure_exposed",
+        "value": "Please… there is nothing here that belongs to you. Only road.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "defeated",
+      "emotion": "seasonal grief",
+      "voiceShift": "Soft as high wind.",
+      "behaviour": "Trusts the Continuance; marks the season and waits for the road to be walked wrong again.",
+      "illustrativeLine": {
+        "key": "char_griffin_pressure_defeated",
+        "value": "When you return, we will still ask you to leave in peace. The road will still be behind you.",
+        "lang": "en"
+      }
+    }
+  ],
+  "tags": [
+    "boss",
+    "rung-9",
+    "highland-march",
+    "roadwarden",
+    "griffin"
+  ],
+  "notes": "REAL identity: guardian of the highland roads, weather shepherd, protector of cliffside roosts. Its gusts normally guide travelers away from dangerous drops. ADAPTIVE BEHAVIOUR (lore): it intercepts the player's straight movement specifically to herd him back toward the exit — the swoop-and-wind kit is a herding protocol, and the 'shadows' that precede its dives are its telegraphs under the Law of Fair Warning. The hero's label 'Sun-Crown Griffin' is journal framing only. KNOWLEDGE: never heard of the children's book (unknown); suspects fact_amulet_translation_is_accurate once redirection fails."
+}

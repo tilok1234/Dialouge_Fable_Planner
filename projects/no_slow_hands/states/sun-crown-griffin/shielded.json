@@ -1,0 +1,39 @@
+{
+  "id": "state_sun_crown_griffin__shielded",
+  "characterId": "char_sun_crown_griffin",
+  "label": "Shielded — holding the saddle of the pass",
+  "mood": "headwind resolve",
+  "location": "The highland pass, the saddle",
+  "injuries": [
+    "Wing feathers torn from landing in his path once too often"
+  ],
+  "activeQuestStages": [
+    "quest_rung_09_highland_march__stage_2",
+    "quest_rung_09_highland_march__stage_3"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_sun_crown_griffin_sh_ev1",
+      "value": "The roosts are emptying deeper along the cliffs; it slams into his path the way it turns hikers from cliff edges, and he calls the rescue an ambush.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_sun_crown_griffin_sh_cf1",
+      "value": "Its fiercest maneuver is a rescue move; he experiences rescue as attack, every time.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-sun-crown-griffin-shielded-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_sun_crown_griffin_sh_obj",
+    "value": "Hold the saddle until the last roost is evacuated.",
+    "lang": "en"
+  },
+  "phase": "shielded"
+}

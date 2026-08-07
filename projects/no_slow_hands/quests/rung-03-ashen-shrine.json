@@ -1,0 +1,146 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-quest-rung-03-ashen-shrine-v1",
+  "id": "quest_rung_03_ashen_shrine",
+  "name": "Rung 3 — The Ashen Shrine",
+  "premise": {
+    "key": "quest_rung_03_ashen_shrine_premise",
+    "value": "The hero believes the Living Pyre, third Dread Sovereign, is a demon-flame stoking war-fires at the heart of a fire cult, and that only he can strike first. In truth, the sentient communal hearth and lighthouse that has warmed the Ashen people for millennia is being attacked inside its own shrine; every plea he hears is translated flawlessly and dismissed as manipulation.",
+    "lang": "en"
+  },
+  "objectiveTruth": "fact_living_pyre_is_communal_hearth",
+  "playerInitialKnowledge": [
+    "fact_no_monster_ever_crossed_gates"
+  ],
+  "characterKnowledge": [
+    {
+      "characterId": "char_living_pyre",
+      "knows": [
+        "fact_living_pyre_is_communal_hearth",
+        "fact_law_of_fair_warning",
+        "fact_continuance_restores_dead"
+      ]
+    }
+  ],
+  "stages": [
+    {
+      "id": "quest_rung_03_ashen_shrine__stage_0",
+      "order": 0,
+      "label": "Gate locked",
+      "entryCondition": "The previous rung's guardian has been defeated (quest_rung_02_palisade_camp__stage_3 complete); the amulet now answers this realm's gate. Cross-file unlock dependency, recorded here as natural language.",
+      "completionCondition": "The hero opens the sealed gate with the amulet, certain a Dread Sovereign waits behind it.",
+      "factsRevealedToPlayer": [],
+      "transitionsTo": [
+        "quest_rung_03_ashen_shrine__stage_1"
+      ],
+      "scenes": [],
+      "notes": "The gate is a diplomatic seal, not a prison; the amulet is an envoy's credential. The hero reads both as siege equipment."
+    },
+    {
+      "id": "quest_rung_03_ashen_shrine__stage_1",
+      "order": 1,
+      "label": "The march",
+      "entryCondition": "The gate is open; the hero steps into the Ashen Shrine.",
+      "completionCondition": "The hero fights through the sealing rooms and reaches the guardian's hall.",
+      "factsRevealedToPlayer": [
+        "fact_living_pyre_is_communal_hearth"
+      ],
+      "transitionsTo": [
+        "quest_rung_03_ashen_shrine__stage_2"
+      ],
+      "scenes": [],
+      "notes": "Rooms seal behind the hero because the inhabitants are containing him while civilians evacuate. The 'mobs' are hearth-keepers, furnace tenders, and spark-carriers shielding homes from the intruder. The optional treasure detour is the winter fuel pantry and lamp-oil stores — the hero calls everything he takes liberated treasure. The identity fact is revealed to the PLAYER through these details; the hero-character learns nothing."
+    },
+    {
+      "id": "quest_rung_03_ashen_shrine__stage_2",
+      "order": 2,
+      "label": "First encounter",
+      "entryCondition": "The hero reaches the guardian's hall.",
+      "completionCondition": "The fight resolves through all three phases: the guardian's plea to leave, the shielded defense of fleeing civilians, and the exhausted final stand.",
+      "factsRevealedToPlayer": [],
+      "transitionsTo": [
+        "quest_rung_03_ashen_shrine__stage_3"
+      ],
+      "scenes": [
+        "scene_living_pyre_first_encounter",
+        "scene_living_pyre_phase_transition"
+      ],
+      "notes": "Phase 1: the guardian reasons with him or orders him to leave. Phase 2: the guardian realizes he understands every word — the amulet's translation is perfect — and keeps coming. Shielded phase: the guardian protects civilians and buys evacuation time; the EXPOSED window is exhaustion, which the hero reads as divine judgment."
+    },
+    {
+      "id": "quest_rung_03_ashen_shrine__stage_3",
+      "order": 3,
+      "label": "Defeated",
+      "entryCondition": "The guardian is EXPOSED through exhaustion and struck down.",
+      "completionCondition": "The guardian falls; the Continuance begins reconstructing them. The hero records another kingdom 'liberated.'",
+      "factsRevealedToPlayer": [
+        "fact_continuance_restores_dead"
+      ],
+      "transitionsTo": [
+        "quest_rung_03_ashen_shrine__stage_4"
+      ],
+      "scenes": [
+        "scene_living_pyre_defeat"
+      ],
+      "notes": "The Continuance restores the body but not the peace of mind. The hero interprets the guardian's return as proof that evil is immortal."
+    },
+    {
+      "id": "quest_rung_03_ashen_shrine__stage_4",
+      "order": 4,
+      "label": "Rematch",
+      "entryCondition": "The amulet opens the gate again; the Continuance has rebuilt the guardian, who remembers everything.",
+      "completionCondition": "The guardian falls again. Repeat clears may yield the boss unique — the sacred lantern, a personally important item, not a wicked relic. The hero calls this farming evil.",
+      "factsRevealedToPlayer": [],
+      "transitionsTo": [],
+      "scenes": [
+        "scene_living_pyre_rematch"
+      ],
+      "notes": "They remember him. Its wisps dim when the amulet sounds, the way a house holds its breath. Stage graph models the first clear; re-running the dungeon re-enters quest_rung_03_ashen_shrine__stage_2 (the fight) in-engine, so this stage has no outgoing transitions."
+    }
+  ],
+  "choices": [
+    {
+      "id": "choice_rung_03_withdraw",
+      "label": {
+        "key": "choice_rung_03_withdraw",
+        "value": "Withdraw and leave this realm in peace",
+        "lang": "en"
+      },
+      "resultingStage": "quest_rung_03_ashen_shrine__stage_0",
+      "consequences": [
+        {
+          "key": "choice_rung_03_withdraw_c1",
+          "value": "The realm's warning bells stand down; under the Law of Fair Warning, the defenders let him go the moment he stops advancing.",
+          "lang": "en"
+        },
+        {
+          "key": "choice_rung_03_withdraw_c2",
+          "value": "The hero's journal records: 'The enemy retreats before me.' His framing, not the truth.",
+          "lang": "en"
+        }
+      ],
+      "variablesChanged": [
+        {
+          "key": "ashen_shrine_left_in_peace",
+          "from": "false",
+          "to": "true"
+        }
+      ],
+      "affectsCharacters": [
+        "char_living_pyre",
+        "char_protagonist"
+      ]
+    }
+  ],
+  "participatingCharacters": [
+    "char_living_pyre",
+    "char_protagonist"
+  ],
+  "tags": [
+    "quest",
+    "rung-3",
+    "boss",
+    "dramatic-irony"
+  ],
+  "notes": "playerInitialKnowledge holds only the gates fact: the 'proof' that ten thousand years of peace was really preparation. The boss-identity fact is what the hero has WRONG, so it never appears there — his delusions live in his profile's opinions, not in quest knowledge. The boss knows their own identity, the Law of Fair Warning, and the Continuance; per their profile's knowledge buckets, the boss does NOT know fact_book_is_childrens_comedy — that gap is the joke. The withdraw choice is the game's central un-taken choice: the amulet recall and the open roads always allow it, and the hero never takes it."
+}

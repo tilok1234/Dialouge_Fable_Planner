@@ -1,0 +1,38 @@
+{
+  "id": "state_ancient_mirejaw__exposed",
+  "characterId": "char_ancient_mirejaw",
+  "label": "Exposed — sinking",
+  "mood": "sinking endurance",
+  "location": "The Sunken Mire, over the deepest pools",
+  "injuries": [
+    "Spent from holding the pools; each surfacing costs more than the last"
+  ],
+  "activeQuestStages": [
+    "quest_rung_07_sunken_mire__stage_3"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_ancient_mirejaw_ex_ev1",
+      "value": "It sank below the ripple-line, slower than it rose. The intruder read the stillness as a verdict from his god.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_ancient_mirejaw_ex_cf1",
+      "value": "Still water is not empty water.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-ancient-mirejaw-exposed-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_ancient_mirejaw_ex_obj",
+    "value": "Nothing here is yours.",
+    "lang": "en"
+  },
+  "phase": "exposed"
+}

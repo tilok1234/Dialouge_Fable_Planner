@@ -1,0 +1,39 @@
+{
+  "id": "state_hub_prospector__late_runs",
+  "characterId": "char_hub_prospector",
+  "label": "Late runs — identification as indictment",
+  "mood": "exhausted candor",
+  "location": "The hub, the assay table",
+  "injuries": [],
+  "activeQuestStages": [],
+  "recentEvents": [
+    {
+      "key": "nsh_state_hub_prospector_late_ev1",
+      "value": "The latest haul, graded aloud, one name at a time: heating stone — goblin make, kept a nursery warm; memorial lamp — he will say whose shelf it sat on; a child's painted bowl — no grade.",
+      "lang": "en"
+    },
+    {
+      "key": "nsh_state_hub_prospector_late_ev2",
+      "value": "The hero asked for the appraisal values. He answered: shall I grade the portrait?",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_hub_prospector_late_cf1",
+      "value": "He calls the row of named objects 'evidence of corruption spreading'. The assay table has stopped calling them anything but what they are.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-hub-prospector-late-runs-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_hub_prospector_late_obj",
+    "value": "Name every object and its owner until the ledger of names is longer than his list of Sovereigns.",
+    "lang": "en"
+  },
+  "notes": "The escalation endpoint: identification-as-indictment, ending on 'Shall I grade the portrait?' (profile notes)."
+}

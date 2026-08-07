@@ -1,0 +1,39 @@
+{
+  "id": "state_dryad_of_nature__shielded",
+  "characterId": "char_dryad_of_nature",
+  "label": "Shielded — rooted between him and the rows",
+  "mood": "winter resolve",
+  "location": "The Verdant Ward, the nesting rows",
+  "injuries": [
+    "Bark split along one arm where she took a blow meant for a sapling"
+  ],
+  "activeQuestStages": [
+    "quest_rung_06_verdant_ward__stage_2",
+    "quest_rung_06_verdant_ward__stage_3"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_dryad_of_nature_sh_ev1",
+      "value": "Her thorns bend around the old alders and the walker calls it sorcery; the curves are the shape of her refusal to wound the Ward.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_dryad_of_nature_sh_cf1",
+      "value": "She protects the trees before herself, and he has learned to use it.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-dryad-of-nature-shielded-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_dryad_of_nature_sh_obj",
+    "value": "Hold the screen until the last nest is moved beyond the deep rows.",
+    "lang": "en"
+  },
+  "phase": "shielded"
+}

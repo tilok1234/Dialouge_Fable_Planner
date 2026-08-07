@@ -1,0 +1,37 @@
+{
+  "id": "state_ancient_mirejaw__phase_two",
+  "characterId": "char_ancient_mirejaw",
+  "label": "Phase two — the pattern registers",
+  "mood": "territorial certainty",
+  "location": "The Sunken Mire, at the spawning pools",
+  "injuries": [],
+  "activeQuestStages": [
+    "quest_rung_07_sunken_mire__stage_2"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_ancient_mirejaw_p2_ev1",
+      "value": "It showed him the bank. He looked at the bank, and kept wading. The mire does not call this malice. It calls this data.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_ancient_mirejaw_p2_cf1",
+      "value": "The boundary is the peace. He keeps crossing it.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-ancient-mirejaw-phase-two-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_ancient_mirejaw_p2_obj",
+    "value": "Rise earlier. Meet him shallower. Carry him to the bank.",
+    "lang": "en"
+  },
+  "phase": "phase-two",
+  "notes": "Deliberate deviation from the other bosses: no fact_amulet_translation_is_accurate here — per its profile it registers his presence, not his words, and the fact sits in unknown."
+}

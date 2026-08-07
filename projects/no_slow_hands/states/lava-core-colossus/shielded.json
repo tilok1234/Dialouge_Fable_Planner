@@ -1,0 +1,39 @@
+{
+  "id": "state_lava_core_colossus__shielded",
+  "characterId": "char_lava_core_colossus",
+  "label": "Shielded — frame across the forge mouth",
+  "mood": "strained duty",
+  "location": "The Molten Forge, the forge mouth",
+  "injuries": [
+    "Frame running over temperature; the presses behind it are cooling untended"
+  ],
+  "activeQuestStages": [
+    "quest_rung_05_molten_forge__stage_2",
+    "quest_rung_05_molten_forge__stage_3"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_lava_core_colossus_sh_ev1",
+      "value": "The crucible-lines pour lava boundaries where heating stones should be cooling; the furnaces are losing their temper while it holds the door.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_lava_core_colossus_sh_cf1",
+      "value": "Somewhere a field will lie untilled because the forge was busy being a fortress.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-lava-core-colossus-shielded-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_lava_core_colossus_sh_obj",
+    "value": "Hold the forge mouth until the workers and the order book are out the cooling galleries.",
+    "lang": "en"
+  },
+  "phase": "shielded"
+}

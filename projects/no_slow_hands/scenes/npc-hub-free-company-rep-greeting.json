@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "contentHash": "sha256:scene-npc-hub-free-company-rep-greeting-v1",
+  "id": "scene_npc_hub_free_company_rep_greeting",
+  "label": "Captain Holt's first greeting — the border observation",
+  "sceneType": "npc-first-greeting",
+  "participants": [
+    {
+      "characterId": "char_hub_free_company_rep",
+      "stateId": "state_hub_free_company_rep__default",
+      "relationshipIds": [
+        "rel_hub_free_company_rep__player"
+      ],
+      "role": "speaker"
+    }
+  ],
+  "boundQuestStages": [],
+  "purpose": {
+    "key": "scene_npc_hub_free_company_rep_greeting_purpose",
+    "value": "Holt gives the hero a professional's free advice: he has reviewed every engagement on the Witness Glass, and every battle begins only after the hero crosses someone else's border — every single one.",
+    "lang": "en"
+  },
+  "requiredFacts": [
+    "fact_no_monster_ever_crossed_gates"
+  ],
+  "hintableFacts": [
+    "fact_book_is_childrens_comedy"
+  ],
+  "forbiddenRevelations": [],
+  "emotionalProgression": [
+    {
+      "order": 1,
+      "emotion": "sizing-up courtesy",
+      "note": "Brave, fit, disciplined: Holt grades him like a recruit and finds one fact that matters missing."
+    },
+    {
+      "order": 2,
+      "emotion": "blunt professional advice",
+      "note": "Verdict first, evidence second: who crossed the border armed? You did. Second question: see question one."
+    },
+    {
+      "order": 3,
+      "emotion": "cold disbelief",
+      "note": "The hero hears a veteran's grudging respect for his campaign and salutes; Holt drops the 'son'."
+    }
+  ],
+  "maxLength": "short",
+  "availableChoices": [],
+  "templateDefaults": {
+    "npcGreeting": {
+      "neverValidateProphecyFraming": true
+    }
+  },
+  "notes": "Misunderstanding pair (Lore.md): 'You are causing all of this' → 'Survivor's guilt. A tragic consequence of witnessing true evil.' Holt KNOWS the book is a children's comedy and can say so in parade-ground terms; the hero files it as enemy disinformation. He knows the Heavy Hands / gate-seal chain, but that indictment is reserved for late runs — here it is the border fact only. Never validate the hero's prophecy framing: there is no canon fact supporting 'the realms are evil', and that absence is itself the guard."
+}

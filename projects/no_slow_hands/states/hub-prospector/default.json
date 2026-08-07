@@ -1,0 +1,39 @@
+{
+  "id": "state_hub_prospector__default",
+  "characterId": "char_hub_prospector",
+  "label": "Default — grading the haul",
+  "mood": "dry, concerned correction",
+  "location": "The hub, the assay table",
+  "injuries": [],
+  "activeQuestStages": [],
+  "recentEvents": [
+    {
+      "key": "nsh_state_hub_prospector_def_ev1",
+      "value": "Watched the latest run on the Glass, then graded the haul it produced: an irrigation rune, a cracked heating stone, and a piece off a memorial lamp.",
+      "lang": "en"
+    },
+    {
+      "key": "nsh_state_hub_prospector_def_ev2",
+      "value": "Told him whose tomatoes are dry because of him. He looked proud of the tomatoes.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_hub_prospector_def_cf1",
+      "value": "He hears 'irrigation rune' and answers 'concentrated evil'. Twenty years of grading, and he will not see a luster.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-hub-prospector-default-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_hub_prospector_def_obj",
+    "value": "Re-identify every 'shard' out loud, with its maker's mark, until one of the names lands.",
+    "lang": "en"
+  },
+  "notes": "Early-run era: the patient re-identification phase. He only suspects fact_banking_uses_diplomatic_network — he sees where the shards land, not the mechanism."
+}

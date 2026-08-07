@@ -1,0 +1,39 @@
+{
+  "id": "state_stash_keeper__default",
+  "characterId": "char_stash_keeper",
+  "label": "Default — filed as received",
+  "mood": "dry, precise concern",
+  "location": "The hub vault, the stash counter",
+  "injuries": [],
+  "activeQuestStages": [],
+  "recentEvents": [
+    {
+      "key": "nsh_state_stash_keeper_def_ev1",
+      "value": "Catalogued his latest banking: four bowls, a stuffed rabbit, six fishing hooks, and a portrait of somebody's grandmother — seized instruments of evil, per the sender.",
+      "lang": "en"
+    },
+    {
+      "key": "nsh_state_stash_keeper_def_ev2",
+      "value": "Watched the run that produced them on the Glass. The previous owners cannot reach this vault. She notes that he knows that.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_stash_keeper_def_cf1",
+      "value": "He banks stolen crockery and calls it a war chest. She has the ledger.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-stash-keeper-default-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_stash_keeper_def_obj",
+    "value": "Ask the discrepancy question at every deposit: file it under 'instruments of evil', or under 'bowl'?",
+    "lang": "en"
+  },
+  "notes": "Early-run era: the dry discrepancy-question phase. She knows fact_banking_uses_diplomatic_network — the vault is where banked goods land."
+}

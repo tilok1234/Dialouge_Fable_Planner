@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-rel-hub-warden-player-v1",
+  "id": "rel_hub_warden__player",
+  "partyA": "char_hub_warden",
+  "partyB": "player",
+  "dimensions": {
+    "trust": -10,
+    "respect": 10,
+    "affection": 5,
+    "fear": 10,
+    "suspicion": 25,
+    "debt": 0
+  },
+  "namedState": "concerned-correction",
+  "history": [
+    {
+      "event": {
+        "key": "rel_hub_warden_h1",
+        "value": "She showed him the treaty archive — four thousand years, signed on both sides — and his own book, filed under children's comedy, third shelf. He called it a clever disguise placed over forbidden prophecy.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -10,
+        "suspicion": 15
+      }
+    },
+    {
+      "event": {
+        "key": "rel_hub_warden_h2",
+        "value": "He thanked her for her courage in keeping records 'despite the enemy's deceptions', and left to open another gate. She logged the visit, and what the Glass showed after it, in the same ledger as the treaties.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "respect": 10,
+        "affection": 5,
+        "fear": 10,
+        "suspicion": 10
+      }
+    }
+  ],
+  "notes": "Modeled at the EARLY/default state: gentle correction — treaties, the book on the children's shelf, 'You may have misunderstood what those gates are.' Escalation baked in per profile: mid-arc she states what he did, plainly, from the record; late-runs she stops correcting and starts testifying ('You entered a bakery and killed everyone who tried to protect the ovens'). She watches the Witness Glass daily and files what she sees, so her suspicion 25 is the second-highest in the hub after the stash-keeper's. Respect 10 is real: the protagonist is brave and courteous, and that is the horror. Softens only if he stops opening gates. Deltas sum to current dimensions."
+}

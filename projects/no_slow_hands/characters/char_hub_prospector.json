@@ -1,0 +1,230 @@
+{
+  "version": 1,
+  "contentHash": "sha256:char-prospector-pell-v1",
+  "id": "char_hub_prospector",
+  "identity": {
+    "name": "Joren Pell",
+    "species": "human",
+    "culture": "prospector's guild, third generation",
+    "factions": [
+      "fac_hub_prospectors"
+    ],
+    "occupation": "Prospector representative; surveys and identifies what comes back through the gates",
+    "gameplayRole": "other",
+    "narrativeFunction": "represent-faction-worldview",
+    "publicReputation": {
+      "key": "char_prospector_hub_reputation",
+      "value": "The man you bring a strange rock to; he will tell you what it is, where it came from, and usually whose it was.",
+      "lang": "en"
+    },
+    "privateReality": {
+      "key": "char_prospector_hub_private",
+      "value": "Every 'dark shard' the hero banks lands on his table, and every one is somebody's heating stone or irrigation rune. He has stopped needing the lens to identify them.",
+      "lang": "en"
+    },
+    "connections": [
+      "fact_shards_are_domestic_magic",
+      "fact_witness_glass_observes_realms",
+      "char_hub_warden",
+      "char_hub_smith"
+    ]
+  },
+  "core": {
+    "primaryDesire": {
+      "key": "char_prospector_hub_desire",
+      "value": "To get the hero to hold one shard still long enough to see it is a broken heating stone, not concentrated evil.",
+      "lang": "en"
+    },
+    "primaryFear": {
+      "key": "char_prospector_hub_fear",
+      "value": "That the realms' domestic magic is being strip-mined one murder at a time and everyone outside is calling it loot.",
+      "lang": "en"
+    },
+    "centralValue": {
+      "key": "char_prospector_hub_value",
+      "value": "A thing is what it is. Name it wrong and you will use it wrong.",
+      "lang": "en"
+    },
+    "mainFlaw": {
+      "key": "char_prospector_hub_flaw",
+      "value": "He treats a moral catastrophe as an identification problem, and gets so absorbed in the lens work that he forgets to be horrified out loud.",
+      "lang": "en"
+    },
+    "centralContradiction": {
+      "key": "char_prospector_hub_contradiction",
+      "value": "The hero is the best source of specimens the guild has ever had, and every specimen is evidence of a crime.",
+      "lang": "en"
+    },
+    "moralBoundary": {
+      "key": "char_prospector_hub_boundary",
+      "value": "He will not buy, grade, or price a shard he can trace to a specific home — identification is where he draws the line.",
+      "lang": "en"
+    },
+    "breakingPoint": {
+      "key": "char_prospector_hub_breaking",
+      "value": "Identifying a memorial-lamp fragment still warm, with the family's mark on it, and having the hero ask what it grades at.",
+      "lang": "en"
+    }
+  },
+  "opinions": [
+    {
+      "target": "player",
+      "targetLabel": "The hero",
+      "position": "wary",
+      "reason": "A reliable supplier of other people's broken household magic who calls it 'concentrated evil' to his face.",
+      "confidence": "high",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Escalates with run count: early, he patiently re-identifies every shard; mid-arc he names the original owner of each piece; late-arc he sets the shards out in a row and makes the hero walk past them. Softens only if the hero ever hands one back.",
+      "illustrativeLine": {
+        "key": "char_prospector_hub_opinion_player",
+        "value": "That is not a dark shard, friend. That is an irrigation rune. Somebody's tomatoes are dry because of you.",
+        "lang": "en"
+      }
+    },
+    {
+      "target": "char_hub_smith",
+      "targetLabel": "Hetta Cole, the smith",
+      "position": "friendly",
+      "reason": "She can re-set the charms he identifies; between them they have quietly repaired more of the realms' magic than the hero will ever break.",
+      "confidence": "high",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "If she ever tells him to stop sending her pieces, he would respect it."
+    },
+    {
+      "target": "concept_the_guild",
+      "targetLabel": "The prospectors' guild",
+      "position": "sympathetic",
+      "reason": "Honest trade built on honest naming; the hero is stress-testing both.",
+      "confidence": "high",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "If the guild votes to profit from the hero's haul, he would resign his seat."
+    }
+  ],
+  "knowledge": {
+    "knows": [
+      "fact_witness_glass_observes_realms",
+      "fact_realms_peaceful_ten_millennia",
+      "fact_no_monster_ever_crossed_gates",
+      "fact_book_is_childrens_comedy",
+      "fact_shards_are_domestic_magic"
+    ],
+    "believesFalse": [],
+    "suspects": [
+      "fact_banking_uses_diplomatic_network"
+    ],
+    "secrets": [],
+    "lies": [],
+    "unknown": []
+  },
+  "voice": {
+    "formality": "casual",
+    "directness": "very-direct",
+    "typicalSentenceLength": "short",
+    "rhythm": "Brisk and practical; talks while examining, verdict delivered without looking up.",
+    "vocabularyComplexity": "common",
+    "usesContractions": true,
+    "usesHumor": "dry",
+    "metaphorDomain": {
+      "source": "stone, grain, luster, tools, and honest naming",
+      "examples": [
+        {
+          "key": "char_prospector_hub_metaphor_1",
+          "value": "Call a heating stone 'evil' all you like. It will still just warm the room.",
+          "lang": "en"
+        }
+      ]
+    },
+    "emotionalRestraint": "measured",
+    "declarationStyle": "declarative",
+    "namesEmotionsDirectly": false,
+    "addressMode": "by-name",
+    "avoids": [
+      "concentrated evil",
+      "destiny",
+      "cursed",
+      "dark power"
+    ],
+    "sampleLines": [
+      {
+        "key": "char_prospector_hub_sample_1",
+        "value": "Heating stone. Cracked. Three winters old, goblin make, decent work. Your 'concentrated evil' kept a nursery warm.",
+        "lang": "en"
+      },
+      {
+        "key": "char_prospector_hub_sample_2",
+        "value": "I've graded stones for twenty years. Evil doesn't have a luster, friend. But this has a maker's mark.",
+        "lang": "en"
+      },
+      {
+        "key": "char_prospector_hub_sample_3",
+        "value": "That one came off a memorial lamp. I won't grade it. I'm telling you whose shelf it sat on.",
+        "lang": "en"
+      }
+    ],
+    "antiSampleLines": [
+      {
+        "key": "char_prospector_hub_antisample_1",
+        "value": "Ah yes, these dark shards hum with delicious wickedness!",
+        "lang": "en"
+      },
+      {
+        "key": "char_prospector_hub_antisample_2",
+        "value": "Brave hero! Sell me your cursed treasures for a mighty price!",
+        "lang": "en"
+      }
+    ]
+  },
+  "pressure": [
+    {
+      "condition": "proven-wrong",
+      "emotion": "unbothered",
+      "voiceShift": "Shrugs it into the ledger.",
+      "behaviour": "Re-identifies on the spot; being wrong about a stone is fine, being wrong about whose it was is not.",
+      "illustrativeLine": {
+        "key": "char_prospector_hub_pressure_wrong",
+        "value": "Huh. Irrigation rune, not heating stone. Still someone's. That's the part that doesn't change.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "betrayed",
+      "emotion": "flat anger",
+      "voiceShift": "Drops the banter; names owners instead of materials.",
+      "behaviour": "When the hero hears 'irrigation rune' and answers 'evil artifact', Joren stops correcting and starts reciting provenance.",
+      "illustrativeLine": {
+        "key": "char_prospector_hub_pressure_betrayed",
+        "value": "You heard me say 'heating stone' and wrote 'demon ember' in that journal, didn't you.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "speaking-to-required-but-hated",
+      "emotion": "grieving bluntness",
+      "voiceShift": "Slower; lays each shard down one at a time as he names it.",
+      "behaviour": "Late-runs posture: performs identification as indictment — a row of objects and the homes they came from.",
+      "illustrativeLine": {
+        "key": "char_prospector_hub_pressure_late",
+        "value": "Bowl. Toy. Fishing hook. Family portrait. Heating stone. That is your hoard, friend. Shall I grade the portrait?",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "praised",
+      "emotion": "wary",
+      "voiceShift": "Suspicious of where the compliment is heading.",
+      "behaviour": "Accepts praise for the lens work only if it is not a preface to 'so what are these evil shards worth'.",
+      "illustrativeLine": {
+        "key": "char_prospector_hub_pressure_praised",
+        "value": "If the next words are 'so what's it worth', we're done being friendly.",
+        "lang": "en"
+      }
+    }
+  ],
+  "tags": [
+    "hub",
+    "prospector",
+    "faction-representative",
+    "human"
+  ],
+  "notes": "One of the five key NPCs that will receive `default` and `late-runs` states: `default` is the patient re-identification phase ('That is not a dark shard, friend — that is an irrigation rune'); `late-runs` is identification-as-indictment (the row of named objects ending 'Shall I grade the portrait?'). Both are baked into the player opinion's canChangeCondition and the pressure profile. He only suspects fact_banking_uses_diplomatic_network — he sees where the shards land, not the mechanism."
+}

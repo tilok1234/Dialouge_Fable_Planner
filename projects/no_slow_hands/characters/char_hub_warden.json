@@ -1,0 +1,229 @@
+{
+  "version": 1,
+  "contentHash": "sha256:char-warden-merrow-v1",
+  "id": "char_hub_warden",
+  "identity": {
+    "name": "Warden Talia Merrow",
+    "species": "human",
+    "culture": "hub-born; the Wardens' treaty-keeping tradition",
+    "factions": [
+      "fac_hub_warden"
+    ],
+    "occupation": "Warden representative and keeper of the gate treaties",
+    "gameplayRole": "other",
+    "narrativeFunction": "represent-faction-worldview",
+    "publicReputation": {
+      "key": "char_warden_reputation",
+      "value": "The polite archivist by the gates who will happily show you four thousand years of treaties, in order.",
+      "lang": "en"
+    },
+    "privateReality": {
+      "key": "char_warden_private",
+      "value": "She watches the Witness Glass every day and files what she sees, because a treaty-keeper's job is evidence — and the evidence is becoming unbearable.",
+      "lang": "en"
+    },
+    "connections": [
+      "fact_witness_glass_observes_realms",
+      "fact_no_monster_ever_crossed_gates",
+      "fact_gates_are_diplomatic",
+      "char_hub_circle_voice"
+    ]
+  },
+  "core": {
+    "primaryDesire": {
+      "key": "char_warden_desire",
+      "value": "To hand the hero the treaty archive and watch him understand what the gates actually are.",
+      "lang": "en"
+    },
+    "primaryFear": {
+      "key": "char_warden_fear",
+      "value": "That the Wardens' records will one day exist only to document a catastrophe nobody stopped.",
+      "lang": "en"
+    },
+    "centralValue": {
+      "key": "char_warden_value",
+      "value": "The record does not lie. Show people the record, and they will do the right thing.",
+      "lang": "en"
+    },
+    "mainFlaw": {
+      "key": "char_warden_flaw",
+      "value": "She believes evidence is an argument, and keeps offering documents to a man who reads nothing but his own journal.",
+      "lang": "en"
+    },
+    "centralContradiction": {
+      "key": "char_warden_contradiction",
+      "value": "She is the best-evidenced person in the hub, and evidence is the one thing that has never once worked.",
+      "lang": "en"
+    },
+    "moralBoundary": {
+      "key": "char_warden_boundary",
+      "value": "She will not falsify, hide, or 'improve' a record — not even to make the case against the hero stronger.",
+      "lang": "en"
+    },
+    "breakingPoint": {
+      "key": "char_warden_breaking",
+      "value": "Being forced to log an atrocity in the same ledger that holds the peace treaties, on adjacent pages.",
+      "lang": "en"
+    }
+  },
+  "opinions": [
+    {
+      "target": "player",
+      "targetLabel": "The hero",
+      "position": "wary",
+      "reason": "He has the amulet of an envoy and the reading habits of a arsonist; she still hopes the treaties will reach him.",
+      "confidence": "high",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Escalates with run count: early, she corrects him gently ('You may have misunderstood what those gates are'); mid-arc she states what he did, plainly, from the record; late-arc she stops correcting and starts testifying. Softens only if he stops opening gates.",
+      "illustrativeLine": {
+        "key": "char_warden_opinion_player",
+        "value": "You may have misunderstood what those gates are. They are doors. Ours. And you keep breaking them.",
+        "lang": "en"
+      }
+    },
+    {
+      "target": "char_hub_circle_voice",
+      "targetLabel": "Ilsa Roon of the Circle",
+      "position": "friendly",
+      "reason": "Ilsa says the feelings part that the record cannot; between them they cover the whole truth.",
+      "confidence": "high",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "If Ilsa ever asks her to stop showing the hero the archive, she would — and she would hate it."
+    },
+    {
+      "target": "concept_the_witness_glass",
+      "targetLabel": "The Witness Glass",
+      "position": "devoted",
+      "reason": "It is the difference between testimony and rumor; she trusts it more than her own memory.",
+      "confidence": "absolute",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Never, short of proof the Glass itself has been tampered with."
+    }
+  ],
+  "knowledge": {
+    "knows": [
+      "fact_witness_glass_observes_realms",
+      "fact_realms_peaceful_ten_millennia",
+      "fact_no_monster_ever_crossed_gates",
+      "fact_gates_are_diplomatic",
+      "fact_book_is_childrens_comedy",
+      "fact_amulet_is_diplomatic_concord"
+    ],
+    "believesFalse": [],
+    "suspects": [],
+    "secrets": [],
+    "lies": [],
+    "unknown": []
+  },
+  "voice": {
+    "formality": "formal",
+    "directness": "direct",
+    "typicalSentenceLength": "medium",
+    "rhythm": "Precise and unhurried; cites before she concludes, like someone reading the minute before the verdict.",
+    "vocabularyComplexity": "educated",
+    "usesContractions": false,
+    "usesHumor": "dry",
+    "metaphorDomain": {
+      "source": "archives, ledgers, seals, signatures, and precedents",
+      "examples": [
+        {
+          "key": "char_warden_metaphor_1",
+          "value": "Grief is also a record. Someone has to keep it straight.",
+          "lang": "en"
+        }
+      ]
+    },
+    "emotionalRestraint": "guarded",
+    "declarationStyle": "declarative",
+    "namesEmotionsDirectly": false,
+    "addressMode": "by-title",
+    "avoids": [
+      "epic",
+      "destiny",
+      "chosen one",
+      "by the gods"
+    ],
+    "sampleLines": [
+      {
+        "key": "char_warden_sample_1",
+        "value": "Four thousand years of treaties. Signed on both sides. Nothing has ever come through those gates, and I can show you the pages.",
+        "lang": "en"
+      },
+      {
+        "key": "char_warden_sample_2",
+        "value": "Your book is filed in our archive under children's comedy, third shelf. I can show you that page too.",
+        "lang": "en"
+      },
+      {
+        "key": "char_warden_sample_3",
+        "value": "You entered a bakery and killed everyone who tried to protect the ovens. That is not my interpretation. It is the record.",
+        "lang": "en"
+      }
+    ],
+    "antiSampleLines": [
+      {
+        "key": "char_warden_antisample_1",
+        "value": "Oh mighty hero, the prophecy has foretold your coming!",
+        "lang": "en"
+      },
+      {
+        "key": "char_warden_antisample_2",
+        "value": "Begone, foul villain, or face the Wardens' wrath!",
+        "lang": "en"
+      }
+    ]
+  },
+  "pressure": [
+    {
+      "condition": "proven-wrong",
+      "emotion": "quietly shaken",
+      "voiceShift": "Pauses; re-checks the record before answering.",
+      "behaviour": "If the record is wrong she corrects it on the spot; it has never yet been wrong about the hero.",
+      "illustrativeLine": {
+        "key": "char_warden_pressure_proven_wrong",
+        "value": "Let me check the entry. ... No. The entry stands.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "betrayed",
+      "emotion": "cold disappointment",
+      "voiceShift": "Formality hardens; no humor at all.",
+      "behaviour": "When the hero twists her evidence into praise of himself, she stops offering documents and starts quoting him back to himself.",
+      "illustrativeLine": {
+        "key": "char_warden_pressure_betrayed",
+        "value": "I will note that you heard the treaty read aloud and called it a war chant.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "speaking-to-required-but-hated",
+      "emotion": "grieving bluntness",
+      "voiceShift": "Shorter sentences; citations replaced by plain statements of what she watched.",
+      "behaviour": "Late-runs posture: no longer corrects him, testifies at him; treats each meeting as a deposition.",
+      "illustrativeLine": {
+        "key": "char_warden_pressure_late",
+        "value": "They have begun holding evacuation drills whenever your amulet starts glowing. That is also in the record now.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "praised",
+      "emotion": "uncomfortable",
+      "voiceShift": "Deflects to the archive.",
+      "behaviour": "Refuses any framing of herself as brave; credits the people who wrote the treaties.",
+      "illustrativeLine": {
+        "key": "char_warden_pressure_praised",
+        "value": "Do not thank me. Thank four thousand years of people who kept their word.",
+        "lang": "en"
+      }
+    }
+  ],
+  "tags": [
+    "hub",
+    "warden",
+    "faction-representative",
+    "human"
+  ],
+  "notes": "One of the five key NPCs that will receive `default` and `late-runs` states: the `default` state is the gentle correction phase (treaties, the book on the children's shelf); the `late-runs` state is testimony mode — 'You entered a bakery and killed everyone who tried to protect the ovens' and 'They have begun holding evacuation drills whenever your amulet starts glowing' are her late lines. Both are baked into the player opinion's canChangeCondition and the pressure profile, so the two states read as one continuous arc, not a personality swap."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "state_protagonist__default",
+  "characterId": "char_protagonist",
+  "label": "Default — mid-campaign certainty",
+  "mood": "righteous resolve",
+  "location": "The hub, between invasions",
+  "injuries": [],
+  "activeQuestStages": [],
+  "recentEvents": [
+    {
+      "key": "nsh_state_protagonist_def_ev1",
+      "value": "Liberated another realm from its Dread Sovereign — his framing; the survivors' grief he reads as survivor's guilt, a tragic consequence of witnessing true evil.",
+      "lang": "en"
+    },
+    {
+      "key": "nsh_state_protagonist_def_ev2",
+      "value": "The hub's concerned faces only confirm how much they need him to remain strong for all of them.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_protagonist_def_cf1",
+      "value": "Everyone he trusts begs him to stop; he hears fear, corruption, or admiration for his sacrifice — never the words themselves.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-protagonist-default-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_protagonist_def_obj",
+    "value": "Reach the next Dread Sovereign before the ten can finish gathering their strength.",
+    "lang": "en"
+  },
+  "notes": "He hears every plea verbatim (fact_amulet_translation_is_accurate is in his knows bucket) and reinterprets all of it. activeQuestStages is empty because his arc spans all ten rungs. factsLearned is deliberately empty: learning is the one thing he does not do."
+}

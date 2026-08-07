@@ -1,0 +1,39 @@
+{
+  "id": "state_hub_warden__late_runs",
+  "characterId": "char_hub_warden",
+  "label": "Late runs — testimony mode",
+  "mood": "exhausted candor",
+  "location": "The hub, the treaty archive by the Witness Glass",
+  "injuries": [],
+  "activeQuestStages": [],
+  "recentEvents": [
+    {
+      "key": "nsh_state_hub_warden_late_ev1",
+      "value": "You entered a bakery and killed everyone who tried to protect the ovens. That is not her interpretation; it is the record, and she reads it to him from the treaty desk.",
+      "lang": "en"
+    },
+    {
+      "key": "nsh_state_hub_warden_late_ev2",
+      "value": "They have begun holding evacuation drills whenever his amulet starts glowing. He called that respect.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_hub_warden_late_cf1",
+      "value": "Four thousand years of treaties could not reach him. She has stopped offering the pages and started reading the charges.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-hub-warden-late-runs-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_hub_warden_late_obj",
+    "value": "Stop correcting and start testifying: the record, read aloud, every visit.",
+    "lang": "en"
+  },
+  "notes": "The escalation endpoint: both canonical late lines ('a bakery', 'evacuation drills') are hers. One continuous arc with the default state, not a personality swap (profile notes)."
+}

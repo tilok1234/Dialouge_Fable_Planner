@@ -1,0 +1,39 @@
+{
+  "id": "state_night_elf_prince__shielded",
+  "characterId": "char_night_elf_prince",
+  "label": "Shielded — holding the ballroom door",
+  "mood": "gracious desperation",
+  "location": "The Moonlit Court, the ballroom door",
+  "injuries": [
+    "A torn shoulder from a copied lunge his tutors never drilled"
+  ],
+  "activeQuestStages": [
+    "quest_rung_08_moonlit_court__stage_2",
+    "quest_rung_08_moonlit_court__stage_3"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_night_elf_prince_sh_ev1",
+      "value": "The honor guard reforms behind him while the ballroom empties; he is dueling the intruder with the intruder's own kit, copied mid-fight.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_night_elf_prince_sh_cf1",
+      "value": "Every duel makes him better at the one thing his realm never wanted him to know.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-night-elf-prince-shielded-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_night_elf_prince_sh_obj",
+    "value": "Hold the door until the moon-gallery is empty.",
+    "lang": "en"
+  },
+  "phase": "shielded"
+}

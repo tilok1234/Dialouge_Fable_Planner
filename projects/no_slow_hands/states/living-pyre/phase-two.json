@@ -1,0 +1,39 @@
+{
+  "id": "state_living_pyre__phase_two",
+  "characterId": "char_living_pyre",
+  "label": "Phase two — understood and ignored",
+  "mood": "banked sorrow",
+  "location": "The Ashen Shrine, the great hearth",
+  "injuries": [],
+  "activeQuestStages": [
+    "quest_rung_03_ashen_shrine__stage_2"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_living_pyre_p2_ev1",
+      "value": "It offered him warmth and the lit door; he heard the offer perfectly and called the supper-wisps weapons.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [
+    "fact_amulet_translation_is_accurate"
+  ],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_living_pyre_p2_cf1",
+      "value": "It is heard, and ignored. A draft does not hate the fire; it merely kills it.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-living-pyre-phase-two-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_living_pyre_p2_obj",
+    "value": "Stop spending warmth on him; spend it shielding the shrine.",
+    "lang": "en"
+  },
+  "phase": "phase-two",
+  "notes": "Its realization line is the canonical 'You understand every word I say, don't you?' — the suspects-bucket entry confirmed."
+}

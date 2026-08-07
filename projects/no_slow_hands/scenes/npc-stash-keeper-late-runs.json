@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "contentHash": "sha256:scene-npc-stash-keeper-late-runs-v1",
+  "id": "scene_npc_stash_keeper_late_runs",
+  "label": "Calloway, late runs — the full inventory, read aloud",
+  "sceneType": "npc-repeat-greeting",
+  "participants": [
+    {
+      "characterId": "char_stash_keeper",
+      "stateId": "state_stash_keeper__late_runs",
+      "relationshipIds": [
+        "rel_stash_keeper__player"
+      ],
+      "role": "speaker"
+    }
+  ],
+  "boundQuestStages": [],
+  "purpose": {
+    "key": "scene_npc_stash_keeper_late_runs_purpose",
+    "value": "Calloway reads the complete vault inventory aloud in full catalog language — procedure as protest: the diplomatic banking network is still holding the hero's haul, and every 'instrument of evil' gets its honest name, at length, while he stands there.",
+    "lang": "en"
+  },
+  "requiredFacts": [
+    "fact_banking_uses_diplomatic_network"
+  ],
+  "hintableFacts": [],
+  "forbiddenRevelations": [],
+  "emotionalProgression": [
+    {
+      "order": 1,
+      "emotion": "exhausted candor",
+      "note": "'Vault contents, in full, as of this morning. I will read them. You will stand there. It is the only part of my job I have changed.'"
+    },
+    {
+      "order": 2,
+      "emotion": "grieving precision",
+      "note": "Every item gets its full description, no abbreviations — the list doesn't lie, and the list is what's true."
+    }
+  ],
+  "maxLength": "short",
+  "availableChoices": [],
+  "templateDefaults": {
+    "npcGreeting": {
+      "neverValidateProphecyFraming": true,
+      "bluntIndictment": true
+    }
+  },
+  "notes": "The escalation endpoint for the ledger arc: the dry discrepancy question has become the whole ledger, read aloud without being asked. She still never mislabels an item, and she still only suspects the book's genre — no book reference even now. The last honest attempt. The hero's reply will still be some variant of 'At last, the enemy respects me.' — that framing belongs to his side of the exchange (notes only), never to an NPC line. Never validate the hero's prophecy framing: there is no canon fact supporting 'the realms are evil', and that absence is itself the guard."
+}

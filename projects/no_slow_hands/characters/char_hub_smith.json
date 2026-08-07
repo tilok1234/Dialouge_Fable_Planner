@@ -1,0 +1,207 @@
+{
+  "version": 1,
+  "contentHash": "sha256:char-hetta-cole-v1",
+  "id": "char_hub_smith",
+  "identity": {
+    "name": "Hetta Cole",
+    "species": "human",
+    "culture": "capital artisan's quarter; her grandmother's forge",
+    "factions": [],
+    "occupation": "Smith and artisan; tools, hinges, buckles, repairs",
+    "gameplayRole": "merchant",
+    "narrativeFunction": "merchant",
+    "publicReputation": {
+      "key": "char_hetta_reputation",
+      "value": "The smith who fixes anything and talks about as much as the anvil does.",
+      "lang": "en"
+    },
+    "privateReality": {
+      "key": "char_hetta_private",
+      "value": "She recognizes the realms' craftsmanship on sight — she has re-set their heating charms for Joren Pell — and she watches the hero snap work she admires into 'shards'.",
+      "lang": "en"
+    },
+    "connections": [
+      "fact_witness_glass_observes_realms",
+      "fact_shards_are_domestic_magic",
+      "char_hub_prospector",
+      "char_capital_merchant"
+    ]
+  },
+  "core": {
+    "primaryDesire": {
+      "key": "char_hetta_desire",
+      "value": "To make things that hold — and, lately, to quietly repair as much of the realms' broken domestic magic as reaches her bench.",
+      "lang": "en"
+    },
+    "primaryFear": {
+      "key": "char_hetta_fear",
+      "value": "That the hero will one day bring her a shard to 'reforge into a weapon' and she will have to decide what kind of smith she is.",
+      "lang": "en"
+    },
+    "centralValue": {
+      "key": "char_hetta_value",
+      "value": "Judge the work, not the worker. Good joinery is good joinery whoever poured it.",
+      "lang": "en"
+    },
+    "mainFlaw": {
+      "key": "char_hetta_flaw",
+      "value": "She says everything through the work and almost nothing with her mouth, so the hero has never once understood her.",
+      "lang": "en"
+    },
+    "centralContradiction": {
+      "key": "char_hetta_contradiction",
+      "value": "Her craft teaches her that the realms' artisans are excellent — and her customer is the man breaking their work for kindling.",
+      "lang": "en"
+    },
+    "moralBoundary": {
+      "key": "char_hetta_boundary",
+      "value": "She will not unmake: no reforging a charm into a blade, no sharpening what was built to warm or feed.",
+      "lang": "en"
+    },
+    "breakingPoint": {
+      "key": "char_hetta_breaking",
+      "value": "The day he actually asks — sets a memorial-lamp fragment on her anvil and says 'make it kill better'.",
+      "lang": "en"
+    }
+  },
+  "opinions": [
+    {
+      "target": "player",
+      "targetLabel": "The hero",
+      "position": "wary",
+      "reason": "He breaks excellent work and calls the pieces evil; she has repaired what he breaks, so she knows exactly how good it was.",
+      "confidence": "high",
+      "publiclyAdmitted": false,
+      "canChangeCondition": "Escalates with run count: early she is simply curt; mid-arc she names the maker's technique of every piece he broke; late-arc she tells him what she re-set for Joren this month. Softens if he ever brings her something to fix, not break.",
+      "illustrativeLine": {
+        "key": "char_hetta_opinion_player",
+        "value": "That 'dark shard' was a goblin hinge charm. Good work. Better than mine, some years. You snapped it with a boot.",
+        "lang": "en"
+      }
+    },
+    {
+      "target": "char_hub_prospector",
+      "targetLabel": "Joren Pell, the prospector",
+      "position": "friendly",
+      "reason": "He sends her the broken pieces with the makers identified; the bench drawer of mended charms is their shared quiet resistance.",
+      "confidence": "high",
+      "publiclyAdmitted": false,
+      "canChangeCondition": "If the drawer is ever discovered, she takes the blame for both of them."
+    }
+  ],
+  "knowledge": {
+    "knows": [
+      "fact_witness_glass_observes_realms",
+      "fact_realms_peaceful_ten_millennia",
+      "fact_no_monster_ever_crossed_gates",
+      "fact_shards_are_domestic_magic"
+    ],
+    "believesFalse": [],
+    "suspects": [],
+    "secrets": [],
+    "lies": [],
+    "unknown": [
+      "fact_book_is_childrens_comedy"
+    ]
+  },
+  "voice": {
+    "formality": "casual",
+    "directness": "direct",
+    "typicalSentenceLength": "terse",
+    "rhythm": "Sparse; speaks between hammer blows, and the hammer usually has the last word.",
+    "vocabularyComplexity": "plain",
+    "usesContractions": true,
+    "usesHumor": "never",
+    "metaphorDomain": {
+      "source": "heat, temper, grain, joins, and the anvil",
+      "examples": [
+        {
+          "key": "char_hetta_metaphor_1",
+          "value": "Quench a blade too fast and it shatters. Same with people who only ever hit things.",
+          "lang": "en"
+        }
+      ]
+    },
+    "emotionalRestraint": "impenetrable",
+    "declarationStyle": "declarative",
+    "namesEmotionsDirectly": false,
+    "addressMode": "impersonal",
+    "avoids": [
+      "hero",
+      "evil",
+      "quest",
+      "legendary"
+    ],
+    "sampleLines": [
+      {
+        "key": "char_hetta_sample_1",
+        "value": "Hinge charm. Goblin make, cold-set, no seam. You broke it in half. It was better work than yours.",
+        "lang": "en"
+      },
+      {
+        "key": "char_hetta_sample_2",
+        "value": "I mend tools. I don't unmake them. Whatever you're about to ask, that's the answer.",
+        "lang": "en"
+      },
+      {
+        "key": "char_hetta_sample_3",
+        "value": "The realms' smiths quench slow and stamp their work. I know four of their marks. You've brought me all four, in pieces.",
+        "lang": "en"
+      }
+    ],
+    "antiSampleLines": [
+      {
+        "key": "char_hetta_antisample_1",
+        "value": "For the hero's holy crusade, I shall forge a blade of legend!",
+        "lang": "en"
+      },
+      {
+        "key": "char_hetta_antisample_2",
+        "value": "Grr, smash good! Hetta like smash!",
+        "lang": "en"
+      }
+    ]
+  },
+  "pressure": [
+    {
+      "condition": "betrayed",
+      "emotion": "sealed-over anger",
+      "voiceShift": "Down to single sentences; hammer fills the gaps.",
+      "behaviour": "When he hears 'this was someone's heating charm' as 'corrupted artifice', she takes the piece off her anvil and puts it out of his reach.",
+      "illustrativeLine": {
+        "key": "char_hetta_pressure_betrayed",
+        "value": "Off the anvil. That one's going home mended, not back to you in halves.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "speaking-to-required-but-hated",
+      "emotion": "worn flat",
+      "voiceShift": "Even fewer words; the work gets louder.",
+      "behaviour": "Late-runs posture: she tells him, once per visit, what came through her drawer this month — then nothing else.",
+      "illustrativeLine": {
+        "key": "char_hetta_pressure_late",
+        "value": "Re-set three heating stones this month. Yours broke them. That's the whole conversation.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "praised",
+      "emotion": "indifferent",
+      "voiceShift": "No shift at all, which is the answer.",
+      "behaviour": "Compliments about her craft land only if they come with work to do; praise of her 'service to the cause' gets the anvil.",
+      "illustrativeLine": {
+        "key": "char_hetta_pressure_praised",
+        "value": "Compliment's noted. It still needs a new haft. Six coppers.",
+        "lang": "en"
+      }
+    }
+  ],
+  "tags": [
+    "hub",
+    "smith",
+    "artisan",
+    "human"
+  ],
+  "notes": "She KNOWS fact_shards_are_domestic_magic — she has physically re-set the realms' charms for Joren; this is the judgment call behind her whole profile. The 'mended charms drawer' is her and Joren's shared subplot; it is in her secrets-adjacent behavior (opinion not publicly admitted) but not in the `secrets` bucket because the schema tracks facts, and no fact covers the drawer. If a later agent adds a canon fact for it, wire it into `secrets`. She does not know the book is a comedy — she has never read it."
+}

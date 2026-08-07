@@ -1,0 +1,104 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-fac-drowned-fen-commons-v1",
+  "id": "fac_drowned_fen_commons",
+  "name": "The Drowned Fen Commons",
+  "summary": {
+    "key": "fac_drowned_fen_commons_summary",
+    "value": "A protected wetland refuge of amphibians, aquatic creatures, herbalists, and marsh wardens — the hero calls it a battlefield. Its resident cast: swarmers frog-dart, jellyfish-venom, and bat-moss; chasers zombie-shambler and crocodile-marsh; shooter cultist-acolyte; bomber slime-aqua; sniper spider-venom; and turret carniplant-snapvine. The 'waves' are refuge residents and wardens wading in to contain the intruder as news spreads through the reeds.",
+    "lang": "en"
+  },
+  "sharedBeliefs": [
+    "fact_realms_peaceful_ten_millennia",
+    "fact_law_of_fair_warning",
+    "fact_continuance_restores_dead",
+    "fact_drowned_fen_is_commons",
+    "fact_heavy_hands_emergency_service"
+  ],
+  "sharedOpinions": [
+    {
+      "target": "char_protagonist",
+      "position": "frightened",
+      "reason": "He cuts through the refuge calling it a cursed swamp. The herbalists he routs were picking feverwort for the downstream villages."
+    },
+    {
+      "target": "fac_mire_wetlands",
+      "position": "friendly",
+      "reason": "The mire is our upstream family. Their pool-watch and our warden rounds share recipes, remedies, and gossip."
+    },
+    {
+      "target": "fac_tide_ferryfolk",
+      "position": "friendly",
+      "reason": "Their floodgates keep our water levels honest. A fen without the ferryfolk would be a pond with ambitions."
+    },
+    {
+      "target": "fac_heavy_hands",
+      "position": "friendly",
+      "reason": "Flood season brings them every year, sandbags on shoulders that could carry the whole dike. They ask for soup, not thanks."
+    }
+  ],
+  "metaphorDomain": {
+    "source": "wetland, remedies, water levels, reeds",
+    "examples": [
+      {
+        "key": "fac_drowned_fen_commons_metaphor_1",
+        "value": "A remedy gathered in anger cures nothing.",
+        "lang": "en"
+      },
+      {
+        "key": "fac_drowned_fen_commons_metaphor_2",
+        "value": "The fen keeps what the river drops; so should a person.",
+        "lang": "en"
+      }
+    ]
+  },
+  "terminology": [
+    {
+      "term": "warden round",
+      "meaning": {
+        "key": "fac_drowned_fen_commons_term_warden_round",
+        "value": "The marsh wardens' daily circuit of the refuge — checking water levels, nests, and the herbarium beds. It doubles as the fen's early warning.",
+        "lang": "en"
+      }
+    },
+    {
+      "term": "the refuge",
+      "meaning": {
+        "key": "fac_drowned_fen_commons_term_refuge",
+        "value": "What residents call the fen: protected ground where hunted and delicate species are left alone. Entry is free; disturbance is not.",
+        "lang": "en"
+      }
+    }
+  ],
+  "customs": [
+    {
+      "key": "fac_drowned_fen_commons_custom_picking",
+      "value": "Herbalists pick in pairs and leave every third plant standing. The fen gives generously to those who take politely.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_drowned_fen_commons_custom_paths",
+      "value": "Visitors are walked in along the boardwalks by a warden before wandering free. It is hospitality with a map attached.",
+      "lang": "en"
+    }
+  ],
+  "taboos": [
+    {
+      "key": "fac_drowned_fen_commons_taboo_herbarium",
+      "value": "Never strip a remedy bed bare, and never during a fever season. Someone downstream is always sicker than you are hurried.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_drowned_fen_commons_taboo_disturbance",
+      "value": "Never shout or stampede through the refuge. Half the residents are shy, aquatic, or convalescing, and all of them were here first.",
+      "lang": "en"
+    }
+  ],
+  "tags": [
+    "faction",
+    "horde",
+    "tier-2",
+    "commons",
+    "drowned-fen"
+  ]
+}

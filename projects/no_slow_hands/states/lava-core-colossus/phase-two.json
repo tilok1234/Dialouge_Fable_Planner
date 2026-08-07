@@ -1,0 +1,39 @@
+{
+  "id": "state_lava_core_colossus__phase_two",
+  "characterId": "char_lava_core_colossus",
+  "label": "Phase two — re-rated to defense",
+  "mood": "cool disappointment",
+  "location": "The Molten Forge, the main floor",
+  "injuries": [],
+  "activeQuestStages": [
+    "quest_rung_05_molten_forge__stage_2"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_lava_core_colossus_p2_ev1",
+      "value": "It read him the production ledger aloud, plain as specification; he heard every entry and called the heating stones ordnance.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [
+    "fact_amulet_translation_is_accurate"
+  ],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_lava_core_colossus_p2_cf1",
+      "value": "This is no accident. It is sabotage — recorded as such.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-lava-core-colossus-phase-two-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_lava_core_colossus_p2_obj",
+    "value": "Re-rate the machinery from production to defense: pour boundaries, not heating stones.",
+    "lang": "en"
+  },
+  "phase": "phase-two",
+  "notes": "'You understand every word I say, don't you? Then this is no accident. It is sabotage.'"
+}

@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "contentHash": "sha256:scene-goblin_crown-defeat-v1",
+  "id": "scene_goblin_crown_defeat",
+  "label": "Goblin War Crown defeat",
+  "sceneType": "boss-defeat",
+  "participants": [
+    {
+      "characterId": "char_goblin_war_crown",
+      "stateId": "state_goblin_war_crown__exposed",
+      "relationshipIds": [
+        "rel_goblin_war_crown__player"
+      ],
+      "role": "speaker"
+    }
+  ],
+  "boundQuestStages": [
+    "quest_rung_02_palisade_camp__stage_3"
+  ],
+  "purpose": {
+    "key": "scene_goblin_crown_defeat_purpose",
+    "value": "Exposed by exhaustion from holding its defenses, the guardian falls with one last honest plea and the defeated promise that it will still ask him to leave in peace when he returns.",
+    "lang": "en"
+  },
+  "requiredFacts": [
+    "fact_continuance_restores_dead"
+  ],
+  "hintableFacts": [
+    "fact_goblin_crown_is_festival_marshal"
+  ],
+  "forbiddenRevelations": [
+    "fact_book_is_childrens_comedy"
+  ],
+  "emotionalProgression": [
+    {
+      "order": 1,
+      "emotion": "spent pleading",
+      "note": "\"Please... there is nothing here that belongs to you.\""
+    },
+    {
+      "order": 2,
+      "emotion": "quiet dignity",
+      "note": "\"When you return, we will still ask you to leave in peace.\""
+    }
+  ],
+  "maxLength": "short",
+  "availableChoices": [],
+  "templateDefaults": {
+    "bossDefeat": {
+      "exposedByExhaustion": true
+    }
+  },
+  "notes": "The EXPOSED window is exhaustion from maintaining defenses for civilians — NEVER frame it as divine judgment; that is only the hero's misreading (\"At last! Evil reveals its weakness!\"). The defeat must establish the return: the Continuance will rebuild the guardian, who will rebuild its home and ask him to leave again. Flavor: fireworks and the Lantern Feast."
+}

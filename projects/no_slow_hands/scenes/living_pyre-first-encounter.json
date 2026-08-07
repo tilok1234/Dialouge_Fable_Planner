@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "contentHash": "sha256:scene-living_pyre-first-enc-v1",
+  "id": "scene_living_pyre_first_encounter",
+  "label": "The Living Pyre first encounter",
+  "sceneType": "boss-first-encounter",
+  "participants": [
+    {
+      "characterId": "char_living_pyre",
+      "stateId": "state_living_pyre__pre_encounter",
+      "relationshipIds": [
+        "rel_living_pyre__player"
+      ],
+      "role": "speaker"
+    }
+  ],
+  "boundQuestStages": [
+    "quest_rung_03_ashen_shrine__stage_2"
+  ],
+  "purpose": {
+    "key": "scene_living_pyre_first_enc_purpose",
+    "value": "The sentient communal hearth that has warmed the Ashen people for millennia carries its voice to the cold threshold and issues the law's fair warning; the hero hears every word and misreads a lighthouse of home-fires as a demonic blaze. The guardian attempts communication first; the hero misreads it as a villain's taunt.",
+    "lang": "en"
+  },
+  "requiredFacts": [
+    "fact_law_of_fair_warning"
+  ],
+  "hintableFacts": [
+    "fact_living_pyre_is_communal_hearth"
+  ],
+  "forbiddenRevelations": [
+    "fact_book_is_childrens_comedy"
+  ],
+  "emotionalProgression": [
+    {
+      "order": 1,
+      "emotion": "courteous warning",
+      "note": "The guardian announces itself and its duty plainly, framed by hearths against the cold."
+    },
+    {
+      "order": 2,
+      "emotion": "offended disbelief",
+      "note": "The warning was honest and complete; being ignored reads as insult."
+    }
+  ],
+  "maxLength": "medium",
+  "availableChoices": [
+    "choice_rung_03_withdraw"
+  ],
+  "templateDefaults": {
+    "bossFirstEncounter": {
+      "mustOfferMercy": true,
+      "mustNotRevealWeakness": true
+    }
+  },
+  "notes": "The scene MUST establish the guardian announcing itself and warning honestly — the law of fair warning means its attack paths will be shown, not hidden. The mercy exit (withdraw) is offered and never taken. Flavor: hearths against the cold. The player's view may hint the guardian's true role; the hero must not perceive it."
+}

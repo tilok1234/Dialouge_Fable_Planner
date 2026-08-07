@@ -1,0 +1,161 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-quest-rung-10-scorpion-empress-v1",
+  "id": "quest_rung_10_scorpion_empress",
+  "name": "Rung 10 — The Scorpion-Empress's Desert",
+  "premise": {
+    "key": "quest_rung_10_scorpion_empress_premise",
+    "value": "The hero believes the Scorpion-Empress, tenth and final Dread Sovereign, is the source of all evil, closing her pincers around the last free world, and that only he can strike first. In truth, the matriarch of a peaceful desert civilization is containing an invader, keeping him away from the nurseries and evacuation tunnels; every plea he hears is translated flawlessly and dismissed as manipulation.",
+    "lang": "en"
+  },
+  "objectiveTruth": "fact_scorpion_empress_is_matriarch",
+  "playerInitialKnowledge": [
+    "fact_no_monster_ever_crossed_gates"
+  ],
+  "characterKnowledge": [
+    {
+      "characterId": "char_scorpion_empress",
+      "knows": [
+        "fact_scorpion_empress_is_matriarch",
+        "fact_law_of_fair_warning",
+        "fact_continuance_restores_dead"
+      ]
+    }
+  ],
+  "stages": [
+    {
+      "id": "quest_rung_10_scorpion_empress__stage_0",
+      "order": 0,
+      "label": "Gate locked",
+      "entryCondition": "The previous rung's guardian has been defeated (quest_rung_09_highland_march__stage_3 complete); the amulet now answers this realm's gate. Cross-file unlock dependency, recorded here as natural language.",
+      "completionCondition": "The hero opens the sealed gate with the amulet, certain a Dread Sovereign waits behind it.",
+      "factsRevealedToPlayer": [],
+      "transitionsTo": [
+        "quest_rung_10_scorpion_empress__stage_1"
+      ],
+      "scenes": [],
+      "notes": "The gate is a diplomatic seal, not a prison; the amulet is an envoy's credential. The hero reads both as siege equipment."
+    },
+    {
+      "id": "quest_rung_10_scorpion_empress__stage_1",
+      "order": 1,
+      "label": "The march",
+      "entryCondition": "The gate is open; the hero steps into the Scorpion-Empress's Desert.",
+      "completionCondition": "The hero fights through the sealing rooms and reaches the guardian's hall.",
+      "factsRevealedToPlayer": [
+        "fact_scorpion_empress_is_matriarch"
+      ],
+      "transitionsTo": [
+        "quest_rung_10_scorpion_empress__stage_2"
+      ],
+      "scenes": [],
+      "notes": "Rooms seal behind the hero because the inhabitants are containing him while civilians evacuate. The 'mobs' are brood guardians, tunnel workers, and nursery tenders sealing each chamber behind him. The optional treasure detour is the hatchery supply caches and a collection of diplomatic gifts — the hero calls everything he takes liberated treasure. The identity fact is revealed to the PLAYER through these details; the hero-character learns nothing."
+    },
+    {
+      "id": "quest_rung_10_scorpion_empress__stage_2",
+      "order": 2,
+      "label": "First encounter",
+      "entryCondition": "The hero reaches the guardian's hall.",
+      "completionCondition": "The fight resolves through all three phases: the guardian's plea to leave, the shielded defense of fleeing civilians, and the exhausted final stand.",
+      "factsRevealedToPlayer": [],
+      "transitionsTo": [
+        "quest_rung_10_scorpion_empress__stage_3"
+      ],
+      "scenes": [
+        "scene_scorpion_empress_first_encounter",
+        "scene_scorpion_empress_phase_transition"
+      ],
+      "notes": "Phase 1: the guardian reasons with him or orders him to leave. Phase 2: the guardian realizes he understands every word — the amulet's translation is perfect — and keeps coming. Shielded phase: the guardian protects civilians and buys evacuation time; the EXPOSED window is exhaustion, which the hero reads as divine judgment."
+    },
+    {
+      "id": "quest_rung_10_scorpion_empress__stage_3",
+      "order": 3,
+      "label": "Defeated",
+      "entryCondition": "The guardian is EXPOSED through exhaustion and struck down.",
+      "completionCondition": "The guardian falls; the Continuance begins reconstructing them. The hero records another kingdom 'liberated.'",
+      "factsRevealedToPlayer": [
+        "fact_continuance_restores_dead"
+      ],
+      "transitionsTo": [
+        "quest_rung_10_scorpion_empress__stage_4"
+      ],
+      "scenes": [
+        "scene_scorpion_empress_defeat"
+      ],
+      "notes": "The Continuance restores the body but not the peace of mind. The hero interprets the guardian's return as proof that evil is immortal."
+    },
+    {
+      "id": "quest_rung_10_scorpion_empress__stage_4",
+      "order": 4,
+      "label": "Rematch",
+      "entryCondition": "The amulet opens the gate again; the Continuance has rebuilt the guardian, who remembers everything.",
+      "completionCondition": "The guardian falls again. Repeat clears may yield the boss unique — the Empress's family seal, a personally important item, not a wicked relic. The hero calls this farming evil.",
+      "factsRevealedToPlayer": [],
+      "transitionsTo": [],
+      "scenes": [
+        "scene_scorpion_empress_rematch"
+      ],
+      "notes": "They remember him. She positions herself between him and the nursery doors before he has even chosen a direction. Stage graph models the first clear; re-running the dungeon re-enters quest_rung_10_scorpion_empress__stage_2 (the fight) in-engine, so this stage has no outgoing transitions."
+    },
+    {
+      "id": "quest_rung_10_scorpion_empress__stage_5",
+      "order": 5,
+      "label": "The reception hall",
+      "entryCondition": "The Scorpion-Empress has been defeated at least once (quest_rung_10_scorpion_empress__stage_3 complete); the final door beyond her hall stands open.",
+      "completionCondition": "The hero walks the reception hall — gifts, set table, the banner 'WELCOME, FRIEND BEYOND THE GATE,' murals of the guardians — and declares it 'a false history.' Unlocks quest_epilogue_false_history (cross-file).",
+      "factsRevealedToPlayer": [
+        "fact_reception_hall_awaits_first_visitor"
+      ],
+      "transitionsTo": [],
+      "scenes": [
+        "scene_reception_hall"
+      ],
+      "notes": "The hall has waited thousands of years for its first visitor from outside. scene_reception_hall is shared with quest_epilogue_false_history__stage_1; boundQuestStages is an array, so the scene binds to both stages."
+    }
+  ],
+  "choices": [
+    {
+      "id": "choice_rung_10_withdraw",
+      "label": {
+        "key": "choice_rung_10_withdraw",
+        "value": "Withdraw and leave this realm in peace",
+        "lang": "en"
+      },
+      "resultingStage": "quest_rung_10_scorpion_empress__stage_0",
+      "consequences": [
+        {
+          "key": "choice_rung_10_withdraw_c1",
+          "value": "The realm's warning bells stand down; under the Law of Fair Warning, the defenders let him go the moment he stops advancing.",
+          "lang": "en"
+        },
+        {
+          "key": "choice_rung_10_withdraw_c2",
+          "value": "The hero's journal records: 'The enemy retreats before me.' His framing, not the truth.",
+          "lang": "en"
+        }
+      ],
+      "variablesChanged": [
+        {
+          "key": "scorpion_empress_left_in_peace",
+          "from": "false",
+          "to": "true"
+        }
+      ],
+      "affectsCharacters": [
+        "char_scorpion_empress",
+        "char_protagonist"
+      ]
+    }
+  ],
+  "participatingCharacters": [
+    "char_scorpion_empress",
+    "char_protagonist"
+  ],
+  "tags": [
+    "quest",
+    "rung-10",
+    "boss",
+    "dramatic-irony"
+  ],
+  "notes": "playerInitialKnowledge holds only the gates fact: the 'proof' that ten thousand years of peace was really preparation. The boss-identity fact is what the hero has WRONG, so it never appears there — his delusions live in his profile's opinions, not in quest knowledge. The boss knows their own identity, the Law of Fair Warning, and the Continuance; per their profile's knowledge buckets, the boss does NOT know fact_book_is_childrens_comedy — that gap is the joke. The withdraw choice is the game's central un-taken choice: the amulet recall and the open roads always allow it, and the hero never takes it."
+}

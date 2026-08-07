@@ -1,0 +1,42 @@
+{
+  "id": "state_night_elf_prince__pre_encounter",
+  "characterId": "char_night_elf_prince",
+  "label": "Pre-encounter — an armed boor at a pageant",
+  "mood": "courtly alarm",
+  "location": "The Moonlit Court, the ballroom",
+  "injuries": [],
+  "activeQuestStages": [
+    "quest_rung_08_moonlit_court__stage_1",
+    "quest_rung_08_moonlit_court__stage_2"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_night_elf_prince_pre_ev1",
+      "value": "The court is withdrawing through the moon-gallery between dances; protocol has no entry for this.",
+      "lang": "en"
+    },
+    {
+      "key": "nsh_state_night_elf_prince_pre_ev2",
+      "value": "An armed stranger declined the rites of welcome — all ninety seconds of them.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_night_elf_prince_pre_cf1",
+      "value": "An armed stranger who understands every word and keeps rehearsing to be something the court has no protocol for.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-night-elf-prince-pre-encounter-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_night_elf_prince_pre_obj",
+    "value": "Receive him as a protocol problem: the rites, the wine, the exit, in that order.",
+    "lang": "en"
+  },
+  "phase": "pre-encounter"
+}

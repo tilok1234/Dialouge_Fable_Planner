@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-rel-lava-core-colossus-player-v1",
+  "id": "rel_lava_core_colossus__player",
+  "partyA": "char_lava_core_colossus",
+  "partyB": "player",
+  "dimensions": {
+    "trust": -50,
+    "respect": -5,
+    "affection": -10,
+    "fear": 30,
+    "suspicion": 50,
+    "debt": 0
+  },
+  "namedState": "recurring-defect",
+  "history": [
+    {
+      "event": {
+        "key": "rel_lava_core_colossus_h1",
+        "value": "Gate breach at the Molten Forge; Steward Ferric read the armed stranger as a lost inspector and corrected before it fought: three hundred plowshares walked past to find a war, and no war in stock. The road out was still open behind him.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -5,
+        "suspicion": 15
+      }
+    },
+    {
+      "event": {
+        "key": "rel_lava_core_colossus_h2",
+        "value": "First fight: correction failed and the fault understood every warning. It re-rated the crucible-lines from production to defense and logged the incursion as sabotage, not accident — industry turned, reluctantly, to emergency defense.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -30,
+        "respect": -5,
+        "affection": -10,
+        "fear": 20,
+        "suspicion": 25
+      }
+    },
+    {
+      "event": {
+        "key": "rel_lava_core_colossus_h3",
+        "value": "Continuance return: every rematch is entered in the order book. 'You are entry eleven in the damage ledger. The pen is steady. My hand is not.' Workers carry stock and apprentices out the cooling galleries when the amulet glows.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -15,
+        "fear": 10,
+        "suspicion": 10
+      }
+    }
+  ],
+  "notes": "Modeled at rematch stage (rung 5). Fear 30 is deliberately the lowest on the ladder: what it fears is a cold forge and an unfilled order — a field untilled because the forge was busy being a fortress — more than the man himself. The register is weariness, not terror. Trust -50 because it has reclassified the protagonist from accident to sabotage; suspicion 50 tracks that same ledger entry. namedState reflects its own framing: he is a recurring defect in the schedule. Deltas sum to current dimensions."
+}

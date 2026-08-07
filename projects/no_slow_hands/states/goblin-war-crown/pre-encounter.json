@@ -1,0 +1,42 @@
+{
+  "id": "state_goblin_war_crown__pre_encounter",
+  "characterId": "char_goblin_war_crown",
+  "label": "Pre-encounter — the Lantern Feast, interrupted",
+  "mood": "hostly alarm, still hoping the guest leaves",
+  "location": "The Palisade Camp, mid-Lantern Feast",
+  "injuries": [],
+  "activeQuestStages": [
+    "quest_rung_02_palisade_camp__stage_1",
+    "quest_rung_02_palisade_camp__stage_2"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_goblin_war_crown_pre_ev1",
+      "value": "The wall-bells rang during the lantern lighting; families are being walked home between songs.",
+      "lang": "en"
+    },
+    {
+      "key": "nsh_state_goblin_war_crown_pre_ev2",
+      "value": "An armed stranger came through the gate during the best night of the year and has not lowered his weapon.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_goblin_war_crown_pre_cf1",
+      "value": "An armed stranger who understands every word and keeps coming — through a festival, toward the lantern lines.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-goblin-war-crown-pre-encounter-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_goblin_war_crown_pre_obj",
+    "value": "Get the guest to lower his weapon, see the festival, and turn back — in that order, if lucky.",
+    "lang": "en"
+  },
+  "phase": "pre-encounter"
+}

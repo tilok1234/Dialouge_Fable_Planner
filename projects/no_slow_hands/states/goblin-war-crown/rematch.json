@@ -1,0 +1,42 @@
+{
+  "id": "state_goblin_war_crown__rematch",
+  "characterId": "char_goblin_war_crown",
+  "label": "Rematch — familiar boots",
+  "mood": "worn grief",
+  "location": "The Palisade Camp, the rebuilt feast ground",
+  "injuries": [],
+  "activeQuestStages": [
+    "quest_rung_02_palisade_camp__stage_4"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_goblin_war_crown_re_ev1",
+      "value": "The Continuance brought him back to a feast ground being rebuilt; half the lantern poles are new.",
+      "lang": "en"
+    },
+    {
+      "key": "nsh_state_goblin_war_crown_re_ev2",
+      "value": "The children recognize the sound of your boots now. They go quiet at the gate-bell before the adults do.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_goblin_war_crown_re_cf1",
+      "value": "A recurring disaster with familiar boots; hospitality stopped being a survivable policy visits ago.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-goblin-war-crown-rematch-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_goblin_war_crown_re_obj",
+    "value": "Ring every bell, empty the lanes, and say the true thing once: the children know his boots.",
+    "lang": "en"
+  },
+  "phase": "rematch",
+  "notes": "REQUIRED (lore): the rematch carries 'The children recognize the sound of your boots now.' The Continuance restores memory, so he — and the children — remember every visit."
+}

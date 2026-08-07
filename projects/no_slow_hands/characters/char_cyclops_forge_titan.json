@@ -1,0 +1,242 @@
+{
+  "version": 1,
+  "contentHash": "sha256:char-ornig-builder-v1",
+  "id": "char_cyclops_forge_titan",
+  "identity": {
+    "name": "Ornig the Builder",
+    "species": "cyclops",
+    "culture": "the mountain realm; the roadwrights' tradition",
+    "factions": [],
+    "occupation": "Legendary builder of bridges, aqueducts, tools, and mountain roads",
+    "gameplayRole": "boss",
+    "narrativeFunction": "boss",
+    "publicReputation": {
+      "key": "char_ornig_reputation",
+      "value": "In the hero's journal: the Cyclops Forge-Titan, a one-eyed war engine hammering out weapons for the end of the world.",
+      "lang": "en"
+    },
+    "privateReality": {
+      "key": "char_ornig_private",
+      "value": "A master builder whose life's work is the roads, bridges, and aqueducts that keep the mountain settlements fed and connected; the 'forge' makes ploughshares and hinges.",
+      "lang": "en"
+    },
+    "connections": [
+      "fact_forge_titan_is_legendary_builder",
+      "char_abyssal_crown_kraken",
+      "char_pit_fiend_juggernaut"
+    ]
+  },
+  "core": {
+    "primaryDesire": {
+      "key": "char_ornig_desire",
+      "value": "To finish the north pass aqueduct and see one spring where nothing he built needs mending.",
+      "lang": "en"
+    },
+    "primaryFear": {
+      "key": "char_ornig_fear",
+      "value": "That something he built — a bridge, a stair, a wall — will fail under someone who trusted it.",
+      "lang": "en"
+    },
+    "centralValue": {
+      "key": "char_ornig_value",
+      "value": "Build true. A crooked foundation is a lie you tell everyone who walks on it.",
+      "lang": "en"
+    },
+    "mainFlaw": {
+      "key": "char_ornig_flaw",
+      "value": "He believes anything broken can be rebuilt, which makes him slow to understand that the hero keeps breaking things on purpose.",
+      "lang": "en"
+    },
+    "centralContradiction": {
+      "key": "char_ornig_contradiction",
+      "value": "Everything he makes exists so strangers can travel safely — and now a stranger uses his roads to march toward him.",
+      "lang": "en"
+    },
+    "moralBoundary": {
+      "key": "char_ornig_boundary",
+      "value": "The Law of Fair Warning: he marks every swing of the great hammer before it falls, and he will not strike a man who has sat down.",
+      "lang": "en"
+    },
+    "breakingPoint": {
+      "key": "char_ornig_breaking",
+      "value": "Watching the hero smash the aqueduct sluices for 'shards' — breaking a water lifeline for kindling is what exhausts his patience.",
+      "lang": "en"
+    }
+  },
+  "opinions": [
+    {
+      "target": "player",
+      "targetLabel": "The hero",
+      "position": "wary",
+      "reason": "Walked up Ornig's own north road, admired nothing, and started breaking the sluices.",
+      "confidence": "high",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "If the hero ever puts the hammer down and picks up a trowel — Ornig would teach him. He means that.",
+      "illustrativeLine": {
+        "key": "char_ornig_opinion_player",
+        "value": "You walked thirty miles of my road to get here. It never once asked who you were.",
+        "lang": "en"
+      }
+    },
+    {
+      "target": "concept_craftsmanship",
+      "targetLabel": "Good work",
+      "position": "devoted",
+      "reason": "Work outlasts the worker; that is the whole point of doing it properly.",
+      "confidence": "absolute",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Never. It is the one thing he is certain of."
+    }
+  ],
+  "knowledge": {
+    "knows": [
+      "fact_forge_titan_is_legendary_builder",
+      "fact_realms_peaceful_ten_millennia",
+      "fact_law_of_fair_warning",
+      "fact_continuance_restores_dead"
+    ],
+    "believesFalse": [],
+    "suspects": [
+      "fact_shards_are_domestic_magic"
+    ],
+    "secrets": [],
+    "lies": [],
+    "unknown": [
+      "fact_book_is_childrens_comedy"
+    ]
+  },
+  "voice": {
+    "formality": "neutral",
+    "directness": "very-direct",
+    "typicalSentenceLength": "medium",
+    "rhythm": "Slow, steady, deliberate; each sentence set down like a dressed stone, then checked for level.",
+    "vocabularyComplexity": "plain",
+    "usesContractions": false,
+    "usesHumor": "rare",
+    "metaphorDomain": {
+      "source": "foundations, plumb lines, mortar, load, and roads",
+      "examples": [
+        {
+          "key": "char_ornig_metaphor_1",
+          "value": "A man who will not listen is a wall out of plumb. You can see it from the road.",
+          "lang": "en"
+        }
+      ]
+    },
+    "emotionalRestraint": "guarded",
+    "declarationStyle": "declarative",
+    "namesEmotionsDirectly": false,
+    "addressMode": "impersonal",
+    "avoids": [
+      "pitiful mortal",
+      "crush you",
+      "my wrath",
+      "fool",
+      "your doom"
+    ],
+    "sampleLines": [
+      {
+        "key": "char_ornig_sample_1",
+        "value": "Those sluices water six valleys. Put the stone back, and I will show you the road down.",
+        "lang": "en"
+      },
+      {
+        "key": "char_ornig_sample_2",
+        "value": "I built that bridge before your grandfather's grandfather. It has carried armies of sheep and not one soldier.",
+        "lang": "en"
+      },
+      {
+        "key": "char_ornig_sample_3",
+        "value": "You hear me plain. I watched you hear me. That is the part I cannot fit in my head.",
+        "lang": "en"
+      }
+    ],
+    "antiSampleLines": [
+      {
+        "key": "char_ornig_antisample_1",
+        "value": "Puny mortal! My forge shall hammer your bones into weapons for my dark army!",
+        "lang": "en"
+      },
+      {
+        "key": "char_ornig_antisample_2",
+        "value": "Rargh! Cyclops smash!",
+        "lang": "en"
+      }
+    ]
+  },
+  "pressure": [
+    {
+      "condition": "threatened",
+      "emotion": "calm patience",
+      "voiceShift": "Slower still; explains like a foreman to a new apprentice.",
+      "behaviour": "Reasons first: names what the hero is standing on, what it cost, and where the road out runs.",
+      "illustrativeLine": {
+        "key": "char_ornig_pressure_reason",
+        "value": "The road let you through as an envoy. Why have you arrived armed?",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "losing-control",
+      "emotion": "dawning disbelief",
+      "voiceShift": "Stops mid-sentence; restarts with shorter, heavier clauses.",
+      "behaviour": "Realizes the hero understands every word and keeps swinging; stops explaining and starts bracing.",
+      "illustrativeLine": {
+        "key": "char_ornig_pressure_realization",
+        "value": "You understand every word I say, don't you.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "gaining-advantage",
+      "emotion": "protective resolve",
+      "voiceShift": "Drops to worksite commands; short and level.",
+      "behaviour": "Shielded phase: braces the aqueduct arches with his own body and holds them while the valley crews evacuate.",
+      "illustrativeLine": {
+        "key": "char_ornig_pressure_protect",
+        "value": "Crews off the spans. I will hold the arch until the bells stop.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "facing-death",
+      "emotion": "exhausted sorrow",
+      "voiceShift": "Breath audible between words; the builder's cadence gone.",
+      "behaviour": "EXPOSED window: arms give out from holding the structure; asks, plainly, to be left to his work.",
+      "illustrativeLine": {
+        "key": "char_ornig_pressure_exhausted",
+        "value": "Please. Nothing on this mountain belongs to you.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "defeated",
+      "emotion": "sorrowful dignity",
+      "voiceShift": "Quiet and even; already thinking of the repair list.",
+      "behaviour": "Does not curse the hero; the Continuance will rebuild him, and he will rebuild what was broken, and he will ask again.",
+      "illustrativeLine": {
+        "key": "char_ornig_pressure_defeated",
+        "value": "When you return, we will still ask you to leave in peace.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "victorious",
+      "emotion": "relieved, already working",
+      "voiceShift": "Back to worksite commands before the hero's light has faded.",
+      "behaviour": "After the amulet recalls the hero, he inspects every span the hero touched and starts the repairs the same hour.",
+      "illustrativeLine": {
+        "key": "char_ornig_pressure_victorious",
+        "value": "He is recalled. Sluice three first, then the south stair.",
+        "lang": "en"
+      }
+    }
+  ],
+  "tags": [
+    "boss",
+    "bench",
+    "mountains",
+    "cyclops"
+  ],
+  "notes": "\"Cyclops Forge-Titan\" is the title the protagonist wrote in his heroic journal; the real identity is Ornig the Builder, per fact_forge_titan_is_legendary_builder. Identity axis: sheer mass. Sincere, practical, never sinister. fact_book_is_childrens_comedy is in `unknown`; fact_shards_are_domestic_magic only in `suspects` — he has seen the hero pocket broken irrigation runes and cannot prove what the hero thinks they are. Future rung 11+."
+}

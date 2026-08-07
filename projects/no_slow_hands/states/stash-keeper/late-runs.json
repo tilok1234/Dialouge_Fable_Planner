@@ -1,0 +1,39 @@
+{
+  "id": "state_stash_keeper__late_runs",
+  "characterId": "char_stash_keeper",
+  "label": "Late runs — the full inventory, read aloud",
+  "mood": "exhausted candor, meticulous",
+  "location": "The hub vault, the stash counter",
+  "injuries": [],
+  "activeQuestStages": [],
+  "recentEvents": [
+    {
+      "key": "nsh_state_stash_keeper_late_ev1",
+      "value": "She reads the complete vault inventory to him now, every deposit: bowls, toys, fishing hooks, family portraits, a winter's seed grain — filed, as always, exactly as received.",
+      "lang": "en"
+    },
+    {
+      "key": "nsh_state_stash_keeper_late_ev2",
+      "value": "He asked whether the vault was secure. It is. That is the problem she no longer softens.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_stash_keeper_late_cf1",
+      "value": "Her rule — never mislabel an item — is now the sharpest blade in the hub: the ledger says 'bowl', he hears 'instrument of evil', and the ledger does not change.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-stash-keeper-late-runs-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_stash_keeper_late_obj",
+    "value": "Read the ledger aloud, item by item, and never once mislabel a thing.",
+    "lang": "en"
+  },
+  "notes": "The escalation endpoint: the full-inventory-read-aloud. The ledger is the hub's quiet indictment; the never-mislabel rule survives both states (profile notes)."
+}

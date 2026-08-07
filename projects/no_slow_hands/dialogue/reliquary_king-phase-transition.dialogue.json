@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "contentHash": "sha256:dlg-rk-phase-v1",
+  "id": "dlg_reliquary_king_phase_transition",
+  "sceneId": "scene_reliquary_king_phase_transition",
+  "approvalStatus": "accepted",
+  "lines": [
+    {
+      "id": "l1",
+      "beatOrder": 1,
+      "speakerId": "char_bone_reliquary_king",
+      "text": {
+        "key": "dlg_rk_phase_l1",
+        "value": "You understand every word I say. Do you not.",
+        "lang": "en"
+      },
+      "humanEdited": false
+    },
+    {
+      "id": "l2",
+      "beatOrder": 2,
+      "speakerId": "char_bone_reliquary_king",
+      "text": {
+        "key": "dlg_rk_phase_l2",
+        "value": "Nine hundred years I have read names to the dark, and the dark has never once answered me with arrows.",
+        "lang": "en"
+      },
+      "humanEdited": false
+    },
+    {
+      "id": "l3",
+      "beatOrder": 3,
+      "speakerId": "char_bone_reliquary_king",
+      "text": {
+        "key": "dlg_rk_phase_l3",
+        "value": "Attendants — deeper, and take the ledgers. I will hold the door myself.",
+        "lang": "en"
+      },
+      "humanEdited": false
+    }
+  ],
+  "provenance": {
+    "characterProfiles": [
+      {
+        "id": "char_bone_reliquary_king",
+        "version": 1
+      }
+    ],
+    "characterStates": [
+      {
+        "id": "state_bone_reliquary_king__phase_two",
+        "version": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "rel_bone_reliquary_king__player",
+        "version": 1
+      }
+    ],
+    "scene": {
+      "id": "scene_reliquary_king_phase_transition",
+      "version": 1
+    },
+    "canonSnapshot": [
+      {
+        "id": "fact_law_of_fair_warning",
+        "version": 1
+      }
+    ],
+    "schemaVersion": "1.0.0",
+    "promptTemplateVersion": "1.0.0",
+    "provider": "claude-code-session",
+    "model": "claude-fable-5",
+    "reasoningEffort": "high",
+    "generatedAt": "2026-08-07T22:32:00Z"
+  },
+  "stale": false,
+  "notes": "Authored in-session at user direction (provider blocked, org 403). The pivotal realization kept short per brief: disbelief, grief, then the turn from appeal to containment. No contractions per voice contract.",
+  "beatPlanId": "beat_reliquary_king_phase_transition",
+  "contextPackageId": "ctx_reliquary_king_phase_transition"
+}

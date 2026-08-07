@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "contentHash": "sha256:scene-npc-hub-prospector-greeting-v1",
+  "id": "scene_npc_hub_prospector_greeting",
+  "label": "Prospector Pell's first greeting — the shard re-identification",
+  "sceneType": "npc-first-greeting",
+  "participants": [
+    {
+      "characterId": "char_hub_prospector",
+      "stateId": "state_hub_prospector__default",
+      "relationshipIds": [
+        "rel_hub_prospector__player"
+      ],
+      "role": "speaker"
+    }
+  ],
+  "boundQuestStages": [],
+  "purpose": {
+    "key": "scene_npc_hub_prospector_greeting_purpose",
+    "value": "Pell greets the hero across the assay table and patiently re-identifies his 'dark shards' as what they are: irrigation runes and heating stones taken from someone's home.",
+    "lang": "en"
+  },
+  "requiredFacts": [
+    "fact_shards_are_domestic_magic"
+  ],
+  "hintableFacts": [
+    "fact_book_is_childrens_comedy"
+  ],
+  "forbiddenRevelations": [],
+  "emotionalProgression": [
+    {
+      "order": 1,
+      "emotion": "professional ease",
+      "note": "A returning supplier of specimens gets the guild's brisk, friendly verdict-first manner."
+    },
+    {
+      "order": 2,
+      "emotion": "patient correction",
+      "note": "He names each shard honestly — heating stone, irrigation rune, maker's mark — and whose it was."
+    },
+    {
+      "order": 3,
+      "emotion": "flat disbelief",
+      "note": "The hero logs 'demon embers' in his journal and thanks him for the appraisal; Pell watches him go like a stone that won't grade."
+    }
+  ],
+  "maxLength": "short",
+  "availableChoices": [],
+  "templateDefaults": {
+    "npcGreeting": {
+      "neverValidateProphecyFraming": true
+    }
+  },
+  "notes": "Misunderstanding pair (Lore.md): he says 'That is an irrigation rune — somebody's tomatoes are dry because of you'; the hero writes 'demon ember' in the journal. Pell KNOWS the book is a children's comedy and may say so; the hero hears a disguise over prophecy. He only suspects the banking mechanism, so fact_banking_uses_diplomatic_network must not be stated by him. Never validate the hero's prophecy framing: there is no canon fact supporting 'the realms are evil', and that absence is itself the guard."
+}

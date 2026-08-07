@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-rel-cyclops-forge-titan-player-v1",
+  "id": "rel_cyclops_forge_titan__player",
+  "partyA": "char_cyclops_forge_titan",
+  "partyB": "player",
+  "dimensions": {
+    "trust": -10,
+    "respect": 0,
+    "affection": 0,
+    "fear": 20,
+    "suspicion": 15,
+    "debt": 0
+  },
+  "namedState": "bracing-builder",
+  "history": [
+    {
+      "event": {
+        "key": "rel_cyclops_forge_titan_h1",
+        "value": "Word came down the roads he built: a man with a book is breaking the ten realms' work into 'shards'. Ornig has built for ten thousand years; he knows what broken irrigation runes look like in a report.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -5,
+        "fear": 10,
+        "suspicion": 10
+      }
+    },
+    {
+      "event": {
+        "key": "rel_cyclops_forge_titan_h2",
+        "value": "He checked every span and sluice on the north road twice and started stockpiling repair stone. Anything broken can be rebuilt — he believes that — but he is no longer sure the breaking is an accident, and that is the part he cannot fit in his head.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -5,
+        "fear": 10,
+        "suspicion": 5
+      }
+    }
+  ],
+  "notes": "BENCH boss — no meeting yet; this is the dread of a builder hearing that someone breaks things on purpose. All dimensions shallow. His flaw is load-bearing here: he believes anything broken can be rebuilt, which makes him slow to understand the protagonist keeps breaking things on purpose — hence 'bracing-builder', a man checking his work against a storm he refuses to believe in. His profile's canChangeCondition is the hope in the file: if the hero ever puts the hammer down and picks up a trowel, Ornig would teach him, and means it. Note he suspects (not knows) that the 'shards' are domestic magic. Deltas sum to current dimensions."
+}

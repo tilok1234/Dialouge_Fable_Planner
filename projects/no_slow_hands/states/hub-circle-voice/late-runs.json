@@ -1,0 +1,39 @@
+{
+  "id": "state_hub_circle_voice__late_runs",
+  "characterId": "char_hub_circle_voice",
+  "label": "Late runs — testimony by name",
+  "mood": "exhausted candor, grief kept human",
+  "location": "The hub, the Circle's table",
+  "injuries": [],
+  "activeQuestStages": [],
+  "recentEvents": [
+    {
+      "key": "nsh_state_hub_circle_voice_late_ev1",
+      "value": "She reads him the names now, one per visit: Merr, who asked him to stop. Her daughter, who watched from the wall. The fen warden who grew his salves.",
+      "lang": "en"
+    },
+    {
+      "key": "nsh_state_hub_circle_voice_late_ev2",
+      "value": "You heard Merr ask you to stop. I know you heard her — your amulet translates perfectly. That is the part I can't forgive yet.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_hub_circle_voice_late_cf1",
+      "value": "She pities him — a kind man inside a story that has eaten him — and the pity gets harder to carry every run.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-hub-circle-voice-late-runs-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_hub_circle_voice_late_obj",
+    "value": "Keep saying the names — and refuse to let him become a monster in her mouth while she says them.",
+    "lang": "en"
+  },
+  "notes": "BOUNDARY (load-bearing, per profile): even here she never dehumanizes him back — the testimony names his victims, never damns his soul. The accusation is 'I know you heard her', not 'you are evil'."
+}

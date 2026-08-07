@@ -1,0 +1,265 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-char-dryad-of-nature-v1",
+  "id": "char_dryad_of_nature",
+  "identity": {
+    "name": "The Aldermother of the Verdant Ward",
+    "species": "dryad",
+    "culture": "The Verdant Ward forest nursery",
+    "factions": [
+      "fac_forest_nursery"
+    ],
+    "occupation": "Keeper of the forest nursery, rung 6 of the ladder",
+    "gameplayRole": "boss",
+    "narrativeFunction": "boss",
+    "publicReputation": {
+      "key": "char_dryad_reputation",
+      "value": "The keeper who raised the Ward from burnt ground, who knows every nesting pair by season, and who grieves a felled sapling like a lost child.",
+      "lang": "en"
+    },
+    "privateReality": {
+      "key": "char_dryad_private",
+      "value": "Entered in the hero's journal as 'the Dryad of Nature', a thorned sorceress. Her curving projectiles avoid ancient trees and guide intruders away from nesting grounds — they bend because she refuses to let a shot touch a trunk.",
+      "lang": "en"
+    },
+    "connections": [
+      "fact_dryad_is_nursery_keeper",
+      "char_protagonist"
+    ]
+  },
+  "core": {
+    "primaryDesire": {
+      "key": "char_dryad_desire",
+      "value": "To see the nursery through another thousand seasons — every sapling standing, every nest undisturbed.",
+      "lang": "en"
+    },
+    "primaryFear": {
+      "key": "char_dryad_fear",
+      "value": "Fire in the nursery rows — or a man with a blade, which is the same thing walking.",
+      "lang": "en"
+    },
+    "centralValue": {
+      "key": "char_dryad_value",
+      "value": "Tending: a forest is not a thing you own but a promise you keep, season over season.",
+      "lang": "en"
+    },
+    "mainFlaw": {
+      "key": "char_dryad_flaw",
+      "value": "She protects the trees before she protects herself — she will take a wound to spare a sapling, and the intruder has learned to hide near the ancient trunks.",
+      "lang": "en"
+    },
+    "centralContradiction": {
+      "key": "char_dryad_contradiction",
+      "value": "Her 'aimed' attacks curve impossibly — because she is the one guardian in the realms who refuses to shoot straight through her own children.",
+      "lang": "en"
+    },
+    "moralBoundary": {
+      "key": "char_dryad_boundary",
+      "value": "She will not let a shot strike a tree or a nest, and every thorn she throws shows its arc first, per the Law of Fair Warning.",
+      "lang": "en"
+    },
+    "breakingPoint": {
+      "key": "char_dryad_breaking",
+      "value": "A blade put to an ancient trunk — nurturing ends and the whole Ward answers.",
+      "lang": "en"
+    }
+  },
+  "opinions": [
+    {
+      "target": "player",
+      "targetLabel": "The intruder (the player)",
+      "position": "wary",
+      "reason": "A blight with boots. First visit: a strayed walker to be guided from the nests. Rematches: a storm that returns by season, remembered ring by ring.",
+      "confidence": "high",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Never — but the tone turns from gardener's patience to winter grief; the trees remember his footfalls longer than she does.",
+      "illustrativeLine": {
+        "key": "char_dryad_op_player",
+        "value": "The saplings you trampled last spring have not forgotten the shape of you. Neither have I.",
+        "lang": "en"
+      }
+    },
+    {
+      "target": "fac_forest_nursery",
+      "targetLabel": "The Verdant Ward nursery",
+      "position": "devoted",
+      "reason": "Every tree, nest, and burrow in the Ward is her charge; she raised most of them.",
+      "confidence": "absolute",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Never.",
+      "illustrativeLine": {
+        "key": "char_dryad_op_people",
+        "value": "I planted half this wood and midwifed the rest. Ask me again why I bend my shots.",
+        "lang": "en"
+      }
+    }
+  ],
+  "knowledge": {
+    "knows": [
+      "fact_dryad_is_nursery_keeper",
+      "fact_realms_peaceful_ten_millennia",
+      "fact_gates_are_diplomatic",
+      "fact_amulet_is_diplomatic_concord",
+      "fact_law_of_fair_warning",
+      "fact_continuance_restores_dead"
+    ],
+    "believesFalse": [],
+    "suspects": [
+      "fact_amulet_translation_is_accurate"
+    ],
+    "secrets": [],
+    "lies": [],
+    "unknown": [
+      "fact_book_is_childrens_comedy"
+    ]
+  },
+  "voice": {
+    "formality": "formal",
+    "directness": "indirect",
+    "typicalSentenceLength": "long",
+    "rhythm": "Seasonal and unhurried; thoughts branch and return to the root.",
+    "vocabularyComplexity": "educated",
+    "usesContractions": false,
+    "usesHumor": "rare",
+    "metaphorDomain": {
+      "source": "arboreal and seasonal: rings, roots, sap, nesting, pruning, winter",
+      "examples": [
+        {
+          "key": "char_dryad_metaphor_1",
+          "value": "Grief is a ring, stranger. Each visit of yours adds one.",
+          "lang": "en"
+        },
+        {
+          "key": "char_dryad_metaphor_2",
+          "value": "A straight shot is a lazy answer. A gardener prunes around what she loves.",
+          "lang": "en"
+        }
+      ]
+    },
+    "emotionalRestraint": "measured",
+    "declarationStyle": "balanced",
+    "namesEmotionsDirectly": false,
+    "addressMode": "impersonal",
+    "avoids": [
+      "nature's vengeance",
+      "I will strangle you with vines",
+      "thorned wrath",
+      "die, defiler"
+    ],
+    "sampleLines": [
+      {
+        "key": "char_dryad_sample_1",
+        "value": "The road welcomed you as an envoy. Yet you walk with a blade drawn through a nursery.",
+        "lang": "en"
+      },
+      {
+        "key": "char_dryad_sample_2",
+        "value": "Watch the thorn's arc, walker. It bends around the old alder — everything I throw is taught to miss what I love.",
+        "lang": "en"
+      },
+      {
+        "key": "char_dryad_sample_3",
+        "value": "You hide beside the eldest trunks because you have learned I will not strike them. A coward's lesson, taught by a gardener's mercy.",
+        "lang": "en"
+      },
+      {
+        "key": "char_dryad_sample_4",
+        "value": "Please… there is nothing here that belongs to you. Only young green things that belong to themselves.",
+        "lang": "en"
+      }
+    ],
+    "antiSampleLines": [
+      {
+        "key": "char_dryad_antisample_1",
+        "value": "Nature's vengeance will strangle you in thorns! (thorned-sorceress framing — her projectiles are guidance, not wrath)",
+        "lang": "en"
+      },
+      {
+        "key": "char_dryad_antisample_2",
+        "value": "I'll feed your corpse to my roots! (she never threatens cruelty; she redirects)",
+        "lang": "en"
+      },
+      {
+        "key": "char_dryad_antisample_3",
+        "value": "The prophecy calls me blight upon the world! (must never confirm the prophecy framing — she has never heard of the book)",
+        "lang": "en"
+      }
+    ]
+  },
+  "pressure": [
+    {
+      "condition": "threatened",
+      "emotion": "gardener's patience",
+      "voiceShift": "Softer, coaxing; speaks as one does to a strayed animal.",
+      "behaviour": "Phase one — guides before she resists: shows the walker the path out and the reason for it.",
+      "illustrativeLine": {
+        "key": "char_dryad_pressure_threatened",
+        "value": "The path out is clear of nests, walker. I keep it swept. Use it.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "proven-wrong",
+      "emotion": "cold-season sorrow",
+      "voiceShift": "The coaxing stops; her sentences go bare-branched.",
+      "behaviour": "Phase two — realization that the walker understands every word and keeps trampling; she stops guiding and starts screening the nests.",
+      "illustrativeLine": {
+        "key": "char_dryad_pressure_wrong",
+        "value": "You understand every word I say, don't you? Then every crushed shoot is a choice you made.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "gaining-advantage",
+      "emotion": "fierce precision",
+      "voiceShift": "Clipped, intent; the pruner's voice.",
+      "behaviour": "Containment response: bends projectiles around cover because the intruder keeps hiding near vulnerable trees — her curves are not trickery, they are the shape of her refusal to wound the Ward while wounding him.",
+      "illustrativeLine": {
+        "key": "char_dryad_pressure_advantage",
+        "value": "You shelter by the alder, so the thorn goes around the alder. You are not outsmarting me. You are outlasting my patience.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "losing-control",
+      "emotion": "winter resolve",
+      "voiceShift": "Low, creaking, like old wood under snow.",
+      "behaviour": "Shielded phase: roots herself between the intruder and the nesting rows while the fledglings and seedlings are moved deeper into the Ward.",
+      "illustrativeLine": {
+        "key": "char_dryad_pressure_shielded",
+        "value": "Stay behind me. I will hold him here.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "facing-death",
+      "emotion": "bare-branch plea",
+      "voiceShift": "Thin, wind-bare; the season turns in her voice.",
+      "behaviour": "EXPOSED window — sap spent from holding the screens, she asks the smallest thing a garden can ask.",
+      "illustrativeLine": {
+        "key": "char_dryad_pressure_exposed",
+        "value": "Please… there is nothing here that belongs to you.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "defeated",
+      "emotion": "ringed grief",
+      "voiceShift": "Very quiet; she speaks in seasons, not sentences.",
+      "behaviour": "Trusts the Continuance; begins cataloguing what must be replanted before his next visit.",
+      "illustrativeLine": {
+        "key": "char_dryad_pressure_defeated",
+        "value": "When you return, we will still ask you to leave in peace. Growth is patient. So am I.",
+        "lang": "en"
+      }
+    }
+  ],
+  "tags": [
+    "boss",
+    "rung-6",
+    "verdant-ward",
+    "nursery-keeper",
+    "dryad"
+  ],
+  "notes": "REAL identity: keeper of a vast forest nursery. Her curving projectiles avoid ancient trees and guide intruders away from nesting grounds. ADAPTIVE BEHAVIOUR (lore): she bends shots around cover precisely because the player keeps hiding near vulnerable trees — a containment response shaped by her refusal to harm the Ward. The hero's label 'Dryad of Nature' (thorned sorceress) is journal framing only. KNOWLEDGE: never heard of the children's book (unknown); suspects fact_amulet_translation_is_accurate once guidance fails."
+}

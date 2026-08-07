@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "contentHash": "sha256:beat-rk-phase_transition-v1",
+  "id": "beat_reliquary_king_phase_transition",
+  "sceneId": "scene_reliquary_king_phase_transition",
+  "beats": [
+    {
+      "order": 1,
+      "speakerId": "char_bone_reliquary_king",
+      "intent": "The realization: the amulet translates perfectly and the stranger chose violence.",
+      "landsOn": [],
+      "emotion": "disbelief"
+    },
+    {
+      "order": 2,
+      "speakerId": "char_bone_reliquary_king",
+      "intent": "Grief at a lifetime of quiet answered with arrows.",
+      "landsOn": [],
+      "emotion": "grief"
+    },
+    {
+      "order": 3,
+      "speakerId": "char_bone_reliquary_king",
+      "intent": "The turn: order the attendants deeper and commit to holding the door.",
+      "landsOn": [],
+      "emotion": "resolve"
+    }
+  ],
+  "avoids": [
+    "fresh pleading",
+    "villain monologue"
+  ],
+  "contextPackageId": "ctx_reliquary_king_phase_transition"
+}

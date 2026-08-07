@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-rel-hub-circle-voice-player-v1",
+  "id": "rel_hub_circle_voice__player",
+  "partyA": "char_hub_circle_voice",
+  "partyB": "player",
+  "dimensions": {
+    "trust": -5,
+    "respect": 10,
+    "affection": 15,
+    "fear": 15,
+    "suspicion": 20,
+    "debt": 0
+  },
+  "namedState": "pitying-witness",
+  "history": [
+    {
+      "event": {
+        "key": "rel_hub_circle_voice_h1",
+        "value": "She offered to introduce the realms' people by name — families, cultures, memories, names are easiest. He praised her 'tireless documentation of the enemy' and asked which names commanded the largest hordes.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -5,
+        "respect": 10,
+        "affection": 15,
+        "suspicion": 10
+      }
+    },
+    {
+      "event": {
+        "key": "rel_hub_circle_voice_h2",
+        "value": "After a run she told him the goblin he fought at the palisade is called Merr, that she has a daughter, that the daughter watched from the wall. He answered that they are breeding an army. She did not call him a monster. It cost her.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "fear": 15,
+        "suspicion": 10
+      }
+    }
+  ],
+  "notes": "Modeled at the EARLY/default state: the introductions phase, offered with genuine warmth. Her position is 'sympathetic' and the pity is load-bearing — affection 15 is real and stays in BOTH states; her moral boundary (she never dehumanizes him back, only calls him wrong) holds across the whole arc. Escalation per profile: mid-arc she recites what he did to them, by name; late-runs sympathy curdles to exhausted grief, never contempt ('The children practice quietly, so as not to frighten the younger children'). She knows the amulet translates perfectly, so her accusation is 'I know you heard her', not 'you misunderstood'. Softens instantly if he says one name back. Deltas sum to current dimensions."
+}

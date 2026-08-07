@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-fac-highland-roosts-v1",
+  "id": "fac_highland_roosts",
+  "name": "The Highland Roosts",
+  "summary": {
+    "key": "fac_highland_roosts_summary",
+    "value": "The cliffside communities of the highland roads, watched over by the Sun-Crown Griffin — road guardian, weather shepherd, and protector of the roosts. Its gusts normally guide travelers away from dangerous drops; against the hero, the same winds herd him back toward the exit he refuses to take.",
+    "lang": "en"
+  },
+  "sharedBeliefs": [
+    "fact_realms_peaceful_ten_millennia",
+    "fact_law_of_fair_warning",
+    "fact_continuance_restores_dead",
+    "fact_griffin_is_road_guardian"
+  ],
+  "sharedOpinions": [
+    {
+      "target": "char_protagonist",
+      "position": "resolute",
+      "reason": "He fights the wind that is trying to save his footing and calls it an ambush. The roads will keep guiding him, whether or not he ever thanks them."
+    },
+    {
+      "target": "fac_desert_matriarchy",
+      "position": "friendly",
+      "reason": "Her caravans use our high passes in the cool season; our fledglings winter on her warm stone. Old road-friends."
+    },
+    {
+      "target": "fac_heavy_hands",
+      "position": "friendly",
+      "reason": "Rockslides are our emergency, and theirs. They climb better than anything that size has a right to."
+    }
+  ],
+  "metaphorDomain": {
+    "source": "wind, roads, altitude, thermals",
+    "examples": [
+      {
+        "key": "fac_highland_roosts_metaphor_1",
+        "value": "The wind is never against you; it is only going somewhere you have not chosen.",
+        "lang": "en"
+      },
+      {
+        "key": "fac_highland_roosts_metaphor_2",
+        "value": "A road is a promise the mountain makes to strangers.",
+        "lang": "en"
+      }
+    ]
+  },
+  "terminology": [
+    {
+      "term": "shepherding weather",
+      "meaning": {
+        "key": "fac_highland_roosts_term_shepherding",
+        "value": "The Griffin's work of turning storms aside from the roads and roosts. Travelers schedule whole seasons around its rounds.",
+        "lang": "en"
+      }
+    },
+    {
+      "term": "road-feather",
+      "meaning": {
+        "key": "fac_highland_roosts_term_road_feather",
+        "value": "A feather of the Sun-Crown, given to trusted road-wardens as a token of safe conduct. The hero covets one as a 'boss unique'; it is a traveler's pass.",
+        "lang": "en"
+      }
+    }
+  ],
+  "customs": [
+    {
+      "key": "fac_highland_roosts_custom_traveler",
+      "value": "Any traveler on the high roads is met at the first roost with water and a weather report. No one walks the passes unwarned.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_highland_roosts_custom_molt",
+      "value": "At the Griffin's molt, found feathers are gathered and returned to the roosts — all but the road-feathers, which are given away deliberately.",
+      "lang": "en"
+    }
+  ],
+  "taboos": [
+    {
+      "key": "fac_highland_roosts_taboo_edge",
+      "value": "Never push any creature toward a drop, even in jest. On the high roads, the edge is the only enemy anyone acknowledges.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_highland_roosts_taboo_nests",
+      "value": "Never climb to a roost uninvited. The nests are nurseries first and fortresses never.",
+      "lang": "en"
+    }
+  ],
+  "tags": [
+    "faction",
+    "realm-people",
+    "highlands",
+    "rung-9"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": "state_living_pyre__rematch",
+  "characterId": "char_living_pyre",
+  "label": "Rematch — the returning draft",
+  "mood": "ember-grief and dread",
+  "location": "The Ashen Shrine, the great hearth",
+  "injuries": [],
+  "activeQuestStages": [
+    "quest_rung_03_ashen_shrine__stage_4"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_living_pyre_re_ev1",
+      "value": "The Continuance relit it in a cold shrine; it remembers each extinguishing, flame by flame.",
+      "lang": "en"
+    },
+    {
+      "key": "nsh_state_living_pyre_re_ev2",
+      "value": "The gate-light kindled again. The hearth-keepers did not need to be told what it meant.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_living_pyre_re_cf1",
+      "value": "You come back colder each time, little ember.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-living-pyre-rematch-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_living_pyre_re_obj",
+    "value": "Ask him again to leave in peace — a hearth does not learn to hate the cold.",
+    "lang": "en"
+  },
+  "phase": "rematch"
+}

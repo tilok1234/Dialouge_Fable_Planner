@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "contentHash": "sha256:scene-living_pyre-phase-trans-v1",
+  "id": "scene_living_pyre_phase_transition",
+  "label": "The Living Pyre phase transition",
+  "sceneType": "boss-phase-transition",
+  "participants": [
+    {
+      "characterId": "char_living_pyre",
+      "stateId": "state_living_pyre__phase_two",
+      "relationshipIds": [
+        "rel_living_pyre__player"
+      ],
+      "role": "speaker"
+    }
+  ],
+  "boundQuestStages": [
+    "quest_rung_03_ashen_shrine__stage_2"
+  ],
+  "purpose": {
+    "key": "scene_living_pyre_phase_trans_purpose",
+    "value": "The realization lands — \"You understand every word I say, don't you?\" — and the guardian stops reasoning with the hero and starts containing him.",
+    "lang": "en"
+  },
+  "requiredFacts": [
+    "fact_amulet_translation_is_accurate"
+  ],
+  "hintableFacts": [
+    "fact_living_pyre_is_communal_hearth"
+  ],
+  "forbiddenRevelations": [
+    "fact_book_is_childrens_comedy"
+  ],
+  "emotionalProgression": [
+    {
+      "order": 1,
+      "emotion": "disbelief",
+      "note": "Every plea was understood. None of it mattered."
+    },
+    {
+      "order": 2,
+      "emotion": "grief",
+      "note": "The guardian grieves that words have failed."
+    },
+    {
+      "order": 3,
+      "emotion": "resolve",
+      "note": "Reasoning ends; containment of the intruder begins."
+    }
+  ],
+  "maxLength": "short",
+  "availableChoices": [],
+  "templateDefaults": {
+    "bossPhaseTransition": {
+      "realizationBeatsReasoning": true
+    }
+  },
+  "notes": "The pivotal line is the guardian realizing the amulet translates perfectly and the hero CHOSE to keep swinging. Keep it short: the turn from appeal to containment. Flavor: hearths against the cold."
+}

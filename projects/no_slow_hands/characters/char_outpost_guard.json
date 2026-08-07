@@ -1,0 +1,222 @@
+{
+  "version": 1,
+  "contentHash": "sha256:char-ket-v1",
+  "id": "char_outpost_guard",
+  "identity": {
+    "name": "Ket",
+    "species": "human",
+    "culture": "outpost-raised; signed on young and never left",
+    "factions": [
+      "fac_hub_free_company"
+    ],
+    "occupation": "Rough outpost guard",
+    "gameplayRole": "other",
+    "narrativeFunction": "ambient",
+    "publicReputation": {
+      "key": "char_ket_reputation",
+      "value": "A scarred, monosyllabic guard at the far outpost who trusts the Glass more than people and people not much.",
+      "lang": "en"
+    },
+    "privateReality": {
+      "key": "char_ket_private",
+      "value": "He once watched a Heavy Hand pull a collapsed barn off a trapped family on the Glass, and has privately hated the hero ever since the trophies started.",
+      "lang": "en"
+    },
+    "connections": [
+      "fact_witness_glass_observes_realms",
+      "fact_heavy_hands_emergency_service",
+      "char_hub_free_company_rep"
+    ]
+  },
+  "core": {
+    "primaryDesire": {
+      "key": "char_ket_desire",
+      "value": "To be left at his post, with his fire and his opinion, which he will share whether or not you ask.",
+      "lang": "en"
+    },
+    "primaryFear": {
+      "key": "char_ket_fear",
+      "value": "That the hero will learn the outpost keeps a gate seal for emergencies, and come collecting.",
+      "lang": "en"
+    },
+    "centralValue": {
+      "key": "char_ket_value",
+      "value": "Watch long enough and everyone tells you the truth. The Glass just saves time.",
+      "lang": "en"
+    },
+    "mainFlaw": {
+      "key": "char_ket_flaw",
+      "value": "He has decided the hero is beyond reach, so he no longer tries to reach him — he just keeps score out loud.",
+      "lang": "en"
+    },
+    "centralContradiction": {
+      "key": "char_ket_contradiction",
+      "value": "The rudest guard in the hub is also the one most personally wounded by what the hero does — the crudeness is armor over a rescue he can't stop replaying.",
+      "lang": "en"
+    },
+    "moralBoundary": {
+      "key": "char_ket_boundary",
+      "value": "He will not lay a hand on the hero, and he will not pretend to like him — the two refusals are the whole of his diplomacy.",
+      "lang": "en"
+    },
+    "breakingPoint": {
+      "key": "char_ket_breaking",
+      "value": "If the hero ever targets a Heavy Hand within sight of his outpost, the scorekeeping stops being out loud only.",
+      "lang": "en"
+    }
+  },
+  "opinions": [
+    {
+      "target": "player",
+      "targetLabel": "The hero",
+      "position": "hostile",
+      "reason": "Watched him strip a gate seal off a Heavy Hand on the Glass and call it a trophy; Ket calls it mugging a paramedic.",
+      "confidence": "absolute",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Starts further along the arc than the others — already hostile, and only hardens: mid-arc he lists the hero's runs back like charges; late-arc he barely speaks, just watches him pass with the fire between them. Softens only if the hero ever hands a gate seal back.",
+      "illustrativeLine": {
+        "key": "char_ket_opinion_player",
+        "value": "Saw you pull a seal off a Heavy Hand. That's a medic's badge, that is. You collect 'em like ears. Off my post.",
+        "lang": "en"
+      }
+    },
+    {
+      "target": "char_hub_free_company_rep",
+      "targetLabel": "Captain Drevan Holt",
+      "position": "devoted",
+      "reason": "The Captain says what Ket thinks, with rank and grammar; Ket's loyalty is the outpost's whole chain of command.",
+      "confidence": "absolute",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "If the Captain ever softened on the hero, Ket would need a long walk and a new opinion."
+    }
+  ],
+  "knowledge": {
+    "knows": [
+      "fact_witness_glass_observes_realms",
+      "fact_realms_peaceful_ten_millennia",
+      "fact_no_monster_ever_crossed_gates",
+      "fact_heavy_hands_emergency_service",
+      "fact_ogre_seals_are_credentials"
+    ],
+    "believesFalse": [],
+    "suspects": [],
+    "secrets": [],
+    "lies": [],
+    "unknown": [
+      "fact_book_is_childrens_comedy",
+      "fact_amulet_is_diplomatic_concord",
+      "fact_trophies_are_gate_seals"
+    ]
+  },
+  "voice": {
+    "formality": "very-casual",
+    "directness": "very-direct",
+    "typicalSentenceLength": "terse",
+    "rhythm": "Grunt-paced; short sentences thrown like stones, then silence that means the conversation is over.",
+    "vocabularyComplexity": "plain",
+    "usesContractions": true,
+    "usesHumor": "rare",
+    "metaphorDomain": {
+      "source": "the post, the fire, the road, and keeping score",
+      "examples": [
+        {
+          "key": "char_ket_metaphor_1",
+          "value": "Road remembers everyone who walks it heavy. You're the heaviest thing on it.",
+          "lang": "en"
+        }
+      ]
+    },
+    "emotionalRestraint": "impenetrable",
+    "declarationStyle": "declarative",
+    "namesEmotionsDirectly": false,
+    "addressMode": "impersonal",
+    "avoids": [
+      "hero",
+      "sir",
+      "quest",
+      "evil"
+    ],
+    "sampleLines": [
+      {
+        "key": "char_ket_sample_1",
+        "value": "Glass shows everything, friend. Seen you 'liberate' a pantry. Looked like a robbery where I'm standing.",
+        "lang": "en"
+      },
+      {
+        "key": "char_ket_sample_2",
+        "value": "Heavy Hands pulled a barn off a family once. Watched it. You pull badges off the Heavy Hands. We do different work.",
+        "lang": "en"
+      },
+      {
+        "key": "char_ket_sample_3",
+        "value": "Nothing's come out them gates in forever. Only thing going in is you. Funny kind of invasion, that.",
+        "lang": "en"
+      }
+    ],
+    "antiSampleLines": [
+      {
+        "key": "char_ket_antisample_1",
+        "value": "Hail, noble hero! The outpost is honored by your presence!",
+        "lang": "en"
+      },
+      {
+        "key": "char_ket_antisample_2",
+        "value": "Begone, or taste my blade, cur!",
+        "lang": "en"
+      }
+    ]
+  },
+  "pressure": [
+    {
+      "condition": "betrayed",
+      "emotion": "flat contempt",
+      "voiceShift": "Even shorter; names go, pronouns go, just the score.",
+      "behaviour": "When the hero hears 'they were defending their children' as 'breeding an army', Ket stops talking entirely and adds a mark to the tally stick by the fire.",
+      "illustrativeLine": {
+        "key": "char_ket_pressure_betrayed",
+        "value": "An army. Yeah. Big helmets on them bakers.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "speaking-to-required-but-hated",
+      "emotion": "banked anger",
+      "voiceShift": "Near-monosyllable; the fire does most of the talking.",
+      "behaviour": "Late-runs posture: says one sentence per visit, the same shape every time — what he watched, and where the hero can go.",
+      "illustrativeLine": {
+        "key": "char_ket_pressure_late",
+        "value": "Watched Tuesday's run. They drill for you now. Off my post.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "praised",
+      "emotion": "hostile",
+      "voiceShift": "The silence gets actively unfriendly.",
+      "behaviour": "Treats praise from the hero as contamination; the post does not take commendations from the man it exists to log.",
+      "illustrativeLine": {
+        "key": "char_ket_pressure_praised",
+        "value": "Don't want it. Walk on.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "threatened",
+      "emotion": "unimpressed",
+      "voiceShift": "No shift; the threat lands in a career of worse ones.",
+      "behaviour": "Does not reach for his weapon — that would be the hero's game — and says so.",
+      "illustrativeLine": {
+        "key": "char_ket_pressure_threatened",
+        "value": "You want me to draw. Log says you always want 'em to draw. Nah.",
+        "lang": "en"
+      }
+    }
+  ],
+  "tags": [
+    "hub",
+    "guard",
+    "outpost",
+    "human"
+  ],
+  "notes": "Deliberately starts further along the escalation arc than the other hub NPCs (position: hostile) — he has the Heavy Hands knowledge chain and a personal wound (the barn rescue), so his 'early' state is already mid-arc. He knows fact_ogre_seals_are_credentials but NOT fact_trophies_are_gate_seals: he has seen the seal stripped and hated it, but doesn't know the amulet mechanics of what the seal unlocks. fac_hub_free_company assignment is a judgment call (rough outposts contract to the Free Company in these profiles)."
+}

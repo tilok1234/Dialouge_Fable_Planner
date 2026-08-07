@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "contentHash": "sha256:scene-npc-hub-prospector-late-runs-v1",
+  "id": "scene_npc_hub_prospector_late_runs",
+  "label": "Prospector Pell, late runs — identification as indictment",
+  "sceneType": "npc-repeat-greeting",
+  "participants": [
+    {
+      "characterId": "char_hub_prospector",
+      "stateId": "state_hub_prospector__late_runs",
+      "relationshipIds": [
+        "rel_hub_prospector__player"
+      ],
+      "role": "speaker"
+    }
+  ],
+  "boundQuestStages": [],
+  "purpose": {
+    "key": "scene_npc_hub_prospector_late_runs_purpose",
+    "value": "Pell performs identification as indictment: he lays the hero's hoard out in a row and names each piece by the home it came from — the 'dark shards' were always domestic magic, and now every one gets its provenance said aloud.",
+    "lang": "en"
+  },
+  "requiredFacts": [
+    "fact_shards_are_domestic_magic"
+  ],
+  "hintableFacts": [
+    "fact_book_is_childrens_comedy"
+  ],
+  "forbiddenRevelations": [],
+  "emotionalProgression": [
+    {
+      "order": 1,
+      "emotion": "exhausted candor",
+      "note": "Slower now; each shard set down one at a time, named, no banter left in the lens work."
+    },
+    {
+      "order": 2,
+      "emotion": "grief",
+      "note": "'Bowl. Toy. Fishing hook. Family portrait. Heating stone. That is your hoard, friend. Shall I grade the portrait?'"
+    }
+  ],
+  "maxLength": "short",
+  "availableChoices": [],
+  "templateDefaults": {
+    "npcGreeting": {
+      "neverValidateProphecyFraming": true,
+      "bluntIndictment": true
+    }
+  },
+  "notes": "The escalation endpoint for the shard arc: the patient re-identification of the greeting has become a row of objects and the homes they came from. The last honest attempt. The hero's reply will still be some variant of 'At last, the enemy respects me.' — that framing belongs to his side of the exchange (notes only), never to an NPC line. Never validate the hero's prophecy framing: there is no canon fact supporting 'the realms are evil', and that absence is itself the guard."
+}

@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-rel-settlement-trader-player-v1",
+  "id": "rel_settlement_trader__player",
+  "partyA": "char_settlement_trader",
+  "partyB": "player",
+  "dimensions": {
+    "trust": 0,
+    "respect": 5,
+    "affection": 20,
+    "fear": 10,
+    "suspicion": 15,
+    "debt": 0
+  },
+  "namedState": "warm-but-wary",
+  "history": [
+    {
+      "event": {
+        "key": "rel_settlement_trader_h1",
+        "value": "He pays fair, tips the mule, and helped right her wagon in the mud. A courteous young man — she keeps the list of his virtues where she can see it, and it is getting shorter than the other one.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": 10,
+        "respect": 5,
+        "affection": 20
+      }
+    },
+    {
+      "event": {
+        "key": "rel_settlement_trader_h2",
+        "value": "She told him about the goblin lady past the second gate who paid in jam — best jam on the road. He heard 'enemy settlement' and promised the roads would soon be safe for trade again. The stories dried up mid-sentence.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -10,
+        "fear": 10,
+        "suspicion": 15
+      }
+    }
+  ],
+  "notes": "Modeled at the EARLY stage: warmth as strategy — she hides the truth in jokes and stories because warmth might work where evidence failed. Affection 20 is the highest in the hub, and that is the horror: she genuinely likes the man who is ruining everything she loves. Her private stake (she traded the old diplomatic roads; some people behind the gates are her customers and friends) keeps suspicion at 15 despite the warmth. Escalation per profile: mid-arc the warmth gets effortful and the news darker; late-runs she keeps the smile as her last open door and says what it costs. Boundary, intact: her wagon never carries 'liberated treasure'. Softens instantly if he asks after a settlement by name. Deltas sum to current dimensions."
+}

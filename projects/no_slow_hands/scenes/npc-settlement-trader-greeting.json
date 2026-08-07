@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "contentHash": "sha256:scene-npc-settlement-trader-greeting-v1",
+  "id": "scene_npc_settlement_trader_greeting",
+  "label": "Tamsin Vale's first greeting — road stories with teeth",
+  "sceneType": "npc-first-greeting",
+  "participants": [
+    {
+      "characterId": "char_settlement_trader",
+      "stateId": "state_settlement_trader__default",
+      "relationshipIds": [
+        "rel_settlement_trader__player"
+      ],
+      "role": "speaker"
+    }
+  ],
+  "boundQuestStages": [],
+  "purpose": {
+    "key": "scene_npc_settlement_trader_greeting_purpose",
+    "value": "Tamsin greets the hero with a trader's warmth and hides the truth in road stories: the gates he keeps forcing were built for envoys and wagons like hers, and some of the people behind them are her old customers.",
+    "lang": "en"
+  },
+  "requiredFacts": [],
+  "hintableFacts": [
+    "fact_gates_are_diplomatic"
+  ],
+  "forbiddenRevelations": [],
+  "emotionalProgression": [
+    {
+      "order": 1,
+      "emotion": "wagon-yard warmth",
+      "note": "She feeds him, jokes with him, and calls warmth a strategy — it has outlasted every other strategy so far."
+    },
+    {
+      "order": 2,
+      "emotion": "story with teeth",
+      "note": "A tale of the old diplomatic roads, told lightly: routes between people who were glad to see her wagon."
+    },
+    {
+      "order": 3,
+      "emotion": "effortful smile",
+      "note": "He enjoys the story as local color about enemy supply lines; the smile stays up because it is her last open door."
+    }
+  ],
+  "maxLength": "short",
+  "availableChoices": [],
+  "templateDefaults": {
+    "npcGreeting": {
+      "neverValidateProphecyFraming": true
+    }
+  },
+  "notes": "Grounded bewilderment, trader register: she knows the gates are diplomatic (hintable, not stated as archive proof — she is no Warden) and only suspects the book's true genre, so no book reference from her. Pair: her fond road stories are heard as intelligence on enemy logistics. Never validate the hero's prophecy framing: there is no canon fact supporting 'the realms are evil', and that absence is itself the guard."
+}

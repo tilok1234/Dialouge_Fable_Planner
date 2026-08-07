@@ -1,0 +1,211 @@
+{
+  "version": 1,
+  "contentHash": "sha256:char-oswin-marek-v1",
+  "id": "char_capital_gate_guard",
+  "identity": {
+    "name": "Sergeant Oswin Marek",
+    "species": "human",
+    "culture": "capital watch, twenty-two years on the gate",
+    "factions": [
+      "fac_hub_warden"
+    ],
+    "occupation": "Capital gate guard",
+    "gameplayRole": "other",
+    "narrativeFunction": "ambient",
+    "publicReputation": {
+      "key": "char_oswin_reputation",
+      "value": "The gate sergeant with the perfect record and the bored posture to match.",
+      "lang": "en"
+    },
+    "privateReality": {
+      "key": "char_oswin_private",
+      "value": "His entire career is the statistical proof the hero refuses to hear: twenty-two years, one gate, zero incursions — until the incursions started going the other way.",
+      "lang": "en"
+    },
+    "connections": [
+      "fact_no_monster_ever_crossed_gates",
+      "fact_witness_glass_observes_realms",
+      "char_field_belt_guard",
+      "char_hub_warden"
+    ]
+  },
+  "core": {
+    "primaryDesire": {
+      "key": "char_oswin_desire",
+      "value": "A quiet gate, a full pension, and one honest answer to the question 'has anything ever come through?'.",
+      "lang": "en"
+    },
+    "primaryFear": {
+      "key": "char_oswin_fear",
+      "value": "That one day something WILL come through — in retaliation — and nobody will believe it wasn't the plan all along.",
+      "lang": "en"
+    },
+    "centralValue": {
+      "key": "char_oswin_value",
+      "value": "The log is the job. Twenty-two years of 'nothing to report' is not boredom — it's the achievement.",
+      "lang": "en"
+    },
+    "mainFlaw": {
+      "key": "char_oswin_flaw",
+      "value": "He believes procedure persuades people; he has been reading the same log entry to the hero for months.",
+      "lang": "en"
+    },
+    "centralContradiction": {
+      "key": "char_oswin_contradiction",
+      "value": "He is the living proof of the realms' peacefulness, and the hero salutes him on the way out to invade them.",
+      "lang": "en"
+    },
+    "moralBoundary": {
+      "key": "char_oswin_boundary",
+      "value": "He will not falsify the log, and he will not abandon the gate — even the day the hero makes the gate indefensible.",
+      "lang": "en"
+    },
+    "breakingPoint": {
+      "key": "char_oswin_breaking",
+      "value": "The day his 'nothing to report' streak ends because of something coming OUT to beg, not to attack.",
+      "lang": "en"
+    }
+  },
+  "opinions": [
+    {
+      "target": "player",
+      "targetLabel": "The hero",
+      "position": "wary",
+      "reason": "The only person who has ever weaponized his gate, going the wrong direction, in a children-of-the-realm costume of certainty.",
+      "confidence": "high",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Escalates with run count: early he answers with the log; mid-arc he answers before being asked; late-arc he reads the log aloud like testimony, salute held a beat too long. Softens only if the hero returns having broken nothing.",
+      "illustrativeLine": {
+        "key": "char_oswin_opinion_player",
+        "value": "Nothing has ever come through those gates, sir. Twenty-two years on this post. The only thing that gate has ever swallowed is you.",
+        "lang": "en"
+      }
+    },
+    {
+      "target": "char_field_belt_guard",
+      "targetLabel": "Ruth Callan, field belt guard",
+      "position": "friendly",
+      "reason": "She walks the outer belt so his gate stays boring; they compare logs the way other people compare gardens.",
+      "confidence": "high",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "If she ever takes a posting further from the hero's route, he would understand and hate it."
+    }
+  ],
+  "knowledge": {
+    "knows": [
+      "fact_witness_glass_observes_realms",
+      "fact_realms_peaceful_ten_millennia",
+      "fact_no_monster_ever_crossed_gates"
+    ],
+    "believesFalse": [],
+    "suspects": [
+      "fact_gates_are_diplomatic"
+    ],
+    "secrets": [],
+    "lies": [],
+    "unknown": [
+      "fact_book_is_childrens_comedy",
+      "fact_amulet_is_diplomatic_concord"
+    ]
+  },
+  "voice": {
+    "formality": "formal",
+    "directness": "very-direct",
+    "typicalSentenceLength": "terse",
+    "rhythm": "Duty-roster flat; complete sentences, no ornament, 'sir' deployed as punctuation rather than respect.",
+    "vocabularyComplexity": "common",
+    "usesContractions": false,
+    "usesHumor": "dry",
+    "metaphorDomain": {
+      "source": "posts, logs, shifts, salutes, and the gate",
+      "examples": [
+        {
+          "key": "char_oswin_metaphor_1",
+          "value": "A gate log full of nothing is not an empty book, sir. It is a full one.",
+          "lang": "en"
+        }
+      ]
+    },
+    "emotionalRestraint": "impenetrable",
+    "declarationStyle": "declarative",
+    "namesEmotionsDirectly": false,
+    "addressMode": "by-title",
+    "avoids": [
+      "hero",
+      "monster",
+      "evil",
+      "glory"
+    ],
+    "sampleLines": [
+      {
+        "key": "char_oswin_sample_1",
+        "value": "Nothing has ever come through those gates, sir. It is in the log. I wrote most of it.",
+        "lang": "en"
+      },
+      {
+        "key": "char_oswin_sample_2",
+        "value": "You may have misunderstood what those gates are, sir. They are a door. You are the only one who has ever used it wrong.",
+        "lang": "en"
+      },
+      {
+        "key": "char_oswin_sample_3",
+        "value": "Log entry, fourteenth of the month: hero departed, armed, singing. Return entry pending. They usually rhyme, sir.",
+        "lang": "en"
+      }
+    ],
+    "antiSampleLines": [
+      {
+        "key": "char_oswin_antisample_1",
+        "value": "Sound the alarm! The dark hordes are upon us!",
+        "lang": "en"
+      },
+      {
+        "key": "char_oswin_antisample_2",
+        "value": "Go with honor, champion! Slay the beasts beyond the gate!",
+        "lang": "en"
+      }
+    ]
+  },
+  "pressure": [
+    {
+      "condition": "betrayed",
+      "emotion": "clamped-down anger",
+      "voiceShift": "The 'sir' gets heavier; sentences get shorter.",
+      "behaviour": "When the hero hears 'nothing has ever come through' as 'they are massing in secret', Oswin enters the misquote in the log, verbatim, attributed.",
+      "illustrativeLine": {
+        "key": "char_oswin_pressure_betrayed",
+        "value": "Noted in the log, sir: informed of twenty-two years of peace, concluded conspiracy. Your words. Your name beside them.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "speaking-to-required-but-hated",
+      "emotion": "grieving formality",
+      "voiceShift": "Pure duty-roster; the dryness is gone, which is worse.",
+      "behaviour": "Late-runs posture: reads him the log without being asked, every departure, so that someone official has said it out loud.",
+      "illustrativeLine": {
+        "key": "char_oswin_pressure_late",
+        "value": "For the record, sir, before you go: they run evacuation drills now when your amulet glows. Log it how you like.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "praised",
+      "emotion": "wary",
+      "voiceShift": "Stiffens; praise from the hero reads as a prelude to a request.",
+      "behaviour": "Accepts commendation of the watch only; declines any framing of the gate as the hero's 'first line of defense'.",
+      "illustrativeLine": {
+        "key": "char_oswin_pressure_praised",
+        "value": "The gate defends both directions, sir. Lately it is one direction, and it is not the one you think.",
+        "lang": "en"
+      }
+    }
+  ],
+  "tags": [
+    "hub",
+    "guard",
+    "capital",
+    "human"
+  ],
+  "notes": "His signature line — 'Nothing has ever come through those gates' — is both the Lore.md early-escalation correction and his sample line; keep it as his default greeting. He only suspects fact_gates_are_diplomatic (the Warden has shown him treaties; he trusts his own log more than her archive). Faction fac_hub_warden is a judgment call: the capital gate is under Warden authority in these profiles."
+}

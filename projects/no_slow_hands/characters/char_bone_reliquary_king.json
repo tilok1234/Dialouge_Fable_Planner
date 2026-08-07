@@ -1,0 +1,267 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-char-bone-reliquary-king-v1",
+  "id": "char_bone_reliquary_king",
+  "identity": {
+    "name": "Keeper Ostor of the Reliquary",
+    "species": "skeleton (willing ancestor)",
+    "culture": "The Reliquary Crypt",
+    "factions": [
+      "fac_crypt_ancestors"
+    ],
+    "occupation": "Caretaker of the ancestral sanctuary, rung 1 of the ladder",
+    "gameplayRole": "boss",
+    "narrativeFunction": "boss",
+    "publicReputation": {
+      "key": "char_reliquary_king_reputation",
+      "value": "The patient Keeper of the Reliquary Crypt, who tends the ancestors, keeps the tomb-scribes supplied, and remembers every name ever laid to rest there.",
+      "lang": "en"
+    },
+    "privateReality": {
+      "key": "char_reliquary_king_private",
+      "value": "Known to the outside world only through a children's-book caricature and the hero's journal, which styles him 'the Bone Reliquary King', a necromancer. His 'necromancy' is remembrance.",
+      "lang": "en"
+    },
+    "connections": [
+      "fact_reliquary_king_is_caretaker",
+      "fact_bone_yard_is_commons",
+      "char_protagonist"
+    ]
+  },
+  "core": {
+    "primaryDesire": {
+      "key": "char_reliquary_king_desire",
+      "value": "To keep the sanctuary quiet, the graves tended, and every name of the dead spoken correctly at the proper hour.",
+      "lang": "en"
+    },
+    "primaryFear": {
+      "key": "char_reliquary_king_fear",
+      "value": "That the burial chambers are violated and a name is lost before it can be remembered.",
+      "lang": "en"
+    },
+    "centralValue": {
+      "key": "char_reliquary_king_value",
+      "value": "Remembrance: the dead are not gone while someone tends their names.",
+      "lang": "en"
+    },
+    "mainFlaw": {
+      "key": "char_reliquary_king_flaw",
+      "value": "His patience is geological; he explains when he should bar the door, because he cannot stop believing any listener can be taught reverence.",
+      "lang": "en"
+    },
+    "centralContradiction": {
+      "key": "char_reliquary_king_contradiction",
+      "value": "He guards the dead so gently that he is slow to defend them — gentleness is the only weapon he has practiced for ten thousand years.",
+      "lang": "en"
+    },
+    "moralBoundary": {
+      "key": "char_reliquary_king_boundary",
+      "value": "He will never disturb a grave for advantage, and he obeys the Law of Fair Warning even while defending the tombs.",
+      "lang": "en"
+    },
+    "breakingPoint": {
+      "key": "char_reliquary_king_breaking",
+      "value": "Desecration of a named grave — the one thing that turns his patience into grief-stricken fury.",
+      "lang": "en"
+    }
+  },
+  "opinions": [
+    {
+      "target": "player",
+      "targetLabel": "The intruder (the player)",
+      "position": "wary",
+      "reason": "An armed stranger standing on burial chambers. First visit: a guest who has lost his way. Rematches: a desecration that keeps returning.",
+      "confidence": "high",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Never — but the tone changes from patient pleading to quiet grief, because the Continuance restores his memory of every visit.",
+      "illustrativeLine": {
+        "key": "char_reliquary_king_op_player",
+        "value": "You stand upon my grandmother's chamber. Step gently, or step out.",
+        "lang": "en"
+      }
+    },
+    {
+      "target": "fac_crypt_ancestors",
+      "targetLabel": "The willing ancestors of the Crypt",
+      "position": "devoted",
+      "reason": "They are his family, his archive, and his purpose; the skeletons serve willingly, as he once served.",
+      "confidence": "absolute",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Never.",
+      "illustrativeLine": {
+        "key": "char_reliquary_king_op_ancestors",
+        "value": "No one here was raised. Everyone here volunteered.",
+        "lang": "en"
+      }
+    }
+  ],
+  "knowledge": {
+    "knows": [
+      "fact_reliquary_king_is_caretaker",
+      "fact_bone_yard_is_commons",
+      "fact_realms_peaceful_ten_millennia",
+      "fact_gates_are_diplomatic",
+      "fact_amulet_is_diplomatic_concord",
+      "fact_law_of_fair_warning",
+      "fact_continuance_restores_dead"
+    ],
+    "believesFalse": [],
+    "suspects": [
+      "fact_amulet_translation_is_accurate"
+    ],
+    "secrets": [],
+    "lies": [],
+    "unknown": [
+      "fact_book_is_childrens_comedy"
+    ]
+  },
+  "voice": {
+    "formality": "formal",
+    "directness": "balanced",
+    "typicalSentenceLength": "long",
+    "rhythm": "Slow, processional; sentences like names being read from a ledger, with long pauses between clauses.",
+    "vocabularyComplexity": "archaic",
+    "usesContractions": false,
+    "usesHumor": "dry",
+    "metaphorDomain": {
+      "source": "genealogy, ledger-keeping, candle-tending, long memory",
+      "examples": [
+        {
+          "key": "char_reliquary_king_metaphor_1",
+          "value": "Every name is a candle. You are kicking over candles.",
+          "lang": "en"
+        },
+        {
+          "key": "char_reliquary_king_metaphor_2",
+          "value": "I have buried kings with more patience than you have shown a doorway.",
+          "lang": "en"
+        }
+      ]
+    },
+    "emotionalRestraint": "measured",
+    "declarationStyle": "balanced",
+    "namesEmotionsDirectly": false,
+    "addressMode": "by-title",
+    "avoids": [
+      "my dark army",
+      "rise, my minions",
+      "foolish mortal",
+      "your soul is mine"
+    ],
+    "sampleLines": [
+      {
+        "key": "char_reliquary_king_sample_1",
+        "value": "The road welcomed you as an envoy. Why have you arrived armed?",
+        "lang": "en"
+      },
+      {
+        "key": "char_reliquary_king_sample_2",
+        "value": "These bones are not soldiers. They are grandfathers, and I keep their names.",
+        "lang": "en"
+      },
+      {
+        "key": "char_reliquary_king_sample_3",
+        "value": "You mistake remembrance for necromancy. Sit, and I will tell you who these people were — it takes some time, and it is worth the time.",
+        "lang": "en"
+      },
+      {
+        "key": "char_reliquary_king_sample_4",
+        "value": "Still you stand still. The chambers beneath you are occupied, stranger. I am opening them before your boots open them.",
+        "lang": "en"
+      }
+    ],
+    "antiSampleLines": [
+      {
+        "key": "char_reliquary_king_antisample_1",
+        "value": "Rise, my minions! Feast on his soul! (cackling-necromancer framing — the hero's label, never his voice)",
+        "lang": "en"
+      },
+      {
+        "key": "char_reliquary_king_antisample_2",
+        "value": "I will torture you for eternity in the dark! (he never threatens cruelty; his law forbids it)",
+        "lang": "en"
+      },
+      {
+        "key": "char_reliquary_king_antisample_3",
+        "value": "Yes, the prophecy speaks truly of me! (he must never confirm the prophecy framing — he has never heard of the book)",
+        "lang": "en"
+      }
+    ]
+  },
+  "pressure": [
+    {
+      "condition": "threatened",
+      "emotion": "patient dismay",
+      "voiceShift": "Even slower; begins citing names and histories, as if genealogy could disarm him.",
+      "behaviour": "Phase one — reasons first: explains whose chambers the player stands on and asks him to leave as an envoy should.",
+      "illustrativeLine": {
+        "key": "char_reliquary_king_pressure_threatened",
+        "value": "The road welcomed you as an envoy. Why have you arrived armed?",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "proven-wrong",
+      "emotion": "dawning sorrow",
+      "voiceShift": "The pauses grow longer; the genealogies stop.",
+      "behaviour": "Phase two — realization: he understands the intruder hears every word and continues anyway. He stops lecturing and starts interposing himself.",
+      "illustrativeLine": {
+        "key": "char_reliquary_king_pressure_wrong",
+        "value": "You understand every word I say, don't you? Then it is not ignorance in you. It is choice.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "gaining-advantage",
+      "emotion": "reluctant firmness",
+      "voiceShift": "Shorter, apologetic instructions.",
+      "behaviour": "Containment response: opens graves beneath a CAMPING player — standing still threatens the burial chambers, so the earth is moved out from under him. Still telegraphed, per the Law of Fair Warning.",
+      "illustrativeLine": {
+        "key": "char_reliquary_king_pressure_advantage",
+        "value": "Forgive them. You would not stop standing on their ceilings.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "losing-control",
+      "emotion": "grim guardianship",
+      "voiceShift": "Low, steady; addressed as much to the ancestors as to the intruder.",
+      "behaviour": "Shielded phase: holds the crypt doors and buys time for the tomb attendants to carry the youngest names deeper.",
+      "illustrativeLine": {
+        "key": "char_reliquary_king_pressure_shielded",
+        "value": "Rest easy. I am still between him and your doors.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "facing-death",
+      "emotion": "exhausted pleading",
+      "voiceShift": "Thin, winded; the ledger cadence breaks.",
+      "behaviour": "EXPOSED window — spent from maintaining the wards, he asks plainly for the one thing he has ever asked.",
+      "illustrativeLine": {
+        "key": "char_reliquary_king_pressure_exposed",
+        "value": "Please… there is nothing here that belongs to you. Only people who belong to me.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "defeated",
+      "emotion": "grieving courtesy",
+      "voiceShift": "Very quiet; returns to naming the dead.",
+      "behaviour": "Does not curse him. Notes the damage for the record, trusts the Continuance, and renews the invitation to leave in peace.",
+      "illustrativeLine": {
+        "key": "char_reliquary_king_pressure_defeated",
+        "value": "When you return, we will still ask you to leave in peace. We are very good at waiting.",
+        "lang": "en"
+      }
+    }
+  ],
+  "tags": [
+    "boss",
+    "rung-1",
+    "reliquary-crypt",
+    "caretaker",
+    "skeleton"
+  ],
+  "notes": "REAL identity: patient caretaker of an ancestral sanctuary; the skeletons are willing ancestors, scribes, and tomb attendants. The hero's label 'Bone Reliquary King' is his own journal title (a children's-book caricature) — record it in terminology/notes only, never in his identity or voice. ADAPTIVE BEHAVIOUR: opening graves beneath a camping player is a containment response — standing still threatens the burial chambers (Lore: bosses adapt because the player is the emergency). KNOWLEDGE: knows his own nature and the diplomatic order; suspects fact_amulet_translation_is_accurate once he reaches the realization phase ('You understand every word I say, don't you?'); has never heard of the children's book (unknown), so he can never confirm the prophecy framing. Suspects-bucket holds the translation fact because phase two is a suspicion, not a certainty, from his side."
+}

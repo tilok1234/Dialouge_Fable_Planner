@@ -1,0 +1,34 @@
+{
+  "id": "state_hub_free_company_rep__default",
+  "characterId": "char_hub_free_company_rep",
+  "label": "Default — free professional advice",
+  "mood": "concerned correction, professional",
+  "location": "The hub, the Free Company board",
+  "injuries": [],
+  "activeQuestStages": [],
+  "recentEvents": [
+    {
+      "key": "nsh_state_hub_free_company_rep_def_ev1",
+      "value": "Reviewed his latest engagement on the Glass: the battle began after he crossed the border armed. Same as every battle on record.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_hub_free_company_rep_def_cf1",
+      "value": "Brave, fit, disciplined, and wrong about the one fact that matters: he starts every fight he fights.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-hub-free-company-rep-default-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_hub_free_company_rep_def_obj",
+    "value": "Walk him through one after-action: who crossed the border armed? Draw the conclusion.",
+    "lang": "en"
+  },
+  "notes": "Early-run era: the free-professional-advice phase ('every battle begins after you enter someone's territory')."
+}

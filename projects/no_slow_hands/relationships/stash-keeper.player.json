@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-rel-stash-keeper-player-v1",
+  "id": "rel_stash_keeper__player",
+  "partyA": "char_stash_keeper",
+  "partyB": "player",
+  "dimensions": {
+    "trust": -20,
+    "respect": 0,
+    "affection": 0,
+    "fear": 10,
+    "suspicion": 45,
+    "debt": 0
+  },
+  "namedState": "watched-with-dread",
+  "history": [
+    {
+      "event": {
+        "key": "rel_stash_keeper_h1",
+        "value": "First banking of 'seized instruments of evil': four bowls, a stuffed rabbit, six fishing hooks, and a portrait of somebody's grandmother. She filed them under their real names and asked the dry discrepancy question — shall she file this under 'instruments of evil', or under 'bowl'?",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -10,
+        "fear": 5,
+        "suspicion": 25
+      }
+    },
+    {
+      "event": {
+        "key": "rel_stash_keeper_h2",
+        "value": "He asked why the vault refuses to use the proper names for his spoils. She read the inventory back to him in full catalog language; he called it 'the tally of my victories'. She entered his exact words in the ledger and initialed them.",
+        "lang": "en"
+      },
+      "dimensionDeltas": {
+        "trust": -10,
+        "fear": 5,
+        "suspicion": 20
+      }
+    }
+  ],
+  "notes": "Modeled at the EARLY/default state: dry discrepancy questions, procedure as a place to hide. She sees EVERYTHING the hero banks — the vault is where the diplomatic network delivers it — so suspicion 45 is the highest in the hub alongside the free company rep, and the dread is catalogued rather than expressed, hence namedState 'watched-with-dread'. Affection 0 and respect 0 are deliberate: her register is the ledger, and the ledger does not lie. Escalation per profile: mid-arc she reads the inventory back to him; late-runs she reads it aloud without being asked, every time — procedure as protest. Her rule survives both states: never mislabel an item; her breaking point is catching her own handwriting starting to sound like his journal. Softens only if he ever reclaims an item to return it. Deltas sum to current dimensions."
+}

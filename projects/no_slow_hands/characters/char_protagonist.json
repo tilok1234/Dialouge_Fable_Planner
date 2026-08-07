@@ -1,0 +1,331 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-char-protagonist-v1",
+  "id": "char_protagonist",
+  "identity": {
+    "name": "The Hero",
+    "species": "human",
+    "culture": "The lands outside the gates",
+    "factions": [],
+    "occupation": "Self-appointed prophesied hero; bearer of the Amulet of Righteous Judgment (his own rename of the Amulet of Concord)",
+    "gameplayRole": "other",
+    "narrativeFunction": "other",
+    "publicReputation": {
+      "key": "char_protagonist_reputation",
+      "value": "A brave, courteous young hero who found an ancient amulet and a battered prophecy, and had the courage to act on it.",
+      "lang": "en"
+    },
+    "privateReality": {
+      "key": "char_protagonist_private",
+      "value": "The kindest man in the story and its only source of violence: he is invading ten peaceful realms on the authority of a children's comedy he believes is prophecy.",
+      "lang": "en"
+    },
+    "connections": [
+      "char_bone_reliquary_king",
+      "char_goblin_war_crown",
+      "char_living_pyre",
+      "char_tide_man_the_blue",
+      "char_lava_core_colossus",
+      "char_dryad_of_nature",
+      "char_ancient_mirejaw",
+      "char_night_elf_prince",
+      "char_sun_crown_griffin",
+      "char_scorpion_empress"
+    ]
+  },
+  "core": {
+    "primaryDesire": {
+      "key": "char_protagonist_desire",
+      "value": "To protect everyone by ridding the world of the ten great evils named in the prophecy.",
+      "lang": "en"
+    },
+    "primaryFear": {
+      "key": "char_protagonist_fear",
+      "value": "That evil wins because he hesitated — that one moment of doubt lets the ten sovereigns gather their strength.",
+      "lang": "en"
+    },
+    "centralValue": {
+      "key": "char_protagonist_value",
+      "value": "Courage: the willingness to act on a hard truth when everyone else is too frightened to see it.",
+      "lang": "en"
+    },
+    "mainFlaw": {
+      "key": "char_protagonist_flaw",
+      "value": "He cannot imagine that his original assumption might be wrong; every counter-proof is absorbed as further evidence.",
+      "lang": "en"
+    },
+    "centralContradiction": {
+      "key": "char_protagonist_contradiction",
+      "value": "The kindest man in the story is its only source of violence.",
+      "lang": "en"
+    },
+    "moralBoundary": {
+      "key": "char_protagonist_boundary",
+      "value": "He genuinely would never harm an innocent. The tragedy is a category error: he has filed ten peaceful civilizations under 'evil'.",
+      "lang": "en"
+    },
+    "breakingPoint": {
+      "key": "char_protagonist_breaking",
+      "value": "None reachable. This is the dramatic irony of the piece: no evidence, plea, or atrocity can reach him, because every correction is reinterpreted as confirmation.",
+      "lang": "en"
+    }
+  },
+  "opinions": [
+    {
+      "target": "concept_ten_dread_sovereigns_is_prophecy",
+      "targetLabel": "The Ten Dread Sovereigns (read as prophecy)",
+      "position": "devoted",
+      "reason": "Delusion 1 of 5: he believes the battered children's book is an ancient prophecy naming the ten evils that will destroy the world.",
+      "confidence": "absolute",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Never. Being told the book is a children's comedy proves to him that forbidden prophecy was given a clever disguise.",
+      "illustrativeLine": {
+        "key": "char_protagonist_op_book",
+        "value": "A false history. Their deception is even greater than I feared.",
+        "lang": "en"
+      }
+    },
+    {
+      "target": "concept_sealed_gates_mean_gathering_evil",
+      "targetLabel": "The sealed gates",
+      "position": "hostile",
+      "reason": "Delusion 2 of 5: ten thousand years of closed gates can only mean the creatures behind them have been secretly gathering strength.",
+      "confidence": "absolute",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Never. 'They have never attacked us' is heard as 'my vigilance has kept them afraid'.",
+      "illustrativeLine": {
+        "key": "char_protagonist_op_gates",
+        "value": "Exactly. My timing was perfect.",
+        "lang": "en"
+      }
+    },
+    {
+      "target": "concept_enemy_pleas_are_manipulation",
+      "targetLabel": "Enemies pleading for mercy",
+      "position": "wary",
+      "reason": "Delusion 3 of 5: a pleading enemy is attempting manipulation. The amulet translates flawlessly; he hears every word and trusts none of them.",
+      "confidence": "absolute",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Never. Understanding the words perfectly is precisely what lets him reframe them.",
+      "illustrativeLine": {
+        "key": "char_protagonist_op_pleas",
+        "value": "A cowardly attempt to hide behind hostages. Typical goblin strategy.",
+        "lang": "en"
+      }
+    },
+    {
+      "target": "concept_peaceful_settlements_are_enemy_camps",
+      "targetLabel": "Peaceful settlements beyond the gates",
+      "position": "hostile",
+      "reason": "Delusion 4 of 5: peace is camouflage. A quiet village is an enemy settlement that has not yet dropped its mask; 'that was a village' is heard as 'an enemy settlement'.",
+      "confidence": "absolute",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Never.",
+      "illustrativeLine": {
+        "key": "char_protagonist_op_settlements",
+        "value": "You are safe now. They can never hurt you again.",
+        "lang": "en"
+      }
+    },
+    {
+      "target": "concept_defenders_prove_guilt",
+      "targetLabel": "Creatures who defend themselves",
+      "position": "hostile",
+      "reason": "Delusion 5 of 5: every defensive attack proves the creature wanted violence all along. 'They were defending their children' is heard as 'they are breeding an army'.",
+      "confidence": "absolute",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Never. Resistance is the evidence; surrender would be a trap.",
+      "illustrativeLine": {
+        "key": "char_protagonist_op_defenders",
+        "value": "Observe how arrogantly they announce their attacks. They truly believe themselves untouchable.",
+        "lang": "en"
+      }
+    },
+    {
+      "target": "concept_those_who_beg_him_to_stop",
+      "targetLabel": "Hub NPCs begging him to stop",
+      "position": "sympathetic",
+      "reason": "He believes they are frightened, deceived, or already under evil influence — and that he must remain strong enough for all of them.",
+      "confidence": "absolute",
+      "publiclyAdmitted": true,
+      "canChangeCondition": "Never. 'You are causing all of this' is heard as survivor's guilt.",
+      "illustrativeLine": {
+        "key": "char_protagonist_op_doubters",
+        "value": "Do not worry. I will remain strong enough for all of us.",
+        "lang": "en"
+      }
+    }
+  ],
+  "knowledge": {
+    "knows": [
+      "fact_no_monster_ever_crossed_gates",
+      "fact_amulet_translation_is_accurate"
+    ],
+    "believesFalse": [
+      "fact_book_is_childrens_comedy",
+      "fact_realms_peaceful_ten_millennia",
+      "fact_gates_are_diplomatic",
+      "fact_law_of_fair_warning",
+      "fact_continuance_restores_dead",
+      "fact_shards_are_domestic_magic"
+    ],
+    "suspects": [],
+    "secrets": [],
+    "lies": [],
+    "unknown": [
+      "fact_amulet_is_diplomatic_concord",
+      "fact_trophies_are_gate_seals",
+      "fact_banking_uses_diplomatic_network",
+      "fact_heavy_hands_emergency_service",
+      "fact_ogre_seals_are_credentials",
+      "fact_reception_hall_awaits_first_visitor"
+    ]
+  },
+  "voice": {
+    "formality": "formal",
+    "directness": "very-direct",
+    "typicalSentenceLength": "medium",
+    "rhythm": "Measured heraldic cadence; each sentence lands on its verdict.",
+    "vocabularyComplexity": "ornate",
+    "usesContractions": false,
+    "usesHumor": "never",
+    "metaphorDomain": {
+      "source": "light and darkness, judgment, vigilance, oaths",
+      "examples": [
+        {
+          "key": "char_protagonist_metaphor_1",
+          "value": "Every lantern of vigilance I keep lit is a question the dark must answer.",
+          "lang": "en"
+        },
+        {
+          "key": "char_protagonist_metaphor_2",
+          "value": "I know mercy when I hear it twisted.",
+          "lang": "en"
+        }
+      ]
+    },
+    "emotionalRestraint": "open",
+    "declarationStyle": "declarative",
+    "namesEmotionsDirectly": true,
+    "addressMode": "by-title",
+    "avoids": [
+      "I might be wrong",
+      "who knows",
+      "no worries",
+      "my bad",
+      "just kidding",
+      "I lied"
+    ],
+    "sampleLines": [
+      {
+        "key": "char_protagonist_sample_1",
+        "value": "Exactly. My timing was perfect.",
+        "lang": "en"
+      },
+      {
+        "key": "char_protagonist_sample_2",
+        "value": "A cowardly attempt to hide behind hostages. Typical goblin strategy.",
+        "lang": "en"
+      },
+      {
+        "key": "char_protagonist_sample_3",
+        "value": "Good. Let fear announce the coming of justice.",
+        "lang": "en"
+      },
+      {
+        "key": "char_protagonist_sample_4",
+        "value": "You are safe now. They can never hurt you again.",
+        "lang": "en"
+      },
+      {
+        "key": "char_protagonist_sample_5",
+        "value": "Observe how arrogantly they announce their attacks. They truly believe themselves untouchable.",
+        "lang": "en"
+      },
+      {
+        "key": "char_protagonist_sample_6",
+        "value": "At last! Evil reveals its weakness!",
+        "lang": "en"
+      },
+      {
+        "key": "char_protagonist_sample_7",
+        "value": "You shall carry only the weight of your crimes.",
+        "lang": "en"
+      },
+      {
+        "key": "char_protagonist_sample_8",
+        "value": "A false history. Their deception is even greater than I feared.",
+        "lang": "en"
+      },
+      {
+        "key": "char_protagonist_sample_9",
+        "value": "The world is not safe yet.",
+        "lang": "en"
+      }
+    ],
+    "antiSampleLines": [
+      {
+        "key": "char_protagonist_antisample_1",
+        "value": "I do enjoy watching them beg. (cruel glee — he never enjoys suffering)",
+        "lang": "en"
+      },
+      {
+        "key": "char_protagonist_antisample_2",
+        "value": "Trust me, I come in peace. (a knowing lie — he never knowingly lies)",
+        "lang": "en"
+      },
+      {
+        "key": "char_protagonist_antisample_3",
+        "value": "Perhaps I have misread all of this. (any admission of doubt)",
+        "lang": "en"
+      },
+      {
+        "key": "char_protagonist_antisample_4",
+        "value": "Yeah, whatever — let's just smash the place and grab the loot. (modern/casual phrasing)",
+        "lang": "en"
+      }
+    ]
+  },
+  "pressure": [
+    {
+      "condition": "proven-wrong",
+      "emotion": "serene certainty",
+      "voiceShift": "No shift — the correction is absorbed and restated as confirmation within one breath.",
+      "behaviour": "Instantly reinterprets counter-evidence through his worldview (see notes: the misunderstanding table is his behaviour spec). Never concedes, and never notices that he has not conceded.",
+      "illustrativeLine": {
+        "key": "char_protagonist_pressure_wrong",
+        "value": "Exactly. My timing was perfect.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "praised",
+      "emotion": "humbled",
+      "voiceShift": "Softer, still formal; deflects toward duty.",
+      "behaviour": "Accepts praise with sincere humility and redirects credit to the prophecy and the people he believes he is protecting.",
+      "illustrativeLine": {
+        "key": "char_protagonist_pressure_praised",
+        "value": "I only did what any soul with courage would do.",
+        "lang": "en"
+      }
+    },
+    {
+      "condition": "threatened",
+      "emotion": "courteous resolve",
+      "voiceShift": "Slower and more formal; addresses the threatener as a worthy foe.",
+      "behaviour": "Does not bargain, flee, or rage. Meets threats with politeness and absolute confidence.",
+      "illustrativeLine": {
+        "key": "char_protagonist_pressure_threatened",
+        "value": "Good. Let fear announce the coming of justice.",
+        "lang": "en"
+      }
+    }
+  ],
+  "tags": [
+    "protagonist",
+    "unreliable-hero",
+    "dramatic-irony",
+    "hero"
+  ],
+  "notes": "GAMEPLAY ROLE: the schema enum has no 'protagonist' value, so gameplayRole/narrativeFunction are 'other'; his true function is unreliable-hero and dramatic-irony engine. KNOWLEDGE MODEL (the point of the character): the canon veracity enum has no false-belief value, so no delusion facts were added to world-facts.json; his five fixed delusions are expressed as opinions on concept targets (see each opinion's reason) and here. Bucket semantics chosen: 'knows' holds truth-facts he objectively experienced and would confirm as experienced (no monster ever crossed the gates — he cites it constantly and draws the wrong conclusion; the amulet's translation is accurate — he relies on it hourly, capability framing only). 'believesFalse' holds canon TRUTH-facts he has been told and would deny: NPCs literally tell him the book is a comedy, the realms are peaceful, shards are domestic magic, telegraphs are a mercy; he hears and rejects each. 'unknown' holds truths never put to him: the amulet's true name and diplomatic nature (he named it himself), the reception hall (secret), the gate-seal economy, the Heavy Hands. 'suspects' is intentionally empty: he suspects a 'source of all evil' beyond rung 10, which is the INVERSE of fact_reception_hall_awaits_first_visitor, and no false-belief fact may be authored to represent the inversion; recorded here instead. 'lies' is empty by character design: he never knowingly lies. BEHAVIOUR SPEC under proven-wrong: 'They have never attacked us' -> 'Because my vigilance has kept them afraid.' / 'That was a village' -> 'An enemy settlement.' / 'They were defending their children' -> 'They are breeding an army.' / 'Please return what you took' -> 'The artifacts still call to their servants.' / 'The book is a children's comedy' -> 'A clever disguise placed over forbidden prophecy.' / 'You are causing all of this' -> 'Survivor's guilt.' / 'We are begging you to stop' -> 'Do not worry. I will remain strong enough for all of us.'"
+}

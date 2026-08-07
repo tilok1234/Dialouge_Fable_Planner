@@ -1,0 +1,38 @@
+{
+  "id": "state_tide_man_the_blue__exposed",
+  "characterId": "char_tide_man_the_blue",
+  "label": "Exposed — slack water",
+  "mood": "spent tide",
+  "location": "The Drowned Vault, the floodgates",
+  "injuries": [
+    "Drained from holding the gates against their own tide"
+  ],
+  "activeQuestStages": [
+    "quest_rung_04_drowned_vault__stage_3"
+  ],
+  "recentEvents": [
+    {
+      "key": "nsh_state_tide_man_the_blue_ex_ev1",
+      "value": "The water went slack all at once; the stranger saw the gates sag and declared that evil reveals its weakness.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_tide_man_the_blue_ex_cf1",
+      "value": "Nothing here belongs to him. There is only a seat, still offered, going out.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-tide-man-the-blue-exposed-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_tide_man_the_blue_ex_obj",
+    "value": "Make the plainest offer a ferryman has: a seat on the boat out.",
+    "lang": "en"
+  },
+  "phase": "exposed"
+}

@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "contentHash": "sha256:nsh-fac-crypt-ancestors-v1",
+  "id": "fac_crypt_ancestors",
+  "name": "The Willing Ancestors of the Reliquary Crypt",
+  "summary": {
+    "key": "fac_crypt_ancestors_summary",
+    "value": "The skeletons of the Reliquary Crypt are willing ancestors, scribes, and tomb attendants who stayed on after death to care for their dead. Their culture is remembrance: every name is kept, every grave is tended, and the skeleton-knight honor guard — the King's guard — escorts visitors rather than threatening them. They are not raised; they volunteered.",
+    "lang": "en"
+  },
+  "sharedBeliefs": [
+    "fact_realms_peaceful_ten_millennia",
+    "fact_law_of_fair_warning",
+    "fact_continuance_restores_dead",
+    "fact_reliquary_king_is_caretaker",
+    "fact_bone_yard_is_commons"
+  ],
+  "sharedOpinions": [
+    {
+      "target": "char_protagonist",
+      "position": "wary",
+      "reason": "He walks across burial chambers with a drawn weapon and calls our remembrance necromancy. We will show him the way out, as the law requires."
+    },
+    {
+      "target": "fac_bone_yard_commons",
+      "position": "friendly",
+      "reason": "The restoration grounds are where our younger dead learn the names we keep. Same work, wider field."
+    },
+    {
+      "target": "fac_heavy_hands",
+      "position": "friendly",
+      "reason": "They have carried our collapsed vaults back upright more than once. Help has a silhouette."
+    }
+  ],
+  "metaphorDomain": {
+    "source": "remembrance, names, candlelight, grave-tending",
+    "examples": [
+      {
+        "key": "fac_crypt_ancestors_metaphor_1",
+        "value": "A name spoken is a lamp relit.",
+        "lang": "en"
+      },
+      {
+        "key": "fac_crypt_ancestors_metaphor_2",
+        "value": "Grief is a garden; you do not finish it, you tend it.",
+        "lang": "en"
+      }
+    ]
+  },
+  "terminology": [
+    {
+      "term": "the Remembered",
+      "meaning": {
+        "key": "fac_crypt_ancestors_term_remembered",
+        "value": "The dead whose names and stories are still recited daily. To be Remembered is to be cared for, not worshipped.",
+        "lang": "en"
+      }
+    },
+    {
+      "term": "keeping",
+      "meaning": {
+        "key": "fac_crypt_ancestors_term_keeping",
+        "value": "The daily round of dusting monuments, reading names aloud, and repairing grave-goods. The work the hero calls a dark ritual.",
+        "lang": "en"
+      }
+    }
+  ],
+  "customs": [
+    {
+      "key": "fac_crypt_ancestors_custom_greeting",
+      "value": "Greet visitors by asking whom they remember; a guest who names no dead is gently lent one of ours.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_crypt_ancestors_custom_quiet",
+      "value": "Speak softly inside the vaults — not from fear, but because the scribes are copying and ink is expensive.",
+      "lang": "en"
+    }
+  ],
+  "taboos": [
+    {
+      "key": "fac_crypt_ancestors_taboo_names",
+      "value": "Never let a name go unspoken for a full season; forgetting is the only death the Continuance cannot mend.",
+      "lang": "en"
+    },
+    {
+      "key": "fac_crypt_ancestors_taboo_graves",
+      "value": "Never stand idle on a grave slab. It unsettles the attendants — and the King will open the ground beneath you to move you along.",
+      "lang": "en"
+    }
+  ],
+  "tags": [
+    "faction",
+    "realm-people",
+    "reliquary-crypt",
+    "rung-1"
+  ]
+}

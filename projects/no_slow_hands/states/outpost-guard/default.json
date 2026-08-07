@@ -1,0 +1,39 @@
+{
+  "id": "state_outpost_guard__default",
+  "characterId": "char_outpost_guard",
+  "label": "Default — already mid-arc",
+  "mood": "hard-edged, grieving correction",
+  "location": "The rough outpost",
+  "injuries": [],
+  "activeQuestStages": [],
+  "recentEvents": [
+    {
+      "key": "nsh_state_outpost_guard_def_ev1",
+      "value": "Watched the Glass as he pulled a gate seal off a Heavy Hand and called it a trophy. A medic's badge. He collects them like ears.",
+      "lang": "en"
+    },
+    {
+      "key": "nsh_state_outpost_guard_def_ev2",
+      "value": "Heavy Hands once pulled a barn off a family; Ket watched. The hero pulls badges off the Heavy Hands. They do different work.",
+      "lang": "en"
+    }
+  ],
+  "factsLearned": [],
+  "promises": [],
+  "playerBetrayed": false,
+  "unresolvedConflicts": [
+    {
+      "key": "nsh_state_outpost_guard_def_cf1",
+      "value": "He hears 'medic's badge' and files it under 'elite monster loot'. Of everyone at the hub, Ket is furthest along the escalation arc already.",
+      "lang": "en"
+    }
+  ],
+  "version": 1,
+  "contentHash": "sha256:nsh-state-outpost-guard-default-v1",
+  "temporaryObjective": {
+    "key": "nsh_state_outpost_guard_def_obj",
+    "value": "Say it to his face once, plainly — mugging a paramedic is not a victory — then get back to the post.",
+    "lang": "en"
+  },
+  "notes": "Deliberately starts further along the escalation arc than the other hub NPCs (profile notes): his 'default' is already mid-arc. He knows fact_ogre_seals_are_credentials but not fact_trophies_are_gate_seals."
+}

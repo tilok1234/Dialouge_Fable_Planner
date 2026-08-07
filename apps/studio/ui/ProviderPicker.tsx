@@ -17,6 +17,8 @@ export function ProviderPicker() {
   const [name, setName] = useState<"mock" | "claude">("mock");
   const [command, setCommand] = useState("claude");
   const [model, setModel] = useState("claude-opus-5");
+  const [baseUrl, setBaseUrl] = useState("");
+  const [authToken, setAuthToken] = useState("");
   const [err, setErr] = useState<string | null>(null);
   const [applying, setApplying] = useState(false);
 
@@ -38,7 +40,11 @@ export function ProviderPicker() {
       const res = await fetch("/api/provider", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify(name === "mock" ? { name } : { name, command, model }),
+        body: JSON.stringify(
+          name === "mock"
+            ? { name }
+            : { name, command, model, baseUrl: baseUrl || undefined, authToken: authToken || undefined },
+        ),
       });
       const body = await res.json();
       if (!res.ok) throw new Error(body.error ?? `switch failed (${res.status})`);
@@ -93,19 +99,39 @@ export function ProviderPicker() {
                 Model
                 <input value={model} onChange={(e) => setModel(e.target.value)} placeholder="claude-opus-5 | kimi-k3 | …" spellCheck={false} />
               </label>
+              <label>
+                Base URL <span className="muted">(optional — Anthropic-compatible endpoint)</span>
+                <input value={baseUrl} onChange={(e) => setBaseUrl(e.target.value)} placeholder="https://api.z.ai/api/anthropic" spellCheck={false} />
+              </label>
+              <label>
+                API token <span className="muted">(optional; kept in backend memory only)</span>
+                <input type="password" value={authToken} onChange={(e) => setAuthToken(e.target.value)} spellCheck={false} />
+              </label>
               <div style={{ display: "flex", gap: 6 }}>
                 <button
                   onClick={() => {
                     setCommand("claude");
                     setModel("claude-opus-5");
+                    setBaseUrl("");
+                    setAuthToken("");
                   }}
                 >
                   Opus 5
                 </button>
                 <button
                   onClick={() => {
+                    setCommand("claude");
+                    setModel("glm-5.2");
+                    setBaseUrl("https://api.z.ai/api/anthropic");
+                  }}
+                >
+                  GLM 5.2
+                </button>
+                <button
+                  onClick={() => {
                     setCommand("kimi");
                     setModel("kimi-k3");
+                    setBaseUrl("");
                   }}
                 >
                   Kimi K3
@@ -113,6 +139,8 @@ export function ProviderPicker() {
               </div>
               <p className="muted" style={{ margin: 0 }}>
                 Any CLI that accepts <code>-p --output-format json --model</code> with the prompt on stdin works.
+                Base URL + token route the claude CLI to a coding-plan endpoint (GLM, Kimi) instead of your
+                Anthropic subscription. The token is sent to your local backend only and never stored on disk.
               </p>
             </>
           )}

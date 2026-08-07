@@ -248,7 +248,10 @@ const server = createServer(async (req, res) => {
     if (req.method === "POST" && path === "/api/provider") {
       // Runtime provider switch (the UI picker). Local tool, origin-fenced;
       // the command charset check keeps the spawned command line boring.
-      const { name, command, model } = await readBody(req);
+      // Optional baseUrl+authToken route the CLI to an Anthropic-compatible
+      // endpoint (GLM/Kimi coding plans). The token lives in this process's
+      // memory only: never logged, never echoed back, never written to disk.
+      const { name, command, model, baseUrl, authToken } = await readBody(req);
       if (name === "mock") {
         provider = mockProvider;
         return send(res, 200, { provider: provider.id });
@@ -257,12 +260,26 @@ const server = createServer(async (req, res) => {
         if (command !== undefined && (typeof command !== "string" || !CLI_CMD_RE.test(command))) {
           return send(res, 400, { error: "command may only contain letters, digits, spaces, . _ / \\ : -" });
         }
+        if (baseUrl !== undefined && (typeof baseUrl !== "string" || !/^https?:\/\/[\w.-]+(:\d+)?(\/[\w./-]*)?$/.test(baseUrl))) {
+          return send(res, 400, { error: "baseUrl must be a plain http(s) URL" });
+        }
+        if (authToken !== undefined && typeof authToken !== "string") {
+          return send(res, 400, { error: "authToken must be a string" });
+        }
+        const env = {};
+        if (baseUrl) env.ANTHROPIC_BASE_URL = baseUrl;
+        if (authToken) env.ANTHROPIC_AUTH_TOKEN = authToken;
         try {
-          provider = new ClaudeCliProvider({ command, model });
+          provider = new ClaudeCliProvider({ command, model, env: Object.keys(env).length ? env : undefined });
         } catch (e) {
           return send(res, 400, { error: e.message });
         }
-        return send(res, 200, { provider: provider.id, model: provider.model, command: command ?? "claude" });
+        return send(res, 200, {
+          provider: provider.id,
+          model: provider.model,
+          command: command ?? "claude",
+          customEndpoint: !!baseUrl,
+        });
       }
       return send(res, 400, { error: `unknown provider "${name}" (mock | claude)` });
     }

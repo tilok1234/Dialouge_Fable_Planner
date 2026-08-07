@@ -177,6 +177,25 @@ describe("studio backend — runtime provider switch (M15)", () => {
     expect((await post("/api/provider", { name: "claude", model: "bad model; rm" })).status).toBe(400);
     expect((await post("/api/provider", { name: "gpt" })).status).toBe(400);
   });
+
+  it("accepts a custom endpoint and NEVER echoes the token (M16)", async () => {
+    const { status, body } = await post("/api/provider", {
+      name: "claude",
+      model: "glm-5.2",
+      baseUrl: "https://api.z.ai/api/anthropic",
+      authToken: "sk-test-secret-value",
+    });
+    expect(status).toBe(200);
+    expect(body.customEndpoint).toBe(true);
+    expect(JSON.stringify(body)).not.toContain("sk-test-secret-value");
+    const health = await (await fetch(base + "/api/health")).json();
+    expect(JSON.stringify(health)).not.toContain("sk-test-secret-value");
+  });
+
+  it("rejects a junk base URL", async () => {
+    const { status } = await post("/api/provider", { name: "claude", baseUrl: "not a url && curl evil" });
+    expect(status).toBe(400);
+  });
 });
 
 describe("studio backend — preview assets", () => {

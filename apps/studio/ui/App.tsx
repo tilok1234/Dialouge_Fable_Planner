@@ -378,6 +378,16 @@ export function App() {
       });
       const body = await res.json();
       if (!res.ok) throw new Error(body.error ?? `export failed (${res.status})`);
+      // Only ACCEPTED dialogue exports. An empty export is almost always a
+      // workflow miss, not a bug — say so instead of downloading a husk.
+      const lineCount = format === "csv" ? Math.max(0, (body.csv ?? "").trim().split("\n").length - 1) : body.json.lines.length;
+      if (lineCount === 0) {
+        const skipped = format === "json" ? body.json.skippedDrafts : undefined;
+        throw new Error(
+          `nothing to export — the project has no ACCEPTED dialogue${skipped ? ` (${skipped} unaccepted draft(s) skipped)` : ""}. ` +
+            `Open a scene → Generate dialogue → Review → Accept into project → Save, then export.`,
+        );
+      }
       const content = format === "csv" ? body.csv : JSON.stringify(body.json, null, 2) + "\n";
       const mime = format === "csv" ? "text/csv" : "application/json";
       const blob = new Blob([content], { type: mime });

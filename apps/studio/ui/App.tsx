@@ -6,9 +6,10 @@
 // NON_GOALS §3.1 — Git is history).
 
 import type { ProjectData } from "@df/storage";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { api, type IntegrityIssue } from "./api.js";
+import { BatchPanel, type BatchBundle } from "./BatchPanel.js";
 import { Browser } from "./Browser.js";
 import { CanonFactEditor } from "./CanonFactEditor.js";
 import { CharacterEditor } from "./CharacterEditor.js";
@@ -51,6 +52,7 @@ export function App() {
   const [saveError, setSaveError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [preview, setPreview] = useState(false);
+  const [batch, setBatch] = useState(false);
   const [creating, setCreating] = useState(false);
   const [newName, setNewName] = useState("");
   const [browse, setBrowse] = useState<{ dir: string; id: string; name: string }[] | null>(null);
@@ -347,24 +349,52 @@ export function App() {
     setDirty(true);
   }
 
+  // Always-fresh project ref for async flows (the batch queue mutates and
+  // saves between renders; state alone would be stale mid-loop).
+  const projectRef = useRef<ProjectData | null>(project);
+  projectRef.current = project;
+
   // Accept a generated dialogue bundle into the project (constraint #8: the
   // human gate). Upserts by id so re-accepting a regenerated scene replaces
   // the old artifact instead of duplicating it.
-  function acceptDialogue(bundle: { dialogue: unknown; beatPlan?: unknown; contextPackage?: unknown; review?: unknown }) {
+  function acceptDialogue(bundle: BatchBundle) {
     if (!project) return;
-    const upsert = <T extends { id: string }>(xs: T[], item: unknown): T[] => {
-      if (!item || typeof (item as T).id !== "string") return xs;
-      const t = item as T;
-      return xs.some((x) => x.id === t.id) ? xs.map((x) => (x.id === t.id ? t : x)) : [...xs, t];
-    };
-    setProject({
-      ...project,
-      dialogues: upsert(project.dialogues, bundle.dialogue),
-      beatPlans: upsert(project.beatPlans, bundle.beatPlan),
-      contextPackages: upsert(project.contextPackages, bundle.contextPackage),
-      reviews: upsert(project.reviews, bundle.review),
-    });
+    setProject(upsertBundle(project, bundle));
     setDirty(true);
+  }
+
+  // Batch queue: upsert the (reviewed) bundle and persist immediately, so
+  // queue progress survives a reload.
+  async function batchBundleSaved(bundle: BatchBundle) {
+    const p = projectRef.current;
+    if (!p) return;
+    const next = upsertBundle(p, bundle);
+    projectRef.current = next;
+    setProject(next);
+    await api.save(dir, next);
+    setDirty(false);
+  }
+
+  // The post-queue sweep: everything still "reviewed" whose review passed
+  // becomes accepted, in one go. Returns how many flipped.
+  async function acceptAllPassed(): Promise<number> {
+    const p = projectRef.current;
+    if (!p) return 0;
+    let count = 0;
+    const dialogues = p.dialogues.map((d) => {
+      if (d.approvalStatus !== "reviewed") return d;
+      const review = p.reviews.find((r) => r.id === d.reviewId);
+      if (!review?.passed) return d;
+      count++;
+      return { ...d, approvalStatus: "accepted" as const };
+    });
+    if (count === 0) return 0;
+    const next = { ...p, dialogues };
+    projectRef.current = next;
+    setProject(next);
+    await api.save(dir, next);
+    setDirty(false);
+    return count;
   }
 
   // Export the project (M7). Fetches JSON or CSV and triggers a download.
@@ -462,6 +492,9 @@ export function App() {
         <button onClick={() => setPreview((p) => !p)} disabled={!project}>
           {preview ? "Close preview" : "Preview room"}
         </button>
+        <button onClick={() => setBatch((b) => !b)} disabled={!project}>
+          {batch ? "Close batch" : "Batch generate"}
+        </button>
         <button onClick={() => setCreating((c) => !c)}>New project</button>
         {saveError && <span className="err">save: {saveError}</span>}
       </header>
@@ -521,7 +554,14 @@ export function App() {
         </div>
       )}
 
-      {preview && project ? (
+      {batch && project ? (
+        <BatchPanel
+          project={project}
+          onBundleSaved={batchBundleSaved}
+          onAcceptAllPassed={acceptAllPassed}
+          onClose={() => setBatch(false)}
+        />
+      ) : preview && project ? (
         <PreviewRoom project={project} onClose={() => setPreview(false)} />
       ) : (
       <main className="layout">
@@ -564,6 +604,22 @@ export function App() {
       )}
     </div>
   );
+}
+
+/** Upsert a generated bundle's artifacts into the project by id. */
+function upsertBundle(p: ProjectData, bundle: BatchBundle): ProjectData {
+  const upsert = <T extends { id: string }>(xs: T[], item: unknown): T[] => {
+    if (!item || typeof (item as T).id !== "string") return xs;
+    const t = item as T;
+    return xs.some((x) => x.id === t.id) ? xs.map((x) => (x.id === t.id ? t : x)) : [...xs, t];
+  };
+  return {
+    ...p,
+    dialogues: upsert(p.dialogues, bundle.dialogue),
+    beatPlans: upsert(p.beatPlans, bundle.beatPlan),
+    contextPackages: upsert(p.contextPackages, bundle.contextPackage),
+    reviews: upsert(p.reviews, bundle.review),
+  };
 }
 
 /** Map a selection kind to the ProjectData collection field. */

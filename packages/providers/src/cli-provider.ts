@@ -55,6 +55,11 @@ export interface ClaudeCliOptions {
   model?: string;
   /** Per-call timeout. Default 5 minutes (subscription CLI calls are slow). */
   timeoutMs?: number;
+  /** Extra environment for the spawned CLI — how Anthropic-compatible
+   * endpoints are selected (e.g. ANTHROPIC_BASE_URL + ANTHROPIC_AUTH_TOKEN
+   * pointing the claude CLI at a GLM/Kimi coding-plan endpoint). Values are
+   * held in memory only and never logged. */
+  env?: Record<string, string>;
   /** Injectable subprocess runner (tests). Default spawns the real CLI. */
   runner?: CliRunner;
 }
@@ -86,7 +91,7 @@ export class ClaudeCliProvider implements DialogueAIProvider {
     }
     this.command = options.command ?? "claude";
     this.timeoutMs = options.timeoutMs ?? 300_000;
-    this.runner = options.runner ?? defaultRunner(this.command);
+    this.runner = options.runner ?? defaultRunner(this.command, options.env);
   }
 
   async generateProfile(request: ProfileRequest): Promise<ProfileResult> {
@@ -273,7 +278,7 @@ export function extractJsonObject(text: string): unknown {
 }
 
 /** Spawn the real CLI; prompt via stdin (no shell-quoting hazards). */
-function defaultRunner(command: string): CliRunner {
+function defaultRunner(command: string, extraEnv?: Record<string, string>): CliRunner {
   return (args, stdin, timeoutMs) =>
     new Promise((fulfil, reject) => {
       // Windows: the npm `claude` shim is a .cmd, which Node refuses to spawn
@@ -281,10 +286,11 @@ function defaultRunner(command: string): CliRunner {
       // DEP0190 args-with-shell warning); args are fixed flags + a
       // charset-validated model id, so quoting is safe.
       const win = process.platform === "win32";
+      const env = extraEnv ? { ...process.env, ...extraEnv } : process.env;
       const cmdline = [command, ...args].map((a) => (/\s/.test(a) ? `"${a}"` : a)).join(" ");
       const child = win
-        ? spawn(cmdline, { shell: true, windowsHide: true, stdio: ["pipe", "pipe", "pipe"] })
-        : spawn(command, args, { stdio: ["pipe", "pipe", "pipe"] });
+        ? spawn(cmdline, { shell: true, windowsHide: true, stdio: ["pipe", "pipe", "pipe"], env })
+        : spawn(command, args, { stdio: ["pipe", "pipe", "pipe"], env });
       let stdout = "";
       let stderr = "";
       const timer = setTimeout(() => {

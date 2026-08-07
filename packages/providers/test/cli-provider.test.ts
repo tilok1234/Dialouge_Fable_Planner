@@ -99,6 +99,17 @@ describe("ClaudeCliProvider — generateProfile", () => {
     await new ClaudeCliProvider({ runner, model: "claude-sonnet-5" }).generateProfile({ brief: "boss" });
     expect(calls[0]!.args).toContain("claude-sonnet-5");
   });
+
+  it("adds --bare only when a custom endpoint env is set (M16 auth-conflict fix)", async () => {
+    const profile = await validProfile();
+    const withEnv = fakeRunner([envelope(JSON.stringify(profile))]);
+    await new ClaudeCliProvider({ runner: withEnv.runner, env: { ANTHROPIC_BASE_URL: "https://x.example" } }).generateProfile({ brief: "boss" });
+    expect(withEnv.calls[0]!.args).toContain("--bare");
+
+    const withoutEnv = fakeRunner([envelope(JSON.stringify(profile))]);
+    await new ClaudeCliProvider({ runner: withoutEnv.runner }).generateProfile({ brief: "boss" });
+    expect(withoutEnv.calls[0]!.args).not.toContain("--bare");
+  });
 });
 
 describe("ClaudeCliProvider — planScene / generateDialogue", () => {
